@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+         <ui:composition template="./_template.xhtml">
+
+           <ui:define name="app-familiar.admin.recaudo.pasarelas.payzend.content">
+
+                <div class="gridContainer clearfix"><!--inicio-contenedor-->
+                    <div class="cajacontenedor"><!--inicio-contenedor-->
+                        <div id="contenedorprincipal">
+                            <div id="contenedorsuperior"><!--inicio_contenedorsuperior-->
+
+                                <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml">
+                                    <div id="pestana1">
+                                        <div id="txtpu" class="estilo8">
+                                            Datos del PPL  <h:outputText  class="fa fa-address-card-o" ></h:outputText>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div id="pestana2" class="estilo8">
+                                    <div id="txtpd">
+                                        Monto Recarga <h:outputText  class="fa fa-usd" ></h:outputText>  
+                                    </div>
+                                </div>
+                                <div id="pestana3" class="estilo8">
+                                    <div id="txtpt">
+                                        3. Confirmar Recarga  <h:outputText  class="fa fa-usd" ></h:outputText>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="contenedormedio"><!--inicio_contenedorsuperior-->
+                                <div id="marcorecaudo">
+                                    <div id="cuadrocontenedor">
+                                        <div id="marcotitulo">
+                                            <div id="titulo_marco"> Enviar Pago </div>
+                                            <div id="titulo_imagen">     <h:outputText  class="fa fa-check-circle-o" style="font-size: 2em; color: #ffffff;float:left"></h:outputText>   </div>
+
+                                            <div id="titulo_contraer"> 
+                                                <a href="#" onclick="mostrar()" >
+                                                    <h:outputText  class="fa fa-chevron-down "  style="font-size: 2em; color: #ffffff;float:left;font-weight:bold;display:none" id="abajo" ></h:outputText> 
+                                                </a>
+                                                <a href="#" onclick="ocultar()">
+                                                    <h:outputText  class="fa fa-chevron-up " style="font-size: 2em; color: #ffffff;float:left;font-weight:bold;display:block" id="arriba"></h:outputText> 
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                        <div id="lineasdiv"></div>
+                                        <div id="area_movil" >
+
+   <h:outputText value="#{beneficiarioControl.recuperaIdPPLInterno(recaudoControl.decodificar(param.numdoc_),recaudoControl.decodificar(param.tdoc_))}"/>
+  <h:outputText value="#{recaudoControl.RecaudoPasarelasPago(recaudoControl.decodificar(param.id_),recaudoControl.decodificar(param.tdoc_),recaudoControl.decodificar(param.numdoc_),recaudoControl.decodificar(param.telrec_),param.valor_,param.comision_)}"/>
+                                            <div id="contenedor_area1">
+                                                <div id="contenedor_resumen">
+                                                    <div id="datos_ppl">
+                                                        <div id="lab-ppl" class="estilo10">Procesando...</div>
+                                                        <div id="barraprogreso">
+                                                            <div class="center">
+                                                                <div class="clear"></div>
+                                                                <div class="progress">
+                                                                   
+                                                                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                                                    <span></span>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="lineasdiv"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        var percent = 0;
+
+                                        timerId = setInterval(function () {
+                                            //increment progress bar
+                                            percent += 5;
+                                            $('.progress-bar').css('width', percent + '%');
+                                            $('.progress-bar').attr('aria-valuenow', percent);
+                                            $('.progress-bar').text(percent + '%');
+
+                                            //complete
+                                            if (percent == 100) {
+                                                clearInterval(timerId);
+                                                document.location.href = '#{recaudoControl.enviarpagopayzend(recaudoControl.decodificar(param.id_),recaudoControl.decodificar(param.tdoc_),recaudoControl.decodificar(param.numdoc_),recaudoControl.decodificar(param.telrec_),param.valor_)}';
+                                            }
+
+                                        }, 1000);
+                                    });
+
+                                </script>
+
+                                <script type='text/JavaScript'>
+
+                                    function ocultar(){
+                                    document.getElementById('area_movil').style.display = 'none';
+                                    document.getElementById('abajo').style.display = 'block';
+                                    document.getElementById('arriba').style.display = 'none';
+                                    }
+
+                                    function mostrar(){
+                                    document.getElementById('area_movil').style.display = 'block';
+                                    document.getElementById('abajo').style.display = 'none';
+                                    document.getElementById('arriba').style.display = 'block';
+                                    }
+
+
+
+                                </script>
+
+
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

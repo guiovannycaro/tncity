@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+
+    <h:form>
+
+        <h:panelGroup rendered="#{buildHtml}">
+            <div id="loading_" align="center">
+                <br/><br/><br/>
+                <b><i>Cargando Documento... Por favor Espere...</i></b><br/><br/>
+                <img src="#{utilControl.protocolHostPortContext}/img/loadBar.gif"/>
+                <br/><br/>
+            </div>
+        </h:panelGroup>
+
+
+        <h:panelGroup id="build_">
+            <div id="export_" align="center">
+                <br/>
+                <p:panelGrid columns="4" layout="grid">
+
+                    <h:panelGroup>
+                        <p:commandLink actionListener="#{informexControl.buildPdf(key,templateJrxml)}" ajax="true" onstart="PF('dlgLoadInfo').show();" update="resBuildInfo_" oncomplete="PF('dlgLoadInfo').hide();PF('dlgResBuildInfo').show();">
+                            <i class="fa fa-file-pdf-o" aria-hidden="true" style="font-size: 20px;color: #ff3333"> PDF</i>
+                        </p:commandLink>
+                    </h:panelGroup>
+
+                    <h:panelGroup>
+                        <p:commandLink actionListener="#{informexControl.buildXlsx(key,templateJrxml)}" ajax="true" onstart="PF('dlgLoadInfo').show();" update="resBuildInfo_" oncomplete="PF('dlgLoadInfo').hide();PF('dlgResBuildInfo').show();">
+                            <i class="fa fa-file-excel-o" aria-hidden="true" style="font-size: 20px;color: #006600"> EXCEL</i>
+                        </p:commandLink>
+                    </h:panelGroup>
+
+                    <h:panelGroup>
+                        <script type="text/javascript" src="#{utilControl.protocolHostPortContext}/libscript/printThis.js"></script>
+                        <a  href="javascript:void();" onclick="$('#print_').printThis();" target="_blank">
+                            <i class="fa fa-print" aria-hidden="true" style="font-size: 20px;color: #0066cc"> IMPRIMIR</i>
+                        </a>
+                    </h:panelGroup>
+
+                    <h:panelGroup>
+                        <i><h:outputText value="Activar paginación?"/> </i>
+                        <div>
+                            <h:outputText value="#{informexControl.initPaginar(key)}"/>
+
+                            <p:selectBooleanButton value="#{informexControl.paginar}" onLabel="Si" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:60px">
+                                <p:ajax listener="#{informexControl.paginarToogle(key,templateJrxml)}" onstart="PF('dlgLoadInfo').show();" oncomplete="PF('dlgLoadInfo').hide();" update="build_" />
+                            </p:selectBooleanButton>
+                        </div>
+                    </h:panelGroup>
+
+                </p:panelGrid>
+                <br/><br/>
+            </div>
+
+            <div>
+                <h:outputText value="#{informexControl.msgErr}" style="color:red"/>
+            </div>
+            <div style="padding: 5px;background: gray; overflow: auto;">
+                <div id="print_"  style="padding: 5px;">
+                    <h:outputText value="#{informexControl.html}" escape="false" id="htmlContent_"/>
+                </div>
+            </div>
+        </h:panelGroup>
+
+        <h:panelGroup rendered="#{buildHtml}">
+            <p:remoteCommand name="rc" actionListener="#{informexControl.buildHtml(key,templateJrxml)}" update="build_"  oncomplete="endLoad();"/>
+            <script type="text/javascript">
+                setTimeout("rc();", 500);
+            </script>
+        </h:panelGroup>
+        <script type="text/javascript">
+
+            function endLoad() {
+                document.getElementById('loading_').style.display = 'none';
+            }
+        </script>
+
+        <p:dialog modal="true" responsive="true" closable="false" widgetVar="dlgLoadInfo">
+            <br/><br/>
+            <div align='center'>
+                <i>Generando documento... Por favor Espere...</i><br/><br/>
+                <img src="#{utilControl.protocolHostPortContext}/img/loadBar.gif"/>
+            </div>
+            <br/><br/>
+
+        </p:dialog>
+
+        <p:dialog modal="true" responsive="true"  header="Resultado" widgetVar="dlgResBuildInfo">
+            <h:panelGroup id="resBuildInfo_">
+                <br/><br/>
+                <div align='center'>
+                    <h:outputText value="#{utilControl.msg}" escape="false"/>
+                    <br/><br/>
+                    <a href="#{informexControl.link}" target="_blank" onclick="PF('dlgResBuildInfo').hide();">
+                        <b class="fa fa-download" style="color: #0066cc;font-size: 25px;text-decoration: underline;"> DESCARGAR</b>
+                    </a>
+                </div>
+                <br/><br/>
+            </h:panelGroup>
+        </p:dialog>
+    </h:form>
+
+
+
+
+
+
+</ui:composition>

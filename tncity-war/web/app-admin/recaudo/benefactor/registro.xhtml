@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>TNPagos </title>
+    </h:head>
+    <h:body>
+        <b>Procesando...</b>
+           
+                       <h:outputText value="#{benefactorControl.nuevobenefactor(
+                                           param.nombre_,param.apellidos_,param.tipdoc_,
+                                           param.numdoc_,param.tel1_,param.tel2_,param.ciudad_,param.correo_,param.ccorreo_,
+        param.contra_,param.ccontra_,direccion_)}"/>
+
+
+                  
+
+
+                    <h:panelGroup rendered="#{benefactorControl.successful}">
+                        <script type="text/javascript">
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/recaudo/benefactor/lista.xhtml';
+                        </script>
+
+                    </h:panelGroup>
+                       
+                         <h:panelGroup rendered="#{benefactorControl.successful == false}">
+                        <script type="text/javascript">
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/recaudo/benefactor/lista.xhtml';
+                        </script>
+
+                    </h:panelGroup>
+
+
+ </h:body>
+</html>

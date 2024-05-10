@@ -1,0 +1,2555 @@
+@charset "utf-8";
+
+img, object, embed, video {
+    max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+    width:100%;
+}
+
+/*
+        Propiedades de cuadrícula fluida de Dreamweaver
+        ----------------------------------
+        dw-num-cols-mobile:		5;
+        dw-num-cols-tablet:		8;
+        dw-num-cols-desktop:	10;
+        dw-gutter-percentage:	25;
+        
+        Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+        http://www.alistapart.com/articles/responsive-web-design
+        
+        y Golden Grid System de Joni Korpi
+        http://goldengridsystem.com/
+*/
+
+body {
+    background-image: url(../imagenes/finternomovil.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position:top center;
+    font-size: 8px;
+    padding:0px;
+    margin:0px;
+    width:100%;
+}
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;/*
+    padding-right: 1.82%;*/
+}
+
+#contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#contenedorprincipal{
+    float: left;
+    width: 100%;
+    height: 1200px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    border: 0px solid #ffffff;
+    background-color: transparent;
+    display: block;
+
+}
+
+#contenedorsuperior{
+    float:left;
+    width: 100%;
+    height:40px;
+    margin: 0% 0% 0% 0%;
+    padding: 1% 0% 0% 1%;
+    display: none;
+
+}
+
+#pestana1{
+    float: left;
+    width: 90%;
+    height: 31px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: none;
+
+}
+
+#txtpu{
+    float: left;
+    width: 100%;
+    height: 38px;
+    margin: 0% 0% 0% 0%;
+    padding: 4% 0% 0% 0%;
+    text-align: center;
+    display: none;
+
+}
+
+#lineapestana{
+    height: 5px;
+    width: 85%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+    background-color:#0B637A;
+    display:block;
+}
+
+#pestana2{
+    float: left;
+    width: 90%;
+    height: 31px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: none;
+}
+
+#txtpd{
+    float: left;
+    width: 100%;
+    height: 38px;
+    margin: 0% 0% 0% 0%;
+    padding: 4% 0% 0% 0%;
+    text-align: center;
+    display: none;
+}
+
+#pestana3{
+    float: left;
+    width: 90%;
+    height: 31px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: none;
+}
+
+#txtpt{
+    float: left;
+    width: 100%;
+    height: 38px;
+    margin: 0% 0% 0% 0%;
+    padding: 4% 0% 0% 0%;
+    text-align: center;
+    display: none;
+
+}
+
+#contenedormedio{
+    float:left;
+    width: 100%;
+    height:40px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#marcorecaudo {
+    height: 1500px;
+    width: 100%;
+    float: left;
+    background-image: url(../imagenes/fondpasosmovil.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+    display: block;
+}
+
+
+#cuadrocontenedor{
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;  
+
+}
+
+#marcotitulo{ 
+    float: left;
+    width: 90%;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    margin: 5% 5% 0% 5%;
+    display: block;
+}
+
+
+#titulo_marco{
+    float: left;
+    width: 40%;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;   
+
+}
+#titulo_imagen{
+    float: left;
+    width: 18%;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;  
+
+}
+#titulo_contraer{
+    float: right;
+    width: 13%;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#area_movil{
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;  
+}
+
+#cuadrouno{
+    float: left;
+    width: 90%;
+    height: 275px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 5% 0% 5%;
+    display: block;
+}
+
+#cuadrouno_titulo{
+    float: left;
+    width: 100%;
+    height: 70px;
+    padding: 0% 0% 0% 0%;
+    margin: 8% 0% 0% 0%;
+    display: block;
+
+}
+
+#cuadro_subtitulo{
+    float: left;
+    width: 100%;
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#cuadrouno_txtu{
+    float: left;
+    width: 100%;
+    height: 40px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#cuadrouno_txtinputu{
+    float: left;
+    width: 71%;
+    height: 17px;
+    padding: 0% 0% 0% 0%;
+    margin: 6% 0% 0% 19%;
+    text-align: left;
+    display: block;
+}
+
+#cuadrouno_inputtxtu{
+    float: left;
+    width: 92%;
+    height: 40px;
+    padding: 0% 0% 0% 6%;
+    margin: 3% 4% 0% 4%;
+    z-index: 1;
+    position: relative;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    display: block;
+}
+
+#cuadrouno_txtinputd{
+    float: left;
+    width: 100%;
+    height: 15px;
+    padding: 0% 0% 0% 0%;
+    margin: 10% 0% 0% 5%;
+    text-align: left;
+    display: block;
+}
+
+#cuadrouno_inputtxtd{
+    float: left;
+    width: 92%;
+    height: 40px;
+    padding: 0% 0% 0% 6%;
+    margin: 3% 4% 0% 4%;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    display: block;
+}
+
+#cuadrouno_btnu
+{
+    float: right;
+    width: 42%;
+    height: 32px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#cuadrouno_txtd{
+    float: left;
+    width: 100%;
+    height: 40px;
+    padding: 0% 0% 0% 0%;
+    margin: 7% 0% 0% 0%;
+    display: block;
+}
+
+#cuadrouno_btn{
+    float: left;
+    width: 100%;
+    height: 33px;
+    padding: 0% 0% 0% 0%;
+    margin: -35% 0% 0% 0%;
+    display: block;
+}
+
+#lineasdiv{
+    height: 5px;
+    width: 94%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 3%;
+    background-color: #0B637A;
+
+
+
+}
+
+#cuadrodos{
+    float: left;
+    width: 90%;
+    height: 160px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 5% 0% 5%;
+    display: block;
+}
+
+#cuadrodos_titulou{
+    float: left;
+    width: 100%;
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 5% 0% 0% 0%;
+    display: block;
+}
+
+#cuadrodos_txtu{
+    float: left;
+    width: 100%;
+    height: 55px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block; 
+}
+
+#cuadrodos_txtinputu{
+    float: left;
+    width: 100%;
+    height: 18px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    text-align: left;
+    display: block;
+}
+
+#cuadrodos_inputtxtu{
+    float: left;
+    width: 100%;
+    height: 26px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    text-align: left;
+    display: block; 
+}
+
+#cuadrotres{
+    float: left;
+    width: 90%;
+    height: 140px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 5% 0% 5%;
+    display: block; 
+}
+
+#cuadrotres_txtd{
+    float: left;
+    width: 100%;
+    height: 43px;
+    padding: 0% 0% 0% 0%;
+    margin: 5% 0% 0% 0%;
+    display: block; 
+}
+
+#cuadrotres_txtt{
+    float: left;
+    width: 100%;
+    height: 26px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#cuadrotres_txtinputt{
+    float: left;
+    width: 70%;
+    height: 36px;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 4%;
+    display: block;
+}
+
+#cuadrotres_inputtxtt{
+    float: left;
+    width: 100%;
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    display: block;
+}
+
+#cuadrocuatro{
+    float: left;
+    width: 90%;
+    height: 82px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 5% 0% 5%;
+    display: block;
+}
+
+#cuadrocuatro_btnu{
+    float: left;
+    width: 100%;
+    height: 35px;
+    padding: 0% 0% 0% 0%;
+    margin: 5% 0% 0% 0%;
+    display: block;
+}
+
+#cuadrocuatro_btnd{
+    float: left;
+    width: 100%;
+    height: 35px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block; 
+}
+
+#cuadrocinco{
+    float: left;
+    width: 100%;
+    height: 82px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block; 
+}
+
+#cuadrocinco_cerror{
+    width: 100%;
+    height: 85px;
+    float: left;
+    border: 1px solid #f50303;
+    padding: 2% 5% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    background-color: #f5c2c2;
+    border-radius: 4px;
+    opacity: 0.5;
+    display: block;
+}
+
+#cuadrocinco_txterror{
+    float: left;
+    width: 100%;
+    height: 18px;
+    color: #f10505;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block; 
+}
+
+
+#registronoexiste{
+    float: left;
+    width: 100%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block; 
+
+}
+
+#btnregistronoexiste{
+    float: left;
+    width: 50%;
+    height: 20px;
+    padding: 0% 0% 0% 0%;
+    margin: 5% 0% 0% 22%;
+    display: block;
+
+}
+
+
+
+@media only screen and (min-width: 481px) {
+
+
+    body {
+        background-image: url(../imagenes/finternotablet.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+
+        width:100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #contenedorprincipal{
+        float: left;
+        width: 100%;
+        height: 640px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        border: 0px solid #bdbdbd;
+        background-color: transparent;
+        display: block;
+
+    }
+
+    #contenedorsuperior{
+        float: left;
+        width: 90%;
+        height: 40px;
+        margin: 4% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #pestana1{
+        float: left;
+        width: 19%;
+        height: 24px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txtpu{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #lineapestana{
+        height: 1px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color: #0B637A;
+        display:block;
+    }
+
+    #pestana2{
+        float: left;
+        width: 30%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpd{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #pestana3{
+        float: left;
+        width: 30%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpt{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #contenedormedio{
+        float: left;
+        width: 100%;
+        height: 582px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        height: 575px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/panelbodymovil.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+        display: block;
+    }
+
+    #cuadrocontenedor{
+        float: left;
+        width: 100%;
+        height: 578px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcotitulo {
+        float: left;
+        width: 90%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 5% 0% 5%;
+        display: none;
+    }
+
+
+    #titulo_marco{
+        float: left;
+        width: 17%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 0%;
+        display: none;  
+
+    }
+    #titulo_imagen{
+        float: left;
+        width: 9%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        display: none; 
+
+    }
+    #titulo_contraer{
+        float: right;
+        width: 5%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #area_movil{
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;  
+    }
+
+    #cuadrouno{
+        float: left;
+        width: 90%;
+        height: 194px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 5% 0% 5%;
+        display: block;
+    }
+
+
+    #cuadrouno_titulo{
+        float: left;
+        width: 70%;
+        height: 69px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #cuadro_subtitulo{
+        float: left;
+        width: 100%;
+        height: 31px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #cuadrouno_txtu{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_txtinputu{
+        float: left;
+        width: 47%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 5%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrouno_inputtxtu{
+        float: left;
+        width: 45%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        z-index: 1;
+        position: relative;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block
+
+    }
+
+    #cuadrouno_txtinputd{
+        float: left;
+        width: 45%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 5%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrouno_inputtxtd{
+        float: left;
+        width: 45%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 2%;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+
+    }
+
+    #cuadrouno_btnu
+    {
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_txtd{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_btn{
+        float: right;
+        width: 30%;
+        height: 40px;
+        padding: 0% 0% 0% 4%;
+        margin: -14% 0% 0% 0%;
+        display: block;
+    }
+
+    #lineasdiv{
+        height: 5px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        background-color: #0B637A;
+
+
+
+    }
+
+    #cuadrodos{
+        float: left;
+        width: 90%;
+        height: 90px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 5% 0% 5%;
+        display: block;
+    }
+
+    #cuadrodos_titulou{
+        float: left;
+        width: 31%;
+        height: 16px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block; 
+    }
+
+    #cuadrodos_txtu{
+        float: left;
+        width: 34%;
+        height: 53px;
+        padding: 0% 0% 0% 0%;
+        margin: 6% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrodos_txtinputu{
+        float: left;
+        width: 100%;
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrodos_inputtxtu{
+        float: left;
+        width: 100%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block; 
+    }
+
+    #cuadrotres{
+        float: left;
+        width: 90%;
+        height: 97px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 5% 0% 5%;
+        display: block;
+    }
+
+    #cuadrotres_txtd{
+        float: left;
+        width: 58%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #cuadrotres_txtt{
+        float: right;
+        width: 60%;
+        height: 28px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrotres_txtinputt{
+        float: left;
+        width: 43%;
+        height: 18px;
+        padding: 0% 0% 0% 4%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrotres_inputtxtt{
+        float: left;
+        width: 53%;
+        height: 37px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #cuadrocuatro{
+        float: left;
+        width: 90%;
+        height: 39px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 5% 0% 5%;
+        display: block;
+    }
+
+    #cuadrocuatro_btnu{
+        float: left;
+        width: 40%;
+        height: 31px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrocuatro_btnd{
+        float: right;
+        width: 40%;
+        height: 31px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrocinco{
+        float: left;
+        width: 100%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+    }
+
+    #cuadrocinco_cerror{
+        width: 100%;
+        height: 70px;
+        float: left;
+        border: 1px solid #f50303;
+        padding: 2% 5% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color: #f5c2c2;
+        border-radius: 4px;
+        opacity: 0.5;
+        display: block; 
+    }
+
+    #cuadrocinco_txterror{
+        float: left;
+        width: 100%;
+        height: 18px;
+        color: #f10505;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+    }
+    #registronoexiste{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+
+    }
+
+    #btnregistronoexiste{
+        float: left;
+        width: 30%;
+        height: 34px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 36%;
+        display: block;
+
+    }
+
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+
+    body {
+        background-image: url(../imagenes/fondointerno.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #contenedorprincipal{
+        float:left;
+        width: 90%;
+        height:930px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 0px solid  #bdbdbd;
+        background-color: transparent;
+        display: block;
+
+    }
+
+    #contenedorsuperior{
+        float: left;
+        width: 90%;
+        height: 40px;
+        margin: 2% 5% 0% 5%;
+        padding: 1% 0% 0% 1%;
+        display: block;
+
+    }
+
+    #pestana1{
+        float: left;
+        width: 19%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txtpu{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+
+    #lineapestana{
+        height: 1px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        background-color: #0B637A;
+        display:block;
+    }
+
+    #pestana2{
+        float: left;
+        width: 30%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpd{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #pestana3{
+        float: left;
+        width: 30%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpt{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #contenedormedio{
+        float: left;
+        width: 100%;
+        height: 907px;
+        margin: 1% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        height: 915px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/panelrtapc.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrocontenedor{
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;  
+
+    }
+
+    #cuadrocontenedor{
+        float: left;
+        width: 98%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 1% 0% 1%;
+        display: block;
+
+    }
+
+    #marcotitulo{ 
+        float: left;
+        width: 90%;
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 5% 0% 5%;
+        display: none;
+    }
+
+
+    #titulo_marco{
+        float: left;
+        width: 11%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: none;  
+
+    }
+    #titulo_imagen{
+        float: left;
+        width: 5%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 0%;
+        display: none;
+
+    }
+    #titulo_contraer{
+        float: right;
+        width: 5%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: -6% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #area_movil{
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;  
+    }
+
+    #cuadrouno{
+        float: left;
+        width: 100%;
+        height: 157px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_titulo{
+        float: left;
+        width: 30%;
+        height: 135px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 1%;
+        display: block;
+
+    }
+
+    #cuadro_subtitulo{
+        float: left;
+        width: 49%;
+        height: 148px;
+        padding: 0% 0% 0% 1%;
+        margin: 1% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #cuadrouno_txtu{
+        float: left;
+        width: 100%;
+        height: 31px;
+        padding: 0% 0% 0% 2%;
+        margin: 5% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_txtinputu{
+        float: left;
+        width: 60%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrouno_inputtxtu{
+        float: right;
+        width: 40%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        z-index: 1;
+        position: relative;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #cuadrouno_txtinputd{
+        float: left;
+        width: 60%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrouno_inputtxtd{
+        float: left;
+        width: 40%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #cuadrouno_btnu
+    {
+        float: left;
+        width: 80%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 18%;
+        display: block; 
+    }
+
+    #cuadrouno_txtd{
+        float: left;
+        width: 100%;
+        height: 31px;
+        padding: 0% 0% 0% 2%;
+        margin: 4% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_btn{
+        float: left;
+        width: 17%;
+        height: 157px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #lineasdiv{
+        height: 5px;
+        width: 98%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 1%;
+        background-color: #0B637A;
+
+
+
+    }
+
+    #cuadrodos{
+        float: left;
+        width: 96%;
+        height: 65px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 2% 0% 2%;
+        display: block; 
+    }
+
+    #cuadrodos_titulou{
+        float: left;
+        width: 21%;
+        height: 23px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrodos_txtu{
+        float: left;
+        width: 29%;
+        height: 22px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+        display: block; 
+    }
+
+    #cuadrodos_txtinputu{
+        float: left;
+        width: 100%;
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrodos_inputtxtu{
+        float: left;
+        width: 100%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block; 
+    }
+
+
+
+
+    #cuadrotres{
+        float: left;
+        width: 96%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 2% 0% 2%;
+        display: block; 
+    }
+
+    #cuadrotres_txtd{
+        float: left;
+        width: 38%;
+        height: 26px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrotres_txtt{
+        float: left;
+        width: 30%;
+        height: 29px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 2%;
+        display: block;
+    }
+
+    #cuadrotres_txtinputt{
+        float: left;
+        width: 45%;
+        height: 24px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 7%;
+        display: block;
+    }
+
+    #cuadrotres_inputtxtt{
+        float: right;
+        width: 86%;
+        height: 35px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -57% 0% 0%;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #cuadrocuatro{
+        float: left;
+        width: 40%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 30% 0% 30%;
+        display: block;
+    }
+
+    #cuadrocuatro_btnu{
+        float: left;
+        width: 40%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 8% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrocuatro_btnd{
+        float: right;
+        width: 40%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 8% 0% 0% 0%;
+        display: block; 
+    }
+
+    #cuadrocinco{
+        float: left;
+        width: 100%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+    }
+
+    #cuadrocinco_cerror{
+        width: 100%;
+        height: 70px;
+        float: left;
+        border: 1px solid #f50303;
+        padding: 2% 5% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 4px;
+        opacity: 0.5;
+        display: block; 
+    }
+
+    #cuadrocinco_txterror{
+        float: left;
+        width: 100%;
+        height: 18px;
+        color: #f10505;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+    }
+
+    #registronoexiste{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+
+    }
+
+    #btnregistronoexiste{
+        float: left;
+        width: 20%;
+        height: 34px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 41%;
+        display: block;
+
+    }
+
+}
+
+@media only screen and (min-width: 1900px) {
+
+    body {
+        background-image: url(../imagenes/fondointerno.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #contenedorprincipal{
+        float: left;
+        width: 90%;
+        height: 1500px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 0px solid #bdbdbd;
+        background-color: transparent;
+        display: block;
+
+    }
+
+    #contenedorsuperior{
+        float: left;
+        width: 90%;
+        height: 61px;
+        margin: 2% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #pestana1{
+        float: left;
+        width: 19%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txtpu{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+
+    #lineapestana{
+        height: 1px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        background-color: #0B637A;
+        display:block;
+    }
+
+    #pestana2{
+        float: left;
+        width: 30%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpd{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #pestana3{
+        float: left;
+        width: 30%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpt{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #contenedormedio{
+        float: left;
+        width: 100%;
+        height: 875px;
+        margin: 1% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        float: left;
+        width: 100%;
+        height: 1500px;
+        background-image: url(../imagenes/panelrtapc.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 0%;
+
+        display: block;
+    }
+
+    #cuadrocontenedor{
+        float: left;
+        width: 98%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 1% 0% 1%;
+        display: block;
+
+    }
+
+    #marcotitulo{ 
+        float: left;
+        width: 100%;
+        height: 30px;
+        padding: 0% 3% 0% 3%;
+        margin: 2% 0% 0% 0%;
+        display: none;
+
+    }
+
+
+    #titulo_marco{
+        float: left;
+        width: 8%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: none;
+
+    }
+    #titulo_imagen{
+        float: left;
+        width: 5%;
+        height: auto;
+        padding: 0% 0% 0% 2%;
+        margin: 0% 0% 0% 0%;
+        display: none;
+
+    }
+    #titulo_contraer{
+        float: right;
+        width: 2%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;  
+
+    }
+
+    #area_movil{
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;  
+    }
+
+    #cuadrouno{
+        float: left;
+        width: 100%;
+        height: 200px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_titulo{
+        float: left;
+        width: 30%;
+        height: 165px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 1%;
+        display: block;
+
+    }
+
+    #cuadro_subtitulo{
+        float: left;
+        width: 50%;
+        height: 208px;
+        padding: 0% 0% 0% 1%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #cuadrouno_txtu{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_txtinputu{
+        float: left;
+        width: 45%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrouno_inputtxtu{
+        float: left;
+        width: 45%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        z-index: 1;
+        position: relative;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #cuadrouno_txtinputd{
+        float: left;
+        width: 45%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrouno_inputtxtd{
+        float: left;
+        width: 45%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #cuadrouno_btnu
+    {
+        float: left;
+        width: 60%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: -2% 0% 0% 0%;
+        display: block; 
+    }
+
+    #cuadrouno_txtd{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrouno_btn{
+        float: left;
+        width: 18%;
+        height: 205px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -6% 0% 0%;
+        display: block;
+    }
+
+    #lineasdiv{
+        height: 5px;
+        width: 98%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 1%;
+        background-color: #0B637A;
+    }
+
+    #cuadrodos{
+        float: left;
+        width: 90%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 5% 0% 5%;
+        display: block;
+    }
+
+    #cuadrodos_titulou{
+        float: left;
+        width: 20%;
+        height: 24px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrodos_txtu{
+        float: left;
+        width: 30%;
+        height: 50px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrodos_txtinputu{
+        float: left;
+        width: 60%;
+        height: 23px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrodos_inputtxtu{
+        float: left;
+        width: 43%;
+        height: 22px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: left;
+        display: block;
+    }
+
+    #cuadrotres{
+        float: left;
+        width: 100%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 5% 0% 5%;
+        display: block; 
+    }
+
+    #cuadrotres_txtd{
+        float: left;
+        width: 31%;
+        height: 29px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrotres_txtt{
+        float: left;
+        width: 35%;
+        height: 32px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrotres_txtinputt{
+        float: left;
+        width: 40%;
+        height: 21px;
+        padding: 0% 0% 0% 3%;
+        margin: 1% 0% 0% 0%;
+        display: block;
+    }
+
+    #cuadrotres_inputtxtt{
+        float: left;
+        width: 50%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        border: 2px solid #0B637A;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #cuadrocuatro{
+        float: left;
+        width: 20%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 40% 0% 40%;
+        display: block;
+    }
+
+    #cuadrocuatro_btnu{
+        float: left;
+        width: 53%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 8% 0% 0% -13%;
+        display: block;
+    }
+
+    #cuadrocuatro_btnd{
+        float: right;
+        width: 58%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 8% 0% 0% -4%;
+        display: block;
+    }
+
+    #cuadrocinco{
+        float: left;
+        width: 90%;
+        height: 82px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 5% 0% 5%;
+        display: block; 
+    }
+
+    #cuadrocinco_cerror{
+        width: 100%;
+        height: 70px;
+        float: left;
+        border: 1px solid #f50303;
+        padding: 2% 5% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color: #f5c2c2;
+        border-radius: 4px;
+        opacity: 0.5;
+        display: block; 
+    }
+
+    #cuadrocinco_txterror{
+        float: left;
+        width: 100%;
+        height: 18px;
+        color: #f10505;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+    }
+
+
+    #registronoexiste{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+
+    }
+
+    #btnregistronoexiste{
+        float: left;
+        width: 12%;
+        height: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 43%;
+        display: block;
+
+    }
+
+}
+
+
+
+a:link
+{
+    text-decoration:none;
+
+    color:#ffffff;
+}
+
+.panelgrid-dotted-border{
+
+    border-spacing: 0;
+    border: 0px;
+}
+.panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+    border: 0px;
+}
+
+body .ui-chkbox .ui-chkbox-box {
+    border: 2px solid #FFFFFF;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-chkbox .ui-chkbox-box.ui-state-active {
+    border-color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+body .ui-message.ui-message-error {
+    font-size: 10px !important;
+    float: left;
+    height: 3px;
+    color: #fff8f8;
+    background-color: #f45f56;
+    width: 135%;
+    margin: 1% 0% 0% 0%;
+    font-weight: bold;
+    width: 300px;
+    font-family: 'CenturyGothic-Bold';
+}
+
+
+
+body .ui-inputfield.ui-state-focus {
+    border-width: 0% 0% 0% 0%;
+    border-color: #ffffff;
+    padding-bottom: 0px;
+}    
+
+body .ui-button {
+    width: 100%;
+    height: 30px;
+    color: #ffffff;
+    font-family: 'CenturyGothic';
+    border: 1px solid black;
+    float: left;
+    margin-top: 0%;
+    margin-left: 0%;
+    overflow: hidden;
+    background-color: #788588;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+    width: 80%;
+    height: 19px;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    border-width: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 7%;
+
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transi45854641565410tion: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 20px;
+
+}
+
+button, select, textarea {
+    width: 90%;
+    height: 30px !important;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #ffffff;
+
+
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 4%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+
+
+}
+
+
+.ui-md-8 {
+    width: 100%;
+}
+
+
+
+
+option {
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    padding: 0px 2px 1px;
+}
+
+select {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #0e0e0e;
+}
+
+.ui-autocomplete {
+    width: auto;
+    zoom: 1;
+    cursor: pointer;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    display: inline-block;
+    background-color: #e6f0f2;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+}
+
+input:-internal-autofill-selected {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    color: #afa0a0 !important;
+}
+
+
+body .ui-radiobutton .ui-radiobutton-box {
+    border: 2px solid #ffffff;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+    background-color: #ffffff;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+body .ui-widget, body .ui-widget .ui-widget {
+    font-family: 'CenturyGothic';
+    font-size: 14px;
+    color: #e0280e;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+input:-internal-autofill-selected {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+}
+
+
+body .ui-radiobutton .ui-radiobutton-box {
+    border: 2px solid #ffffff;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+    background-color: #ffffff;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.24) !important;
+    border: 1px solid #e2d6d6 !important;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 2px solid black;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #e8edef;
+    border: 1px;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+body .ui-message {
+    min-height: 14px;
+}
+
+body .ui-message .ui-message-error-icon {
+    margin-top: 0px;
+    font-size: 18px;
+    right: 15px;
+}
+
+body .ui-messages .ui-messages-error-icon, body .ui-message .ui-message-error-icon {
+    background: none;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    font-size: 13px;
+    color: #fff;
+    margin-top: -2px;
+}
+
+body .ui-state-error, body .ui-widget.ui-state-error, body .ui-widget-content .ui-state-error, body .ui-widget-header .ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-inputfield.ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-button {
+    overflow: hidden;
+    background-color: #0B637A;
+    color: #4d4d4d;
+    font-size: 16px;
+    height: 36px;
+    width: 100%;
+    padding: 0 16px;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+    float: left;
+    width: 90%;
+    height: 30px !important;
+    background: transparent;
+    border-width: 0 0 1px 0;
+    padding: 2px 1px 2px 5px;
+    font-size: 14px;
+    color: #0e2031 !important;
+    border-color: transparent !important;
+    border-style: solid;
+    border-radius: 20px !important;
+    background-color: #FFFFFF;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.24) !important;
+    border: 1px solid #e2d6d6 !important;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 2px solid black;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #e8edef;
+    border: 1px;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+body .ui-button.ui-state-hover {
+    background-color: #fbfbfc !important;
+}
+
+body .ui-button.ui-state-focus {
+    outline: 0 none;
+    background-color: #fbfbfc !important;
+}
+
+body.layout-compact .ui-message > span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -11% 0% 0% 6%;
+    width: 100%;
+}
+
+body .ui-widget-content {
+    background-color: transparent;
+    font-size: 16px;
+    border: 1px solid #bdbdbd0d;
+}

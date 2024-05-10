@@ -1,0 +1,8 @@
+.svn
+.git
+build
+dist
+upload
+/tncity-ejb/nbproject/private/
+/tncity-war/nbproject/private/
+/nbproject/private/

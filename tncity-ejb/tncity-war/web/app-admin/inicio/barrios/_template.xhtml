@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <body>
+        
+        <ui:composition template="./../_template.xhtml">
+            
+            <ui:define name="app-admin.inicio.content">
+                 <span class="fa fa-building-o " style="font-size: 25px;">Barrios</span>
+                <p:separator/>
+                 <h:outputText value="#{PermisosControl.validarSeccionesSubSecciones(loginAdminControl.usLog.idpersona.idpersona,'Inicio','Barrios','Barrios')}"/>
+
+                        <ui:repeat  var="lst" value="#{PermisosControl.lstsubsecciones}" >  
+
+                            <h:panelGroup rendered="#{lst.ingreso == 'true' }"> 
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/inicio/barrios/nuevo.xhtml">
+                                    <div style="float: left;width: 15%;height: 33px;margin: 0% 0% 0% 0%;
+                                         padding: 0% 0% 0% 0%; 
+                                         background-color: #ffffff;"> 
+                                        <div style="float: left;width: 90%;height: 20px;margin: 6% 0% 0% 9%;padding: 0% 0% 0% 0%;font-size: 15x;color:#000000 !important">
+                                            <span class="fa fa-plus-circle" style="font-size: 20px;color:#757575"></span>  Nuevo
+                                        </div>
+                                    </div>
+                                </a>
+                            </h:panelGroup> 
+                            <h:panelGroup rendered="#{lst.buscar == 'true' }"> 
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/inicio/barrios/buscar.xhtml">
+                                    <div style="float: left;width: 15%;height: 33px;margin: 0% 0% 0% 0%;
+                                         padding: 0% 0% 0% 0%; 
+                                         background-color: #ffffff;"> 
+                                        <div style="float: left;width: 90%;height: 20px;margin: 6% 0% 0% 9%;padding: 0% 0% 0% 0%;font-size: 15x;color:#000000 !important">
+                                            <span class="fa fa-search" style="font-size: 20px;color:#757575"></span>   Buscar
+                                        </div>
+                                    </div>
+                                </a>
+                            </h:panelGroup> 
+                                      <h:panelGroup rendered="#{lst.consulta == 'true' }"> 
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/inicio/barrios/lista.xhtml">
+                                    <div style="float: left;width: 15%;height: 33px;margin: 0% 0% 0% 0%;
+                                         padding: 0% 0% 0% 0%; 
+                                         background-color: #ffffff;"> 
+                                        <div style="float: left;width: 90%;height: 20px;margin: 6% 0% 0% 9%;padding: 0% 0% 0% 0%;font-size: 15x;color:#000000 !important">
+                                            <span class="fa fa-list-ul" style="font-size: 20px;color:#757575"></span>   Lista
+                                        </div>
+                                    </div>
+                                </a>
+                            </h:panelGroup> 
+
+                        </ui:repeat> 
+                    </div>
+                    <br/>
+                
+                
+             
+                <ui:insert name="app-admin.inicio.barrios.content"></ui:insert>
+            </ui:define>
+
+        </ui:composition>
+        
+    </body>
+</html>

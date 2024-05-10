@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+
+                <h:outputText value="#{repoauditoriaControl.RecuperaReporAditorias()}"/>
+
+                <br/>
+                <div>
+
+                    <h:form>
+
+
+
+
+
+                        <p:dataTable reflow="true" var="lst" value="#{repoauditoriaControl.lstrepoauditoria}" tableStyle="width:100%">
+                         
+                                <p:column>
+
+                                    <h:panelGroup >
+
+
+
+                                        <div style="width: 100%;height: 100px" >
+                                            <div style="width: 100%;height: 95px;border: solid 1px black;float: left;margin: 0% 0% 0% 0%">
+                                                <div style="width: 65%;float: left; height: 43px;margin-top: 3%;margin-left: 3%;" >
+                                                    <div style="float: left;width: 40%;height: auto">
+                                                        <span class="#{lst.imagen}" style="font-size: 40px;color: green;"></span> 
+                                                        No. <b style="color: #003366;font-size: 20px;">#{lst.idrepoauditoria}</b> &rArr;
+                                                    </div>
+                                                    <div style="float: Left;
+                                                         width: 100%;
+                                                         height: auto;">
+                                                        <a href="#{utilControl.protocolHostPortContext}#{lst.url}">
+                                                            <b style="">#{lst.nombrevisual}</b>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div style="    float: left;margin-top: 7%; width: 4%; margin-right: 0%;">
+                                                    <p:panelGrid >
+                                                        <h:panelGroup >
+                                                            <a href="#{utilControl.protocolHostPortContext}#{lst.url}" > 
+                                                                <div class="tooltip top">
+                                                                  <span class="fa fa-play"></span>
+
+                                                                </div>
+                                                            </a>
+                                                          
+                                                            
+                                                        </h:panelGroup>
+                                                    </p:panelGrid>
+                                                </div>
+                                    
+
+                                            </div>
+                                        </div>
+
+
+                                    </h:panelGroup>
+                                </p:column>
+                            
+                        </p:dataTable>
+
+
+
+
+
+
+
+                    </h:form>
+
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

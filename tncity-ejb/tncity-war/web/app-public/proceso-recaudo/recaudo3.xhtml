@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-public.proceso-recaudo.content">
+                <script>
+                    $('.tab3-class').css('background', '#beddec');
+                    $('.tab3-class').css('color', '##144c68');
+                </script>
+
+                <h:outputText value="#{benefactorControl.recuperaById()}"/>
+
+                <h:form id="ff_">
+                    <div align="center">
+                        <h:panelGrid id = "panel" columns = "2" border = "0"
+                                     cellpadding = "2" cellspacing = "1" width="60%">
+
+                            <f:facet name = "header">
+                                <h:outputLabel value = "Gestion Del Recaudo"/>
+                                <h:panelGroup style = "display:block;margin-top: 8%;">
+                                    <h:outputText value="#{utilControl.msg}" escape="false"/>
+                                </h:panelGroup> 
+                            </f:facet>
+
+
+                            <h:outputText value="Persona que realiza la recarga:" styleClass="label"/>
+                            <h:panelGroup>
+                                <h:outputText value="#{benefactorControl.obj.idpersona.nombres} #{benefactorControl.obj.idpersona.apellidos}"
+                                                                                              
+                                              />
+                            </h:panelGroup>
+
+                            <h:outputText value="Valor *:" styleClass="label"/>
+                            <h:panelGroup>
+
+
+                                <p:inputText  value="#{recaudoControl.obj.valor}" required="true" validatorMessage="Debe ingresar un valor mayor que 0" id="attr_recaudo"
+                                              
+                                              onkeyup="format(this)" onchange="format(this)" placeholder="Valor a recargar en pesos"  autocomplete="off">
+                                    <f:validateLongRange minimum="100"/>
+                                    <f:convertNumber maxFractionDigits="2"
+                                                     groupingUsed="true"
+                                                     currencySymbol="$"
+                                                     maxIntegerDigits="4"
+                                                     type="currency"/>
+                                </p:inputText> 
+                                <p:message for="attr_recaudo"  style="    height: auto;margin-left: 60px;width: 90%;float: left;"/>
+
+                            </h:panelGroup>
+
+
+
+
+                            <h:outputText value="Pin * " styleClass="label"/>
+
+                            <h:panelGroup>
+                                <p:inputText autocomplete="off" value="#{recaudoControl.pin}" required="true" requiredMessage="Debe ingresar el numero de pin" id="attr_pin"
+                                             placeholder="pin asignado al interno" 
+
+
+                                             />
+                                <p:message for="attr_pin"  style="height: auto; margin-left: 60px;width: 90%;float: left;"/>
+                            </h:panelGroup>
+
+
+                            <f:facet name = "footer">
+
+                                <h:panelGroup style = "display:block; text-align:center">
+
+                                    <p:commandButton value="Continuar" onclick="enviar();" icon="fa fa-arrow-right"  style="
+                                                     text-decoration: none;width: 44%;height: 38px;
+                                                     float: right;padding: 2px 5px 1px 3px;font-weight: bold;font-size: 14px;
+                                                     color: #ffffff;background-color: #2F4050; border-radius: 6px;
+                                                     border: 1px solid black; margin-right: 0px;
+                                                     " >
+                                        <f:param name="idbenefactor_" value="#{param.idbenefactor_}"/>
+                                    </p:commandButton>
+
+                                    <p:commandButton value="Regresar"  ajax="true" onclick="regresar();" icon="fa fa-arrow-left"  style="
+                                                     text-decoration: none;width: 39%;height: 38px;float: left;padding: 2px 7px 1px 3px;font-weight: bold;
+                                                     font-size: 14px;color: #ffffff;background-color: #2F4050;border-radius: 6px;border: 1px solid black;
+                                                     margin-left: 78px;
+                                                     " >
+
+                                    </p:commandButton>
+
+                                </h:panelGroup>
+
+                            </f:facet>
+                        </h:panelGrid>
+                    </div>
+
+                    <br/>
+
+                </h:form>
+
+                <script type="text/javascript">
+                    function enviar() {
+
+
+                        var formulario = document.getElementById("ff_");
+                        var pin = document.getElementById('ff_:attr_pin').value;
+                        var valor = document.getElementById('ff_:attr_recaudo').value;
+
+                        if (pin == '' || isNaN(pin)) {
+                            swal("Debe ingresar el numero de pin");
+                            return false;
+                        }
+
+                        if (valor == '' || isNaN(valor) || 0 >= valor) {
+                            swal("Debe ingresar un valor mayor que 0");
+                            return false;
+                        }
+                        var valor2 = replaceAll(valor, ".", "");
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-public/proceso-recaudo/recaudo4.xhtml?idbenefactor_=#{param.idbenefactor_}&amp;pin_=' + pin + '&amp;valor_=' + valor2;
+
+                    }
+
+                    function replaceAll(text, busca, reemplaza) {
+                        while (text.toString().indexOf(busca) != - 1)
+                            text = text.toString().replace(busca, reemplaza);
+                        return text;
+                    }
+
+                    function regresar() {
+
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-public/proceso-recaudo/recaudo1.xhtml'
+                    }
+
+
+                    function format(input)
+                    {
+                        var num = input.value.replace(/\./g, '');
+                        if (!isNaN(num)) {
+                        num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
+                                num = num.split('').reverse().join('').replace(/^[\.]/, '');
+                                input.value = num;
+                        } else {
+                        swal({
+                        type: "warning",
+                                title: 'Solo se permiten numeros',
+                                confirmButtonColor: "#DD6B55"
+
+                        });
+                                input.value = input.value.replace(/[^\d\.]*/g, '');
+                        }
+                    }
+
+
+                </script>
+
+                <h:panelGroup rendered="#{recaudoControl.successful}">
+                    <script type="text/javascript">
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-public/proceso-recaudo/recaudo4.xhtml?idbenefactor_=#{param.idbenefactor_}&amp;pin_=' + pin + '&amp;valor_=' + valor
+                                ';
+                    </script>
+                </h:panelGroup>
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

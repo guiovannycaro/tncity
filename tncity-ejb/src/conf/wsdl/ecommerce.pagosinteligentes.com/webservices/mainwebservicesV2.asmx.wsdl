@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://pagosinteligentes.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://pagosinteligentes.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://pagosinteligentes.com/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInfo" type="tns:PaymentInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaymentInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AcID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reference1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reference2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reference3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="BDev" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantOption1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantOption2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantOption3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnableCard" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnablePSE" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnableCash" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SourceId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GenerateTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessCardPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentOption" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AcID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ref3" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tax" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="BDev" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CVV2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardFranchise" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fees" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExpDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessCardPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessCardPaymentResult" type="tns:ResultTransactionLog" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultTransactionLog">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AcID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOpt1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOpt2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOpt3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumRec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MethodPayment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReverseTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idTransaccion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReverseTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReverseTransactionResult" type="tns:ResponseReverse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseReverse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contraseña" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="acid" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetPaymentURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Payment" type="tns:PaymentInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsTest" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPaymentURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPaymentURLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByTransactionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByTransactionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionByTransactionIdResult" type="tns:ResultTransactionLog" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByTransactionIdV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByTransactionIdV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResultTransactionLog" type="tns:ResultTransactionLogV2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultTransactionLogV2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AcID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOpt1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOpt2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOpt3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumRec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MethodPayment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransactionByReference1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reference1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByReference1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionByReference1Result" type="tns:ResultTransactionLog" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByReference1V2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reference1" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByReference1V2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResultTransactionLog" type="tns:ResultTransactionLogV2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateToken" />
+  </wsdl:message>
+  <wsdl:message name="GenerateTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessCardPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="ProcessCardPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReverseTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReverseTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentURLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPaymentURL" />
+  </wsdl:message>
+  <wsdl:message name="GetPaymentURLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPaymentURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByTransactionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionByTransactionId" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByTransactionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionByTransactionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByTransactionIdV2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionByTransactionIdV2" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByTransactionIdV2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionByTransactionIdV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByReference1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionByReference1" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByReference1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionByReference1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByReference1V2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionByReference1V2" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByReference1V2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionByReference1V2Response" />
+  </wsdl:message>
+  <wsdl:portType name="MainWebServicesV2Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateToken">
+      <wsdl:input message="tns:GenerateTokenSoapIn" />
+      <wsdl:output message="tns:GenerateTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCardPayment">
+      <wsdl:input message="tns:ProcessCardPaymentSoapIn" />
+      <wsdl:output message="tns:ProcessCardPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <wsdl:input message="tns:ReverseTransactionSoapIn" />
+      <wsdl:output message="tns:ReverseTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentURL">
+      <wsdl:input message="tns:GetPaymentURLSoapIn" />
+      <wsdl:output message="tns:GetPaymentURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByTransactionId">
+      <wsdl:input message="tns:GetTransactionByTransactionIdSoapIn" />
+      <wsdl:output message="tns:GetTransactionByTransactionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByTransactionIdV2">
+      <wsdl:input message="tns:GetTransactionByTransactionIdV2SoapIn" />
+      <wsdl:output message="tns:GetTransactionByTransactionIdV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByReference1">
+      <wsdl:input message="tns:GetTransactionByReference1SoapIn" />
+      <wsdl:output message="tns:GetTransactionByReference1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByReference1V2">
+      <wsdl:input message="tns:GetTransactionByReference1V2SoapIn" />
+      <wsdl:output message="tns:GetTransactionByReference1V2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MainWebServicesV2Soap" type="tns:MainWebServicesV2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="https://pagosinteligentes.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateToken">
+      <soap:operation soapAction="https://pagosinteligentes.com/GenerateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCardPayment">
+      <soap:operation soapAction="https://pagosinteligentes.com/ProcessCardPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap:operation soapAction="https://pagosinteligentes.com/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReverseTransactionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentURL">
+      <soap:operation soapAction="https://pagosinteligentes.com/GetPaymentURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByTransactionId">
+      <soap:operation soapAction="https://pagosinteligentes.com/GetTransactionByTransactionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByTransactionIdV2">
+      <soap:operation soapAction="https://pagosinteligentes.com/GetTransactionByTransactionIdV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByReference1">
+      <soap:operation soapAction="https://pagosinteligentes.com/GetTransactionByReference1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByReference1V2">
+      <soap:operation soapAction="https://pagosinteligentes.com/GetTransactionByReference1V2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MainWebServicesV2Soap12" type="tns:MainWebServicesV2Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="https://pagosinteligentes.com/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateToken">
+      <soap12:operation soapAction="https://pagosinteligentes.com/GenerateToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCardPayment">
+      <soap12:operation soapAction="https://pagosinteligentes.com/ProcessCardPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap12:operation soapAction="https://pagosinteligentes.com/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ReverseTransactionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentURL">
+      <soap12:operation soapAction="https://pagosinteligentes.com/GetPaymentURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByTransactionId">
+      <soap12:operation soapAction="https://pagosinteligentes.com/GetTransactionByTransactionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByTransactionIdV2">
+      <soap12:operation soapAction="https://pagosinteligentes.com/GetTransactionByTransactionIdV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByReference1">
+      <soap12:operation soapAction="https://pagosinteligentes.com/GetTransactionByReference1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByReference1V2">
+      <soap12:operation soapAction="https://pagosinteligentes.com/GetTransactionByReference1V2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MainWebServicesV2">
+    <wsdl:port name="MainWebServicesV2Soap" binding="tns:MainWebServicesV2Soap">
+      <soap:address location="https://ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MainWebServicesV2Soap12" binding="tns:MainWebServicesV2Soap12">
+      <soap12:address location="https://ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

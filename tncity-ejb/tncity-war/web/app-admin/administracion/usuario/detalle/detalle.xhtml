@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.usuario.detalle.content">
+
+    <h:outputText value="#{usuarioControl.RecuperaUsuarioByIdS(param.idusuario_)}"/>
+
+                <p:panel header="Editar Usuario">
+                    <div align="center">
+                        <h:form id="form_u"  >
+                              <ui:repeat value="#{usuarioControl.lstpermisouser}" var="lstu"> 
+                            <p:panelGrid columns="4" style="width: 100%">
+
+                                <h:panelGroup>
+                                    <h:outputText value="Persona" styleClass="label"/>
+                                    <h:outputText value="" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <h:outputText value="#{lstu.idusuario.idpersona.nombres}"/>
+
+                           
+
+
+
+                                </h:panelGroup>
+
+                 
+
+                               
+
+                                <h:panelGroup>
+                                    <h:outputText value="Perfil" styleClass="label"/>
+                                    <h:outputText value="" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+
+                        
+
+                                    <h:outputText value="#{lstu.idperfil.nombre}" />
+                                     
+                               
+
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Activo" styleClass="label"/>
+                                    <h:outputText value="" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                       <h:outputText value="#{lstu.idusuario.isActivo}" />
+                                   
+
+
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                </h:panelGroup>
+
+
+
+                            </p:panelGrid>
+                              </ui:repeat>
+                            <br></br>
+
+
+                            <p:panelGrid id = "panel"   style="width: 100%;" styleClass="panelgrid-dotted-border">
+                                <p:row>
+
+                                    <p:column >
+                                        <div class="titulos">         
+                                            Módulos</div>
+                                    </p:column>
+                                    <p:column >
+                                        <div class="titulos">         
+                                            Secciones</div>
+                                    </p:column>
+                                    <p:column >
+                                        <div class="titulos">         
+                                            SubSecciones</div>
+                                    </p:column>
+                                    <p:column >
+                                        <div class="titulos">         
+                                            Consultar</div>
+                                    </p:column>
+                                    <p:column >
+                                        <div class="titulos">         
+                                            Ingreso</div>
+                                    </p:column>
+                                    <p:column >
+                                        <div class="titulos">         
+                                            Edicion</div>
+                                    </p:column>
+                                    <p:column >
+                                        <div class="titulos">         
+                                            Busqueda</div>
+                                    </p:column>
+
+                                </p:row>
+                                <h:outputText value="#{PermisosControl.EditarRecuperaPermisosS(param.idusuario_)}"/>
+                                <ui:repeat  var="lst" value="#{PermisosControl.lstpermisos}" >
+                                    <p:row>
+
+                                        <p:column >
+                                            <div class="subtitulos">
+                                                <br><label class="float--none">#{lst.idmodulo.nombre}</label></br>
+                                                
+                                            
+                                                 <h:panelGroup rendered="#{lst.modulo == true }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="modulo#{lst.idmodulo.idmodulo}" checked="true" disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                                  <h:panelGroup rendered="#{lst.modulo == false }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="modulo#{lst.idmodulo.idmodulo}"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                            </div>
+                                        </p:column>
+                                        <p:column >
+                                            <div class="subtitulos">
+                                                <br><label class="float--none">#{lst.idseccion.nombre}</label></br>
+                                                     <h:panelGroup rendered="#{lst.seccion == true }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="seccion#{lst.idseccion.idseccion}" checked="true"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                                  <h:panelGroup rendered="#{lst.seccion == false }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="seccion#{lst.idseccion.idseccion}"   disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>  
+                                                
+                                                
+                                    
+
+                                            </div>
+                                        </p:column>
+
+                                        <p:column >
+                                            <div class="subtitulos">
+                                                <br><label class="float--none">#{lst.idsubsecccion.nombre}</label></br>
+        
+
+                                                
+                                                           <h:panelGroup rendered="#{lst.subseccion == true }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="sseccion#{lst.idsubsecccion.idsubseccion}" checked="true"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                                  <h:panelGroup rendered="#{lst.subseccion == false }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="sseccion#{lst.idsubsecccion.idsubseccion}"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>  
+                                                
+                                                
+                                            </div>
+                                        </p:column>
+                                        <p:column >
+                                            <div class="subtitulos">
+                                                
+                                                 <h:panelGroup rendered="#{lst.consulta == true }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="csseccion#{lst.idsubsecccion.idsubseccion}" checked="true"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                                  <h:panelGroup rendered="#{lst.consulta == false }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="csseccion#{lst.idsubsecccion.idsubseccion}"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>  
+                                                
+                                           
+
+                                            </div>
+                                        </p:column>
+
+                                        <p:column >
+                                            <div class="subtitulos">   
+                                                
+                                                  <h:panelGroup rendered="#{lst.ingreso == true }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="isseccion#{lst.idsubsecccion.idsubseccion}" checked="true"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                                  <h:panelGroup rendered="#{lst.ingreso == false }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="isseccion#{lst.idsubsecccion.idsubseccion}"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>  
+                                                
+                                         
+
+
+                                            </div>
+                                        </p:column>
+                                        <p:column >
+                                            <div class="subtitulos">    
+                                                
+                                                <h:panelGroup rendered="#{lst.edicion == true }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="esseccion#{lst.idsubsecccion.idsubseccion}" checked="true"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                                  <h:panelGroup rendered="#{lst.edicion == false }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="esseccion#{lst.idsubsecccion.idsubseccion}"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>  
+                                                
+                                              
+                                            </div>
+                                        </p:column>
+                                        <p:column >
+                                            <div class="subtitulos">  
+                                                
+                                                 <h:panelGroup rendered="#{lst.buscar == true }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="bsseccion#{lst.idsubsecccion.idsubseccion}" checked="true"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>
+                                                  <h:panelGroup rendered="#{lst.buscar == false }">
+                                                <input class="messageCheckbox" type="checkbox" value="true" id="bsseccion#{lst.idsubsecccion.idsubseccion}"  disabled="disabled" readonly="readonly"/>
+                                                 </h:panelGroup>  
+                                                
+                                              
+
+                                            </div>
+                                        </p:column>
+
+
+                                    </p:row>
+
+                                </ui:repeat>
+
+                            </p:panelGrid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <br/><br/>
+                        
+
+
+
+
+                            <br/><br/>
+                        </h:form>
+
+
+
+                    </div>
+                    <script type="text/javascript">
+                        function enviarf() {
+
+                            var usuario = document.getElementById('form_u:idusuario').value;
+
+                            var perfil = document.getElementById('form_u:perfil').value;
+            
+                            var estado = document.getElementById('form_u:estado').value;
+
+
+                            var modulo1 = document.getElementById('modulo1').checked;
+                            var modulo2 = document.getElementById('modulo2').checked;
+                            var modulo3 = document.getElementById('modulo3').checked;
+                            var modulo4 = document.getElementById('modulo4').checked;
+                            var modulo5 = document.getElementById('modulo5').checked;
+
+                            var seccion1 = document.getElementById('seccion1').checked;
+                            var seccion2 = document.getElementById('seccion2').checked;
+                            var seccion3 = document.getElementById('seccion3').checked;
+                            var seccion4 = document.getElementById('seccion4').checked;
+                            var seccion5 = document.getElementById('seccion5').checked;
+                            var seccion6 = document.getElementById('seccion6').checked;
+                            var seccion7 = document.getElementById('seccion7').checked;
+                            var seccion8 = document.getElementById('seccion8').checked;
+                            var seccion9 = document.getElementById('seccion9').checked;
+                            var seccion10 = document.getElementById('seccion10').checked;
+                            var seccion11 = document.getElementById('seccion11').checked;
+                            var seccion12 = document.getElementById('seccion12').checked;
+
+
+
+                            var sseccion1 = document.getElementById('sseccion1').checked;
+                            var sseccion2 = document.getElementById('sseccion2').checked;
+                            var sseccion3 = document.getElementById('sseccion3').checked;
+                            var sseccion4 = document.getElementById('sseccion4').checked;
+                            var sseccion5 = document.getElementById('sseccion5').checked;
+                            var sseccion6 = document.getElementById('sseccion6').checked;
+                            var sseccion7 = document.getElementById('sseccion7').checked;
+                            var sseccion8 = document.getElementById('sseccion8').checked;
+                            var sseccion9 = document.getElementById('sseccion9').checked;
+                            var sseccion10 = document.getElementById('sseccion10').checked;
+                            var sseccion11 = document.getElementById('sseccion11').checked;
+                            var sseccion12 = document.getElementById('sseccion12').checked;
+                            var sseccion13 = document.getElementById('sseccion13').checked;
+                            var sseccion14 = document.getElementById('sseccion14').checked;
+                            var sseccion15 = document.getElementById('sseccion15').checked;
+                            var sseccion16 = document.getElementById('sseccion16').checked;
+                            var sseccion17 = document.getElementById('sseccion17').checked;
+                            var sseccion18 = document.getElementById('sseccion18').checked;
+                            var sseccion19 = document.getElementById('sseccion19').checked;
+                            var sseccion20 = document.getElementById('sseccion20').checked;
+                            var sseccion21 = document.getElementById('sseccion21').checked;
+                            var sseccion22 = document.getElementById('sseccion22').checked;
+
+
+                            var csseccion1 = document.getElementById('csseccion1').checked;
+                            var csseccion2 = document.getElementById('csseccion2').checked;
+                            var csseccion3 = document.getElementById('csseccion3').checked;
+                            var csseccion4 = document.getElementById('csseccion4').checked;
+                            var csseccion5 = document.getElementById('csseccion5').checked;
+                            var csseccion6 = document.getElementById('csseccion6').checked;
+                            var csseccion7 = document.getElementById('csseccion7').checked;
+                            var csseccion8 = document.getElementById('csseccion8').checked;
+                            var csseccion9 = document.getElementById('csseccion9').checked;
+                            var csseccion10 = document.getElementById('csseccion10').checked;
+                            var csseccion11 = document.getElementById('csseccion11').checked;
+                            var csseccion12 = document.getElementById('csseccion12').checked;
+                            var csseccion13 = document.getElementById('csseccion13').checked;
+                            var csseccion14 = document.getElementById('csseccion14').checked;
+                            var csseccion15 = document.getElementById('csseccion15').checked;
+                            var csseccion16 = document.getElementById('csseccion16').checked;
+                            var csseccion17 = document.getElementById('csseccion17').checked;
+                            var csseccion18 = document.getElementById('csseccion18').checked;
+                            var csseccion19 = document.getElementById('csseccion19').checked;
+                            var csseccion20 = document.getElementById('csseccion20').checked;
+                            var csseccion21 = document.getElementById('csseccion21').checked;
+                            var csseccion22 = document.getElementById('csseccion22').checked;
+
+
+
+
+                            var isseccion1 = document.getElementById('isseccion1').checked;
+                            var isseccion2 = document.getElementById('isseccion2').checked;
+                            var isseccion3 = document.getElementById('isseccion3').checked;
+                            var isseccion4 = document.getElementById('isseccion4').checked;
+                            var isseccion5 = document.getElementById('isseccion5').checked;
+                            var isseccion6 = document.getElementById('isseccion6').checked;
+                            var isseccion7 = document.getElementById('isseccion7').checked;
+                            var isseccion8 = document.getElementById('isseccion8').checked;
+                            var isseccion9 = document.getElementById('isseccion9').checked;
+                            var isseccion10 = document.getElementById('isseccion10').checked;
+                            var isseccion11 = document.getElementById('isseccion11').checked;
+                            var isseccion12 = document.getElementById('isseccion12').checked;
+                            var isseccion13 = document.getElementById('isseccion13').checked;
+                            var isseccion14 = document.getElementById('isseccion14').checked;
+                            var isseccion15 = document.getElementById('isseccion15').checked;
+                            var isseccion16 = document.getElementById('isseccion16').checked;
+                            var isseccion17 = document.getElementById('isseccion17').checked;
+                            var isseccion18 = document.getElementById('isseccion18').checked;
+                            var isseccion19 = document.getElementById('isseccion19').checked;
+                            var isseccion20 = document.getElementById('isseccion20').checked;
+                            var isseccion21 = document.getElementById('isseccion21').checked;
+                            var isseccion22 = document.getElementById('isseccion22').checked;
+
+
+
+                            var esseccion1 = document.getElementById('esseccion1').checked;
+                            var esseccion2 = document.getElementById('esseccion2').checked;
+                            var esseccion3 = document.getElementById('esseccion3').checked;
+                            var esseccion4 = document.getElementById('esseccion4').checked;
+                            var esseccion5 = document.getElementById('esseccion5').checked;
+                            var esseccion6 = document.getElementById('esseccion6').checked;
+                            var esseccion7 = document.getElementById('esseccion7').checked;
+                            var esseccion8 = document.getElementById('esseccion8').checked;
+                            var esseccion9 = document.getElementById('esseccion9').checked;
+                            var esseccion10 = document.getElementById('esseccion10').checked;
+                            var esseccion11 = document.getElementById('esseccion11').checked;
+                            var esseccion12 = document.getElementById('esseccion12').checked;
+                            var esseccion13 = document.getElementById('esseccion13').checked;
+                            var esseccion14 = document.getElementById('esseccion14').checked;
+                            var esseccion15 = document.getElementById('esseccion15').checked;
+                            var esseccion16 = document.getElementById('esseccion16').checked;
+                            var esseccion17 = document.getElementById('esseccion17').checked;
+                            var esseccion18 = document.getElementById('esseccion18').checked;
+                            var esseccion19 = document.getElementById('esseccion19').checked;
+                            var esseccion20 = document.getElementById('esseccion20').checked;
+                            var esseccion21 = document.getElementById('esseccion21').checked;
+                            var esseccion22 = document.getElementById('esseccion22').checked;
+
+                            var bsseccion1 = document.getElementById('bsseccion1').checked;
+                            var bsseccion2 = document.getElementById('bsseccion2').checked;
+                            var bsseccion3 = document.getElementById('bsseccion3').checked;
+                            var bsseccion4 = document.getElementById('bsseccion4').checked;
+                            var bsseccion5 = document.getElementById('bsseccion5').checked;
+                            var bsseccion6 = document.getElementById('bsseccion6').checked;
+                            var bsseccion7 = document.getElementById('bsseccion7').checked;
+                            var bsseccion8 = document.getElementById('bsseccion8').checked;
+                            var bsseccion9 = document.getElementById('bsseccion9').checked;
+                            var bsseccion10 = document.getElementById('bsseccion10').checked;
+                            var bsseccion11 = document.getElementById('bsseccion11').checked;
+                            var bsseccion12 = document.getElementById('bsseccion12').checked;
+                            var bsseccion13 = document.getElementById('bsseccion13').checked;
+                            var bsseccion14 = document.getElementById('bsseccion14').checked;
+                            var bsseccion15 = document.getElementById('bsseccion15').checked;
+                            var bsseccion16 = document.getElementById('bsseccion16').checked;
+                            var bsseccion17 = document.getElementById('bsseccion17').checked;
+                            var bsseccion18 = document.getElementById('bsseccion18').checked;
+                            var bsseccion19 = document.getElementById('bsseccion19').checked;
+                            var bsseccion20 = document.getElementById('bsseccion20').checked;
+                            var bsseccion21 = document.getElementById('bsseccion21').checked;
+                            var bsseccion22 = document.getElementById('bsseccion22').checked;
+
+
+
+                      
+
+                            var som = '/app-admin/administracion/usuario/detalle/editarusuario.xhtml?usuario_=' + usuario + '&amp;perfil_=' + perfil + '&amp;estado_=' + estado
+                                    + '&amp;modulo1_=' + modulo1 + '&amp;seccion1_=' + seccion1 + '&amp;sseccion1_=' + sseccion1 + '&amp;csseccion1_=' + csseccion1 + '&amp;isseccion1_=' + isseccion1 + '&amp;esseccion1_=' + esseccion1 + '&amp;bsseccion1_=' + bsseccion1
+                                    + '&amp;modulo2_=' + modulo2 + '&amp;seccion2_=' + seccion2 + '&amp;sseccion2_=' + sseccion2 + '&amp;csseccion2_=' + csseccion2 + '&amp;isseccion2_=' + isseccion2 + '&amp;esseccion2_=' + esseccion2 + '&amp;bsseccion2_=' + bsseccion2
+                                    + '&amp;modulo3_=' + modulo3 + '&amp;seccion3_=' + seccion3 + '&amp;sseccion3_=' + sseccion3 + '&amp;csseccion3_=' + csseccion3 + '&amp;isseccion3_=' + isseccion3 + '&amp;esseccion3_=' + esseccion3 + '&amp;bsseccion3_=' + bsseccion3
+                                    + '&amp;modulo4_=' + modulo4 + '&amp;seccion4_=' + seccion4 + '&amp;sseccion4_=' + sseccion4 + '&amp;csseccion4_=' + csseccion4 + '&amp;isseccion4_=' + isseccion4 + '&amp;esseccion4_=' + esseccion4 + '&amp;bsseccion4_=' + bsseccion4
+                                    + '&amp;modulo5_=' + modulo5 + '&amp;seccion5_=' + seccion5 + '&amp;sseccion5_=' + sseccion5 + '&amp;csseccion5_=' + csseccion5 + '&amp;isseccion5_=' + isseccion5 + '&amp;esseccion5_=' + esseccion5 + '&amp;bsseccion5_=' + bsseccion5
+
+                                    + '&amp;seccion6_=' + seccion6 + '&amp;sseccion6_=' + sseccion6 + '&amp;csseccion6_=' + csseccion6 + '&amp;isseccion6_=' + isseccion6 + '&amp;esseccion6_=' + esseccion6 + '&amp;bsseccion6_=' + bsseccion6
+                                    + '&amp;seccion7_=' + seccion7 + '&amp;sseccion7_=' + sseccion7 + '&amp;csseccion7_=' + csseccion7 + '&amp;isseccion7_=' + isseccion7 + '&amp;esseccion7_=' + esseccion7 + '&amp;bsseccion7_=' + bsseccion7
+                                    + '&amp;seccion8_=' + seccion8 + '&amp;sseccion8_=' + sseccion8 + '&amp;csseccion8_=' + csseccion8 + '&amp;isseccion8_=' + isseccion8 + '&amp;esseccion8_=' + esseccion8 + '&amp;bsseccion8_=' + bsseccion8
+                                    + '&amp;seccion9_=' + seccion9 + '&amp;sseccion9_=' + sseccion9 + '&amp;csseccion9_=' + csseccion9 + '&amp;isseccion9_=' + isseccion9 + '&amp;esseccion9_=' + esseccion9 + '&amp;bsseccion9_=' + bsseccion9
+
+                                    + '&amp;seccion10_=' + seccion10 + '&amp;sseccion10_=' + sseccion10 + '&amp;csseccion10_=' + csseccion10 + '&amp;isseccion10_=' + isseccion10 + '&amp;esseccion10_=' + esseccion10 + '&amp;bsseccion10_=' + bsseccion10
+                                    + '&amp;seccion11_=' + seccion11 + '&amp;sseccion11_=' + sseccion11 + '&amp;csseccion11_=' + csseccion11 + '&amp;isseccion11_=' + isseccion11 + '&amp;esseccion11_=' + esseccion11 + '&amp;bsseccion11_=' + bsseccion11
+                                    + '&amp;seccion12_=' + seccion12 + '&amp;sseccion12_=' + sseccion12 + '&amp;csseccion12_=' + csseccion12 + '&amp;isseccion12_=' + isseccion12 + '&amp;esseccion12_=' + esseccion12 + '&amp;bsseccion12_=' + bsseccion12
+
+                                    + '&amp;sseccion13_=' + sseccion13 + '&amp;csseccion13_=' + csseccion13 + '&amp;isseccion13_=' + isseccion13 + '&amp;esseccion13_=' + esseccion13 + '&amp;bsseccion13_=' + bsseccion13
+                                    + '&amp;sseccion14_=' + sseccion14 + '&amp;csseccion14_=' + csseccion14 + '&amp;isseccion14_=' + isseccion14 + '&amp;esseccion14_=' + esseccion14 + '&amp;bsseccion14_=' + bsseccion14
+                                    + '&amp;sseccion15_=' + sseccion15 + '&amp;csseccion15_=' + csseccion15 + '&amp;isseccion15_=' + isseccion15 + '&amp;esseccion15_=' + esseccion15 + '&amp;bsseccion15_=' + bsseccion15
+                                    + '&amp;sseccion16_=' + sseccion16 + '&amp;csseccion16_=' + csseccion16 + '&amp;isseccion16_=' + isseccion16 + '&amp;esseccion16_=' + esseccion16 + '&amp;bsseccion16_=' + bsseccion16
+                                    + '&amp;sseccion17_=' + sseccion17 + '&amp;csseccion17_=' + csseccion17 + '&amp;isseccion17_=' + isseccion17 + '&amp;esseccion17_=' + esseccion17 + '&amp;bsseccion17_=' + bsseccion17
+                                    + '&amp;sseccion18_=' + sseccion18 + '&amp;csseccion18_=' + csseccion18 + '&amp;isseccion18_=' + isseccion18 + '&amp;esseccion18_=' + esseccion18 + '&amp;bsseccion18_=' + bsseccion18
+                                    + '&amp;sseccion19_=' + sseccion19 + '&amp;csseccion19_=' + csseccion19 + '&amp;isseccion19_=' + isseccion19 + '&amp;esseccion19_=' + esseccion19 + '&amp;bsseccion19_=' + bsseccion19
+                                    + '&amp;sseccion20_=' + sseccion20 + '&amp;csseccion20_=' + csseccion20 + '&amp;isseccion20_=' + isseccion20 + '&amp;esseccion20_=' + esseccion20 + '&amp;bsseccion20_=' + bsseccion20
+                                    + '&amp;sseccion21_=' + sseccion21 + '&amp;csseccion21_=' + csseccion21 + '&amp;isseccion21_=' + isseccion21 + '&amp;esseccion21_=' + esseccion21 + '&amp;bsseccion21_=' + bsseccion21
+                                    + '&amp;sseccion22_=' + sseccion22 + '&amp;csseccion22_=' + csseccion22 + '&amp;isseccion22_=' + isseccion22 + '&amp;esseccion22_=' + esseccion22 + '&amp;bsseccion22_=' + bsseccion22;
+
+
+
+
+
+                            var url = '#{utilControl.protocolHostPortContext}' + som;
+
+                         
+
+
+
+                        }
+                    </script>      
+                </p:panel>
+
+
+
+            </ui:define>
+
+
+        </ui:composition>
+
+    </body>
+</html>

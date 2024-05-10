@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+
+                <h:outputText value="#{SubSeccionControl.RecuperaSubsecciones()}"/>
+
+                <br/>
+                <div>
+
+                    <h:form>
+                        <p:dataTable reflow="true" var="lst" value="#{SubSeccionControl.lstmodsecsub}"
+                                     >
+
+                            <p:column headerText="Cod_Modulo">
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/administracion/subsecciones/detalle/detalle.xhtml?idsubseccion_=#{lst.idsubseccion.idsubseccion}">
+                                    <h:outputText value="#{lst.idmodulo.idmodulo}" />
+                                </a>
+                            </p:column>
+
+                            <p:column headerText="Modulo">
+
+                                <h:outputText value="#{lst.idmodulo.nombre}" />
+
+                            </p:column>
+                            <p:column headerText="Cod_Seccion">
+
+                                <h:outputText value="#{lst.idseccion.idseccion}" />
+
+                            </p:column>
+                            <p:column headerText="Seccion">
+                                <h:outputText value="#{lst.idseccion.nombre}" />
+                            </p:column>
+                                   <p:column headerText="Cod_SubSeccion">
+                                  
+                                               <h:outputText value="#{lst.idsubseccion.idsubseccion}" />
+                                         
+                                </p:column>
+                            <p:column headerText="Subseccion">
+                                <h:outputText value="#{lst.idsubseccion.nombre}" />
+                            </p:column>
+
+
+                            <f:facet name="paginatorTopLeft">
+                                <p:commandButton type="button" icon="pi pi-refresh" />
+                            </f:facet>
+
+                            <f:facet name="paginatorBottomRight">
+                                <p:commandButton type="button" icon="pi pi-cloud-upload" />
+                            </f:facet>
+
+                        </p:dataTable>
+                    </h:form>
+
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

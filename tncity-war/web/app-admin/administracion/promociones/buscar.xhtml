@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.promociones.content">
+              
+                <h:outputText value="#{promocionesControl.recuperaCountTotalReg()}"/>
+
+                <p:panel header="Buscar Promocion">
+
+                    <div align="center">
+                        <h:form>
+                            <br/><br/>
+                            <i style="color:gray">Nombre</i>
+                            <br/><br/>
+                            <p:inputText value="#{promocionesControl.valBusq}"/>
+                            <br/><br/>
+                            <p:commandButton value="Buscar" icon="fa fa-search" ajax="false"/>
+                            <br/><br/>
+                        </h:form>
+
+                    </div>
+
+                    <h:panelGroup rendered="#{promocionesControl.valBusq!=null}">
+                        <div align="center">
+
+                            <h:outputText value="#{promocionesControl.recuperaNumTotalReg()}"/>
+
+                            Registros Encontrados (<b>#{promocionesControl.totalConsulta}</b>) - Criterio " <b>#{promocionesControl.valBusq}</b> "
+
+                            <jc:pagList
+                                id="0"
+                                count="#{promocionesControl.totalConsulta}"
+                                urlPageData="#{utilControl.protocolHostPortContext}/app-admin/administracion/promociones/buscarPag.xhtml?query_=#{promocionesControl.valBusq}"
+                                maxRegLista="#{promocionesControl.maxRegLista}"/>
+
+                        </div>
+                        <br/><br/>
+                    </h:panelGroup>
+                </p:panel>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

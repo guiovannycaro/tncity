@@ -1,0 +1,5736 @@
+@charset "utf-8";
+
+img, object, embed, video {
+    max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+    width:100%;
+}
+
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,textarea,p,blockquote,th,td { 
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+/*img {
+        border: none;
+        width:100%;
+}
+*/
+ol,ul {
+    list-style:none;
+}
+
+caption,th {
+    text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;/*
+    padding-right: 1.82%;*/
+}
+
+
+.cajacontenedor {
+    width: 100%;
+    max-width:480px;
+    margin:auto;
+    display: block;
+}
+
+#contenedorsuperior{
+    height: 50px;
+    width: 100%;
+    float: left;
+    position: relative;
+    z-index: 0;
+    text-align: left;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txtcontenedor{
+    height: 99px;
+    padding: 1% 0% 0% 0%;
+    margin: 51% 12% 0% 0%;
+    width: 100%;
+    text-align: center;
+    float: left;
+    display: block;
+}
+
+#contenedorpestana{
+    height: 46px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    width: 100%;
+    text-align: center;
+    float: left;
+    display: block;
+}
+
+
+#contenedormedio {
+    height: 1707px;
+    width: 100%;
+    float: left;
+    margin-top: 0%;
+    display: block;
+}
+
+
+#marco {
+    height: 474px;
+    width: 100%;
+    float: left;
+    background-image: url(../imagenes/cambioclave.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 0% 0% 0% 0%;
+    margin: 0% -1%;
+}
+
+#contantigua{
+    height: 31px;
+    margin: 5% 0% 0% 6%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+
+
+#txt-antigua{
+    height: 19px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 5%;
+    width: 91%;
+    float: left;
+    display: block;
+}
+
+#input-antigua{
+    height: 21px;
+    margin: 1% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    width: 80%;
+    float: left;
+    display: block;
+}
+
+#btn-antigua{
+    height: 40px;
+    margin: 5% 0% 0% -29%;
+    padding: 0% 0% 0% 0%;
+    width: 114%;
+    float: left;
+    display: block;
+}
+
+
+#contnueva{
+    height: 31px;
+    margin: 15% 0% 0% 6%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+#contconfirmar{
+    height: 31px;
+    margin: 15% 0% 0% 6%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+#contbotones{
+    height: 31px;
+    margin: 8% 0% 0% 6%;
+    width: 81%;
+    float: left;
+    display: block;
+
+}
+
+
+#footer {
+    height: 66px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    float: left;
+    background-color: #ffffff;
+    display:block;
+}
+
+#ver1{
+    height: 21px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% -4% 0% 0%;
+    width: 4%;
+    float: right;
+    display: block;
+}
+
+#verc{
+    height: 21px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% -14% 0% 0%;
+    width: 13%;
+    float: right;
+    display: block;
+}
+
+#menuhor{
+    float:left;
+    width: 100%;
+    height: 40px;
+    display:block;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+#panelu{
+    float: left;
+    width: 91%;
+    height: 40px;
+    display: block;
+    background-color: #e9e5e5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid #4d4d4d;
+    margin-left: 2.0%;
+    margin-top: 0%;
+
+}
+
+#paneld{
+    float: left;
+    width: 91%;
+    height: 45px;
+    display: block;
+    background-color: #e9e5e5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid #4d4d4d;
+    margin-left: 2%;
+    margin-top: 0%;
+
+}
+
+#panelt{
+    float: left;
+    width: 91%;
+    height: 44px;
+    display: block;
+    background-color: #e9e5e5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid #4d4d4d;
+    margin-left: 2%;
+    margin-top: 0%;
+}
+
+#txtpanel{
+    width: 100%;
+    float: left;
+    height: auto;
+    margin: 3% 0% 0% 0%;
+}
+
+
+#txttitulo{
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 10% 12% 0% 4%;
+    width: 100%;
+    text-align: center;
+    float: left;
+    display: block;
+}
+
+
+
+#marcorecaudo{
+    height: 1600px;
+    width: 100%;
+    float: left;
+    background-image: url(../imagenes/panelbodymovil.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0% 0% 0% 0%;
+    margin: 26% 0% 0% -0.7%;
+}
+
+#parterecuno{
+    height: 225px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 12% 0% 0% 0%;
+
+}
+
+#titben{
+    height: 15px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 7% 0% 0% 3%;
+
+}
+
+#contformben{
+    height: 190px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+}  
+
+#inputleft{
+    height: 34px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 4% 0% 0% 0%;
+}
+
+
+#txtleft{
+    height: 20px;
+    width: 68%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 20%;
+}
+
+
+#inputtxtleft{
+    height: 34px;
+    width: 96%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 2%;
+
+
+}
+
+#inputrigth{
+    height: 34px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 10% 0% 0% 0%;
+}
+
+
+#txtrigth{
+    height: 20px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+
+#inputtxtrigth{
+    height: 45px;
+    width: 90%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 5%;
+    border-radius: 20px;
+    background-color: #ffffff;
+
+
+}
+
+
+#inpubotones{
+    height: 34px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 14% 0% 0% 0%;
+
+}
+#btnu{
+    height: 34px;
+    width: 58%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% -5%;
+
+}
+
+
+
+#parterecdiv{
+    height: 5px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 11% 0% 0% 0%;
+    background-color: #87b8c4;
+}
+
+#parterecdivd{
+    height: 5px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 0%;
+    background-color: #87b8c4;
+}
+
+
+#titbenf{
+    height: 15px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 5% 0% 0% 3%;
+
+}
+
+
+#parterecdos{
+    height: 162px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 8% 0% 0% 0%;
+
+
+}
+
+#contbenef{
+    height: 99px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 0%;
+
+}
+
+#contndoc{
+    height: 34px;
+    width: 95%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 2%;
+
+}
+
+#txttitulo1{
+    height: 34px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+
+}
+
+#txtnumero{
+    height: 20px;
+    width: 96%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: -1% 0% 0% 0%;
+    border: 1px solid black;
+    color: #2F4050;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 2px 5px;
+    background-color: #efefef;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 4px;
+    opacity: 0.8;
+
+}
+
+#contdoc{
+    height: 34px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% 0%;
+
+}
+
+#txttitulo2{
+    height: 34px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 10% 0% 0% 0%;
+
+}
+
+#txtnombre{
+    height: 40px;
+    width: 96%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: -2% 0% 0% 0%;
+    border: 1px solid black;
+    color: #2F4050;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 2px 5px;
+    background-color:  #ffffff;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 20px;
+
+}
+
+#botonesbenf{
+    height: 34px;
+    width: 86%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 15% 0% 0% 0%;
+
+}
+
+#btnuben{
+    height: 34px;
+    width: 61%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+}
+
+#btndben{
+    height: 34px;
+    width: 61%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% 0%;
+}
+
+#procesorecaudo{
+    height: 980px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 7% 0% 0% 0%;
+
+}
+
+#ccontenedor{
+    height: auto;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#txttitmon {
+    height: 25px;
+    padding: 1% 0% 0% 0%;
+    margin: 2% 12% 0% 17%;
+    width: 70%;
+    text-align: center;
+    float: left;
+    display: block;
+}
+
+#cuadrodos{
+    float: left;
+    width: 90%;
+    height: 243px;
+    padding: 0% 0% 0% 0%;
+    margin: 15% 0% -6% 5%;
+}
+
+#imgUno{
+    float: left;
+    background-image: url(../img/valor2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 204px;
+    width: 100%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+
+#imgDos{
+    float: left;
+    background-image: url(../img/valor3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 204px;
+    width: 100%;
+    padding: 2% 0% 0% 0%;
+    margin: 4% 0% 0% 0%;
+
+}
+
+#imgTres{
+    float: left;
+    background-image: url('../img/valor1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 204px;
+    width: 100%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+
+#conttxti{
+    float: left;
+    height: 25px;
+    width: 100%;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+
+}
+#txtvaluno{
+    float: right;
+    height: 43px;
+    width: 67%;
+    padding: 0% 0% 2% 0%;
+    margin: 1% 0% 0% 0%;
+}
+
+
+
+
+
+#txtvaldos{
+    float: left;
+    height: 25px;
+    width: 30%;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 0%;
+}
+
+
+
+
+#otromediorec{
+    float: left;
+    width: 100%;
+    height: 74px;
+    padding: 0% 0% 0% 0%;
+    margin: 17% 0% 0% 0%;
+
+
+}
+
+
+#labelomrec{
+    float: left;
+    width: 90%;
+    height: 40px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 5%;
+
+
+}
+
+#txtomrec{
+    float: left;
+    width: 91%;
+    height: 47px;
+    padding: 0% 0% 0% 0%;
+    margin: -5% 0% 0% 4%;
+    background-color: #ffffff;
+    border-radius: 20px;
+
+}
+
+#labselselects{
+    width: 100%;
+    float: left;
+    height: 27px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#cuadtres{
+    width: 100%;
+    float: left;
+    height: auto;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% -4%;
+    text-align: center;
+    background-color: #efefef;
+    text-decoration: none;
+    text-transform: capitalize;border-radius: 4px;
+    opacity: 0.8;
+
+}
+
+#valorrec{
+    height: 86px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% 0%;
+}
+
+#title{
+    width: 92%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 5%;
+}
+
+#conttotal{
+    width: 93%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% 5%;
+}
+
+#txttotal{
+    width: 30%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 5%;
+}
+
+#total_{
+    width: 30%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 5%;
+}
+
+#txtmoneda{
+    width: 100%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 5%;
+
+}
+
+
+#contbotonesr{
+    height: 59px;
+    margin: 76% 0% 0% 0%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+
+#btnur{
+    width: 66%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 4% 0% 0% -11%;
+
+
+}
+#btndr{
+    width: 66%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 7% 0% 0% -11%;
+
+}
+
+#banlogos{
+    float: left;
+    background-image: url(../imagenes/bannerlogos.png);
+    background-repeat: no-repeat;
+    background-size: 88%;
+    height: 132px;
+    width: 90%;
+    padding: 0% 0% 0% 0%;
+    margin: 13% 0% 0% 8%;
+
+}
+
+#telrecaudo{
+    float: left;
+    height: 125px;
+    width: 100%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#contradio{
+    float: left;
+    height: 50px;
+    width: 100%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#pcontenedor{
+    height: 417px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 8% 0% 0% 0%;
+}
+
+#cont_pago{
+    float: left;
+    width: 100%;
+    height: 417px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+
+
+
+#titulo_txtconfirm{
+    float: left;
+    width: 100%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 0%;
+    text-align: center;
+}
+
+#titulo_subtxtconfirm{
+    float: left;
+    width: 100%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 9% 0% 0% 0%;
+    text-align: left;
+}
+
+#datos_recarga{
+    float: left;
+    width: 100%;
+    height: 57px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#lab-recarga{
+    float: left;
+    width: 100%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#lab-confrecarga{
+    float: left;
+    width: 45%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 19% 0% 0% 0%;
+
+}
+
+#txtconfnombre {
+    height: 43px;
+    width: 90%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: -3% 0% 0% 2%;
+    border: 1px solid black;
+    color: #2F4050;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 2px 5px;
+    background-color: #ffffff;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 20px;
+}
+
+#txt_recarga{
+    float: left;
+    width: 100%;
+    height: 44px;
+    padding: 0% 0% 0% 0%;
+    margin: 11% 0% 0% 0%;
+}
+
+#txt_confrecarga{
+    float: left;
+    width: 100%;
+    height: 44px;
+    padding: 0% 0% 0% 0%;
+    margin: 11% 0% 0% 0%;
+}
+
+#txt_confrecarga{
+    float: right;
+    width: 69%;
+    height: 44px;
+    padding: 0% 0% 0% 0%;
+    margin: -7% 0% 0% 0%;
+}
+
+#datos_recargad{
+    float: left;
+    width: 100%;
+    height: 57px;
+    padding: 0% 0% 0% 0%;
+    margin: 19% 0% 0% 0%;
+
+}
+
+#datos_recargadconf{
+    float: left;
+    width: 100%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 22% 0% 0% 0%;
+
+}
+
+#lab-recargad{
+    float: left;
+    width: 100%;
+    height: 49px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#txt_recargad{
+    float: left;
+    width: 100%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 0%;
+}
+
+#contbotfinpg{
+    height: 100px;
+    margin: 70% 0% 0% -1%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+
+#btnufp{
+    width: 100%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% -43%;
+
+
+}
+
+
+
+
+#btndfp{
+    width: 100%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 7% 0% 0% -43%;
+
+}
+#btndft{
+    width: 100%;
+    height: 21px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 7% 0% 0% -43%;
+
+}
+
+#contbotfpago{
+    float: left;
+    width: 80%;
+    height: 53px;
+    padding: 0% 10% 0% 10%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#btterminar{
+    width: 100%;
+    height: 25px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% -43%;
+
+}
+
+
+
+#datoscorresponsal{
+    width: 100%;
+    height: 142px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 14% 0% 0% 0%;
+
+}
+
+#corresponsalleft{
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#clabelleft{
+    width: 100%;
+    height: 25px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 15% 0% 0% 0%;
+    text-align: center;
+
+}
+
+#ctxtleft{
+    width: 100%;
+    height: 40px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+
+}
+
+#corresponsalcenter{
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#labelleft{
+    width: 100%;
+    height: 25px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 27% 0% 0% 0%;
+    text-align: center;
+}
+
+#txtcenter{
+    width: 100%;
+    height: 25px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    text-align: center;
+
+}
+
+#corresponsalrigth{
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+}
+
+#labelrigth{
+    width: 100%;
+    height: 25px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 30% 0% 0% 0%;
+    text-align: center;
+
+}
+
+#txtrigth{
+    width: 100%;
+    height: 25px;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    text-align: center;
+
+}
+
+#txtrigthds{
+    width: 49%;
+    height: 25px;
+    float: left;
+    padding: 0% 3% 0% 0%;
+    margin: 0% 0% 0% 38%;
+
+}
+
+
+#pagolinea {
+    float: left;
+    width: 87%;
+    height: 38px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+}
+
+
+#checkpago{
+    float: right;
+    width: 27%;
+    height: 38px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 25% 0% 0%;
+
+
+}
+
+#contcambipass{
+    float: left;
+    width: 96%;
+    height: 356px;
+    padding: 0% 0% 0% 0%;
+    margin: 53% 0% 0% 2%;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+}
+
+#contbotonescambio{
+    float: left;
+    width: 55%;
+    height: 38px;
+    padding: 0% 0% 0% 0%;
+    margin: 17% 0% 0% -2%;
+
+}
+
+#errortrans{
+    float: left;
+    width: 94%;
+    height: 38px;
+    padding: 0% 0% 0% 0%;
+    margin: 41% 0% 0% 5%;
+}
+
+.info-green{
+    display: none;
+
+}
+
+.progress-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-color: #24829C;
+    transition: width .6s ease;
+    border-radius : 20px ;
+    height: 30px;
+}
+
+#contenedor{
+    width: 100%;
+    height: 100px;
+    float: left;
+    margin: 67% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+
+}
+
+
+#saldosubdist{
+    width: 100%;
+    height: 100px;
+    float: left;
+    margin:0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;   
+
+}
+
+#titulo_txtsubdist{
+    width: 100%;
+    height: 100px;
+    float: left;
+    margin: 33% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+
+}
+
+#datos_subdist{
+    width: 100%;
+    height: 100px;
+    float: left;
+    margin:0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;  
+
+}
+
+#lab-sudist{
+    width: 100%;
+    height: 100px;
+    float: left;
+    margin: -20% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+}
+
+#txt_subdist{
+    width: 100%;
+    height: 100px;
+    float: left;
+    margin:0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;  
+
+}
+
+#txtsubdist{
+    width: 100%;
+    height: 40px;
+    float: left;
+    margin: -24% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: 1px solid black;
+
+}
+
+#contbotsubdist{
+    width: 55%;
+    height: 100px;
+    float: left;
+    margin: 54% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+}
+
+#btsubdist{
+    width: 100%;
+    height: 100px;
+    float: left;
+    margin:0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;  
+}
+
+
+
+#txttitulorecupera{
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 4% 12% 0% 4%;
+    width: 99%;
+    text-align: center;
+    float: left;
+    display: block;
+}
+
+#marcorecupera {
+    height: 474px;
+    width: 100%;
+    float: left;
+    background-color: #ffffff;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+}
+
+#contantiguarecupera{
+    height: 31px;
+    margin: 5% 0% 0% 6%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+
+
+#txt-antiguarecupera{
+    height: 19px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 5%;
+    width: 54%;
+    float: left;
+    display: block;
+}
+
+#input-antiguarecupera{
+    height: 21px;
+    margin: 1% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    width: 80%;
+    float: left;
+    display: block;
+}
+
+#btn-antiguarecupera{
+    height: 40px;
+    margin: 5% 0% 0% -29%;
+    padding: 0% 0% 0% 0%;
+    width: 114%;
+    float: left;
+    display: block;
+}
+
+#vercrecupera{
+    height: 21px;
+    padding: 0% 0% 0% 0%;
+    margin: 10% 6% 0% 0%;
+    width: 13%;
+    float: right;
+    display: block;
+}
+
+#ver1recupera{
+    height: 21px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% -4% 0% 0%;
+    width: 4%;
+    float: right;
+    display: block;
+}
+
+#contnuevarecupera{
+    height: 31px;
+    margin: 7% 0% 0% 6%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+
+#contconfirmarrecupera{
+    height: 31px;
+    margin: 10% 0% 0% 6%;
+    width: 100%;
+    float: left;
+    display: block;
+
+}
+
+#contbotonesrecupera{
+    height: 31px;
+    margin: 8% 0% 0% 6%;
+    width: 59%;
+    float: left;
+    display: block;
+
+}
+#contenedorinputrecupera{
+
+    height: 31px;
+    margin: 0% 0% 0% 6%;
+    width: 100%;
+    float: left;
+    display: block;
+}
+
+
+@media only screen and (min-width: 481px) {
+    .gridContainer {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        padding-left: 0%;/*
+        padding-right: 1.82%;*/
+    }
+
+    .cajacontenedor {
+        width: 100%;
+        max-width: 768px;
+        margin:auto;
+        display: block;
+    }
+
+    #contenedorsuperior{
+        height: 50px;
+        width: 100%;
+        float: left;
+        position: relative;
+        z-index: 0;
+        text-align: left;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #txtcontenedor{
+        height: 46px;
+        padding: 1% 0% 0% 0%;
+        margin: 15% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+    #contenedorpestana{
+        height: 46px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        width: 100%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+    #contenedormedio {
+        height: 560px;
+        width: 100%;
+        float: left;
+        margin-top: 0%;
+        display: block;
+    }
+
+
+
+    #marco {
+        height: 474px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/cambioclave.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -4%;
+    }
+
+
+    #contantigua{
+        height: 31px;
+        margin: 2% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+
+    #txt-antigua{
+        height: 31px;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        width: 49%;
+        float: left;
+        display: block;
+    }
+
+    #input-antigua{
+        height: 24px;
+        margin: -9% 0% 0% 50%;
+        padding: 0% 0% 0% 0%;
+        width: 56%;
+        float: left;
+        display: block;
+    }
+
+    #btn-antigua{
+        height: 40px;
+        margin: 5% 0% 0% -29%;
+        padding: 0% 0% 0% 0%;
+        width: 56%;
+        float: left;
+        display: block;
+    }
+
+    #contnueva{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+    #contconfirmar{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+    #contbotones{
+        height: 31px;
+        margin: 3% 0% 0% 38%;
+        width: 80%;
+        float: left;
+        display: block;
+
+    }
+
+
+    #footer {
+        height: 66px;
+        width:100%;   
+        position: relative;
+        bottom: 0;
+        float: left;
+        background-color: #ffffff;
+        display:block;
+    }
+
+    #ver1{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        width: 4%;
+        float: right;
+        display:block;
+    }
+
+    #verc{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -10% 0% 0%;
+        width: 13%;
+        float: right;
+        display:block;
+    }
+
+    #menuhor{
+        float:left;
+        width: 100%;
+        height: 40px;
+        display:block;
+        margin-top: 1%;
+        margin-left: 2%;
+
+    }
+
+    #panelu{
+        float: left;
+        width: 26%;
+        height: 40px;
+        display: block;
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 10px;
+        border: 1px solid #4d4d4d;
+        margin-left: 0.1%;
+        margin-top: 0%;
+
+    }
+
+    #paneld{
+        float: left;
+        width: 33%;
+        height: 40px;
+        display: block;
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 10px;
+        border-top-right-radius:  10px;
+        border: 1px solid #4d4d4d;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    #panelt{
+        float: left;
+        width: 33%;
+        height: 40px;
+        display:block;
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 10px;
+        border-top-right-radius:  10px;
+        border: 1px solid #4d4d4d;
+        margin-left: 0%;
+        margin-top: 0%;
+
+    }
+
+    #txtpanel{
+        width: 100%;
+        float: left;
+        height: auto;
+        margin: 3% 0% 0% 0%;
+    }
+
+
+    #txttitulo{
+        height: 30px;
+        padding: 1% 0% 0% 0%;
+        margin: 10% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+    #marcorecaudo{
+        height: 664px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/panelbodytablet.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 0%;
+
+    }
+
+    #parterecuno{
+        height: 1px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #titben{
+        height: 15px;
+        width: 25%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 3%;
+
+
+    }
+    #contformben{
+        height: 94px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }  
+
+    #inputleft{
+        height: 34px;
+        width: 45%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }
+
+
+    #txtleft{
+        height: 34px;
+        width: 54%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 2%;
+
+    }
+
+
+    #inputtxtleft{
+        height: 40px;
+        width: 54%;
+        float: right;
+        padding: 0% 0% 0% 0%;
+        margin: -14% -9% 0% 0%;
+        border: 1px solid black;
+        text-decoration: none;
+        border-radius: 20px;
+        background-color: #ffffff;
+
+
+    }
+
+    #inputrigth{
+        height: 34px;
+        width: 45%;
+        float: left;
+        padding: 0% 0% 0% 8%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+
+    #txtrigth{
+        height: 34px;
+        width: 65%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }
+
+
+
+
+    #inputtxtrigth{
+        height: 40px;
+        width: 45%;
+        float: right;
+        padding: 0% 0% 0% 0%;
+        margin: -3% -24% 0% 0%;
+        border: 1px solid black;
+        background-color: #ffffff;
+        text-decoration: none;
+        border-radius: 20px;
+
+
+    }
+
+
+    #inpubotones{
+
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #btnu{
+        height: 29px;
+        width: 24%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 28%;
+    }
+
+
+
+
+
+
+
+    #parterecdiv{
+        height: 5px;
+        width: 99%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 20% 0% 0% 0%;
+        background-color: #87b8c4;
+    }
+
+
+
+    #parterecdos{
+        height: 162px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 9% 0% 0% 0%;
+
+    }
+
+
+    #parterecdivd{
+        height: 5px;
+        width: 99%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 6% 0% 0% 0%;
+        background-color: #87b8c4;
+    }
+
+    #titbenf{
+        height: 15px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 3%;
+
+    }
+
+
+    #contbenef{
+        height: 34px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 50%;
+
+
+    }
+
+    #contndoc{
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #txttitulo1{
+        height: 34px;
+        width: 38%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #txtnumero{
+        height: 20px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 2%;
+        border: 1px solid black;
+        color: #2F4050;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        padding: 2px 5px;
+        background-color: #efefef;
+        text-decoration: none;
+        text-transform: capitalize;border-radius: 4px;
+        opacity: 0.8;
+
+    }
+
+    #contdoc{
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+
+    }
+
+    #txttitulo2{
+        height: 34px;
+        width: 48%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% -46%
+
+    }
+
+    #txtnombre{
+        height: 40px;
+        width: 97%;
+        float: left;
+
+        margin: 1% 0% 0% 0%;
+        border: 1px solid black;
+        color: #2F4050;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        padding: 2px 5px;
+        background-color: #ffffff;
+        text-decoration: none;
+        text-transform: capitalize;
+        border-radius: 20px;
+
+
+    }
+
+    #txtconfnombre {
+        height: 43px;
+        width: 92%;
+        float: left;
+        margin: 1% 0% 0% 2%;
+        border: 1px solid black;
+        color: #2F4050;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        padding: 2px 5px 0% 0%;
+        background-color: #ffffff;
+        text-decoration: none;
+        text-transform: capitalize;
+        border-radius: 20px;
+    }
+
+    #botonesbenf{
+        height: 34px;
+        width: 69%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 15%;
+
+    }
+
+    #btnuben{
+        height: 34px;
+        width: 30%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #btndben{
+        height: 34px;
+        width: 44%;
+        float: left;
+        padding: 0% 0% 0% 13%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #procesorecaudo{
+        height: 236px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #ccontenedor{
+        height: auto;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #txttitmon {
+        height: 25px;
+        padding: 1% 0% 0% 0%;
+        margin: 0% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+    #cuadrodos{
+        float: left;
+        width: 30%;
+        height: 120px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 2%;
+    }
+
+    #imgUno{
+        float: left;
+        background-image: url('../img/valor2.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 132px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #imgDos{
+
+        float: left;
+        background-image: url('../img/valor3.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 132px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #imgTres{
+        float: left;
+        background-image: url('../img/valor1.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 132px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #conttxti{
+        float: left;
+        height: 25px;
+        width: 100%;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #txtvaluno{
+        float: left;
+        height: 25px;
+        width: 56%;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+
+    }
+
+
+
+
+
+
+    #txtvaldos{
+        float: left;
+        height: 25px;
+        width: 44%;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+
+    }
+
+
+
+
+
+
+
+    #otromediorec{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 8% 0% 0% 0%;
+    }
+
+    #labelomrec{
+        float: left;
+        width: 25%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 2%;
+
+    }
+
+    #txtomrec{
+        float: left;
+        width: 70%;
+        height: 47px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+    }
+
+
+    #labselselects{
+        width: 100%;
+        float: left;
+        height: 27px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #cuadtres{
+        width: 100%;
+        float: left;
+        height: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% -4%;
+        text-align: center;
+        background-color: #efefef;
+        text-decoration: none;
+        text-transform: capitalize;border-radius: 4px;
+        opacity: 0.8;
+
+
+    }
+
+    #valorrec{
+        height: 100px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }
+
+    #title{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 5%;
+    }
+
+    #conttotal{
+        width: 51%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #txttotal{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 5%;
+    }
+
+    #total_{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 5%;
+    }
+
+    #txtmoneda{
+        width: 100%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 5%;
+
+    }
+
+
+    #contbotonesr{
+        height: 59px;
+        margin: 3% 0% 0% 5%;
+        width: 100%;
+        float: left;
+        display: block;
+
+    }
+
+    #btnur{
+        width: 28%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 5%;
+
+
+    }
+    #btndr{
+        width: 28%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 2%;
+
+    }
+
+    #banlogos{
+        float: left;
+        background-image: url(../imagenes/bannerlogos.png);
+        background-repeat: no-repeat;
+        background-size: 86%;
+        height: 72px;
+        width: 30%;
+        padding: 0% 0% 0% 0%;
+        margin: -15% 0% 0% 77%;
+
+    }
+
+    #telrecaudo{
+        float: left;
+        height: 50px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #contradio{
+        float: left;
+        height: 30px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+
+    }
+
+    #pcontenedor{
+
+        height: 417px;
+        width: 100%;
+        float: left;
+        padding: 3% 0% 7% 0%;
+        margin: 2% 0% 0% 0%;
+    }
+
+    #cont_pago{
+        float: left;
+        width: 100%;
+        height: 417px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #titulo_txtconfirm{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 9% 0% 0% 0%;
+        text-align: center;
+    }
+
+    #titulo_subtxtconfirm{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        text-align: left;
+    }
+
+
+    #datos_recarga{
+        float: left;
+        width: 96%;
+        height: 25px;
+        padding: 0% 0% 5% 0%;
+        margin: -1% 0% 0% 4%;
+
+    }
+
+    #lab-recarga{
+        float: left;
+        width: 45%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+
+    }
+
+    #lab-confrecarga{
+        float: left;
+        width: 45%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% -42%;
+
+    }
+
+    #txt_recarga{
+        float: left;
+        width: 50%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 3%;
+    }
+
+    #txt_confrecarga{
+        float: right;
+        width: 53%;
+        height: 44px;
+        padding: 0% 0% 0% 0%;
+        margin: -4% 0% 0% 0%;
+    }
+
+    #datos_recargad{
+        float: left;
+        width: 96%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 4%;
+
+    }
+
+    #datos_recargadconf{
+
+        width: 81%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 10%;
+
+    }
+
+
+    #lab-recargad{
+        float: left;
+        width: 48%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+
+    }
+
+    #txt_recargad{
+        float: left;
+        width: 50%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }
+
+
+    #contbotfinpg{
+        height: 37px;
+        margin: 0% 0% 0% 0%;
+        width: 100%;
+        float: left;
+        display: block;
+
+    }
+
+    #btnufp{
+        width: 18%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 10%;
+
+
+    }
+
+
+
+
+    #btndfp{
+        width: 18%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 2%;
+
+    }
+    #btndft{
+        width: 25%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 47%;
+
+    }
+
+    #contbotfpago{
+        float: left;
+        width: 80%;
+        height: 53px;
+        padding: 0% 10% 0% 10%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #btterminar{
+        width: 21%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 35%;
+
+    }
+
+
+
+    #datoscorresponsal{
+        width: 100%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 0%;
+
+    }
+
+    #corresponsalleft{
+        width: 35%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #clabelleft{
+        width: 56%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 15%;
+
+    }
+
+    #ctxtleft{
+        width: 45%;
+        height: 40px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 15%;
+        background-color: #ffffff;
+        border-radius: 20px;
+
+    }
+
+    #corresponsalcenter{
+        width: 30%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #labelleft{
+        width: 100%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #txtcenter{
+        width: 100%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #corresponsalrigth{
+        width: 35%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #labelrigth{
+        width: 100%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #txtrigth{
+        width: 86%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% -9%;
+
+    }
+
+    #txtrigthds{
+        width: 98%;
+        height: 25px;
+        float: left;
+        padding: 0% 3% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: center;
+    }
+
+    #pagolinea {
+        float: left;
+        width: 87%;
+        height: 38px;
+        #contcambipass{
+            float: left;
+            width: 50%;
+            height: 138px;
+            padding: 0% 0% 0% 0%;
+            margin: 0% 0% 0% 0%;  
+            border-radius: 20px;
+            border: 2px solid #0c0c0c;
+        } padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+
+    #checkpago{
+        float: right;
+        width: 27%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: -8% 29% 0% 0%;
+
+
+    }
+
+    #contcambipass{
+        float: left;
+        width: 72%;
+        height: 299px;
+        padding: 0% 0% 0% 0%;
+        margin: 22% 0% 0% 17%;
+        border-radius: 20px;
+        border: 2px solid #ffffff;
+    }
+
+    #contbotonescambio{
+        float: left;
+        width: 50%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 0%;
+
+    }
+
+    #errortrans{
+        float: left;
+        width: 95%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 36% 0% 0% 4%;
+    }
+
+    .info-green{
+        display: none;
+
+    }
+
+    .progress-bar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        background-color: #24829C;
+        transition: width .6s ease;
+        border-radius : 20px ;
+        height: 30px;
+    }
+
+    #contenedor{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;;
+
+    }
+
+    #barraprogreso{
+        width: 50%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #saldosubdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin: 5% 0% 0% 0%;
+        padding: 0% 0% 0% 0%; 
+
+    }
+
+    #titulo_txtsubdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;  
+
+    }
+
+    #datos_subdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin: -10% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #lab-sudist{
+        width: 32%;
+        height: 27px;
+        float: left;
+        margin: 0% 0% 0% 10%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #txt_subdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;  
+
+    }
+
+    #txtsubdist{
+        width: 41%;
+        height: 40px;
+        float: left;
+        margin: 0% 0% 0% 7%;
+        padding: 0% 0% 0% 0%;
+        border-radius: 20px;
+        background-color: #ffffff;
+        border: 1px solid black;
+    }
+
+    #contbotsubdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+    }
+
+    #btsubdist{
+        width: 30%;
+        height: 36px;
+        float: left;
+        margin: 0% 0% 0% 22%;
+        padding: 0% 0% 0% 0%;
+    }
+
+
+    #txttitulorecupera{
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 12% 0% 4%;
+        width: 100%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+
+    #marcorecupera {
+        height: 474px;
+        width: 100%;
+        float: left;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #contantiguarecupera{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+
+    }
+
+
+    #txt-antiguarecupera{
+        height: 19px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 5%;
+        width: 54%;
+        float: left;
+        display: block;
+    }
+
+    #input-antiguarecupera{
+        height: 21px;
+        margin: 1% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        width: 80%;
+        float: left;
+        display: block;
+    }
+
+    #btn-antiguarecupera{
+        height: 40px;
+        margin: 5% 0% 0% -29%;
+        padding: 0% 0% 0% 0%;
+        width: 114%;
+        float: left;
+        display: block;
+    }
+
+    #vercrecupera{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 7% 0% 0%;
+        width: 13%;
+        float: right;
+        display: block;
+    }
+
+    #ver1recupera{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -4% 0% 0%;
+        width: 4%;
+        float: right;
+        display: block;
+    }
+
+    #contnuevarecupera{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+
+    }
+
+    #contconfirmarrecupera{
+        height: 31px;
+        margin: 6% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+    }
+
+    #contbotonesrecupera{
+        height: 31px;
+        margin: 3% 0% 0% 6%;
+        width: 60%;
+        float: left;
+        display: block;
+
+    }
+    #contenedorinputrecupera{
+
+        height: 31px;
+        margin: 0% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+    }
+
+}
+
+@media only screen and (min-width: 769px) {
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    .cajacontenedor {
+        width: 100%;
+        max-width:995px;
+        margin:auto;
+        display:block;
+    }
+
+    #contenedorsuperior{
+        height: 100px;
+        width: 100%;
+        float: left;
+        position: relative;
+        z-index: 0;
+        text-align: left;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+
+    #txtcontenedor{
+        height: 46px;
+        padding: 1% 0% 0% 0%;
+        margin: 5% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+    #contenedorpestana{
+        height: 46px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        width: 100%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+    #contenedormedio {
+        height: 612px;
+        width: 100%;
+        float: left;
+        margin-top: 0%;
+        display: block;
+    }
+
+
+    #marco {
+        height: 367px;
+        width: 49%;
+        float: left;
+        background-image: url(../imagenes/cambioclave.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: 9% 11% 0% 24%;
+    }
+
+
+
+    #contantigua{
+        height: 31px;
+        margin: 0% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+
+
+    #txt-antigua{
+        height: 40px;
+        margin: 7% 0% 0% 7%;
+        padding: 0% 0% 0% 0%;
+        width: 42%;
+        float: left;
+        display: block;
+    }
+
+    #input-antigua{
+        height: 40px;
+        margin: -10% 0% 0% 49%;
+        padding: 0% 0% 0% 0%;
+        width: 61%;
+        float: left;
+        display: block;
+    }
+
+
+    #btn-antigua{
+        height: 40px;
+        margin: 5% 0% 0% 8%;
+        padding: 0% 0% 0% 0%;
+        width: 56%;
+        float: left;
+        display: block;
+    }
+
+    #contnueva{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+    #contconfirmar{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+    #contbotones{
+        height: 31px;
+        margin: 3% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+
+
+
+    #footer {
+        height: 66px;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        float: left;
+        background-color: #ffffff;
+        display:block;
+    }
+
+    #ver1{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -14% 0% 0%;
+        width: 13%;
+        float: right;
+        display:block;
+    }
+
+    #verc{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% -15% 0% 0%;
+        width: 13%;
+        float: right;
+        display: block;
+    }
+
+    #menuhor{
+        float: left;
+        width: 100%;
+        height: 48px;
+        display: block;
+        margin-top: 1%;
+        margin-left: 0%;
+    }
+
+    #panelu{
+        float: left;
+        width: 19%;
+        height: 40px;
+        display: block;
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 34px;
+        border-top-right-radius: 21px;
+        border: 1px solid #4d4d4d;
+        margin-left: 1.3%;
+        margin-top: 0%;
+    }
+
+    #paneld{
+        float: left;
+        width: 30%;
+        height: 40px;
+        display: block;
+
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 10px;
+        border-top-right-radius:  10px;
+        border: 1px solid #4d4d4d;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    #panelt{
+        float: left;
+        width: 30%;
+        height: 40px;
+        display: block;
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius:  10px;
+        border: 1px solid #4d4d4d;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    #txtpanel{   
+        width: 100%;
+        float: left;
+        height: auto;
+        margin: 5% 0% 0% 0%;
+    }
+
+
+
+    #txttitulo{
+        height: 30px;
+        padding: 1% 0% 0% 0%;
+        margin: 2% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+
+    #marcorecaudo{
+        height: 655px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/panelbody.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: -6% 0% 0% -0.3%;
+
+    }
+
+
+    #parterecuno{
+        height: 150px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #titben{
+        height: 15px;
+        width: 25%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 3%;
+
+
+    }
+    #contformben{
+        height: 61px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }  
+
+    #inputleft{
+        height: 34px;
+        width: 40%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }
+
+
+    #txtleft{
+        height: 34px;
+        width: 43%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 6%;
+
+    }
+
+
+
+
+    #inputtxtleft{
+        height: 38px;
+        width: 53%;
+        float: right;
+        padding: 0% 0% 0% 0%;
+        margin: -1% -4% 0% 0%;
+        border: 1px solid black;
+        text-decoration: none;
+        border-radius: 20px;
+        background-color: #FFFFFF;
+    }
+
+    #inputrigth{
+        height: 34px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+
+    #txtrigth{
+        height: 25px;
+        width: 55%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+
+    }
+
+
+    #inputtxtrigth{
+        height: 40px;
+        width: 35%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -6% 0% 0% 53%;
+        border: 1px solid black;
+        background-color: #FFFFFF;
+        text-decoration: none;
+        border-radius: 20px;
+
+
+
+    }
+
+
+    #inpubotones{
+        height: 34px;
+        width: 15%;
+        float: right;
+        padding: 0% 0% 0% 0%;
+        margin: -4.8% 0% 0% 0%;
+
+    }
+    #btnu{
+        height: 29px;
+        width: 84%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 6% 0% 0% -38%;
+
+    }
+
+
+
+    #parterecdiv{
+        height: 5px;
+        width: 99%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        background-color: #87b8c4;
+
+    }
+
+
+
+    #parterecdos{
+        height: 240px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #parterecdivd{
+        height: 5px;
+        width: 98.7%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        background-color: #87b8c4;
+    }
+
+
+
+    #titbenf{
+        height: 15px;
+        width: 33%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 3%;
+
+    }
+
+
+    #contbenef{
+        height: 34px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 35%;
+
+
+    }
+
+    #contndoc{
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -9% 0% 0% 7%;
+
+    }
+
+    #txttitulo1{
+        height: 34px;
+        width: 29%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #txtnumero{
+        height: 20px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 2%;
+        border: 1px solid black;
+        color: #2F4050;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        padding: 2px 5px;
+        background-color: #efefef;
+        text-decoration: none;
+        text-transform: capitalize;border-radius: 4px;
+        opacity: 0.8;
+
+    }
+
+    #contdoc{
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+
+    }
+
+    #txttitulo2{
+        height: 34px;
+        width: 37%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #txtnombre{
+        height: 43px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 2%;
+        border: 1px solid black;
+        color: #2F4050;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        background-color: #ffffff;
+        text-decoration: none;
+        text-transform: capitalize;
+        border-radius: 20px;
+
+
+    }
+
+    #botonesbenf{
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 15% 0% 15%;
+        margin: 1% 0% 0% 4%;
+    }
+
+    #btnuben{
+        height: 34px;
+        width: 24%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #btndben{
+        height: 34px;
+        width: 30%;
+        float: left;
+        padding: 0% 0% 0% 5%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #procesorecaudo{
+        height: 308px;
+        width: 99%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%
+
+    }
+
+    #ccontenedor{
+        height: 259px;
+        width: 90%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 5% 0% 5%;
+
+    }
+
+    #txttitmon {
+        height: 25px;
+        padding: 1% 0% 0% 0%;
+        margin: 1% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+    #cuadrodos{
+        float: left;
+        width: 33%;
+        height: 186px;
+        padding: 0% 0% 0% 2%;
+        margin: 1% 0% 0% 0%;
+    }
+
+    #imgUno{
+        float: left;
+        background-image: url(../img/valor2.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 186px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #imgDos{
+
+        float: left;
+        background-image: url(../img/valor3.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 186px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #imgTres{
+        float: left;
+        background-image: url(../img/valor1.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 186px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #conttxti{
+        float: left;
+        height: 25px;
+        width: 100%;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #txtvaluno{
+        float: left;
+        height: 25px;
+        width: 62%;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+    }
+
+
+
+    #txtvaldos{
+
+        float: left;
+        height: 25px;
+        width: 37%;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+
+
+
+
+
+    #otromediorec{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 0%;
+    }
+
+
+    #labelomrec{
+        float: left;
+        width: 19%;
+        height: 22px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 7%;
+
+
+    }
+
+    #txtomrec{
+        float: left;
+        width: 70%;
+        height: 48px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+
+
+    }
+
+
+    #labselselects{
+        width: 100%;
+        float: left;
+        height: 27px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+
+
+
+    }
+    #cuadtres{
+        width: 19%;
+        float: left;
+        height: 27px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 11%;
+        text-align: center;
+        background-color: #efefef;
+        text-decoration: none;
+        text-transform: capitalize;
+        border-radius: 20px;
+        opacity: 0.8;
+
+    }
+
+
+
+
+    #valorrec{
+        height: 71px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #title{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 5%;
+    }
+
+    #conttotal{
+        width: 35%;
+        height: 48px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 5%;
+
+    }
+
+    #txttotal{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 5%;
+    }
+
+    #total_{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 5%;
+    }
+
+    #txtmoneda{
+        width: 100%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 5%;
+
+    }
+
+
+    #contbotonesr{
+        height: 37px;
+        margin: 2% 0% 0% 12%;
+        width: 60%;
+        float: left;
+        display: block;
+
+
+    }
+
+    #btnur{
+        width: 28%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 20%;
+
+
+    }
+    #btndr{
+        width: 28%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 52%;
+
+    }
+
+    #banlogos{
+        float: left;
+        background-image: url(../imagenes/bannerlogos.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 119px;
+        width: 17%;
+        padding: 0% 0% 0% 0%;
+        margin: -0.7% 0% 0% 0%;
+    }
+
+    #telrecaudo{
+        float: left;
+        height: 56px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #contradio{
+        float: left;
+        height: 50px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 0%
+
+    }
+
+    #pcontenedor{
+        height: 417px;
+        width: 99%;
+        float: left;
+        padding: 3% 10% 7% 10%;
+        margin: 2% 0% 0% 0%;
+    }
+
+    #cont_pago{
+        float: left;
+        width: 100%;
+        height: 320px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #titulo_txtconfirm{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        text-align: center;
+    }
+
+    #titulo_subtxtconfirm{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        text-align: left;
+    }
+
+
+    #datos_recarga{
+        float: left;
+        width: 100%;
+        height: 41px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%
+
+    }
+
+    #lab-recarga{
+        float: left;
+        width: 40%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 6%;
+
+    }
+
+    #lab-confrecarga{
+        float: left;
+        width: 45%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 12% 0% 0% -40%;
+
+    }
+
+    #txt_recarga{
+        float: left;
+        width: 50%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 1%;
+    }
+
+
+    #txt_confrecarga{
+        float: right;
+        width: 54%;
+        height: 44px;
+        padding: 0% 0% 0% 0%;
+        margin: -6% -1% 0% 0%;
+    }
+
+    #datos_recargad{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+
+    }
+
+    #datos_recargadconf{
+        float: left;
+        width: 79%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 10% 0% 0% 16%;
+
+    }
+
+    #lab-recargad{
+        float: left;
+        width: 41%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 6%;
+    }
+
+    #txt_recargad{
+        float: left;
+        width: 50%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }
+
+
+    #contbotfinpg{
+        height: 37px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        width: 100%;
+        float: left;
+        display: block;
+
+
+    }
+
+    #btnufp{
+        width: 18%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 20%;
+
+
+    }
+
+
+
+
+    #btndfp{
+        width: 18%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 52%;
+
+    }
+    #btndft{
+        width: 23%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 77%;
+
+    }
+
+    #contbotfpago{
+        float: left;
+        width: 80%;
+        height: 53px;
+        padding: 0% 10% 0% 10%;
+        margin: 11% 0% 0% 0%;
+
+    }
+
+    #btterminar{
+        width: 25%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 42%;
+
+    }
+
+    #datoscorresponsal{
+        width: 100%;
+        height: 28px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #corresponsalleft{
+        width: 29%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #clabelleft{
+        width: 46%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 17%;
+
+    }
+
+    #ctxtleft{
+        width: 33%;
+        height: 40px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 4%;
+        background-color: #ffffff;
+        border-radius: 20px;
+
+    }
+
+    #corresponsalcenter{
+        width: 31%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #labelleft{
+        width: 55%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #txtcenter{
+        width: 40%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #corresponsalrigth{
+        width: 40%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #labelrigth{
+        width: 93%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% -21%;
+
+    }
+
+    #txtrigth{
+        width: 49%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 3%;
+
+    }
+
+    #txtrigthds{
+        width: 25%;
+        height: 25px;
+        float: left;
+        padding: 0% 3% 0% 0%;
+        margin: -6% 0% 0% 68%;
+
+    }
+
+    #pagolinea {
+        float: left;
+        width: 87%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+
+    #checkpago{
+        float: right;
+        width: 27%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: -7% 26% 0% 0%;
+
+
+    }
+
+    #contcambipass{
+        float: left;
+        width: 70%;
+        height: 367px;
+        padding: 0% 0% 0% 0%;
+        margin: 9% 15% 0% 15%;
+        border-radius: 20px;
+        border: 2px solid #ffffff;
+    }
+
+    #contbotonescambio{
+        float: left;
+        width: 50%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 10% 0% 0% 7%;
+    }
+
+
+    #errortrans{
+        float: left;
+        width: 95%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 25% 0% 0% 3%;
+    }
+
+    .info-green{
+        display: none;
+
+    }
+
+    .progress-bar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        background-color: #24829C;
+        transition: width .6s ease;
+        border-radius : 20px ;
+        height: 30px;
+    }
+
+    #contenedor{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;;
+
+    }
+
+    #barraprogreso{
+        width: 50%;
+        height: 100px;
+        float: left;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #saldosubdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin: 6% 0% 0% 0%;
+        padding: 0% 0% 0% 0%; 
+
+    }
+
+    #titulo_txtsubdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;  
+
+    }
+
+    #datos_subdist{
+        width: 73%;
+        height: 40px;
+        float: left;
+        margin: -7% 0% 0% 21%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #lab-sudist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;  
+
+    }
+
+    #txt_subdist{
+        width: 53%;
+        height: 40px;
+        float: right;
+        margin: -19% 1% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        border: 1px #000000 ;
+
+
+    }
+
+    #txtsubdist{
+        width: 55%;
+        height: 40px;
+        float: left;
+        margin: -20% 0% 0% 45%;
+        padding: 0% 0% 0% 0%;
+        border-radius: 20px;
+        background-color: #ffffff;
+        border: 1px solid black;
+
+    }
+
+    #contbotsubdist{
+        width: 100%;
+        height: 49px;
+        float: left;
+        margin: 12% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+    }
+
+    #btsubdist{
+        width: 33%;
+        height: 35px;
+        float: left;
+        margin: 0% 0% 0% 21%;
+        padding: 0% 0% 0% 0%;
+    }
+
+
+    #txttitulorecupera{
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 10% 12% 0% 4%;
+        width: 100%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+    #marcorecupera {
+        height: 402px;
+        width: 60%;
+        float: left;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 9% 20% 0% 20%;
+    }
+
+    #contantiguarecupera{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+
+    }
+
+
+    #txt-antiguarecupera{
+        height: 19px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 5%;
+        width: 54%;
+        float: left;
+        display: block;
+    }
+
+    #input-antiguarecupera{
+        height: 21px;
+        margin: 1% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        width: 80%;
+        float: left;
+        display: block;
+    }
+
+    #btn-antiguarecupera{
+        height: 40px;
+        margin: 0% 0% 0% -29%;
+        padding: 0% 0% 0% 0%;
+        width: 82%;
+        float: left;
+        display: block;
+    }
+
+    #vercrecupera{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 6% 0% 0%;
+        width: 13%;
+        float: right;
+        display: block;
+    }
+
+    #ver1recupera{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -4% 0% 0%;
+        width: 4%;
+        float: right;
+        display: block;
+    }
+
+    #contnuevarecupera{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+
+    }
+
+    #contconfirmarrecupera{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+
+    }
+
+    #contbotonesrecupera{
+        height: 31px;
+        margin: 8% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+    #contenedorinputrecupera{
+
+        height: 31px;
+        margin: 0% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+    }
+
+}
+
+
+@media only screen and (min-width: 1441px) {
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    .cajacontenedor {
+        width: 100%;
+        max-width:1441px;
+        margin:auto;
+        display:block;
+
+
+    }
+
+    #contenedorsuperior{
+        height: 100px;
+        width: 100%;
+        float: left;
+        position: relative;
+        z-index: 0;
+        text-align: left;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+
+    #txtcontenedor{
+        height: 46px;
+        padding: 1% 0% 0% 0%;
+        margin: 0% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display:block;
+    }
+
+    #contenedorpestana{
+        height: 46px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        width: 100%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+    #contenedormedio {
+        height: 542px;
+        width: 100%;
+        float: left;
+        margin-top: 0%;
+        display: block;
+    }
+
+
+    #marco {
+        height: 865px;
+        width: 77%;
+        float: left;
+        background-image: url(../imagenes/cambioclave.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 11%;
+    }
+
+
+
+    #contantigua{
+        height: 31px;
+        margin: 2% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+
+
+    #txt-antigua{
+        height: 40px;
+        margin: 5% 0% 0% 7%;
+        padding: 0% 0% 0% 0%;
+        width: 38%;
+        float: left;
+        display: block;
+    }
+
+    #input-antigua{
+        height: 40px;
+        margin: -9% 0% 0% 45%;
+        padding: 0% 0% 0% 0%;
+        width: 56%;
+        float: left;
+        display: block;
+    }
+
+
+    #btn-antigua{
+        height: 40px;
+        margin: 5% 0% 0% 8%;
+        padding: 0% 0% 0% 0%;
+        width: 56%;
+        float: left;
+        display: block;
+    }
+
+    #contnueva{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+    #contconfirmar{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+    #contbotones{
+        height: 31px;
+        margin: 8% 0% 0% 6%;
+        width: 81%;
+        float: left;
+        display: block;
+
+    }
+
+
+
+    #footer {
+        height: 66px;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        float: left;
+        background-color: #ffffff;
+        display:block;
+    }
+
+    #ver1{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -14% 0% 0%;
+        width: 13%;
+        float: right;
+        display:block;
+    }
+
+    #verc{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% -15% 0% 0%;
+        width: 13%;
+        float: right;
+        display: block;
+    }
+
+    #menuhor{
+        float: left;
+        width: 100%;
+        height: 48px;
+        display: block;
+        margin-top: 1%;
+        margin-left: 0%;
+    }
+
+    #panelu{
+        float: left;
+        width: 19%;
+        height: 40px;
+        display: block;
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 34px;
+        border-top-right-radius: 21px;
+        border: 1px solid #4d4d4d;
+        margin-left: 1.3%;
+        margin-top: 0%;
+    }
+
+    #paneld{
+        float: left;
+        width: 30%;
+        height: 40px;
+        display: block;
+
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top-left-radius: 10px;
+        border-top-right-radius:  10px;
+        border: 1px solid #4d4d4d;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    #panelt{
+        float: left;
+        width: 30%;
+        height: 40px;
+        display: block;
+        background-image: url(../imagenes/panelnosel.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius:  10px;
+        border: 1px solid #4d4d4d;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    #txtpanel{   
+        width: 100%;
+        float: left;
+        height: auto;
+        margin: 2% 0% 0% 0%;
+    }
+
+
+
+    #txttitulo{
+        height: 30px;
+        padding: 1% 0% 0% 0%;
+        margin: 10% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+
+
+    #marcorecaudo{
+        height: 993px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/panelbody.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0% 0% 0% 0%;
+        margin: -4% 0% 0% 0.3%;
+
+
+    }
+
+
+    #parterecuno{
+        height: 150px;
+        width: 95%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #titben{
+        height: 15px;
+        width: 25%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 3%;
+
+
+    }
+    #contformben{
+        height: 61px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+    }  
+
+    #inputleft{
+        height: 34px;
+        width: 35%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 2%;
+    }
+
+
+    #txtleft{
+        height: 34px;
+        width: 37%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 2%;
+
+    }
+
+
+
+
+    #inputtxtleft{
+        height: 40px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 2%;
+        border: 1px solid black;
+
+        text-decoration: none;
+        border-radius: 20px;
+
+    }
+
+    #inputrigth{
+        height: 40px;
+        width: 39%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+
+    #txtrigth{
+        height: 25px;
+        width: 34%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+
+
+    }
+
+
+    #inputtxtrigth{
+        height: 44px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -4% 0% 0% 49%;
+        border: 1px solid black;
+        background-color: #e6f0f2;
+        text-decoration: none;
+        border-radius: 20px;
+
+
+
+    }
+
+
+    #inpubotones{
+
+        height: 40px;
+        width: 15%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 2%;
+
+    }
+    #btnu{
+        height: 29px;
+        width: 69%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 2%;
+
+    }
+
+
+
+    #parterecdiv{
+        height: 5px;
+        width: 99%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color: #87b8c4;
+
+    }
+
+
+
+
+    #parterecdos{
+        height: 250px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 8% 0% 0% 0%;
+
+    }
+
+    #parterecdivd{
+        height: 5px;
+        width: 99%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        background-color: #87b8c4;
+    }
+
+    #titbenf{
+        height: 15px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 3%;
+
+    }
+
+    #contbenef{
+        height: 34px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 35%;
+
+
+    }
+
+    #contndoc{
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #txttitulo1{
+        height: 34px;
+        width: 29%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #txtnumero{
+        height: 20px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 2%;
+        border: 1px solid black;
+        color: #2F4050;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        padding: 2px 5px;
+        background-color: #efefef;
+        text-decoration: none;
+        text-transform: capitalize;border-radius: 4px;
+        opacity: 0.8;
+
+    }
+
+    #contdoc{
+        height: 34px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 3% 0% 0% 0%;
+
+    }
+
+    #txttitulo2{
+        height: 34px;
+        width: 29%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+    #txtnombre{
+        height: 45px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 2%;
+        border: 1px solid black;
+        color: #2F4050;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        padding: 2px 5px;
+        background-color: #ffffff;
+        text-decoration: none;
+        text-transform: capitalize;
+        border-radius: 20px;
+
+    }
+
+    #botonesbenf{
+        height: 34px;
+        width: 50%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 28%;
+
+    }
+
+    #btnuben{
+        height: 34px;
+        width: 30%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #btndben{
+        height: 34px;
+        width: 30%;
+        float: left;
+        padding: 0% 0% 0% 6%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #procesorecaudo{
+        height: 377px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #ccontenedor{
+        height: 300px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+
+    }
+
+
+    #txttitmon {
+        height: 25px;
+        padding: 1% 0% 0% 0%;
+        margin: 0% 12% 0% 17%;
+        width: 70%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+    #cuadrodos{
+        float: left;
+        width: 25%;
+        height: 270px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 7%;
+    }
+
+    #imgUno{
+        float: left;
+        background-image: url(../img/valor2.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 229px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #imgDos{
+
+        float: left;
+        background-image: url(../img/valor3.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 229px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+
+    #imgTres{
+        float: left;
+        background-image: url(../img/valor1.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 229px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #conttxti{
+        float: left;
+        height: 25px;
+        width: 100%;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #txtvaldos{
+        float: left;
+        height: 25px;
+        width: 27%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #txtvaluno{
+        float: left;
+        height: 25px;
+        width: 73%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+
+    #otromediorec{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+
+    }
+
+    #labelomrec{
+        float: left;
+        width: 13%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 7%;
+
+
+    }
+
+    #txtomrec{
+        float: left;
+        width: 77%;
+        height: 52px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px
+
+    }
+
+    #labselselects{
+        width: 100%;
+        float: left;
+        height: 27px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+
+    }
+    #cuadtres{
+        width: 19%;
+        float: left;
+        height: 27px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 11%;
+        text-align: center;
+        background-color: #efefef;
+        text-decoration: none;
+        text-transform: capitalize;
+        border-radius: 4px;
+        opacity: 0.8;
+
+    }
+
+
+
+
+    #valorrec{
+        height: 77px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    #title{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 5%;
+    }
+
+    #conttotal{
+        width: 30%;
+        height: 49px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 5%;
+    }
+
+    #txttotal{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 5%;
+    }
+
+    #total_{
+        width: 30%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 5%;
+    }
+
+    #txtmoneda{
+        width: 100%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 5%;
+
+    }
+
+
+    #contbotonesr{
+        height: 37px;
+        margin: 2.3% 0% 0% 0%;
+        width: 100%;
+        float: left;
+        display: block;
+
+
+    }
+
+    #btnur{
+        width: 18%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 20%;
+
+
+    }
+
+
+
+
+    #btndr{
+        width: 18%;
+        height: 21px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 0% 0% 52%;
+
+    }
+
+    #banlogos{
+        float: left;
+        background-image: url(../imagenes/bannerlogos.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 119px;
+        width: 17%;
+        padding: 0% 0% 0% 0%;
+        margin: -0.7% 0% 0% 0%;
+    }
+
+    #telrecaudo{
+        float: left;
+        height: 50px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #contradio{
+        float: left;
+        height: 58px;
+        width: 100%;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+
+    }
+    #pcontenedor{
+        height: 417px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+    }
+
+    #cont_pago{
+        float: left;
+        width: 99%;
+        height: 354px;
+        padding: 0% 10% 0% 10%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #titulo_txtconfirm{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        text-align: center;
+    }
+
+    #titulo_subtxtconfirm{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        text-align: left;
+    }
+
+
+    #datos_recarga{
+        float: left;
+        width: 100%;
+        height: 40px;
+        padding: 0% 15% 0% 15%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #lab-recarga{
+        float: left;
+        width: 41%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 7% 0% 0% 6%;
+
+    }
+
+    #lab-confrecarga{
+        float: left;
+        width: 45%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 16%;
+
+    }
+
+    #txt_recarga{
+        loat: left;
+        width: 50%;
+        height: 46px;
+        padding: 0% 0% 0% 0%;
+        margin: 6% 0% 0% 0%;
+    }
+
+
+    #txt_confrecarga{
+        float: right;
+        width: 28%;
+        height: 44px;
+        padding: 0% 0% 0% 0%;
+        margin: -3% 26% 0% 0%;
+    }
+
+    #datos_recargad{
+        float: left;
+        width: 80%;
+        height: 25px;
+        padding: 0% 15% 0% 15%;
+        margin: 2% 0% 0% 0%;
+
+    }
+
+
+    #datos_recargadconf{
+        float: left;
+        width: 30%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 16%;
+
+    }
+
+    #datos_recargad{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 15% 0% 15%;
+        margin: 2% 0% 0% 0%;
+
+    }
+
+    #datos_recargadconf{
+        float: left;
+        width: 76%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 16%;
+
+    }
+
+    #txt_recargad{
+        float: left;
+        width: 50%;
+        height: 45px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+    }
+
+    #contbotfinpg{
+        float: left;
+        width: 99%;
+        height: 53px;
+        padding: 0% 10% 0% 10%;
+        margin: 2% 0% 0% 0%;
+    }
+
+
+
+    #btnufp{
+        width: 14%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 25%;
+
+    }
+
+
+
+
+    #btndfp{
+        width: 14%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 3%;
+
+    }
+    #btndft{
+        width: 18%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: -2.3% 0% 0% 59%;
+
+    }
+
+
+    #contbotfpago{
+        float: left;
+        width: 80%;
+        height: 53px;
+        padding: 0% 10% 0% 10%;
+        margin: 5% 0% 0% 0%;
+
+    }
+
+
+    #btterminar{
+        width: 25%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 39%;
+
+    }
+
+
+    #datoscorresponsal{
+        width: 100%;
+        height: 28px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #corresponsalleft{
+        width: 36%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #clabelleft{
+        width: 31%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 12%;
+
+    }
+
+    #ctxtleft{
+        width: 33%;
+        height: 44px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+    }
+
+    #corresponsalcenter{
+        width: 35%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #labelleft{
+        width: 43%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 13%;
+
+    }
+
+    #txtcenter{
+        width: 25%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #corresponsalrigth{
+        width: 26%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #labelrigth{
+        width: 70%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+    }
+
+    #txtrigth{
+        width: 45%;
+        height: 25px;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%
+
+    }
+
+    #txtrigthds{
+        width: 49%;
+        height: 25px;
+        float: left;
+        padding: 0% 3% 0% 0%;
+        margin: -6% 0% 0% 61%;
+
+    }
+
+    #pagolinea {
+        float: left;
+        width: 87%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+
+    #checkpago{
+        float: right;
+        width: 27%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: -6% 37% 0% 0%;
+
+
+    }
+
+    #contcambipass{
+        float: left;
+        width: 50%;
+        height: 343px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 28%;
+        border-radius: 20px;
+        border: 2px solid #ffffff;
+    }
+
+
+    #contbotonescambio{
+        float: left;
+        width: 50%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 6% 0% 0% 0%;
+
+    }
+
+    #errortrans{
+        loat: left;
+        width: 97%;
+        height: 38px;
+        padding: 0% 0% 0% 0%;
+        margin: 17% 0% 0% 2%;
+    }
+
+    .info-green{
+        display: none;
+
+    }
+
+    .progress-bar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        background-color: #24829C;
+        transition: width .6s ease;
+        border-radius : 20px ;
+        height: 30px;
+    }
+
+    #contenedor{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;;
+
+    }
+
+    #barraprogreso{
+        width: 50%;
+        height: 100px;
+        float: left;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+    #saldosubdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin: 6% 0% 0% 0%;
+        padding: 0% 0% 0% 0%; 
+
+    }
+
+    #titulo_txtsubdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;  
+
+    }
+
+    #datos_subdist{
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;  
+
+    }
+
+    #lab-sudist{
+        width: 21%;
+        height: 32px;
+        float: left;
+        margin: -5% 0% 0% 27%;
+        padding: 0% 0% 0% 0%;
+
+    }
+
+
+    #txtsubdist{
+        width: 19%;
+        height: 46px;
+        float: left;
+        margin: -6% 0% 0% 53%;
+        padding: 0% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        border: 1px solid black;
+    }
+
+    #contbotsubdist{
+        width: 99%;
+        height: 100px;
+        float: left;
+        margin: 8% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+    }
+
+    #btsubdist{
+        width: 16%;
+        height: 40px;
+        float: left;
+        margin: 0% 0% 0% 33%;
+        padding: 0% 0% 0% 0%; 
+    }
+
+    #txttitulorecupera{
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 12% 0% -1%;
+        width: 100%;
+        text-align: center;
+        float: left;
+        display: block;
+    }
+
+    #marcorecupera {
+        height: 589px;
+        width: 52%;
+        float: left;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 21%;
+    }
+
+    #contantiguarecupera{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 82%;
+        float: left;
+        display: block;
+    }
+
+
+    #txt-antiguarecupera{
+        height: 19px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 5%;
+        width: 54%;
+        float: left;
+        display: block;
+    }
+
+    #input-antiguarecupera{
+        height: 21px;
+        margin: 3% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        width: 100%;
+        float: left;
+        display: block;
+    }
+
+    #btn-antiguarecupera{
+        height: 40px;
+        margin: 5% 0% 0% -29%;
+        padding: 0% 0% 0% 0%;
+        width: 114%;
+        float: left;
+        display: block;
+    }
+
+    #vercrecupera{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% -13% 0% 0%;
+        width: 13%;
+        float: right;
+        display: block;
+    }
+
+    #ver1recupera{
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% -4% 0% 0%;
+        width: 4%;
+        float: right;
+        display: block;
+    }
+
+    #contnuevarecupera{
+        height: 31px;
+        margin: 5% 0% 0% 6%;
+        width: 82%;
+        float: left;
+        display: block;
+
+    }
+
+    #contconfirmarrecupera{
+        height: 31px;
+        margin: 6% 0% 0% 6%;
+        width: 82%;
+        float: left;
+        display: block;
+    }
+
+    #contbotonesrecupera{
+        height: 31px;
+        margin: 8% 0% 0% 6%;
+        width: 52%;
+        float: left;
+        display: block;
+
+    }
+    #contenedorinputrecupera{
+
+        height: 31px;
+        margin: 0% 0% 0% 6%;
+        width: 100%;
+        float: left;
+        display: block;
+    }
+}
+
+a:link
+{
+    text-decoration:none;
+
+    color:#ffffff;
+}
+
+.panelgrid-dotted-border{
+
+    border-spacing: 0;
+    border: 0px;
+}
+.panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+    border: 0px;
+}
+
+body .ui-chkbox .ui-chkbox-box {
+    border: 2px solid #FFFFFF;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-chkbox .ui-chkbox-box.ui-state-active {
+    border-color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+body .ui-message.ui-message-error {
+    font-size: 12px;
+    float: left;
+    height: 3px;
+    color: #fff8f8;
+    background-color: #f45f56;
+    width: 100%;
+    margin-top: 1%;
+    margin-left: 0%;
+    font-weight: bold;
+    font-family: 'CenturyGothic-Bold';
+}
+
+
+
+body .ui-inputfield.ui-state-focus {
+    border-width: 0% 0% 0% 0%;
+    border-color: #ffffff;
+    padding-bottom: 0px;
+}    
+
+body .ui-button {
+    width: 100%;
+    height: 30px;
+    color: #000;
+    font-family: 'CenturyGothic';
+    border: 1px solid black;
+    float: left;
+    margin-top: 0%;
+    margin-left: 44%;
+    overflow: hidden;
+    background-color: #e6f0f2;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+
+    width: 90%;
+    height: 34px;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 1em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+
+
+    border-width: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 6%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transi45854641565410tion: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 20px;
+
+}
+
+button, select, textarea {
+    width: 90%;
+    height: 35px;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #ffffff;
+
+
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 4%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+
+
+}
+
+
+.ui-md-8 {
+    width: 100%;
+}
+
+
+
+
+option {
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    padding: 0px 2px 1px;
+}
+
+select {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #0e0e0e;
+}
+
+.ui-autocomplete {
+    width: auto;
+    zoom: 1;
+    cursor: pointer;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    display: inline-block;
+    background-color: #e6f0f2;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+}
+
+
+body .ui-widget, body .ui-widget .ui-widget {
+    font-family: 'CenturyGothic';
+    font-size: 1em;
+    color: #0c0c0c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+input:-internal-autofill-selected {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    color: #afa0a0 !important;
+}
+
+
+body .ui-radiobutton .ui-radiobutton-box {
+    border: 2px solid #ffffff;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+    background-color: #ffffff;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.24) !important;
+    border: 1px solid #e2d6d6 !important;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 2px solid black;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #e8edef;
+    border: 1px;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+body .ui-inputfield {
+    background: transparent;
+    border-width: 0 0 1px 0;
+    padding: 2px 2px 1px 2px;
+    font-size: 16px;
+    border-color: #ffffff;
+    border-style: solid;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}

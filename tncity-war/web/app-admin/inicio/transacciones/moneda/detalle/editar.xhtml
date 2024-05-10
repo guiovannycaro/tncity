@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.inicio.transacciones.moneda.detalle.content">
+             
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <p:panelGrid columns="2">
+
+                              <h:panelGroup>
+                                    <h:outputText value="Pais" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <p:selectOneMenu value="#{monedaControl.obj.idpais}" required="true" requiredMessage="Requerido!" id="attr_idpais">
+                                        <f:selectItems value="#{paisControl.selectAll()}"/>
+                                    </p:selectOneMenu>
+                                </h:panelGroup>
+                                
+                                <h:panelGroup>
+                                    <h:outputText value="Codigo Iso 4217" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{monedaControl.obj.codeiso4217}" required="true" requiredMessage="Requerido!" id="attr_nombre"/>
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Numero Oficial 4217" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                <h:panelGroup>
+                                    <p:inputText value="#{monedaControl.obj.numiso4217}" required="true" requiredMessage="Requerido!" id="attr_codOficialIso"/>
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                
+                                  <h:panelGroup>
+                                    <h:outputText value="Simbolo" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{monedaControl.obj.simbolo}" required="true" requiredMessage="Requerido!" id="attr_simbolo"/>
+                                    <p:message for="attr_simbolo"/>
+                                </h:panelGroup>
+                                
+                                
+                                  <h:panelGroup>
+                                    <h:outputText value="Valor Tasa De Cambio" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                
+                                <h:panelGroup>
+                                    <p:inputText value="#{monedaControl.obj.valortrm}" required="true" requiredMessage="Requerido!" id="attr_iso3"/>
+                                    <p:message for="attr_iso3"/>
+                                </h:panelGroup>
+
+                           
+                        </p:panelGrid>
+                        <br/><br/>
+
+                        <h:inputHidden value="#{monedaControl.obj.idmoneda}"/>
+
+                        <p:commandButton value="Guardar Cambios" action="#{monedaControl.editar()}" icon="fa fa-save" ajax="false">
+                            <f:param name="idmoneda_" value="#{param.idmoneda_}"/>
+                        </p:commandButton>
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+                    <h:panelGroup rendered="#{monedaControl.successful}">
+                        <script type="text/javascript">
+                            document.location.href = 
+             '#{utilControl.protocolHostPortContext}/app-admin/inicio/transacciones/moneda/detalle/detalle.xhtml?idmoneda_=#{monedaControl.obj.idmoneda}';
+                        </script>
+                    </h:panelGroup>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

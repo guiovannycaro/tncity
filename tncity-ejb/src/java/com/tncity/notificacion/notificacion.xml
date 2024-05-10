@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notificacionConfig>
+
+     
+    <notificacion id="1">
+        <descripcion>Envio De Correo Con Contraseña Temporal al Benefactor.</descripcion>
+        <var name="@nombrebenefactor@">
+            <descripcion>Nombre del Benefactor.</descripcion>
+        </var>
+        
+         <var name="@apellidobenefactor@">
+            <descripcion>Apellido del Benefactor.</descripcion>
+        </var>
+  
+        <var name="@correobenefactor@">
+            <descripcion>Correo al que se envia la notificacion</descripcion>
+        </var>
+       
+        <var name="@clavetemporal@">
+            <descripcion>Clave Temporal</descripcion>
+        </var>
+    </notificacion>
+    
+    
+    
+    
+
+</notificacionConfig>

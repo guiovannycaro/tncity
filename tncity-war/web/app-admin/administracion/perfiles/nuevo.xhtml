@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.perfiles.content">
+               
+                <p:panel header="Nuevo Perfil">
+                    <div align="center">
+                        <h:form>
+                            <p:panelGrid columns="2">
+
+                                <h:panelGroup>
+                                    <h:outputText value="Nombre" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{perfilControl.obj.nombre}" required="true" requiredMessage="Requerido!" id="attr_nombre"/>
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Observaciones" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{perfilControl.obj.observaciones}" required="true" requiredMessage="Requerido!" id="attr_ap"/>
+                                    <p:message for="attr_ap"/>
+                                </h:panelGroup>
+
+                                
+                            </p:panelGrid>
+                            <br/><br/>
+                            <p:commandButton value="Guardar" action="#{perfilControl.nuevo()}" icon="fa fa-save" ajax="false"/>
+                            <br/><br/>
+                        </h:form>
+
+                        <h:panelGroup rendered="#{perfilControl.successful}">
+                            <script type="text/javascript">
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/administracion/perfiles/detalle/detalle.xhtml?idperfil_=#{perfilControl.obj.idperfil}';
+                            </script>
+                        </h:panelGroup>
+
+                    </div>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

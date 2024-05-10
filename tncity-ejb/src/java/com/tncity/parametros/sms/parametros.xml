@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parametrossmsConfig>
+
+     
+    <parametros id="1">
+        <descripcion>Parametros Mensajeria Gestionados.</descripcion>
+        <var name="@nombre@">
+            <descripcion>Nombre .</descripcion>
+        </var>
+        
+         <var name="@puerto@">
+            <descripcion>Puerto.</descripcion>
+        </var>
+  
+        <var name="@host@">
+            <descripcion>host</descripcion>
+        </var>
+       
+        <var name="@protocolo@">
+            <descripcion>Protocolo</descripcion>
+        </var>
+    </parametros>
+    
+    
+     <parametros id="2">
+        <descripcion>Parametros Mensajeria TeleAmigo.</descripcion>
+        <var name="@nombre@">
+            <descripcion>Nombre .</descripcion>
+        </var>
+        
+         <var name="@puerto@">
+            <descripcion>Puerto.</descripcion>
+        </var>
+  
+        <var name="@host@">
+            <descripcion>host</descripcion>
+        </var>
+       
+        <var name="@protocolo@">
+            <descripcion>Protocolo</descripcion>
+        </var>
+    </parametros>
+    
+
+</parametrossmsConfig>

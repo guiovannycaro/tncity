@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../../_template.xhtml">
+
+          <ui:define name="app-admin.config.content">
+
+
+                <p:panel header="Parámetros NOtificacion Email">
+
+                    <div align="center">
+
+                        <div align="left">
+                            <b>Notificaciones para configurar</b>
+                            <p:separator/>
+
+                            <h:outputText value="#{notificacionControl.recuperaNotificacionesConfig()}"/>
+
+                            <br/>
+                            <ui:repeat var="n" value="#{notificacionControl.notificacionConfig.lstNotificacion}">
+                                <a href="javascript:edit_(#{n.id});">
+                                &rArr; <h:outputText value="#{n.descripcion}"/>
+                                </a>
+                                <br/><br/>
+                            </ui:repeat>
+                            
+                        </div>
+
+                        <script type="text/javascript">
+                            function edit_(id) {
+                            
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/config/notificaciones/email/editar.xhtml?id_=' + id;
+                                               
+
+}
+                        </script>
+
+                    </div>
+
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

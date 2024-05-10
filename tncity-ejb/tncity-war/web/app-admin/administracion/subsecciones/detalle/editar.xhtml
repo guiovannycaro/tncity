@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.subsecciones.detalle.content">
+
+                <h:outputText value="#{SubSeccionControl.RecuperaSubseccionesById(param.idsubseccion_)}"/>
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <ui:repeat value="#{SubSeccionControl.lstmodsecsub}" var="lst"> 
+                            <p:panelGrid columns="2">
+
+                                <h:panelGroup>
+                                    <h:outputText value="Nombre" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{lst.idsubseccion.nombre}" required="true" requiredMessage="Requerido!" id="attr_nombre"/>
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Nombre Visual" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{lst.idsubseccion.nombrevisual}" required="true" requiredMessage="Requerido!" id="attr_nvisula"/>
+                                    <p:message for="attr_nvisula"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Imagen" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{lst.idsubseccion.imagen}" required="true" requiredMessage="Requerido!" id="attr_imagen"/>
+                                    <p:message for="attr_imagen"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Url" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{lst.idsubseccion.url}" required="true" requiredMessage="Requerido!" id="attr_url"/>
+                                    <p:message for="attr_url"/>
+                                </h:panelGroup>
+
+
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Estado" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:selectOneMenu value="#{lst.idsubseccion.estado}" required="true" requiredMessage="Requerido!" id="attr_estado">
+                                        <f:selectItem itemLabel="Seleccione una opcion" itemValue=""  />
+                                        <f:selectItem itemLabel="Activo" itemValue="true"/>
+                                        <f:selectItem itemLabel="Inactivo" itemValue="false"/>
+                                    </h:selectOneMenu>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Modulo" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    Actual : #{lst.idmodulo.nombre}
+                                    <br></br>
+                                    <h:selectOneMenu  value="#{SubSeccionControl.modulo}" id="attr_modulo">
+                                        <f:selectItems value="#{modulosControl.selectAllOBJ()}"/>
+                                    </h:selectOneMenu>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Seccion" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+
+                                    Actual : #{lst.idseccion.nombre}
+                                    <br></br>
+                                    <h:selectOneMenu  value="#{SubSeccionControl.seccion}" id="seccion">
+                                        <f:selectItems value="#{submodulosControl.selectAllOBJ()}"/>
+                                    </h:selectOneMenu>
+
+                                   
+
+                                </h:panelGroup>
+
+                           
+
+                                <h:inputHidden value="#{lst.idsubseccion.idsubseccion}"/>
+                            </p:panelGrid>
+                        </ui:repeat> 
+                        <br/><br/>
+
+
+
+
+
+                        <p:commandButton value="Guardar Cambios" onclick="enviarf();"  icon="fa fa-save"  >
+                            <f:param name="idsubseccion_" value="#{param.idsubseccion_}"/>
+                        </p:commandButton>
+
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+
+
+                </div>
+                <script type="text/javascript">
+                    function enviarf() {
+
+
+                        var nombre = document.getElementById("ff_:j_idt59:0:attr_nombre").value;
+                        var nombrever = document.getElementById("ff_:j_idt59:0:attr_nvisula").value;
+                        var imagen = document.getElementById("ff_:j_idt59:0:attr_imagen").value;
+                        var link = document.getElementById("ff_:j_idt59:0:attr_url").value;
+                        var estado = document.getElementById("ff_:j_idt59:0:attr_estado").value;
+                        var modulo = document.getElementById("ff_:j_idt59:0:attr_modulo").value;
+                        var seccion = document.getElementById("ff_:j_idt59:0:seccion").value;
+                        var subseccionid = '#{param.idsubseccion_}';
+
+                        alert(nombre + ' ' + nombrever + ' ' + imagen + ' ' + link + ' ' + estado + ' ' + ' ' + subseccionid + modulo + seccion);
+                       var som = '/app-admin/administracion/subsecciones/geditar.xhtml?nombre_='+ nombre +'&amp;nomvisual_='+ nombrever +'&amp;imagen_='+ imagen +'&amp;link_='+ link +'&amp;estado_='+ estado +'&amp;subseccionid_='+ subseccionid +'&amp;modulo_='+ modulo + '&amp;seccion_='+ seccion ;
+                       var url = '#{utilControl.protocolHostPortContext}' + som;
+                     document.location.href = url;
+
+                    }
+                </script>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

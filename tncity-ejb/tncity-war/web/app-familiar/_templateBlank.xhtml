@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/baseCSS.css"/>
+
+        <h:outputScript name="js/nanoscroller.js" library="ultima-layout" />
+        <h:outputScript name="js/layout.js" library="ultima-layout" />
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+        <h:outputScript name="js/swipe.js" library="ultima-layout" />
+
+        <title>Amigo Interno - Recargas</title>
+   <link rel="shortcut icon" type="image/x-icon" href="#{utilControl.protocolHostPortContext}/imagenes/favicon.ico" />
+
+
+        <!-- Sess -->
+        <h:outputText value="#{loginBenefactorControl.validaSession()}" escape="false"/>
+    </h:head>
+    <h:body>
+        <ui:insert name="app-familiar.contentBlank">Content BlanK !!!</ui:insert>  
+        <br/>
+        <h:outputText value="#{utilControl.msg}" escape="false"/>
+
+        <h:outputStylesheet name="css/nanoscroller.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/animate.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{themeControl.theme}.css" library="ultima-layout" />
+        
+         <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/estilosmodal.css"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/fuentes/fuentes.css"/>
+        
+    </h:body>
+</html>

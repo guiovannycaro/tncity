@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../_templateBlank.xhtml">
+
+            <ui:define name="app-familiar.contentBlank">
+
+
+
+                <div id="contenedor">
+                    <div id="cuadrocontenedor">
+                        <h:form id="formP_" class="formP">
+
+                            <div id="marcotitulo">
+                                <div id="cuadrouno_titulo" class="estilo20">
+                                    <center> <p >Registrar PPL (Persona Privada Libertad)</p></center>
+                                </div> 
+
+                            </div>
+
+                            <div id="cuadroform">
+                                <div id="cuadrouno_txtu">
+
+                                    <div id="cuadrouno_txt" class="estilo11">
+
+                                        Nombre Beneficiario *
+
+                                    </div>
+                                    <div id="cuadrouno_txtinput">
+                                        <h:panelGroup>
+                                            <p:inputText value="#{beneficiarionoexisteControl.nombresApellidos}" 
+                                                         placeholder="Nombre Beneficiario*"
+                                                         required="true" 
+                                                         requiredMessage="Requerido!" id="attr_nbenefi"/>
+                                            <p:message for="attr_nbenefi"/>
+                                            <p:message for="attr_nbenefi" style="color:#ffffff !important"/>
+                                        </h:panelGroup>
+                                    </div>
+                                </div>
+
+
+
+                                <div id="cuadrouno_txtud">
+
+                                    <div id="cuadrouno_txtd" class="estilo11">
+                                        Tipo Documento  *
+                                    </div>
+                                    <div id="cuadrouno_txtinputd">
+                                        <h:panelGroup>
+                                            <h:selectOneMenu value="#{beneficiarionoexisteControl.tipodocumento}" required="true" requiredMessage="¡Por favor seleccione un tipo de identificación de la lista!" id="attr_tipodoc" 
+
+
+                                                             >
+                                                <f:selectItem 
+                                                    itemValue="" itemLabel="Seleccione..." />
+                                                <f:selectItem itemValue="CEDULA" itemLabel="Cédula de Ciudadanía"/>
+                                                <f:selectItem itemValue="PASAPORTE" itemLabel="Pasaporte"/>
+                                                <f:selectItem itemValue="CEDULA EXTRANGERIA" itemLabel="Cédula Extranjería"/>
+
+                                            </h:selectOneMenu>
+                                            <p:message for="attr_tipodoc" style="color:#ffffff !important"/>
+                                        </h:panelGroup>
+                                    </div>
+                                </div>
+
+                                <div id="cuadrouno_txtud">
+
+                                    <div id="cuadrouno_txtd" class="estilo11">
+                                        No. Documento Beneficiario  *
+                                    </div>
+                                    <div id="cuadrouno_txtinputd">
+                                        <h:panelGroup>
+                                            <p:inputText value="#{beneficiarionoexisteControl.pin}" required="true"
+                                                         requiredMessage="Requerido!" maxlength="12" placeholder="Número de Identificación*"  id="attr_pin">
+                                             <p:keyFilter regEx="/[A-Za-z0-9_]/i"/>  
+                                            </p:inputText>
+                                            
+                                            <p:message for="attr_pin"/>
+                                        </h:panelGroup>
+                                    </div>
+                                </div>
+
+                                <div id="cuadrouno_txtud">
+
+                                    <div id="cuadrouno_txtd" class="estilo11">
+                                        Ciudad Beneficiario  *
+                                    </div>
+                                    <div id="cuadrouno_txtinputd">
+                                        <h:panelGroup>
+                                            <h:selectOneMenu  value="#{beneficiarionoexisteControl.tariffgroupname}" 
+                                                              required="true" requiredMessage="Debe Elegir Una Tipo de documento de la lista!" 
+                                                              id="attr_ciudad">
+                                                   <f:selectItems  value="#{ciudadControl.selectAll()}"/>
+
+                                                </h:selectOneMenu>
+                                                
+                                            <p:message for="attr_ciudad"/>
+                                        </h:panelGroup>
+
+                                        <h:outputText value="#{loginBenefactorControl.usLog.idbenefactor}"/>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div id="cuadrobtn">
+                                <p:commandButton value="Guardar" style="color:#FFFFFF !important;width: 100%" onclick="enviarf();" icon="fa fa-users"  >
+                                    <f:param name="numdoc_" value="#{loginBenefactorControl.usLog.idbenefactor}"/>
+                                </p:commandButton>
+                            </div>
+
+                        </h:form>
+                    </div>
+                    <script type="text/javascript">
+                        function enviarf() {
+
+                            var formulario = document.getElementById("formP_");
+                            var nombreben = document.getElementById('formP_:attr_nbenefi').value;
+                            var tdoc = document.getElementById('formP_:attr_tipodoc').value;
+                            var cedula = document.getElementById('formP_:attr_pin').value;
+                            var ciudad = document.getElementById('formP_:attr_ciudad').value;
+                            var funciona = 'S';
+
+                            if (nombreben == "") {
+
+                                swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, ingrese su nombre.'});
+                                formulario.nombre.focus();
+                                funciona = 'N';
+                                return false;
+                            }
+
+                            if (tdoc == "") {
+
+                                swal({type: "error", title: '¡Mensaje De Error!', text: '¡Por favor seleccione un tipo de identificación de la lista!'});
+                                formulario.tipdoc.focus();
+                                funciona = 'N';
+                                return false;
+
+                            }
+
+                            if (ciudad == "")
+                            {
+
+                                swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor seleccione una ciudad '});
+                                formulario.ciudad.focus();
+                                funciona = 'N';
+                                return false;
+                            }
+
+
+                            if (cedula == "") {
+
+                                swal({type: "error", title: '¡Mensaje De Error!', text: 'Por Favor diligencie el campo Número Documento '});
+                                formulario.ciudad.focus();
+                                funciona = 'N';
+                                return false;
+
+
+
+                            }
+
+                            if (funciona == 'S') {
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/beneficiario/guardarnuevo.xhtml?nombre_=' + nombreben + '&amp;tdoc_=' + tdoc + '&amp;idbenefactor_=#{loginBenefactorControl.usLog.idbenefactor}&amp;cedula_=' + cedula + '&amp;ciudad_=' +ciudad+ '';
+
+                            }
+                        }
+
+
+
+                    </script>
+                    <style type="text/css">
+                        .panelgrid-dotted-border{
+
+                            border-spacing: 0;
+                            border: 0px;
+                        }
+                        .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                            border: 0px;
+                        }
+                    </style>
+                </div>
+                <style>
+                    body .ui-inputfield {
+                        background: transparent;
+                        border-width: 0 0 1px 0;
+                        padding: 2px 2px 1px 2px;
+                        margin: 0% 0% 0% 8% !important;
+                        font-size: 16px;
+                        width: 90% !important;
+                        border: 2px solid #0B637A !Important;
+                        border-radius: 20px  !Important;
+                        border-style: solid;
+                        -moz-transition: border-color 0.3s;
+                        -o-transition: border-color 0.3s;
+                        -webkit-transition: border-color 0.3s;
+                        transition: border-color 0.3s;
+                        -moz-border-radius: 0px;
+                        -webkit-border-radius: 0px;
+                        border-radius: 0px;
+                    }
+                </style>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
+

@@ -1,0 +1,582 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.promociones.content">
+
+                <p:panel header="Nueva Promocion">
+                    <div align="center">
+                        <h:form id="formP_">
+                            <p:panelGrid columns="2">
+
+                                <h:panelGroup>
+                                    <h:outputText value="Nombre" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <h:outputText value="#{promocionControl.RecuperaPromocionesId()}"/>
+
+                                    <p:selectOneMenu id="attr_nombre"  class="selu" required="true" onchange="selectA()" requiredMessage="Por favor, Debe seleccionar Una Promocion De La Lista!" >
+                                        <f:selectItem  itemValue="" itemLabel="Seleccione una opcion.. "/>
+
+                                        <f:selectItems value="#{promocionControl.lispromociones}" var="lst" itemValue="#{lst.idpromocion} " itemLabel="#{lst.nombre} "/>
+
+                                    </p:selectOneMenu>
+
+
+
+
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Tipo Promocion" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <h:selectOneMenu id="tipovalor" class="selu"  onchange="selectO1()" required="false" requiredMessage="Debe Elegir UnA Opcion!"  
+                                                     >
+                                        <f:selectItem 
+                                            itemValue="" itemLabel="Seleccione una Opcion" />
+                                        <f:selectItem itemValue="Valor" itemLabel="Valor"/>
+                                        <f:selectItem itemValue="Porcentaje" itemLabel="Porcentaje"/>
+
+                                    </h:selectOneMenu>
+
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Valor Promocion" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{promocionesControl.valorpromocion}"     required="true" requiredMessage="Requerido!" id="attr_vpromocion1"  style="display:none;" placeholder="0.00">
+                                        <p:keyFilter regEx="/[0-9]/"/>  
+                                    </p:inputText>
+
+                                    <p:spinner id="attr_vpromocion2" value="#{promocionesControl.valorpromocion}" stepFactor="0.05" style="display:none;"   >
+                                        <p:keyFilter regEx="/[0-9]/"/>  
+                                    </p:spinner>          
+
+                                    <p:message for="attr_evpromocion1" id="attr_evpromocion1" style="display:none;"/>
+                                    <p:message for="attr_evpromocion2" id="attr_evpromocion2" style="display:none;"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Fecha Inicial" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <p:calendar autocomplete="off" id="attr_finicial" required="true" requiredMessage="Por favor, Debe seleccionar la fecha de inicio!" value="#{promocionesControl.fechainicial}" pattern="yyyy-MM-dd" locale="es"  navigator="true"/>
+                                    <p:messages for="attr_finicial"/>
+
+
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Fecha Final" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:calendar autocomplete="off" id="attr_ffin" required="true" requiredMessage="Por favor, Debe seleccionar la fecha de inicio!" value="#{promocionesControl.fechafinal}" pattern="yyyy-MM-dd" locale="es"  navigator="true"/>
+                                    <p:messages for="attr_ffin"/>
+
+
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Estado" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <h:selectOneMenu value="#{promocionesControl.estado}"  requiredMessage="Debe Elegir Una Opcion" id="attr_estado" 
+                                                     >
+                                        <f:selectItem  itemValue="" itemLabel="Seleccione un Estado..." noSelectionOption="true" />
+                                        <f:selectItem itemLabel="Activo" itemValue="true" />
+                                        <f:selectItem itemLabel="Inactivo" itemValue="false" />
+
+
+                                    </h:selectOneMenu>
+
+
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Tipo Criterio" styleClass="label"/>
+                                    <h:outputText value="" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <h:selectOneMenu id="tipocriterio" class="selu" value="#{promocionesControl.obj.tipoAplicadesde}" onchange="selectO2()" required="false" requiredMessage="Debe Elegir UnA Opcion!" >
+                                        <f:selectItem 
+                                            itemValue="" itemLabel="Seleccione una Opcion" />
+                                        <f:selectItem itemValue="valor" itemLabel="Valor"/>
+                                        <f:selectItem itemValue="pesos" itemLabel="Pesos"/>
+                                        <f:selectItem itemValue="sitio" itemLabel="Sitio"/>
+                                        <f:selectItem itemValue="calendario" itemLabel="Calendario"/>
+                                    </h:selectOneMenu>
+
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Criterio Aplicación" styleClass="label"/>
+                                    <h:outputText value="" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputMask maxlength="2"  value="#{promocionesControl.caplica}"  id="attr_caplica1"  mask="99" style="display:none;">
+                                        <p:keyFilter regEx="/[0-9]/"/>  
+                                    </p:inputMask>
+
+
+
+
+                                    <p:inputText value="#{promocionesControl.caplica}"     required="true" requiredMessage="Requerido!" id="attr_caplica2"  style="display:none;" >
+                                        <p:keyFilter regEx="/[0-9]/"/>  
+                                    </p:inputText>
+
+
+                                    <h:outputText value="#{ciudadControl.RecuperaCiudadesId()}"/>
+
+
+
+                                    <p:selectOneMenu id="attr_caplica3"   value="#{promocionesControl.caplica}"  required="true" requiredMessage="Por favor, Debe seleccionar Una Ciudad De La lista.!" style="display:none;">
+                                        <f:selectItem itemLabel="Selecione Una Opción.." />
+                                        <f:selectItems value="#{ciudadControl.listciudad}" var="lst" itemValue="#{lst.nombre}" itemLabel="#{lst.nombre}"/>
+                                    </p:selectOneMenu>
+
+
+
+
+
+
+
+
+
+
+                                    <p:calendar autocomplete="off" id="attr_caplica4" required="true" requiredMessage="Por favor, Debe seleccionar una fecha!" value="#{promocionesControl.caplica}" pattern="yyyy-MM-dd" locale="es"  navigator="true" style="display:none;"/>
+                                    <br/>
+                                    <p:inputText value="#{promocionesControl.valcriterio}" id="attr_caplica5"     required="true" requiredMessage="Requerido!"  style="display:none;" placeholder="Digite un Valor Numerico ">
+                                        <p:keyFilter regEx="/[0-9]/"/>  
+                                    </p:inputText>
+
+                                    <p:message for="attr_caplica1" id="attr_vcaplica1" style="display:none;"/>
+                                    <p:message for="attr_caplica2" id="attr_vcaplica2" style="display:none;"/>
+                                    <p:message for="attr_caplica3" id="attr_vcaplica3" style="display:none;"/>
+                                    <p:message for="attr_caplica4" id="attr_vcaplica4" style="display:none;"/>
+                                    <p:message for="attr_caplica5" id="attr_vcaplica5" style="display:none;"/>
+                                </h:panelGroup>
+
+
+
+
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Observaciones" styleClass="label"/>
+                                    <h:outputText value="" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{promocionesControl.observacion}" required="false" requiredMessage="Requerido!" id="attr_observaciones"/>
+                                    <p:message for="attr_observaciones"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Digitos Cedula" styleClass="label"/>
+                                    <h:outputText value="" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+
+                                    <div style="float: left;width: 100%;height: 30px">
+                                        <div id="cero"   style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula0" value="true"> 0 </input></div>
+                                        <div id="uno"    style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula1" value="true"> 1 </input></div>
+                                        <div id="dos"    style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula2" value="true"> 2 </input></div>
+                                        <div id="tres"   style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula3" value="true"> 3 </input></div>
+                                        <div id="cuatro" style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula4" value="true"> 4 </input></div>
+                                    </div>
+                                    <div style="float: left;width: 100%;height: 30px">
+                                        <div id="cinco"  style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula5" value="true"> 5 </input></div>
+                                        <div id="seis"   style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula6" value="true"> 6 </input></div>
+                                        <div id="siete"  style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula7" value="true"> 7 </input></div>
+                                        <div id="ocho"   style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula8" value="true"> 8 </input></div>
+                                        <div id="nueve"  style="float:left;height: 21px;width: 12%"> <input type="checkbox" id="ncedula9" value="true"> 9 </input></div>
+                                    </div>
+
+                                </h:panelGroup>
+
+
+                            </p:panelGrid>
+
+                            <p:commandButton value="Enviar" onclick="enviarf();" class="sigui"  >
+                            </p:commandButton>
+                        </h:form>
+
+
+
+                    </div>
+                </p:panel>
+                <script type="text/javascript">
+
+                    PrimeFaces.locales['es'] = {
+                        closeText: 'Cerrar',
+                        prevText: 'Anterior',
+                        nextText: 'Siguiente',
+                        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                        monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                        dayNamesMin: ['D', 'L', 'M', 'Mi', 'J', 'V', 'S'],
+                        weekHeader: 'Semana',
+                        firstDay: 1,
+                        isRTL: false,
+                        showMonthAfterYear: false,
+                        yearSuffix: '',
+                        timeOnlyTitle: 'Sólo hora',
+                        timeText: 'Tiempo',
+                        hourText: 'Hora',
+                        minuteText: 'Minuto',
+                        secondText: 'Segundo',
+                        currentText: 'Fecha actual',
+                        ampm: false,
+                        month: 'Mes',
+                        week: 'Semana',
+                        day: 'Día',
+                        allDayText: 'Todo el día'
+                    };
+
+                    function selectA() {
+                        var n = document.getElementById("formP_:attr_nombre_input").value;
+
+                        if (n == 1) {
+
+                            document.getElementById('formP_:tipocriterio').style.display = "none";
+                            document.getElementById('cero').style.display = "none";
+                            document.getElementById('uno').style.display = "none";
+                            document.getElementById('dos').style.display = "none";
+                            document.getElementById('tres').style.display = "none";
+                            document.getElementById('cuatro').style.display = "none";
+                            document.getElementById('cinco').style.display = "none";
+                            document.getElementById('seis').style.display = "none";
+                            document.getElementById('siete').style.display = "none";
+                            document.getElementById('ocho').style.display = "none";
+                            document.getElementById('nueve').style.display = "none";
+
+                        }
+
+                        if (n == 2) {
+
+                            document.getElementById('formP_:tipocriterio').style.display = "block";
+                            document.getElementById('cero').style.display = "none";
+                            document.getElementById('uno').style.display = "none";
+                            document.getElementById('dos').style.display = "none";
+                            document.getElementById('tres').style.display = "none";
+                            document.getElementById('cuatro').style.display = "none";
+                            document.getElementById('cinco').style.display = "none";
+                            document.getElementById('seis').style.display = "none";
+                            document.getElementById('siete').style.display = "none";
+                            document.getElementById('ocho').style.display = "none";
+                            document.getElementById('nueve').style.display = "none";
+
+                        }
+
+                        if (n == 3) {
+
+                            document.getElementById('formP_:tipocriterio').style.display = "block";
+                            document.getElementById('cero').style.display = "none";
+                            document.getElementById('uno').style.display = "none";
+                            document.getElementById('dos').style.display = "none";
+                            document.getElementById('tres').style.display = "none";
+                            document.getElementById('cuatro').style.display = "none";
+                            document.getElementById('cinco').style.display = "none";
+                            document.getElementById('seis').style.display = "none";
+                            document.getElementById('siete').style.display = "none";
+                            document.getElementById('ocho').style.display = "none";
+                            document.getElementById('nueve').style.display = "none";
+
+                        }
+
+                        if (n == 4) {
+
+                            document.getElementById('formP_:tipocriterio').style.display = "none";
+                            document.getElementById('cero').style.display = "block";
+                            document.getElementById('uno').style.display = "block";
+                            document.getElementById('dos').style.display = "block";
+                            document.getElementById('tres').style.display = "block";
+                            document.getElementById('cuatro').style.display = "block";
+                            document.getElementById('cinco').style.display = "block";
+                            document.getElementById('seis').style.display = "block";
+                            document.getElementById('siete').style.display = "block";
+                            document.getElementById('ocho').style.display = "block";
+                            document.getElementById('nueve').style.display = "block";
+                            
+                        }
+                        
+                        if (n == 5) {
+
+                            document.getElementById('formP_:tipocriterio').style.display = "block";
+                            document.getElementById('cero').style.display = "none";
+                            document.getElementById('uno').style.display = "none";
+                            document.getElementById('dos').style.display = "none";
+                            document.getElementById('tres').style.display = "none";
+                            document.getElementById('cuatro').style.display = "none";
+                            document.getElementById('cinco').style.display = "none";
+                            document.getElementById('seis').style.display = "none";
+                            document.getElementById('siete').style.display = "none";
+                            document.getElementById('ocho').style.display = "none";
+                            document.getElementById('nueve').style.display = "none";
+                            
+                        }
+                        
+                        if (n == 6) {
+
+                            document.getElementById('formP_:tipocriterio').style.display = "block";
+                            document.getElementById('cero').style.display = "none";
+                            document.getElementById('uno').style.display = "none";
+                            document.getElementById('dos').style.display = "none";
+                            document.getElementById('tres').style.display = "none";
+                            document.getElementById('cuatro').style.display = "none";
+                            document.getElementById('cinco').style.display = "none";
+                            document.getElementById('seis').style.display = "none";
+                            document.getElementById('siete').style.display = "none";
+                            document.getElementById('ocho').style.display = "none";
+                            document.getElementById('nueve').style.display = "none";
+
+                        }
+
+                    }
+                    
+                    function selectO1() {
+                        var v1 = document.getElementById("formP_:tipovalor").value;
+
+                        if (v1 == 'Valor') {
+
+                            document.getElementById('formP_:attr_vpromocion1').style.display = "block";
+                            document.getElementById('formP_:attr_evpromocion1').style.display = "block";
+                            document.getElementById('formP_:attr_vpromocion2').style.display = "none";
+                            document.getElementById('formP_:attr_evpromocion2').style.display = "none";
+                        }
+
+                        if (v1 == 'Porcentaje') {
+
+                            document.getElementById('formP_:attr_vpromocion2').style.display = "block";
+                            document.getElementById('formP_:attr_evpromocion2').style.display = "block";
+                            document.getElementById('formP_:attr_vpromocion1').style.display = "none";
+                            document.getElementById('formP_:attr_evpromocion1').style.display = "none";
+                        }
+
+                    }
+
+                    function selectO2() {
+                        var vc = document.getElementById("formP_:tipocriterio").value;
+
+                        if (vc == 'valor') {
+
+                            document.getElementById('formP_:attr_caplica1').style.display = "block";
+                            document.getElementById('formP_:attr_vcaplica1').style.display = "block";
+                            document.getElementById('formP_:attr_caplica2').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica2').style.display = "none";
+                            document.getElementById('formP_:attr_caplica3_input').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica3').style.display = "none";
+                            document.getElementById('formP_:attr_caplica4').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica4').style.display = "none";
+                            
+                        }
+
+                        if (vc == 'pesos') {
+
+                            document.getElementById('formP_:attr_caplica1').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica1').style.display = "none";
+                            document.getElementById('formP_:attr_caplica2').style.display = "block";
+                            document.getElementById('formP_:attr_vcaplica2').style.display = "block";
+                            document.getElementById('formP_:attr_caplica3_input').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica3').style.display = "none";
+                            document.getElementById('formP_:attr_caplica4').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica4').style.display = "none";
+                            
+                        }
+
+                        if (vc == 'sitio') {
+                            
+                            document.getElementById('formP_:attr_caplica1').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica1').style.display = "none";
+                            document.getElementById('formP_:attr_caplica2').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica2').style.display = "none";
+                            document.getElementById('formP_:attr_caplica3').style.display = "block";
+                            document.getElementById('formP_:attr_vcaplica3').style.display = "block";
+                            document.getElementById('formP_:attr_caplica4').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica4').style.display = "none";
+                            document.getElementById('formP_:attr_caplica5').style.display = "block";
+                            document.getElementById('formP_:attr_vcaplica5').style.display = "block";
+                            
+                        }
+
+                        if (vc == 'calendario') {
+                            
+                            document.getElementById('formP_:attr_caplica1').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica1').style.display = "none";
+                            document.getElementById('formP_:attr_caplica2').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica2').style.display = "none";
+                            document.getElementById('formP_:attr_caplica3_input').style.display = "none";
+                            document.getElementById('formP_:attr_vcaplica3').style.display = "none";
+                            document.getElementById('formP_:attr_caplica4').style.display = "block";
+                            document.getElementById('formP_:attr_vcaplica4').style.display = "block";
+                            
+                        }
+
+                    }
+
+                    function enviarf() {
+                        
+                        var nombre      = document.getElementById("formP_:attr_nombre_input").value;
+                        var tipopromo   = document.getElementById("formP_:tipovalor").value;
+                        var promou      = document.getElementById("formP_:attr_vpromocion1").value;
+                        var promod      = document.getElementById("formP_:attr_vpromocion2_input").value;
+                        var fechainicial = document.getElementById("formP_:attr_finicial_input").value;
+                        var fechafinal   = document.getElementById("formP_:attr_ffin_input").value;
+                        var estado      = document.getElementById("formP_:attr_estado").value;
+                        var observacion = document.getElementById("formP_:attr_observaciones").value;
+                        var cero        = document.getElementById('ncedula0').checked;
+                        var uno         = document.getElementById('ncedula1').checked;
+                        var dos         = document.getElementById('ncedula2').checked;
+                        var tres        = document.getElementById('ncedula3').checked;
+                        var cuatro      = document.getElementById('ncedula4').checked;
+                        var cinco       = document.getElementById('ncedula5').checked;
+                        var seis        = document.getElementById('ncedula6').checked;
+                        var siete       = document.getElementById('ncedula7').checked;
+                        var ocho        = document.getElementById('ncedula8').checked;
+                        var nueve       = document.getElementById('ncedula9').checked;
+                        var promocionu  = 0;
+                        var promociond  = 0;
+                        var valor1;
+                        var valor2;
+                        var taplica     = document.getElementById("formP_:tipocriterio").value;
+                        var caplica1    = document.getElementById('formP_:attr_caplica1').value;
+                        var caplica2    = document.getElementById('formP_:attr_caplica2').value;
+                        var caplica3    = document.getElementById('formP_:attr_caplica3_input').value;
+                        var caplica4    = document.getElementById('formP_:attr_caplica4_input').value;
+                        var caplica5    = document.getElementById('formP_:attr_caplica5').value;
+                        var aplica      = "no";
+                        var caplicaa;
+                        var caplicab;
+                        var caplicac;
+                        var caplicad;
+                        var caplicasi;
+                        var formulario  = document.getElementById("formP_");
+                        var funciona    = 'S';
+                        
+                        if (promou == '') {
+
+                            valor1 = promocionu;
+                        } else {
+                            valor1 = promou;
+
+                        }
+                      
+                        if (promod == '') {
+
+                            valor2 = promociond;
+                        } else {
+                            valor2 = promod;
+
+                        }
+              
+                        if (caplica1 == "") {
+                            caplicaa = aplica;
+                        } else {
+                            caplicaa = caplica1;
+                        }
+                     
+                        if (caplica2 == "") {
+                            caplicab = aplica;
+                        } else {
+                            caplicab = caplica2;
+                        }
+                       
+                        if (caplica3 == "") {
+                            caplicac = aplica;
+                        } else {
+                            caplicac = caplica3;
+                        }
+                        
+                        if (caplica4 == "") {
+                            caplicad = aplica;
+                        } else {
+                            caplicad = caplica4;
+                        }
+                       
+                        if (caplica5 == "") {
+                            caplicasi = aplica;
+                        } else {
+                            caplicasi = caplica5;
+                        }
+
+                        if (nombre == "") {
+                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, ingrese un  nombre para la promocion.'});
+                            formulario.nombre.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (tipopromo == "") {
+                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Seccione el tipo de promocion.'});
+                            formulario.tipopromo.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (fechainicial == "") {
+                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Seccione la fecha inicial para la promocion.'});
+                            formulario.fechainicial.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (fechafinal == "") {
+                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Seccione la fecha final para la promocion.'});
+                            formulario.fechafinal.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (estado == "") {
+                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Seccione un estado para la promocion.'});
+                            formulario.estado.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (funciona == 'S') {
+
+                            $.colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/administracion/promociones/salvarnuevo.xhtml?nombre_=' + nombre + '&amp;tipopromo_=' + tipopromo + '&amp;valorpromouno_='
+                                        + valor1 + '&amp;valorpromodos_=' + valor2 + '&amp;finicial_=' + fechainicial
+                                        + '&amp;ffinal_=' + fechafinal + '&amp;estado_=' + estado + '&amp;observacion_=' + observacion
+                                        + '&amp;cero_=' + cero + '&amp;uno_=' + uno + '&amp;dos_=' + dos + '&amp;tres_=' + tres + '&amp;cuatro_=' + cuatro
+                                        + '&amp;cinco_=' + cinco + '&amp;seis_=' + seis + '&amp;siete_=' + siete + '&amp;ocho_=' + ocho + '&amp;nueve_=' + nueve + '&amp;taplica_=' + taplica + '&amp;caplicaa_=' + caplicaa + '&amp;caplicab_=' + caplicab + '&amp;caplicac_=' + caplicac + '&amp;caplicad_=' + caplicad + '&amp;caplicasi_=' + caplicasi + '', iframe: true, title: ' ', transition: 'fade', width: '60 % ', height: '50 % '});
+
+                        }
+                        
+                    }
+
+                </script>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

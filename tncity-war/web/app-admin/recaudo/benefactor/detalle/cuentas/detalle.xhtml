@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.benefactor.detalle.cuentas.content">
+
+                
+                 <h:outputText value="#{cuentasControl.sincronisarCuentasId(param.idbenefactor_,param.idcuenta_)}"/>
+                <h:outputText value="#{cuentasControl.recuperaCountTotalCuentasId(param.idbenefactor_)}"/>
+                <div align="center">
+                    <ui:repeat var="lst" value="#{cuentasControl.lisbenCuenta}" >
+                        <p:panelGrid id = "panel"   style="width: 70%;" styleClass="panelgrid-dotted-border">
+
+                            <p:row>
+
+
+                                <p:column colspan="2" >
+                                    <div style="text-align: center"  ><b>Detalles  De La Cuenta</b></div>
+                                </p:column>
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Codigo Cuenta " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idcuenta} "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Tipo Documento " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idbenefactor.idpersona.tipodocumento} "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+     <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Número Documento " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idbenefactor.idpersona.numdocumento} "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Nombre Benefactor  " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idbenefactor.idpersona.nombres}  #{lst.idbenefactor.idpersona.apellidos} "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Estado Cuenta  " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="Activa" rendered="#{lst.isActiva == true }"/>
+                                        <h:outputText value="Inactiva" rendered="#{lst.isActiva == false }"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+                        <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Saldo  " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                          <h:outputText value="#{lst.valSaldo}  "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+                            
+                              <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Entradas  " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.valEntradas}  "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                              
+                              <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Salidas  " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.valSalidas}  "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            
+                            
+                            
+                        </p:panelGrid>
+                    </ui:repeat>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

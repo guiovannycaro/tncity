@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report-name" pageWidth="${model.pageWidth}" pageHeight="${model.pageHeight}" isIgnorePagination="true" columnWidth="0" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d6fe2cd6-3ba7-429b-8915-46a2c9e38b60">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    
+    <!--Parameters -->
+    <parameter name="observaciones" class="java.lang.String"/>
+    
+    <!-- Campos -->
+    <field name="dataFieldSub" class="java.util.List">
+        <fieldDescription><![CDATA[values]]></fieldDescription>
+    </field>
+    <!--Variables -->
+    #set ($i=0)
+    #foreach($c in $model.columns)
+    #if(${c.totalAutoSumEnabled})
+    <variable name="v$i" class="java.lang.Double" calculation="Sum">
+        <variableExpression><![CDATA[$F{dataFieldSub}.get($i)]]></variableExpression>
+        <initialValueExpression><![CDATA[0]]></initialValueExpression>
+    </variable>
+    #end
+    #set ($i=$i+1)
+    #end
+       
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    
+    <title>
+        <band height="22" splitType="Stretch">
+            <staticText>
+                <reportElement x="${model.xTitle}" y="${model.yTitle}" width="95" height="20" uuid="92859cae-f51d-4acb-974c-16fdde27595e"/>
+                <box>
+                  
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" isPdfEmbedded="false"/>
+                </textElement>
+                <text><![CDATA[ ${model.title} ]]></text>
+            </staticText>
+        </band>
+    </title>
+    
+    #if(${model.showColumnsHeaders})
+    <columnHeader>
+        <band height="29" splitType="Stretch">
+            #foreach($c in $model.columns)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="29" backcolor="#CCCCCC" mode="Opaque" stretchType="RelativeToTallestObject"/>
+                <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+                    <pen lineWidth="0.5" lineStyle="Solid"/>
+                    <topPen lineWidth="0.5" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.5" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.5" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.5" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["${c.headerText}"]]></textFieldExpression>
+            </textField>
+            #end
+        </band>
+    </columnHeader>
+    #end
+    
+    <detail>
+        <band height="${model.detailHeight}" splitType="Stretch">
+            #set ($i=0)
+            #foreach($c in $model.columns)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true" pattern="${c.pattern}">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="20" isPrintWhenDetailOverflows="true" stretchType="RelativeToBandHeight"/>
+                <box leftPadding="3" rightPadding="3">
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="${c.textAlignment}" verticalAlignment="${c.verticalAlignment}"/>
+                <textFieldExpression><![CDATA[$F{dataFieldSub}.get($i)]]></textFieldExpression>
+            </textField>
+            #set ($i=$i+1)
+            #end
+        </band>
+    </detail>
+    <summary>
+        <band height="${model.sumaryHeight}" splitType="Stretch">
+            #if(${model.showAutoSum})
+            #set ($i=0)
+            #foreach($c in $model.columns)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true" pattern="${c.pattern}">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="22" uuid="afe73864-dbf8-48cc-b5db-3f20984e3cdd"  positionType="Float"/>
+                <box leftPadding="3" rightPadding="3">
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="${c.textAlignment}" verticalAlignment="${c.verticalAlignment}"/>
+                #if(${c.totalAutoSumEnabled})
+                <textFieldExpression><![CDATA[$V{v$i}]]></textFieldExpression>
+                #else
+                #if($i==0)  
+                <textFieldExpression><![CDATA["Total"]]></textFieldExpression>
+                #else
+                <textFieldExpression><![CDATA[]]></textFieldExpression>
+                #end
+                #end
+            </textField>
+            #set ($i=$i+1)
+            #end
+            #end
+            
+            #if(${model.observacionesShow})
+            <!-- Observaciones -->   
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+                <reportElement x="${model.observacionesX}" y="${model.observacionesY}" width="${model.observacionesWidth}" height="22" uuid="afe73864-dbf8-48cc-b5db-3f20984e3cdd"  positionType="Float"/>
+                <box leftPadding="3" rightPadding="3">
+                    <pen lineWidth="0.0"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textFieldExpression><![CDATA["${model.observacionesWithoutLn}"]]></textFieldExpression>
+            </textField>
+            #end
+            
+            <!-- Charts -->
+            #foreach($ch in $model.charts)
+            
+            #if($ch.type==$ch.TYPE_PIE3D)
+            <pie3DChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement uuid="d7e6dc4a-570c-4d81-8702-9f0caa1d57a5" x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartLegend/>
+                </chart>
+                <pieDataset>
+                    <keyExpression><![CDATA[$F{dataFieldSub}.get(${ch.keyColumn.id})]]></keyExpression>
+                    <valueExpression><![CDATA[$F{dataFieldSub}.get(${ch.valueColumn.id})]]></valueExpression>
+                    <labelExpression><![CDATA[$F{dataFieldSub}.get(${ch.labelColumn.id})+""]]></labelExpression>
+                </pieDataset>
+                <pie3DPlot isShowLabels="${ch.showLabel}">
+                    <plot/>
+                    <itemLabel/>
+                </pie3DPlot>
+            </pie3DChart>
+            #end 
+            
+            #if($ch.type==$ch.TYPE_BAR)
+            <barChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement uuid="37913e28-39e4-4f16-991c-8875a4b5f7ae" x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    #foreach($s in $ch.lstSeries)
+                    <categorySeries>
+                        <seriesExpression><![CDATA["${s.serieExpression}"]]></seriesExpression>
+                        <categoryExpression><![CDATA[$F{dataFieldSub}.get(${s.categoryColumn.id})]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{dataFieldSub}.get(${s.valueColumn.id})]]></valueExpression>
+                    </categorySeries>
+                    #end
+                </categoryDataset>
+                <barPlot>
+                    <plot labelRotation="90.0" orientation="${ch.orientation}"/>
+                    <itemLabel/>
+                </barPlot>
+            </barChart>
+            #end
+            
+            #if($ch.type==$ch.TYPE_LINE)
+            <lineChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement uuid="a52dda0a-2bbd-49ae-9c42-0a7bcdbd69b1" x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartSubtitle/>
+                    <chartLegend position="Top"/>
+                </chart>
+                <categoryDataset>
+                    #foreach($s in $ch.lstSeries)
+                    <categorySeries>
+                        <seriesExpression><![CDATA["${s.serieExpression}"]]></seriesExpression>
+                        <categoryExpression><![CDATA[$F{dataFieldSub}.get(${s.categoryColumn.id})]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{dataFieldSub}.get(${s.valueColumn.id})]]></valueExpression>
+                    </categorySeries>
+                    #end
+                </categoryDataset>
+                <linePlot>
+                    <plot labelRotation="90.0" orientation="${ch.orientation}"/>
+                </linePlot>
+            </lineChart>
+            #end
+            
+            #if($ch.type==$ch.TYPE_AREA)
+            <areaChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    #foreach($s in $ch.lstSeries)
+                    <categorySeries>
+                        <seriesExpression><![CDATA["${s.serieExpression}"]]></seriesExpression>
+                        <categoryExpression><![CDATA[$F{dataFieldSub}.get(${s.categoryColumn.id})]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{dataFieldSub}.get(${s.valueColumn.id})]]></valueExpression>
+                    </categorySeries>
+                    #end
+                </categoryDataset>
+                <areaPlot>
+                    <plot  labelRotation="90.0" orientation="${ch.orientation}"/>
+                    <categoryAxisFormat>
+                        <axisFormat/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat/>
+                    </valueAxisFormat>
+                </areaPlot>
+            </areaChart>
+            #end
+             
+            #end
+            
+        </band>
+    </summary>
+</jasperReport>

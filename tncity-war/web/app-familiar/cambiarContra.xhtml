@@ -1,0 +1,134 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="_template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+
+    <ui:define name="head">
+        <script type="text/javascript">
+            //<![CDATA[
+            function skinChart() {
+                this.cfg.shadow = false;
+                this.cfg.title = '';
+                this.cfg.seriesColors = ['#FFC107', '#03A9F4'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#ffffff',
+                    gridLineColor: '#EEEEEE',
+                    shadow: false
+                };
+                this.cfg.axesDefaults = {
+                    rendererOptions: {
+                        textColor: '#212121'
+                    }
+                }
+                ;
+                this.cfg.seriesDefaults = {
+                shadow: false,
+                        lineWidth: 1, <?xml version="1.0" encoding="UTF-8"?>
+                    <!--
+                    To change this license header, choose License Headers in Project Properties.
+                To change this template file, choose Tools | Templates
+                        and open the template in the editor.
+                -->
+                <!DOCTYPE html>
+                <html xmlns="http://www.w3.org/1999/xhtml">
+                        <head>
+                        <title>TODO supply a title</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    </head>
+                <body>
+
+                <div>TODO write content</div>
+                        </body>
+                </html>
+                
+                markerOptions: {
+                shadow: false,
+                        size: 7,
+                        style: 'circle'
+                        }
+                    }
+                    }
+                    //]]>  
+                                </script>
+        <style type="text/css">
+            .main-content {
+                padding: 0;
+            }
+        </style>
+    </ui:define>
+
+   <ui:define name="app-familiar.content">
+        <div class="ui-g dashboard" style="min-height: 400px;">
+            <div class="ui-g-12 ui-md-8">
+                <b style="color: #003366; font-size: 17px;"><h:outputText value="Cambiar Contraseña"/></b>
+
+   <div align="center">
+
+   <p:panel>
+                        <h:form>
+                            <p:panelGrid columns="2">
+
+   
+                                    <h:outputText value="Contraseña Actual:"/>
+                                <h:panelGroup>
+                                                <p:password value="#{benefactorControl.antcontrat}" feedback="true" id="ap1" required="true" requiredMessage="Requerido!"/>
+                                    <p:message for="ap1"/>
+                                    </h:panelGroup>
+
+                                    <h:outputText value="Nueva Contraseña:"/>
+                                    <h:panelGroup>
+                                        <p:password value="#{benefactorControl.contrat}" feedback="true" id="p1" required="true" requiredMessage="Requerido!"/>
+                                        <p:message for="p1"/>
+                                    </h:panelGroup>
+
+                                    <h:outputText value="Confirmar:"/>
+                                    <h:panelGroup>
+                                        <p:password value="#{benefactorControl.con_contrat}" feedback="true" id="p2" required="true" requiredMessage="Requerido!"/>
+                                        <p:message for="p2"/>
+                                    </h:panelGroup>
+
+
+                                    </p:panelGrid>
+
+                                    <br/><br/>
+                                    <p:commandButton value="Cambiar Contraseña" icon="fa fa-key" ajax="false" action="#{benefactorControl.cambiarPassUser()}">
+                                        <f:param name="idbenefactor_" value="#{param.idbenefactor_}"/>
+                                    </p:commandButton>
+
+                                    <br/><br/>
+                                    </h:form>
+
+
+                                    </p:panel>
+
+                                    </div>
+
+
+                                    </div>
+                                    </div>
+                                    <h:panelGroup rendered="#{benefactorControl.successful}">
+                                        <script type="text/javascript                                            ">
+
+                                                document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';
+
+                                                </script>
+                                    </h:panelGroup>
+
+
+           <script>
+           $(function () {
+                PrimeFaces.cw("Password", "widget_form2_contra", {id: "form2:contra", feedback: true, inline: false, promptLabel: "Digite 8 caracteres como minimo 1 letra mayuscula 1 caracter especial ($,@)", weakLabel: "Contraseña Debil", goodLabel: "Contraseña  Normal", strongLabel:                                "Contraseña Fue                                    rte"});
+            });
+              $(function () {
+                PrimeFaces.cw("Password", "widget_form2_ccontra", {id: "form2:ccontra", feedback: true, inline: false, promptLabel: "Digite 8 caracteres como minimo 1 letra mayuscula 1 caracter especial ($,@)", weakLabel: "Contraseña Debil", goodLabel: "Contraseña Normal", strongLabel:                                    "Contraseña Fuerte"});
+                });
+                    
+           </script>
+    </ui:define>
+
+</ui:composition>

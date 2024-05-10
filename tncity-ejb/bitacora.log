@@ -1,0 +1,16 @@
+nov 29, 2019 9:33:59 AM com.tncity.pbitacora.Bitacora main
+INFORMACIÓN: Bitacora inicializada
+nov 29, 2019 9:34:01 AM com.tncity.pbitacora.Bitacora main
+INFORMACIÓN: Llamadas a los componentes del sistema
+nov 29, 2019 9:34:01 AM com.tncity.bitacora.bitacora.subnivel.Utilidades funcionDudosa
+GRAVE: ERROR MASIVO
+nov 29, 2019 9:34:01 AM com.tncity.bitacora.bitacora.subnivel.Control controlar
+INFORMACIÓN: Proceso exitoso
+nov 29, 2019 9:34:01 AM com.tncity.bitacora.subnivel.under.InternalSys llamadaSistema
+ADVERTENCIA: Ocurrio un error de acceso en 0xFF
+nov 29, 2019 9:34:01 AM com.tncity.pbitacora.Bitacora main
+INFORMACIÓN: Probando manejo de excepciones
+nov 29, 2019 9:34:01 AM com.tncity.pbitacora.Bitacora main
+GRAVE: java.lang.Exception: ERROR DE CONTROL DE FLUJO DE PROGRAMA
+	at com.tncity.pbitacora.Bitacora.main(Bitacora.java:83)
+

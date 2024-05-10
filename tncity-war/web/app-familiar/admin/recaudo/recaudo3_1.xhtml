@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+
+
+        <ui:composition template="./_templatepaso3.xhtml">
+
+            <ui:define name="app-familiar.admin.recaudo.content">
+
+                <div class="gridContainer clearfix"><!--inicio-gridContainer-->
+                    <div class="cajacontenedor"><!--inicio-cajacontenedor-->
+                        <div id="contenedorprincipal"><!--inicio-contenedorprincipal-->
+                            <div id="contenedormedio"><!--inicio_contenedormedio-->
+                                <div id="marcorecaudo"><!--inicio_marcorecaudo-->
+                                        <div id="contenedorsuperior"><!--inicio_contenedorsuperior-->
+                                <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml">
+                                    <div id="pestana1"><!--inicio_pestana1-->
+                                        <div id="txtpu" class="estilo28"><!--inicio_txtpu-->
+                                            DATOS PPL  <h:outputText  class="fa fa-address-card-o" style="font-size: 2em; color: #0B637A;float:left" ></h:outputText>
+                                        </div><!--fin_txtpu-->
+                                    </div><!--fin_pestana1-->
+                                </a>
+                                <div id="pestana2" class="estilo28"><!--inicio_pestana2-->
+                                    <div id="txtpd"><!--inicio_txtpd-->
+                                       RECARGA <h:outputText  class="fa fa-usd" style="font-size: 2em; color: #0B637A;float:left" ></h:outputText>  
+                                    </div><!--fin_txtpd-->
+                                </div><!--fin_pestana2-->
+                                <div id="pestana3" class="estilo27"><!--inicio_pestana3-->
+                                    <div id="txtpt" ><!--inicio_txtpt-->
+                                        TRANSACCIÓN   <h:outputText  class="fa fa-usd" style="font-size: 2em; color: #0B637A;float:left" ></h:outputText>
+                                    </div><!--fin_txtpu-->
+                                      <div id="lineapestana"></div>
+                                </div><!--fin_pestana3-->
+                            </div><!--inicio_contenedorsuperior-->
+                                    <div id="cuadrocontenedor"><!--inicio_cuadrocontenedor-->
+                                        <div id="marcotitulo">
+                                            <div id="titulo_marco"  class="estilo27">  TRANSACCIÓN </div>
+                                            <div id="titulo_imagen">     <h:outputText  class="fa fa-check-circle-o" style="font-size: 2em; color: #0B637A;float:left"></h:outputText>   </div>
+
+
+                                            <div id="titulo_contraer"> 
+                                                <a href="#" onclick="mostrar()" >
+                                                    <h:outputText  class="fa fa-chevron-down "  style="font-size: 2em; color: #0B637A;float:left;font-weight:bold;display:none" id="abajo" ></h:outputText> 
+                                                </a>
+                                                <a href="#" onclick="ocultar()">
+                                                    <h:outputText  class="fa fa-chevron-up " style="font-size: 2em; color: #0B637A;float:left;font-weight:bold;display:block" id="arriba"></h:outputText> 
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                      
+                                        <div id="area_movil" >
+
+                                            <h:outputText value="#{benefactorControl.validarEstadoSubdistribuidor(recaudoControl.decodificar(param.id_))}"/>
+
+                                            <h:panelGroup rendered="#{benefactorControl.subdistribuidor == 'true' }">      
+                                                <h:outputText value="#{beneficiarioControl.recuperaIdPPLInterno(recaudoControl.decodificar(param.numdoc_),recaudoControl.decodificar(param.tdoc_))}"/>
+                                                <h:form id="form3_">
+                                                    <div id="contenedor_area1">
+                                                        <div id="contenedor_resumen">
+
+                                                            <div id="titulo_txtconfirm" class="estilo30">Confirmación Recarga</div>
+
+                                                            <div id="titulo_subtxtconfirm" class="estilo30">Datos De Recarga</div>
+
+                                                            <div id="datos_ppl">
+                                                                <div id="lab-ppl" class="estilo30">Nombres y Apellidos Del PPL:</div>
+                                                                <div id="txt_ppl">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value="#{beneficiarioControl.datosben.lastname} " id="attr_nombre" />
+                                                                        <p:message for="attr_nombre"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="datos_ppl">
+                                                                <div id="lab-ppl" class="estilo30">Ciudad PPL:</div>
+                                                                <div id="txt_ppl">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value="#{beneficiarioControl.datosben.tariffgroupname} " id="attr_ciudad" />
+                                                                        <p:message for="attr_ciudad"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="datos_ppltiponumdoc">
+                                                                <div id="lab-ppltiponumdoc" class="estilo30">Tipo De Documento:</div>
+                                                                <div id="txt_ppltiponumdoc">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value="#{recaudoControl.decodificar(param.tdoc_)} " id="attr_nombred"/>
+                                                                        <p:message for="attr_nombred"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="datos_ppltiponumdoc">
+                                                                <div id="lab-ppltiponumdoc" class="estilo30">Numero De Documento:</div>
+                                                                <div id="txt_ppltiponumdoc">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value=" #{recaudoControl.decodificar(param.numdoc_)}" id="attr_numerod"/>
+                                                                        <p:message for="attr_numerod"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+                                                            <div id="datos_valor">
+                                                                <div id="lab-valor" class="estilo30">Valor a Recarga  ($):</div>
+                                                                <div id="txt_valor">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value="#{recaudoControl.parseDouble(param.valor_)}" id="attr_valor"/>
+                                                                        <p:message for="attr_valor"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="datos_valor">
+                                                                <div id="lab-valor" class="estilo30">Valor Transacción  ($):</div>
+                                                                <div id="txt_valor">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value="#{ param.comision_ }" id="attr_comision"/>
+                                                                        <p:message for="attr_comision"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+                                                            <div id="datos_valor">
+                                                                <div id="lab-valor" class="estilo30">Valor Total a Pagar  ($):</div>
+                                                                <div id="txt_valor">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value="#{ recaudoControl.parseDouble(param.valor_)   +   param.comision_}" id="attr_total"/>
+                                                                        <p:message for="attr_total"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="datos_telefono">
+                                                                <div id="lab-telefono" class="estilo30">Teléfono:</div>
+                                                                <div id="txt_telefono">
+                                                                    <h:panelGroup>
+                                                                        <p:inputText readonly="true" value="#{recaudoControl.decodificar(param.telrec_)}" id="attr_tele" />
+                                                                        <p:message for="attr_tele"/>
+                                                                    </h:panelGroup>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <!--  <div id="datos_pago">
+                                                                  <div id="lab-pago" class="estilo30">Medio De Pago:</div>
+                                                                  <div id="txt_pago">
+                                                                      <h:panelGroup>
+                                                                          <p:inputText value="Corresponsal" id="attr_mpago" readonly="true"/>
+                                                                          <p:message for="attr_mpago"/>
+                                                                      </h:panelGroup>
+                                                                  </div>
+                                                              </div>-->
+
+
+
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div id="lineasdiv"></div>
+                                                    <div id="contenedor_area5">
+
+                                                        <div id="contenedor_botones">
+
+
+                                                            <h:panelGroup>
+                                                                <p:inputText  type="hidden" value="#{recaudoControl.valor}"  id="total_"/>
+                                                                <p:message for="total_"  id="message"/>
+                                                            </h:panelGroup>
+
+                                                            <div id="botones_regresar">
+                                                                <p:commandButton value="REGRESAR"  ajax="true" onclick="regresar();" icon="fa fa-arrow-left"   >
+                                                                </p:commandButton>
+                                                            </div>
+
+                                                            <div id="botones_cancelar">
+                                                                <p:commandButton value="CANCELAR"  ajax="true" onclick="cancelar();" icon="fa fa-arrow-left"   >
+                                                                </p:commandButton>
+                                                            </div>
+
+
+                                                            <h:outputText value="#{recaudoControl.recuperaPasarelaDia()}"/>
+
+                                                            <p:inputText  type="hidden" value="#{recaudoControl.pasareladia()}"  id="pasadia_"/>                                                            
+
+                                                            <h:panelGroup rendered="#{recaudoControl.redirigir == 'Pagos Inteligentes' }">
+
+                                                                <div id="botones_siguiente">
+
+
+                                                                    <p:commandButton value="Confirmación Envio" id="Confirmar"   ajax="true"  action="#{recaudoControl.recaudoinpec()}"  icon="fa fa-arrow-right"  >
+                                                                        <p:confirm header="Confirmaci&oacute;n" message="Confirma el env&iacute;o del recaudo?" icon="pi pi-exclamation-triangle" />
+                                                                        <f:param name="id_" value="#{recaudoControl.decodificar(param.id_)}"/>
+                                                                        <f:param name="tdoc_" value="#{recaudoControl.decodificar(param.tdoc_)}"/>
+                                                                        <f:param name="numdoc_" value="#{recaudoControl.decodificar(param.numdoc_)}"/>
+                                                                        <f:param name="telrec_" value="#{recaudoControl.decodificar(param.telrec_)}"/>
+                                                                        <f:param name="valor_" value="#{param.valor_}"/>
+                                                                        <f:param name="comision_" value="#{param.comision_}"/>
+                                                                    </p:commandButton>
+
+                                                                    <p:confirmDialog global="true"    showEffect="fade" hideEffect="explode" widgetVar="groupDeleteConfirm"
+                                                                                     width="400"
+                                                                                     >
+                                                                        <p:commandButton value="Si" onclick="opSi();" ajax="true" type="button" style="    width: 100%;
+                                                                                         width: 50%;height: 41px;float: left;color: #f4f8fb;font-weight: bold;
+                                                                                         font-size: 12px;text-align: center;padding: 2px 5px;background-color: #2F4050;text-decoration: none;text-transform: capitalize;
+                                                                                         border-radius: 4px;opacity: 4.8;margin-left: 0px;" icon="pi pi-check" >
+
+                                                                        </p:commandButton>
+                                                                        <p:commandButton value="No" type="button" style="    width: 100%;
+                                                                                         width: 45%;height: 41px;float:  right;color: #f4f8fb;
+                                                                                         font-weight: bold;font-size: 12px;text-align: center;
+                                                                                         padding: 2px 5px;background-color: #2F4050;
+                                                                                         text-decoration: none;text-transform: capitalize;border-radius: 4px;opacity: 4.8;margin-right:  0px;" icon="pi pi-times"  onclick="opNo();"/>
+                                                                    </p:confirmDialog>  
+
+                                                                </div>
+
+                                                            </h:panelGroup> 
+                                                            <h:panelGroup rendered="#{recaudoControl.redirigir == 'payzen' }">
+                                                                <div id="botones_siguiente">
+                                                                    <p:commandButton value="Confirmación Envio" id="ConfirPayZend"   ajax="true"  action="#{recaudoControl.RecaudoPasarelasPago()}"  icon="fa fa-arrow-right"  >
+                                                                        <p:confirm header="Confirmaci&oacute;n" message="Confirma el env&iacute;o del recaudo?" icon="pi pi-exclamation-triangle" />
+                                                                        <f:param name="id_" value="#{recaudoControl.decodificar(param.id_)}"/>
+                                                                        <f:param name="tdoc_" value="#{recaudoControl.decodificar(param.tdoc_)}"/>
+                                                                        <f:param name="numdoc_" value="#{recaudoControl.decodificar(param.numdoc_)}"/>
+                                                                        <f:param name="telrec_" value="#{recaudoControl.decodificar(param.telrec_)}"/>
+                                                                        <f:param name="valor_" value="#{param.valor_}"/>
+                                                                        <f:param name="comision_" value="#{param.comision_}"/>
+                                                                    </p:commandButton>
+
+                                                                    <p:confirmDialog global="true"    showEffect="fade" hideEffect="explode" widgetVar="groupDeleteConfirm"
+                                                                                     width="400"
+                                                                                     >
+                                                                        <p:commandButton value="Si" onclick="opSipasarelas();" ajax="true" type="button" style="    width: 100%;
+                                                                                         width: 50%;height: 41px;float: left;color: #f4f8fb;font-weight: bold;
+                                                                                         font-size: 12px;text-align: center;padding: 2px 5px;background-color: #2F4050;text-decoration: none;text-transform: capitalize;
+                                                                                         border-radius: 4px;opacity: 4.8;margin-left: 0px;" icon="pi pi-check" >
+
+                                                                        </p:commandButton>
+                                                                        <p:commandButton value="No" type="button" style="    width: 100%;
+                                                                                         width: 45%;height: 41px;float:  right;color: #f4f8fb;
+                                                                                         font-weight: bold;font-size: 12px;text-align: center;
+                                                                                         padding: 2px 5px;background-color: #2F4050;
+                                                                                         text-decoration: none;text-transform: capitalize;border-radius: 4px;opacity: 4.8;margin-right:  0px;" icon="pi pi-times"  onclick="opNo();"/>
+                                                                    </p:confirmDialog> 
+
+                                                                </div>
+                                                            </h:panelGroup>
+
+                                                        </div>
+                                                    </div>
+
+                                                </h:form>
+                                            </h:panelGroup>
+
+
+
+                                        </div>
+
+                                    </div><!--fin_cuadrocontenedor-->
+                                </div><!--fin_marcorecaudo-->
+
+                                <h:panelGroup rendered="#{benefactorControl.subdistribuidor == 'false' }"> 
+
+                                    <script type="text/javascript">
+
+
+                                        setTimeout(function () {
+                                            swal({
+                                                title: "Para poder continuar!",
+                                                text: "Es Nesesario que tenga una cuenta Activa en el sistema de recargas por favor comuniquese con el administrador..",
+                                                type: "error"
+                                            }, function () {
+                                                document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';
+                                            });
+                                        }, 1000);
+
+
+
+                                    </script>
+                                </h:panelGroup>
+
+                                <script type="text/javascript">
+
+
+
+                                    function opNo() {
+
+                                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';
+                                    }
+
+                                    function opSi() {
+                                        var valor = document.getElementById("form3_:total_").value;
+                                        var pasadia = document.getElementById("form3_:pasadia_").value;
+
+            
+
+                                            document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/pasarelas/pagosinteligentes/recaudocorresponsal.xhtml?id_=#{param.id_}&amp;tdoc_=#{param.tdoc_}&amp;numdoc_=#{param.numdoc_}&amp;telrec_=#{param.telrec_}&amp;valor_=#{param.valor_}&amp;comision_=#{param.comision_}';
+                                                   
+                                                }
+
+                                                function opSipasarelas() {
+                                                    var valor = document.getElementById("form3_:total_").value;
+
+                                                    var pasadia = document.getElementById("form3_:pasadia_").value;
+
+
+                                                           if(pasadia == 4){
+
+                                                               document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/pasarelas/payzend/recaudocorresponsal.xhtml?id_=#{param.id_}&amp;tdoc_=#{param.tdoc_}&amp;numdoc_=#{param.numdoc_}&amp;telrec_=#{param.telrec_}&amp;valor_=#{param.valor_}&amp;comision_=#{param.comision_}';
+                                                          }
+                                                        }
+
+
+
+
+
+
+                                                        function enviarf() {
+                                                            var valor = document.getElementById("form3_:total_").value;
+                                                            document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo5.xhtml??id_=#{param.id_}&amp;tdoc_=#{param.tdoc_}&amp;numdoc_=#{param.numdoc_}&amp;telrec_=#{param.telrec_}&amp;valor_=#{param.valor_}&amp;comision_=#{param.comision_}';
+                                                                }
+
+                                                                function regresar() {
+                                                                    document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo2.xhtml?numdoc_=#{recaudoControl.decodificar(param.numdoc_)}&amp;tdoc_=#{recaudoControl.decodificar(param.tdoc_)}&amp;id_=#{param.id_}&amp;telrec_=#{recaudoControl.decodificar(param.telrec_)}';
+
+
+                                                                        }
+
+                                                                        function cancelar() {
+                                                                            swal({
+                                                                                title: "Está Seguro?",
+                                                                                text: "¡desea cancelar la recarga!",
+                                                                                type: "warning",
+                                                                                showCancelButton: true,
+                                                                                confirmButtonColor: '#5a5352',
+                                                                                confirmButtonText: '¡Si, Estoy Seguro!',
+                                                                                cancelButtonText: "¡No, Cancelalo!",
+                                                                                closeOnConfirm: false,
+                                                                                closeOnCancel: false
+                                                                            },
+                                                                                    function (isConfirm) {
+
+                                                                                        if (isConfirm) {
+                                                                                            document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml'
+                                                                                        } else {
+                                                                                            document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo3_1.xhtml?numdoc_=#{param.numdoc_}&amp;tdoc_=#{param.tdoc_}&amp;id_=#{param.id_}&amp;telrec_=#{param.telrec_}&amp;valor_=#{param.valor_}&amp;comision_=#{param.comision_}';
+                                                                                                                }
+                                                                                                            });
+
+                                                                                                }
+
+                                </script>
+                 <style>
+                    body.layout-compact .ui-button.ui-button-text-icon-left .ui-icon, body.layout-compact .ui-button.ui-button-text-icon-right .ui-icon {
+                        width: 20px;
+                        height: 20px;
+                        font-size: 20px;
+                        margin-top: -10px;
+                        color: #FFFFFF;
+                    }
+                </style>
+
+                                <script type='text/JavaScript'>
+                                    function ocultar(){
+                                    document.getElementById('area_movil').style.display = 'none';
+                                    document.getElementById('abajo').style.display = 'block';
+                                    document.getElementById('arriba').style.display = 'none';
+                                    }
+
+                                    function mostrar(){
+                                    document.getElementById('area_movil').style.display = 'block';
+                                    document.getElementById('abajo').style.display = 'none';
+                                    document.getElementById('arriba').style.display = 'block';
+                                    }
+                                </script>
+                                
+                            </div><!--fin_contenedormedio-->
+                        </div><!--fin_contenedorprincipal-->
+
+                    </div><!--fin-cajacontenedor-->
+                </div><!--inicio-gridcontainer-->
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
+

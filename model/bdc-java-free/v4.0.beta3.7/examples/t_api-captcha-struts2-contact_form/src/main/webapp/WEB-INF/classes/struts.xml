@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.action.excludePattern" value="/botdetectcaptcha"/>
+        
+    <package name="formCaptcha" extends="struts-default">
+        <action name="captchaAction"
+                class="com.captcha.botdetect.examples.struts.form_captcha.actions.ContactFormAction" method="execute">
+            <result name="input">/index.jsp</result>
+            <result name="success">/WEB-INF/success.jsp</result>
+        </action>
+    </package>
+</struts>

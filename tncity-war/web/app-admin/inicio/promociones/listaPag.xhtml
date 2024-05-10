@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+
+                <h:outputText value="#{recaudopromoControl.TotalPromociones()}"/>
+
+                <br/>
+                <div>
+                    <p:dataTable reflow="true" var="lst" value="#{recaudopromoControl.lstpromociones}" tableStyle="width:auto">
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idrecaudo"
+                                attributeDisplay="Cód. Recaudo"
+                                />
+                            <h:panelGroup>
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/recaudo/recaudo/detalle/detalle.xhtml?idrecaudo_=#{lst.idrecaudo.idrecaudo}">
+                                    <h:outputText value="#{lst.idrecaudo.idrecaudo} "/>
+                                </a>
+                            </h:panelGroup>
+                        </p:column>
+
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="valor"
+                                attributeDisplay="valor Recaudo"
+                                />
+                            <h:panelGroup>
+                                <h:outputText value="#{lst.idrecaudo.valor}" >
+                                </h:outputText>
+                            </h:panelGroup>
+                        </p:column>
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="promocionFinicial"
+                                attributeDisplay="Fecha Inicial Promocion"
+                                />
+                            <h:panelGroup>
+                                <h:outputText value="#{lst.promocionFinicial}" >
+                                    <f:convertDateTime pattern="dd-MM-yyyy" />
+                                </h:outputText>
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="promocionFfinal"
+                                attributeDisplay="Fecha Final promocion"
+                                />
+
+                            <h:panelGroup>
+
+                                <h:outputText value="#{lst.promocionFfinal}" >
+                                    <f:convertDateTime pattern="dd-MM-yyyy" />
+                                </h:outputText>
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="nombre"
+                                attributeDisplay="Nombre Promoción"
+
+                                />
+
+                            <h:panelGroup>
+
+                                <h:outputText value="#{lst.idpromociones.idpromocion.nombre}" >
+
+                                </h:outputText>
+                            </h:panelGroup>
+                        </p:column>
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="valorpromocion"
+                                attributeDisplay="Total Promoción"
+
+                                />
+
+                            <h:panelGroup>
+
+                                <h:outputText value="#{lst.idrecaudo.valorpromocion}" >
+
+                                </h:outputText>
+                            </h:panelGroup>
+                        </p:column>
+
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="promo"
+                                attributeDisplay="Valor Promoción"
+
+                                />
+
+                            <h:panelGroup>
+
+                                <h:outputText value="#{lst.idrecaudo.promo}" >
+
+                                </h:outputText>
+                            </h:panelGroup>
+                        </p:column>
+
+
+
+
+                    </p:dataTable>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

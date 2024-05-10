@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-familiar.admin.transacciones.detalle.content">
+
+                <h:outputText value="#{recaudoControl.recuperaRecaudosId(param.idrecaudo_)}"/>
+
+
+                <h:form>
+                    <div id="tabladatos"> 
+                        
+                                 <p:dataTable reflow="true" var="lst" value="#{recaudoControl.lisbenfactor}" tableStyle="width:100%">
+
+                                     <p:column headerText="idrecaudo" class="estilo27">
+                                <div class="estilo28">      <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/transacciones/detalle/detalle.xhtml?idrecaudo_=#{lst.idrecaudo}">
+                                        <h:outputText value="#{lst.idrecaudo}" style="color: #00529B" />
+                                    </a></div>
+                            </p:column>
+
+                            <p:column headerText="Nombre" class="estilo27">
+
+                                <div class="estilo28">     <h:outputText value="#{lst.idbenefactor.idpersona.nombres}" />
+                                </div>
+                            </p:column>
+
+                            <p:column headerText="Apellidos" class="estilo27">
+
+                                <div class="estilo28">      <h:outputText value="#{lst.idbenefactor.idpersona.apellidos}" />
+                                </div>
+                            </p:column>
+
+                            <p:column headerText="Numero Documento" class="estilo27">
+
+                                <div class="estilo28">    <h:outputText value="#{lst.idbenefactor.idpersona.numdocumento}" />
+                                </div>
+                            </p:column>
+
+                            <p:column headerText="Valor" class="estilo27">
+
+                                <div class="estilo28">     <h:outputText value="#{lst.valor}" />
+                                </div>
+                            </p:column>
+
+                            <p:column headerText="Estado" class="estilo27">
+
+                                <div class="estilo28">    <h:outputText value="#{lst.estado}" />
+                                </div>
+                            </p:column>
+
+                            <p:column headerText="Tipo Documento PPL" class="estilo27">
+
+                                <div class="estilo28">       <h:outputText value="#{lst.idbeneficiario.td}" />
+                                </div>
+                            </p:column>
+                            <p:column headerText="Numero Documento" class="estilo27">
+
+                                <div class="estilo28">        <h:outputText value="#{lst.idbeneficiario.pin}" />
+                                </div>
+                            </p:column>
+                            <p:column headerText="Nombre Apellido PPL" class="estilo27">
+
+                                <div class="estilo28">         <h:outputText value="#{lst.idbeneficiario.nombresApellidos}" />
+                                </div>
+                            </p:column>
+
+                        </p:dataTable>
+                    </div>
+
+                    <p:separator/>
+                    <h:outputText value="#{recaudoControl.validartipobenefactor(param.idrecaudo_)}"/>
+                    <h:panelGroup rendered="#{recaudoControl.successful == false}">    
+                        <!--familiar--> 
+                        <div id="contenedorresumen"> 
+                            <div id="tabladatosresumen"> 
+                                <h:outputText value="#{recaudoControl.mostrarDetallesRecaudo(param.idrecaudo_)}"/>
+                                <ui:repeat var="lst" value="#{recaudoControl.listtransaccion}" >
+                                    <h:form id="form3_">
+
+                                        <p:panelGrid id = "panel"   style="width: 100%;">
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="Recarga Familiar " class="estilo27"/>
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <h:panelGroup>
+                                                        <div class="estilo28">      ¡RECARGA Codigo : #{lst.codigo} -  #{lst.mensajeerror} !
+                                                        </div>
+                                                    </h:panelGroup>
+                                                </p:column> 
+                                            </p:row>
+
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="Se ha recargado al:  " class="estilo27"/>
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <div class="estilo28">  
+                                                        <h:panelGroup>
+                                                            <p:outputLabel value="SR(Ra). #{lst.idrecaudo.idbeneficiario.nombresApellidos} " id="attr_nombre"/>
+                                                            <p:message for="attr_nombre"/>
+
+                                                        </h:panelGroup></div>
+                                                </p:column> 
+                                            </p:row>
+
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <div class="estilo28">       <h:outputText value="El valor de $ monto:  " class="estilo27"/>
+                                                    </div>
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <h:panelGroup>
+
+                                                        <div class="estilo28">  <b><p:inputNumber id="attr_monto" value="#{lst.idrecaudo.valor}" style="font-weight: bold" decimalSeparator="," thousandSeparator="." readonly='TRUE'>  
+                                                                </p:inputNumber>  </b>
+                                                            <p:message for="attr_monto"/>
+                                                        </div>
+                                                    </h:panelGroup>
+                                                </p:column> 
+                                            </p:row>
+
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="Número de autorización " class="estilo27"/>
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <div class="estilo28">       <h:panelGroup>
+                                                            <p:outputLabel value="#{lst.numerorecibo}" id="attr_nombred"/>
+                                                            <p:message for="attr_nombred"/>
+                                                        </h:panelGroup></div>
+                                                </p:column> 
+                                            </p:row>
+
+
+                                        </p:panelGrid>
+                                    </h:form>
+
+                                </ui:repeat>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+
+                    <h:panelGroup rendered="#{recaudoControl.successful == true}">
+                        <!--subdistribuidor-->
+
+                        <div id="contenedorresumen"> 
+                            <div id="tabladatosresumen"> 
+                                <h:outputText value="#{recaudoControl.mostrarDetallesRecaudo(param.idrecaudo_)}"/>
+                                <ui:repeat var="lst" value="#{recaudoControl.listtransaccion}" >
+                                    <h:form id="form3_">
+
+                                        <p:panelGrid id = "panel"   style="width: 100%;" >
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="Recarga Subdistribuidor " />
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <h:panelGroup>
+                                                        ¡RECARGA Codigo : #{lst.codigo} -  #{lst.mensajeerror} !
+
+                                                    </h:panelGroup>
+                                                </p:column> 
+                                            </p:row>
+
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="Se ha recargado al: " />
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <h:panelGroup>
+                                                        <p:outputLabel class="estilo17" value="SR(Ra). #{lst.idrecaudo.idbeneficiario.nombresApellidos} " id="attr_nombre"/>
+                                                        <p:message for="attr_nombre"/>
+
+                                                    </h:panelGroup>
+                                                </p:column> 
+                                            </p:row>
+
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="El valor de $ monto:  " />
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <h:panelGroup>
+                                                        <b><p:inputNumber id="attr_monto" value="#{lst.idrecaudo.valor}" style="font-weight: bold" decimalSeparator="," thousandSeparator="." readonly='TRUE'>  
+                                                            </p:inputNumber>  </b>
+                                                        <p:message for="attr_monto"/>
+                                                    </h:panelGroup>
+                                                </p:column> 
+                                            </p:row>
+
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="Número de autorización "/>
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <h:panelGroup>
+                                                        <p:outputLabel value="#{lst.numerorecibo}" id="attr_nombred"/>
+                                                        <p:message for="attr_nombred"/>
+                                                    </h:panelGroup>
+                                                </p:column> 
+                                            </p:row>
+                                            <p:row>
+                                                <p:column  style="width: 35%">
+                                                    <h:outputText value="SALDO SUBDISTRIBUIDOR * " />
+                                                </p:column>    
+                                                <p:column style="width: 60%">
+                                                    <h:panelGroup>    
+                                                        <center>
+                                                            <p:inputNumber id="attr_saldo" value="#{benefactorControl.recuperaSaldoSub(loginBenefactorControl.usLog.idbenefactor)}" style="font-weight: bold" decimalSeparator="," thousandSeparator="." readonly='TRUE'>  
+                                                            </p:inputNumber>  
+                                                        </center>
+                                                        <p:message for="attr_saldo"/>
+                                                    </h:panelGroup>
+                                                </p:column> 
+                                            </p:row>
+
+                                        </p:panelGrid>
+                                    </h:form>
+                                </ui:repeat>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                </h:form>
+
+
+                <style type="text/css">
+                    .panelgrid-dotted-border{
+
+                        border-spacing: 0;
+                        border: 0px;
+                    }
+                    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                        border: 0px;
+                    }
+                </style>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

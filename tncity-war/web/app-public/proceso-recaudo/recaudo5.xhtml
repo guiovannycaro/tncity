@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-public.proceso-recaudo.content">
+                <script>
+                    $('.tab5-class').css('background', '#beddec');
+                    $('.tab5-class').css('color', '##144c68');
+                </script>
+
+                <p:panel>
+
+                    <h:outputText value="#{utilControl.msg}" escape="false"/>
+
+                    <h:outputText value="#{recaudoControl.recuperaById()}"/>
+
+                    <div align="center">
+                        <h:outputText value="Se realizó la recarga correctamente" style="color:green;"/>
+
+                        <br/>
+                        <p:panelGrid id = "panel"   style="width: 40%;" styleClass="panelgrid-dotted-border">
+
+                            <p:row>
+                                <p:column>
+                                    <h:outputText value="Destinatario:" styleClass="label"/>
+
+                                </p:column>
+                                <p:column>
+                                    <h:panelGroup>
+                                        <h:outputText value="#{recaudoControl.obj.idbeneficiario.nombresApellidos}"/>
+                                    </h:panelGroup>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column>
+                                    <h:outputText value="Valor:" styleClass="label"/>
+                                </p:column>
+                                <p:column>
+                                    <h:panelGroup>
+                                        $<h:outputText value="#{recaudoControl.obj.valor}">
+                                            <f:convertNumber type="currency" currencySymbol=""/>
+                                        </h:outputText>
+                                    </h:panelGroup>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <h:panelGroup>
+                                        <p:commandButton value="Finalizar" onclick="finalizar();" icon="fa fa-times" ajax="true" style="
+                                                         width: 100%;
+                                                         float: left;
+                                                         height: auto;
+                                                         margin-left: 0%;
+                                                         " />
+
+                                    </h:panelGroup>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+
+
+
+                    </div>
+
+                </p:panel>          
+
+                <style type="text/css">
+                    .panelgrid-dotted-border{
+
+                        border-spacing: 0;
+                        border: 0px;
+                    }
+                    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                        border: 0px;
+                    }
+
+
+                </style>
+                <script type="text/javascript">
+                    function finalizar() {
+
+                         document.location.href = '#{utilControl.protocolHostPortContext}/app-public/proceso-recaudo/recaudo1.xhtml'
+                    }
+                </script>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

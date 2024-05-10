@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+            
+                <h:outputText value="#{cuentasControl.setValBusq(param.query_)}"/>
+                <h:outputText value="#{cuentasControl.buscarFullText()}"/>
+
+                <br/>
+                <div>
+                    <ui:repeat var="lst" value="#{cuentasControl.lst}" >
+                        <p:panel>
+                            <div align="left">
+
+
+                                <p:separator/>
+
+                                <div>
+                                    <b> Codigo de Cuenta :</b>   <a href="#{utilControl.protocolHostPortContext}/app-admin/recaudo/cuentas/detalle/detalle.xhtml?idbenefactor_=#{lst.idbenefactor.idbenefactor}&amp;idcu_=#{lst.idcuenta}">
+                                        <h:outputText value="#{lst.idcuenta} " class="busqBlue"/>
+                                    </a>
+                                </div>
+
+                                <p:separator/>
+
+
+                                <div>
+
+                                </div>
+                                <div class="busqGreen">
+
+                                    <div>
+                                        Datos Benefactor: <h:outputText value="#{lst.idbenefactor.idpersona.nombres} #{lst.idbenefactor.idpersona.apellidos}"/>
+                                    </div>
+                                    <div>
+                                        Tipo Documento: <h:outputText value="#{lst.idbenefactor.idpersona.tipodocumento} "/>
+                                    </div>
+                                    <div>
+                                        Numero Documento: <h:outputText value="#{lst.idbenefactor.idpersona.numdocumento} "/>
+                                    </div>
+                                    <div>
+                                        Entradas: <h:outputText value="#{lst.valEntradas} "/>
+                                    </div>
+
+                                    <div>
+                                        Salidas: <h:outputText value="#{lst.valSalidas} "/>
+                                    </div>
+                                    <div>
+                                        Saldo: <h:outputText value="#{lst.valSaldo} "/>
+                                    </div>
+                                    <div>
+                                        Estado:
+
+                                        <h:outputText value="Activa" rendered="#{lst.isActiva == true }"/>
+                                        <h:outputText value="Inactiva" rendered="#{lst.isActiva == false }"/>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </p:panel>    
+                        <br/>
+                    </ui:repeat>
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+
+
+        <title>TNCity- Sistema De Recaudos</title>
+        <link rel="shortcut icon" href="#{utilControl.protocolHostPortContext}/img/app/logo3.png"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/baseCSS.css"/>
+        <script src="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.min.js" type="text/javascript"></script>
+        <link href="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+        <h:outputScript name="js/layout.js" library="ultima-layout" />
+
+        <style type="text/css">
+            .login-body {
+                background: url("#{utilControl.protocolHostPortPath}/img/app/bannerLogin.jpg") top left no-repeat #f7f7f7;
+                background-size: 100% auto; }
+            </style>
+        </h:head>
+        <style>
+        body { background-color: #FF0000; }
+    </style>
+    <h:body styleClass="login-body">
+
+        <h:form>
+
+        </h:form>
+        <div class="card login-panel ui-fluid" style="background: rgba(255,255,255, 0.75); padding: 5px;width: 80%">
+
+            <div class="ui-g-12">
+                <img src="#{utilControl.protocolHostPortPath}/img/app/logo.png" height="50"/>
+            </div>
+
+
+
+            <h:form id="ff">
+                <p:panel>
+                    <h:panelGrid columns="5">
+                        <p:panel  class="tab1-class">
+                            <a href="#{utilControl.protocolHostPortContext}/app-public/proceso-recaudo/recaudo1.xhtml">
+                                1. Datos de Donante
+                            </a>
+                        </p:panel>
+                        <p:panel class="tab2-class">
+                            2. Registrarse / Sistema
+                        </p:panel>
+                        <p:panel class="tab3-class">
+                            3. Registrar Recaudo
+                        </p:panel>
+                        <p:panel class="tab4-class">
+                            4. Confirmaci&oacute;n
+                        </p:panel>
+                        <p:panel class="tab5-class">
+                            5. Finalizaci&oacute;n
+                        </p:panel>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+
+
+            <p:panel>
+                <ui:insert name="app-public.proceso-recaudo.content"></ui:insert>
+            </p:panel>
+
+
+            <br/>
+            <ui:include src="./../footer.xhtml" />
+
+        </div>   
+
+
+
+
+
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{themeControl.theme}.css" library="ultima-layout" />
+    </h:body>
+
+</html>

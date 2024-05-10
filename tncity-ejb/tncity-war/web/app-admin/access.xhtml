@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+            <meta http-equiv="Pragma" content="no-cache" />
+            <meta http-equiv="Expires" content="-1" />
+        </f:facet>
+
+        <title>Recargas - Administrador de Recargas</title>
+        <link rel="shortcut icon" href="#{utilControl.protocolHostPortContext}/img/app/logo3.png"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/baseCSS.css"/>
+
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+
+
+    </h:head>
+
+    <h:body styleClass="exception-body accessdenied-page">
+
+        <div class="exception-type">
+            <p:graphicImage name="images/401.svg" library="ultima-layout" />
+        </div>
+
+        <div class="card exception-panel">
+            <i class="material-icons">&#xE32A;</i>
+            <h1>Acceso Denegado</h1>
+            <div class="exception-detail">
+                Se ha detectado un acceso no autorizado al sistema.
+                <p:separator/>
+                <h:outputText value="#{utilControl.msg}" escape="false"/>
+            </div>
+
+            <p:button href="#{utilControl.protocolHostPortContext}/app-admin/login.xhtml" value="Ingresar" styleClass="secondary"/>
+        </div>
+
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{themeControl.theme}.css" library="ultima-layout" />
+    </h:body>
+
+</html>

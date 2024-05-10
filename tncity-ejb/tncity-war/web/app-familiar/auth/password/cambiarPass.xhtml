@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:head>
+
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        </f:facet>
+
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/estilosrecupera.css"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/fuentes/fuentes.css"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/boilerplate.css"/>
+        <script src="#{utilControl.protocolHostPortContext}/js/respond.min.js"></script>
+        <script src="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.min.js" type="text/javascript"></script>
+        <link href="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.css" rel="stylesheet" type="text/css"/>
+
+    </h:head>
+    <body>
+
+        <h:outputScript library="primefaces" name="jquery/jquery.js"
+                        target="head" />
+        <div class="gridContainer clearfix"><!--inicio-contenedor-->
+            <div id="contenedor"><!--inicio-contenedor-->
+
+
+
+                <div id="contenedorprincipal"><!--inicio_contenedorprincipal-->
+                    <div id="marcorecupera">
+                        <h:form id="ff"> 
+                            <div id="txttitulo_recupera" class="estilo19"><!--inicio_datos1-->
+                               Cambio de Contraseña
+                            </div><!--fin_datos1-->
+                            <div id="contenedor_dinputs">
+                            <div id="contantiguarecupera"> 
+
+                                <div id="txt-antigua" class="estilo7"> Contraseña Temporal</div>
+                                <div id="input-antigua">
+                                    <div id="ver1antigua">
+                                        <a href="javascript:mostrarContrasena1()" ><i class="fa fa-eye-slash" style="color:#215c76" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                    </div>
+                                    <h:panelGroup>
+                                        <p:password value="#{benefactorControl.antcontra}" feedback="true" id="ap1" required="true" requiredMessage="Digite Una  Contraseña"
+                            
+
+
+                                                    />
+                                        <p:message for="p1"/>
+                                    </h:panelGroup>
+                                </div>
+                            </div>
+                                
+                            <div id="contnuevarecupera">   
+
+                                <div id="txt-nueva" class="estilo7">Nueva Contraseña</div>
+                                <div id="input-nueva">
+                                    <div id="ver1nueva">
+                                        <a href="javascript:mostrarContrasena2()" ><i class="fa fa-eye-slash" style="color:#215c76" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                    </div>
+                                    <h:panelGroup>
+                                        <p:password value="#{benefactorControl.contra}" feedback="true" id="p1" class="nocopi" required="true" requiredMessage="Digite Una  Contraseña"
+                                               
+                                                    />
+                                        <p:message for="p1"/>
+                                    </h:panelGroup>
+                                </div>
+                            </div>
+                                
+                            <div id="contconfirmarrecupera">  
+                        
+                                <div id="txt-confnueva" class="estilo7">Confirmar Contraseña</div>
+                                <div id="input-confnueva">
+                                   <div id="verconfnueva">
+                                    <a href="javascript:mostrarContrasena3()" ><i class="fa fa-eye-slash" style="color:#215c76" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                </div>
+                                
+                                
+                                
+                                    <h:panelGroup>
+                                        <p:password value="#{benefactorControl.con_contra}" feedback="true" id="p2" class="nocopi" required="true" requiredMessage="Digite Una  Contraseña"
+                                                   
+                                                    />
+                                        <p:message for="p2"/>
+                                    </h:panelGroup>
+                                </div>
+                            </div>
+                    </div>
+                            
+                            <div id="contenedomensaje">
+
+                                <h:outputText value="#{utilControl.msg}" escape="false" style="font-size: 16px;float: left;height: 3px;color: #f45f56;text-align: center;width: 96%;margin-top: 0%;margin-left: 0%;font-weight: bold;font-family: 'CenturyGothic-Bold';"/>
+
+                            </div>
+
+                            <div id="contbotones">    
+
+                                <div id="btn-antiguarecupera">
+                                    <p:commandButton value="Cambiar Contraseña"  ajax="false" action="#{benefactorControl.cambiarPassCurrentUser()}"
+
+
+                                                     >
+                                        <f:param name="id_" value="#{param.id_}"/>
+                                    </p:commandButton> 
+                                </div>
+                            </div>
+
+                        </h:form>
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                $('.nocopi').attr('autocomplete', 'off');
+                                $('.nocopi').bind("cut copy paste", function (e) {
+                                    e.preventDefault();
+                                });
+                            });
+
+                            function mostrarContrasena1() {
+                                var tipo = document.getElementById("ff:ap1");
+                                if (tipo.type == "password") {
+                                    tipo.type = "text";
+                                } else {
+                                    tipo.type = "password";
+                                }
+
+                            }
+                            function mostrarContrasena2() {
+                                var tipo = document.getElementById("ff:p1");
+                                if (tipo.type == "password") {
+                                    tipo.type = "text";
+                                } else {
+                                    tipo.type = "password";
+                                }
+
+                            }
+                            function mostrarContrasena3() {
+                                var tipo = document.getElementById("ff:p2");
+                                if (tipo.type == "password") {
+                                    tipo.type = "text";
+                                } else {
+                                    tipo.type = "password";
+                                }
+
+                            }
+
+                            $(function () {
+                                PrimeFaces.cw("Password", "ui_widget_ff_ap1_panel", {id: "ff:ap1_panel", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña  Normal", strongLabel: "Contraseña Fuerte"});
+                            });
+                            $(function () {
+                                PrimeFaces.cw("Password", "ui_widget_ff_p1_panel", {id: "ff:p1_panel", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña  Normal", strongLabel: "Contraseña Fuerte"});
+                            });
+                            $(function () {
+                                PrimeFaces.cw("Password", "ui_widget_ff_p2_panel", {id: "ff:p2_panel", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña Normal", strongLabel: "Contraseña Fuerte"});
+                            });
+                            
+                        </script>
+                        <h:panelGroup rendered="#{benefactorControl.successful}">
+                            <script type="text/javascript">
+
+                   
+                                    parent.document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/auth/logout.xhtml';
+                      
+                            </script>
+                        </h:panelGroup>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </body>
+</html>

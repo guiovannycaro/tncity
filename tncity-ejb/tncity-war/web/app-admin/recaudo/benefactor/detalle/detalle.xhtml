@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.benefactor.detalle.content">
+
+      
+                <div class="ui-g">
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                    <div class="ui-g-12 ui-md-12 ui-lg-8">
+                        <p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-3,ui-grid-col-9">
+
+                            <h:outputText value="Nombre" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.nombres}"/>
+
+                            <h:outputText value="Apellidos" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.apellidos}"/>
+
+                            <h:outputText value="Tipo Documento" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.tipodocumento}"/>
+
+                            <h:outputText value="Número Documento" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.numdocumento}"/>
+
+                            <h:outputText value="E-mail" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.email}"/>
+                            
+                            <h:outputText value="Teléfono" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.numTelefono}"/>
+                            
+                             <h:outputText value="Teléfono" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.numTelefono2}"/>
+                            
+                            <h:outputText value="Ciudad" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.idciudad.nombre}"/>
+                            
+                               <h:outputText value="Direccion" class="label"/>
+                            <h:outputText value="#{benefactorControl.obj.idpersona.direccion}"/>
+                         
+                            
+                         
+
+
+                        </p:panelGrid>
+                        <br/><br/><br/>
+                    </div>
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

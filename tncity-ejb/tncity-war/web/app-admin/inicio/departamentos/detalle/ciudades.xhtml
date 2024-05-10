@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.inicio.departamentos.detalle.content">
+     
+
+
+
+                <p:panel >
+           <span class="fa fa-building" style="font-size: 17px;"> Lista de Ciudades</span>
+                    <h:outputText value="#{ciudadControl.recuperaCiudades()}"/>
+
+                    <div align="center">
+
+                        Registros encontrados (<h:outputText value="#{ciudadControl.lstdepartamentos.size()}"/>)
+
+                        <p:dataTable value="#{ciudadControl.lstdepartamentos }" var="l" tableStyle="width:auto">
+
+                            <p:column headerText="Ciudad">
+                                <a href="#">
+                                    <h:outputText value="#{l.nombre}"/>
+                                </a>
+                            </p:column>
+                            
+                            <p:column headerText="Codigo Ciudad">
+                              
+                                    <h:outputText value="#{l.codoficial}"/>
+                                
+                            </p:column>
+                        </p:dataTable>
+
+                    </div>
+
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

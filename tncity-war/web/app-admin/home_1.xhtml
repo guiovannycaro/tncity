@@ -1,0 +1,118 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="_template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+
+    <ui:define name="head">
+        <script type="text/javascript">
+            //<![CDATA[
+            function skinChart() {
+                this.cfg.shadow = false;
+                this.cfg.title = '';
+                this.cfg.seriesColors = ['#FFC107', '#03A9F4'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#ffffff',
+                    gridLineColor: '#EEEEEE',
+                    shadow: false
+                };
+                this.cfg.axesDefaults = {
+                    rendererOptions: {
+                        textColor: '#212121'
+                    }
+                };
+                this.cfg.seriesDefaults = {
+                    shadow: false,
+                    lineWidth: 1,
+                    markerOptions: {
+                        shadow: false,
+                        size: 7,
+                        style: 'circle'
+                    }
+                }
+            }
+            //]]>  
+        </script>
+        <style type="text/css">
+            .main-content {
+                padding: 0;
+            }
+            #titlo{
+                width: 100%;
+                float:left;
+                margin :0% 0% 0% 0%;
+                padding: 0% 0% 0% 0%;
+            }
+
+        </style>
+    </ui:define>
+
+    <ui:define name="app-admin.content">
+        <div class="ui-g dashboard" style="min-height: 400px;">
+            <div class="ui-g-12 ui-md-8">
+                <div id="titlo"> <b style="color: #003366; font-size: 23px;">Bienvenid@ a el Administrador !</b>
+
+                    <center>
+                        <span class="fa fa fa-mobile" style="padding: 2px; background: #ffdec9;color: #cb5508;font-size: 21px;"> Sistema Recargas</span>
+                    </center>
+                </div>
+
+
+                <h:outputText value="#{usuarioControl.validarPrimerIngreso(loginAdminControl.usLog.idusuario)}"/>
+
+                <h:panelGroup rendered="#{usuarioControl.redirigir == 'true' }">
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            swal('Ha ingresado al sistema de recaudo,Por Primera vez \n\nPor favor actualice sus datos.');
+
+                            abrir('actinfo');
+                        });
+
+                        function abrir(tp)
+                        {
+                            var modal = document.getElementById('modal');
+                            var receptor = document.getElementById('form2_');
+                            if (tp == "actinfo")
+                            {
+                                receptor.src = $.colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/inicio/usuario/detalle/cambiarPass_1.xhtml?id_=#{loginAdminControl.usLog.idusuario}', iframe: true, title: 'Cambiar Password', transition: 'fade', width: '75%', height: '95%'});
+                                        }
+
+                                    }
+
+                                    function cerrar()
+                                    {
+                                        var modal = document.getElementById('modal');
+                                        modal.style.display = 'none';
+
+                                    }
+
+                    </script>
+
+                </h:panelGroup>
+
+
+                  <div align="center">
+                    <img src="#{utilControl.protocolHostPortPath}/img/app/logo3.png"/>
+                       <center>
+                        <span class="fa fa fa-mobile" style="padding: 2px; background: #ffdec9;color: #cb5508;font-size: 21px;"> Sistema Recargas</span>
+                    </center>
+                    
+                    <br/>
+                    <br/><br/>
+
+                    <br/><br/>
+
+
+                </div>
+                
+                
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

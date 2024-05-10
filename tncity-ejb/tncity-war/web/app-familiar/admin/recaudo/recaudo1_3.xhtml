@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+
+
+        <ui:composition template="./_templatepaso1.xhtml">
+
+            <ui:define name="app-familiar.admin.recaudo.content">
+
+                <div class="gridContainer clearfix"><!--inicio-contenedor-->
+                    <div class="cajacontenedor"><!--inicio-contenedor-->
+                        <div id="contenedorprincipal">
+                            <div id="contenedorsuperior"><!--inicio_contenedorsuperior-->
+
+
+                                <h:outputText value="#{benefactorControl.validarPrimerIngreso(loginBenefactorControl.usLog.idbenefactor)}"/>
+
+                                <h:panelGroup rendered="#{benefactorControl.redirigir == 'true' }">
+                                    <script type="text/javascript">
+                                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1_1.xhtml';
+                                    </script>
+                                </h:panelGroup>     
+
+
+
+                                <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml">
+                                    <div id="pestana1">
+                                        <div id="txtpu" class="estilo8">
+                                            Datos del PPL  <h:outputText  class="fa fa-address-card-o" ></h:outputText>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div id="pestana2" class="estilo8">
+                                    <div id="txtpd">
+                                        Monto Recarga <h:outputText  class="fa fa-usd" ></h:outputText>  
+                                    </div>
+                                </div>
+                                <div id="pestana3" class="estilo8">
+                                    <div id="txtpt">
+                                        3. Confirmar Recarga  <h:outputText  class="fa fa-usd" ></h:outputText>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="contenedormedio"><!--inicio_contenedorsuperior-->
+                                <div id="marcorecaudo">
+                                    <div id="cuadrocontenedor">
+                                        <div id="marcotitulo">
+                                            <div id="titulo_marco"> DATOS PPL </div>
+                                            <div id="titulo_imagen">     <h:outputText  class="fa fa-id-card" style="font-size: 2em; color: #ffffff;float:left"></h:outputText>   </div>
+
+
+                                            <div id="titulo_contraer"> 
+                                                <a href="#" onclick="mostrar()" >
+                                                    <h:outputText  class="fa fa-chevron-down "  style="font-size: 2em; color: #ffffff;float:left;font-weight:bold;display:none" id="abajo" ></h:outputText> 
+                                                </a>
+                                                <a href="#" onclick="ocultar()">
+                                                    <h:outputText  class="fa fa-chevron-up " style="font-size: 2em; color: #ffffff;float:left;font-weight:bold;display:block" id="arriba"></h:outputText> 
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                        <div id="lineasdiv"></div>
+                                        <div id="area_movil" >
+
+
+                                            <h:form id="form1_" class="form1">
+                                                <div id="cuadrouno">
+                                                     <div id="cuadrouno_titulo" class="estilo10">Identificación PPL</div> 
+                                                    <div id="cuadrouno_txtu">
+                                                        <div id="cuadrouno_txtinputu" class="estilo11">
+                                                            Tipo  Identificación 
+                                                        </div>
+                                                        <div id="cuadrouno_inputtxtu">
+                                                            <h:panelGroup>
+                                                                <h:selectOneMenu value="#{beneficiarioControl.tipodocumento}" required="true" requiredMessage="Debe Elegir Un Tipo de documento de la lista!" id="attr_tipodoc" 
+
+
+                                                                                 >
+                                                                    <f:selectItem 
+                                                                        itemValue="" itemLabel="Seleccione..." />
+                                                                    <f:selectItem itemValue="CEDULA" itemLabel="Cédula de Ciudadanía"/>
+                                                                    <f:selectItem itemValue="PASAPORTE" itemLabel="PASAPORTE"/>
+                                                                    <f:selectItem itemValue="CEDULA EXTRANGERIA" itemLabel="Cédula Extranjería"/>
+
+                                                                </h:selectOneMenu>
+                                                                <p:message for="attr_tipodoc"/>
+                                                            </h:panelGroup>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="cuadrouno_txtd">
+                                                        <div id="cuadrouno_txtinputd" class="estilo11">
+                                                            <center>Número de Identificación</center> 
+                                                        </div>
+                                                        <div id="cuadrouno_inputtxtd">
+                                                            <h:panelGroup>
+                                                                <p:inputText value="#{beneficiarioControl.numdocumento}" required="true" id="attr_numide" class="attr_numide"
+                                                                             requiredMessage="Por Favor ingrese un numero de documento ." placeholder="No. Documento"
+
+
+                                                                             >   	
+                                                                </p:inputText>  
+                                                                <p:message for="attr_numide"/>
+                                                            </h:panelGroup>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="cuadrouno_btn">
+                                                        <div id="cuadrouno_btnu">
+                                                            <h:panelGroup>
+                                                                <p:commandButton value="Buscar" action="#{beneficiarioControl.recuperaIdPPL()}" icon="fa fa fa-search"  ajax="false" style="
+                                                                                 width: 100%;height: 38px;
+
+                                                                                 border: 1px solid black; margin-right: 0px;
+                                                                                 " >
+
+                                                                </p:commandButton>
+
+                                                            </h:panelGroup>
+
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </h:form>
+
+                                            <div id="lineasdiv"></div>
+                                            <h:panelGroup rendered="#{beneficiarioControl.redir == 'CONTINUAR' }">  
+                                                <h:form id="form21_" class="form21">
+
+
+                                                    <div id="cuadrodos"> 
+
+                                                        <div id="cuadrodos_titulou" class="estilo10">Datos Del PPL:</div>
+
+                                                        <div id="cuadrodos_txtu">
+                                                            <div id="cuadrodos_txtinputu" class="estilo11">
+                                                                Nombres y Apellidos
+                                                            </div>
+                                                            <div id="cuadrodos_inputtxtu">
+                                                                <h:panelGroup>
+                                                                    <p:outputLabel value="#{beneficiarioControl.datosben.lastname} " id="attr_nombre" />
+                                                                    <p:message for="attr_nombre"/>
+                                                                </h:panelGroup>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="lineasdiv"></div>
+                                                    <div id="cuadrotres">
+                                                        <div id="cuadrotres_txtd" class="estilo10">Teléfono de la Persona Que Recarga:</div> 
+
+                                                        <div id="cuadrotres_txtt">
+                                                            <h:outputText  class="fa fa-mobile" style="font-size: 2em; color: #ffffff;float:left"></h:outputText> 
+                                                            <div id="cuadrotres_txtinputt" class="estilo11">
+                                                                 Teléfono Móvil
+                                                            </div>
+                                                            <div id="cuadrotres_inputtxtt">
+                                                                <h:panelGroup>
+                                                                    <p:inputMask  value="#{benefactorControl.obj.idpersona.numTelefono2}" autocomplete="off" required="true" requiredMessage="Debe ingresar un numero de telefono movil!" id="attr_telprec" class="attr_telprec"
+                                                                                  maxlength="25" placeholder="Teléfono 2*"  mask="9999999999" size="10">
+                                                                    </p:inputMask>
+
+                                                                    <p:message for="attr_telprec"/>
+                                                                </h:panelGroup>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="lineasdiv"></div>
+                                                    <div id="cuadrocuatro">
+                                                        <div id="cuadrocuatro_btnu">
+                                                            <p:commandButton value="Limpiar"  ajax="true" onclick="limpiarFormulario();" icon="fa fa-paint-brush"   >
+
+                                                            </p:commandButton>
+
+                                                        </div>
+                                                        <div id="cuadrocuatro_btnd">
+                                                            <p:commandButton value="Siguiente" onclick="enviarf();" icon="fa fa-arrow-right"  >
+                                                                <f:param name="numdoc_" value="#{param.numdoc_}"/>
+                                                            </p:commandButton>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="lineasdiv"></div>
+
+
+                                                 
+                                                </h:form>
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{beneficiarioControl.redir == 'ESPERAR' }">
+
+                                                <div id="cuadrocinco">
+                                                    <div id="cuadrocinco_cerror">
+                                                        <div id="txterror">
+                                                            El número  de documento o tipo de documento no coincide con  nuestros registros. por favor, vuelva a intentarlo!
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </h:panelGroup>
+
+                                        </div>
+                                        <script type="text/javascript">
+                                            function enviarf() {
+
+                                                var formulario = document.getElementById("form1_");
+                                                var tdoc = document.getElementById('form1_:attr_tipodoc').value;
+                                                var numide = document.getElementById('form1_:attr_numide').value;
+                                                var telrec = document.getElementById('form21_:attr_telprec').value;
+
+
+                                                if (tdoc == "") {
+
+                                                    swal('Por Favor Seleccione el tipo de Identificacion');
+                                                    return false;
+                                                }
+
+                                                if (numide == "") {
+
+                                                    swal('Por Favor diligencie el campo Número Documento');
+                                                    return false;
+
+                                                }
+
+
+                                                if (telrec == "") {
+
+                                                    swal('Por Favor diligencie el telefono de la persona que recarga');
+                                                    return false;
+
+                                                }
+
+                                                document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo2.xhtml?numdoc_=' + numide + '&amp;tdoc_=' + tdoc + '&amp;id_=#{loginBenefactorControl.usLog.idbenefactor}&amp;telrec_=' + telrec + '';
+
+
+                                            }
+
+
+                                            function limpiarFormulario() {
+                                                document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';
+                                            }
+                                        </script>
+                                        <style type="text/css">
+                                            .panelgrid-dotted-border{
+
+                                                border-spacing: 0;
+                                                border: 0px;
+                                            }
+                                            .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                                                border: 0px;
+                                            }
+                                        </style>
+                                        <script type="text/javascript">
+                                            function elegirOpcion() {
+                                                if (document.getElementById('terminos1').cheked) {
+                                                    alert('ok');
+
+                                                }
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                                <script type="text/javascript">
+
+                                    function enviarf() {
+
+                                        var formulario = document.getElementById("form1_");
+                                        var tdoc = document.getElementById('form1_:attr_tipodoc').value;
+                                        var numide = document.getElementById('form1_:attr_numide').value;
+
+                                        var telrec = document.getElementById('form21_:attr_telprec').value;
+
+                                        if (tdoc == "") {
+
+                                            swal('Por Favor Seleccione el tipo de Identificacion');
+                                            return false;
+                                        }
+
+                                        if (numide == "") {
+
+                                            swal('Por Favor diligencie el campo Número Documento');
+                                            return false;
+
+                                        }
+
+
+                                        if (telrec == "") {
+
+                                            swal('Por Favor diligencie el telefono de la persona que recarga');
+                                            return false;
+
+                                        }
+
+
+                                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo2.xhtml?numdoc_=' + numide + '&amp;tdoc_=' + tdoc + '&amp;id_=#{recaudoControl.codificar(loginBenefactorControl.usLog.idpersona.idpersona)}&amp;telrec_=' + telrec + '';
+
+
+                                    }
+
+
+                                    function limpiarFormulario() {
+                                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1c.xhtml';
+                                    }
+                                </script>
+                                <style type="text/css">
+                                    .panelgrid-dotted-border{
+
+                                        border-spacing: 0;
+                                        border: 0px;
+                                    }
+                                    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                                        border: 0px;
+                                    }
+                                </style>
+                                <script type="text/javascript">
+                                    function elegirOpcion() {
+                                        if (document.getElementById('terminos1').cheked) {
+                                            alert('ok');
+
+                                        }
+                                    }
+
+                                    $(document).ready(function () {
+                                        $('.attr_numide').attr('autocomplete', 'off');
+
+                                        $('.attr_numide').on("cut copy paste", function (e) {
+                                            e.preventDefault();
+                                        });
+
+                                        $('.attr_telprec').attr('autocomplete', 'off');
+
+                                        $('.attr_telprec').on("cut copy paste", function (e) {
+                                            e.preventDefault();
+                                        });
+
+                                    });
+                                </script>
+                                <script type='text/JavaScript'>
+
+                                    function ocultar(){
+                                    document.getElementById('area_movil').style.display = 'none';
+                                    document.getElementById('abajo').style.display = 'block';
+                                    document.getElementById('arriba').style.display = 'none';
+                                    }
+
+                                    function mostrar(){
+                                    document.getElementById('area_movil').style.display = 'block';
+                                    document.getElementById('abajo').style.display = 'none';
+                                    document.getElementById('arriba').style.display = 'block';
+                                    }
+
+
+
+                                </script>
+
+
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
+

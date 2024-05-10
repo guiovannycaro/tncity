@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+            <ui:define name="app-admin.estadisticas.tnpagos.detalle.content">
+
+
+
+
+
+                <div align="center">
+
+
+
+                    <h:outputText value="#{recaudoControl.listarRecaudosCompleta(param.desde_,param.hasta_)}"/>
+
+                    <p:panelGrid id = "panel"   style="width: 100%;" styleClass="panelgrid-dotted-border">
+
+                        <p:row>
+                            <p:column>
+                                <div   style=" width: 100%;height: 21px;float: right;color: #2F4050;font-weight: bold;
+                                       font-size: 16px;text-align: center;padding: 2px 5px;text-decoration: none;
+                                       text-transform: capitalize;border-radius: 4px;opacity: 0.8;align-content: center;">Recaudos Generados  </div>
+                            </p:column> 
+                        </p:row>
+
+                        <p:separator/>
+                        <p:row>
+                            <p:column>
+                                <p:chart type="pie" model="#{recaudoControl.tortaRecaudos}" style="width: 50%;height: 350px;
+                                         float: left;margin: 0% 0% 0% 23%;"
+                                         rendered="#{recaudoControl.tortaRecaudos != null}"></p:chart>
+
+
+                            </p:column> 
+                        </p:row>
+
+
+
+                    </p:panelGrid>
+
+                </div>
+                <br/><br/>
+
+            </ui:define>
+
+
+
+
+
+        </ui:composition>
+
+    </body>
+</html>

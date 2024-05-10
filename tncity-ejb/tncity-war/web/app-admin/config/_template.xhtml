@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../_template.xhtml">
+
+            <ui:define name="head">
+
+            </ui:define>
+
+            <ui:define name="app-admin.content">
+
+                <h:outputText value="#{seguridadControl.validaPermisoAdmin}" escape="false"/>
+
+                <span class="fa fa-cog" style="font-size: 25px;"> 
+                    <a href="#{utilControl.protocolHostPortContext}/app-admin/config/config.xhtml">
+                        Configuraci&oacute;n del Sistema
+                    </a>
+                </span>
+                <p:separator/>
+                <br/><br/>
+
+                <ui:insert name="app-admin.config.content"></ui:insert>
+            </ui:define>
+
+              <ui:define name="app-admin.menu">
+                <h:form>
+                    <h:outputText value="#{PermisosControl.validarPermisosSecciones(loginAdminControl.usLog.idpersona.idpersona,'Administracion')}"/>
+                    <div style="width: 100%;height: 500px;border: 1px solid #D3D3D3;border-radius: 8px;" >
+                        <div style="width: 99%;height:auto;float: left;
+                             margin: 9% 0% 0% 0%;
+                             padding: 0% 0% 0% 0%">
+                            <ui:repeat  var="lst" value="#{PermisosControl.lstsecciones}" >     
+                                <div style="width: 96%;height: 35px;
+                                     font-size: 14px;
+                                     color: #ffffff;
+                                     margin: 0% 0% 0% 4%;
+                                     padding: 0% 0% 0% 0%;background-color: #39899C;">
+                                    <div style="width: 96%;height: 18px;margin: 0% 0% 0% 4%;
+                                         padding: 6% 0% 0% 2%;">
+                                        #{lst.idseccion.nombre}
+                                    </div>
+                                </div> 
+
+                                <h:outputText value="#{PermisosControl.validarPermisosSubSecciones(loginAdminControl.usLog.idpersona.idpersona,'Administracion',lst.idseccion.nombre)}"/>
+                                <ui:repeat  var="lstd" value="#{PermisosControl.lstsubsecciones}" >  
+                                    <a href="#{utilControl.protocolHostPortContext}/#{lstd.idsubsecccion.url}">
+                                        <div style="width: 100%;height: 35px;margin: 5% 0% 0% 0%;
+                                             padding: 0% 0% 0% 0%; border: 1px solid #ffffff;
+                                             background-color: #ffffff;
+                                             ">
+                                            <div style="width: 15%;height: 29px;margin: 2% 0% 0% 4%;
+                                                 padding: 0% 0% 0% 0%;"><span class="#{lstd.idsubsecccion.imagen}" style="color:#757575;font-size:20px"></span></div>
+                                            <div style="width: 71%;height: 23px;margin: -17% 0% 0% 27%;
+                                                 padding: 0% 0% 0% 0%;color: #212121;font-size: 14px;">#{lstd.idsubsecccion.nombrevisual}</div>
+
+                                        </div>
+                                    </a>      
+                                </ui:repeat>  
+                            </ui:repeat> 
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

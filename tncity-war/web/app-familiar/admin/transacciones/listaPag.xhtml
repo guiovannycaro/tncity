@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+             
+                    <h:outputText value="#{recaudoControl.recuperaCountTotalBenRecaudosId(param.id_)}"/>
+
+
+
+                    <h:form>
+                        <div id="tabladatos">
+                            <p:dataTable var="lst" value="#{recaudoControl.lisben}" rows="15"
+                                         paginator="false"
+                                         paginatorTemplate="  {RowsPerPageDropdown}"
+                                         rowsPerPageTemplate="5,10,15,25" >
+                                <p:column headerText="Id Recaudo" class="estilo27" >
+                                    <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/transacciones/detalle/detalle.xhtml?idrecaudo_=#{lst.idrecaudo}">
+                                        <div class="estilo28">          <h:outputText value="#{lst.idrecaudo}" style="color: #00529B" /></div>
+                                    </a>
+                                </p:column>
+
+                                <p:column headerText="Nombre" class="estilo27">
+
+                                    <div class="estilo28">  <h:outputText value="#{lst.idbenefactor.idpersona.nombres}" /></div>
+
+                                </p:column>
+
+                                <p:column headerText="Apellidos" class="estilo27">
+
+                                    <div class="estilo28">     <h:outputText value="#{lst.idbenefactor.idpersona.apellidos}" /></div>
+
+                                </p:column>
+
+                                <p:column headerText="Número Documento" class="estilo27">
+
+                                    <div class="estilo28">      <h:outputText value="#{lst.idbenefactor.idpersona.numdocumento}" />
+                                    </div>
+                                </p:column>
+
+                                <p:column headerText="Valor Recaudo" class="estilo27">
+
+                                    <div class="estilo28">      <h:outputText value="#{lst.valor}" />
+                                    </div>
+                                </p:column>
+                                <p:column headerText="Valor Comision" class="estilo27">
+
+                                    <div class="estilo28">          <h:outputText value="#{lst.valorcomision - lst.valor }" />
+                                    </div>
+                                </p:column>
+
+
+                                <p:column headerText="Estado" class="estilo27">
+
+                                    <div class="estilo28">        <h:outputText value="#{lst.estado}" />
+                                    </div>
+                                </p:column>
+
+                                <p:column headerText="Tipo Documento PPL" class="estilo27">
+
+                                    <div class="estilo28">       <h:outputText value="#{lst.idbeneficiario.td}" />
+                                    </div>
+                                </p:column>
+                                <p:column headerText="Número Documento" class="estilo27">
+
+                                    <div class="estilo28">      <h:outputText value="#{lst.idbeneficiario.pin}" />
+                                    </div>
+                                </p:column>
+                                <p:column headerText="Nombre Apellido PPL" class="estilo27">
+
+                                    <div class="estilo28">             <h:outputText value="#{lst.idbeneficiario.nombresApellidos}" />
+                                    </div>
+                                </p:column>
+                                <p:column headerText="Fecha Creación" class="estilo27">
+
+                                    <div class="estilo28">         <h:outputText value="#{lst.createdAt}" />
+                                    </div>
+                                </p:column>
+
+
+                            </p:dataTable>
+                        </div>
+                    </h:form>
+
+
+
+              
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

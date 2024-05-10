@@ -1,0 +1,39 @@
+<!--
+@Author Edwar A. Rojas B
+edwar.red@gmail.com
+-->
+
+<functionalityTree id="0">
+	
+    <item text="TNcity" id="-1">
+
+        <item text='inicio' isadmin='true' isfirst='true' id='1' im0='folderClosed.gif' im1='folderOpen.gif' im2='folderClosed.gif' label='inicio' name='inicio' ruta='/'>
+            <item text='personas' isadmin='true' isfirst='true' id='2' im0='folderClosed.gif' im1='folderOpen.gif' im2='folderClosed.gif' label='personas' name='personas' ruta='/inicio'>
+                <item text='Buscar' isadmin='true' isfirst='true' id='5' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Buscar' name='buscar' ruta='/inicio/personas'/>
+                <item text='Lista' isadmin='true' isfirst='true' id='6' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Lista' name='lista' ruta='/inicio/personas'/>
+                <item text='Nuevo' isadmin='true' isfirst='true' id='7' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Nuevo' name='nuevo' ruta='/inicio/personas'/>
+                <item text='Detalle' isadmin='true' isfirst='true' id='4' im0='folderClosed.gif' im1='folderOpen.gif' im2='folderClosed.gif' label='Detalle' name='detalle' ruta='/inicio/personas'>
+                    <item text='Detalle' isadmin='true' isfirst='true' id='8' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Detalle' name='detalle' ruta='/inicio/personas/detalle'/>
+                    <item text='Editar' isadmin='true' isfirst='true' id='9' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Editar' name='editar' ruta='/inicio/personas/detalle'/>
+                </item>
+            </item>
+            <item text='usuario' isadmin='true' isfirst='true' id='3' im0='folderClosed.gif' im1='folderOpen.gif' im2='folderClosed.gif' label='usuario' name='usuario' ruta='/inicio'>
+                <item text='Buscar' isadmin='true' isfirst='true' id='11' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Buscar' name='buscar' ruta='/inicio/usuario'/>
+                <item text='Lista' isadmin='true' isfirst='true' id='12' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Lista' name='lista' ruta='/inicio/usuario'/>
+                <item text='Nuevo' isadmin='true' isfirst='true' id='13' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Nuevo' name='nuevo' ruta='/inicio/usuario'/>
+                <item text='Detalle' isadmin='true' isfirst='true' id='10' im0='folderClosed.gif' im1='folderOpen.gif' im2='folderClosed.gif' label='Detalle' name='detalle' ruta='/inicio/usuario'>
+                    <item text='Detalle' isadmin='true' isfirst='true' id='14' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Detalle' name='detalle' ruta='/inicio/usuario/detalle'/>
+                    <item text='Editar' isadmin='true' isfirst='true' id='15' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Editar' name='editar' ruta='/inicio/usuario/detalle'/>
+                    <item text='perfiles' isadmin='true' isfirst='true' id='16' im0='folderClosed.gif' im1='folderOpen.gif' im2='folderClosed.gif' label='perfiles' name='perfiles' ruta='/inicio/usuario/detalle'>
+                        <item text='Eliminar' isadmin='true' isfirst='true' id='18' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Eliminar' name='eliminar' ruta='/inicio/usuario/detalle/perfiles'/>
+                        <item text='Lista' isadmin='true' isfirst='true' id='19' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Lista' name='lista' ruta='/inicio/usuario/detalle/perfiles'/>
+                        <item text='Nuevo' isadmin='true' isfirst='true' id='17' im0='iconText.gif' im1='iconText.gif' im2='iconText.gif' label='Nuevo' name='nuevo' ruta='/inicio/usuario/detalle/perfiles'/>
+                    </item>
+                </item>
+            </item>
+        </item>
+    </item>
+
+</functionalityTree> 
+
+                                    

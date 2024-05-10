@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.captcha</groupId>
+    <artifactId>t_api-captcha-spring5-contact_form</artifactId>
+    <version>${bd.version}</version>
+    <packaging>war</packaging>
+
+    <name>t_api-captcha-spring5-contact_form</name>
+
+    <properties>
+        <bd.version>4.0.beta3.7</bd.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties> 
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.captcha</groupId>
+            <artifactId>botdetect</artifactId>
+            <version>${bd.version}</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/../../botdetect-${bd.version}.jar</systemPath>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.captcha</groupId>
+            <artifactId>botdetect-servlet</artifactId>
+            <version>${bd.version}</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/../../botdetect-servlet-${bd.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.captcha</groupId>
+            <artifactId>botdetect-jsp20</artifactId>
+            <version>${bd.version}</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/../../botdetect-jsp20-${bd.version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+      
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency> 
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.1.2.RELEASE</version>
+        </dependency> 
+ 
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.7</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+
+                        <configuration>
+                            <outputDirectory>${basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/../../</directory>
+                                    <includes>
+                                        <include>botdetect-${bd.version}.jar</include>
+                                        <include>botdetect-servlet-${bd.version}.jar</include>
+                                        <include>botdetect-jsp20-${bd.version}.jar</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+        </plugins>
+    </build>
+    
+    <repositories>
+        <repository>
+            <id>captcha</id>
+            <name>BotDetect Captcha Repository</name>
+            <url>https://git.captcha.com/botdetect-java-captcha.git/blob_plain/HEAD:/</url>
+        </repository>   
+        <repository>
+            <id>java.net.m2</id>
+            <name>java.net m2 repo</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>     
+    </repositories> 
+
+</project>

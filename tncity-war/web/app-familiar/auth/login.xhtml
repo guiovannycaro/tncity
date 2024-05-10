@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+
+
+        <title>Amigo Interno - Bienvenido</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="#{utilControl.protocolHostPortContext}/imagenes/favicon.ico" />
+            <link href="#{utilControl.protocolHostPortContext}/css/boilerplate.css" rel="stylesheet" type="text/css"/>
+            <link href="#{utilControl.protocolHostPortContext}/css/estilosloginfam.css" rel="stylesheet" type="text/css"/>
+            <link href="#{utilControl.protocolHostPortContext}/fuentes/fuentes.css" rel="stylesheet" type="text/css"/>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                  rel="stylesheet"/>
+
+            <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+
+
+
+
+
+            <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+            <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+            <link rel="stylesheet" type="text/css" href="#{utilControl.protocolHostPortContext}/js/engine1/style.css" />
+            <script src="#{utilControl.protocolHostPortContext}/js/engine1/jquery.js"></script>
+
+
+            <!-- End WOWSlider.com HEAD section -->
+            <!-- 
+            Para obtener más información sobre los comentarios condicionales situados alrededor de las etiquetas html en la parte superior del archivo:
+            paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+              
+            Haga lo siguiente si usa su compilación personalizada de modernizr (http://www.modernizr.com/):
+            * inserte el vínculo del código js aquí
+            * elimine el vínculo situado debajo para html5shiv
+            * añada la clase "no-js" a las etiquetas html en la parte superior
+            * también puede eliminar el vínculo con respond.min.js si ha incluido MQ Polyfill en su compilación de modernizr 
+            -->
+            <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+            <script src="#{utilControl.protocolHostPortContext}/js/respond.min.js"></script>
+
+
+
+            <style type="text/css">
+                .login-body {
+                    background: url("#{utilControl.protocolHostPortPath}/img/app/bannerLogin.jpg") top left no-repeat #f7f7f7;
+                    background-size: 100% auto; }
+                .login-contenedor {
+                    background: url("#{utilControl.protocolHostPortPath}/img/app/formlogin.png") top left no-repeat #f7f7f7;
+                    background-size: 100% auto; }
+
+            </style>
+    </h:head>
+
+    <h:body>
+        <div class="gridContainer clearfix"><!--inicio-contenedor-->
+            <div id="contenedor"><!--inicio-contenedorpc-->
+                <div id="cabezote">
+                    <div id="tit_cabezote" class="estilo14" > Bienvenido </div>
+                    <div id="stit_cabezote" class="estilo15" >  RECARGA MINUTOS A TUS FAMILIARES PRIVADOS DE LA LIBERTAD Y PERMÍTELE COMUNICARSE CON LOS SERES QUE MÁS AMA </div>
+                </div>
+
+                <div id="bannerlog"></div>
+
+                <div id="marcocontenendor">
+
+
+
+
+                    <div id="marcologin">   
+                        <div id="marcocabezote">
+
+                            <div id="stit_marcocabezote" class="estilo22" >  RECARGA MINUTOS A TUS FAMILIARES PRIVADOS DE LA LIBERTAD Y PERMÍTELE COMUNICARSE CON LOS SERES QUE MÁS AMA </div>
+                        </div>
+                        <h:form id="form_1">
+                            <div id="contenedorlogeo">
+                                <div id="subtitulo_marco"  class="estilo15">
+
+                                    <b>Ingreso</b>
+                                </div>
+                                <a href="#" onclick="RegistrarseClave();">
+                                    <div id="btnsubtitulo_marco"> </div>
+                                </a>
+
+
+
+                                <div id="inusuario" class="estilo24">
+                                    <div id="imgusu">
+
+                                        <i class="fa fa-user" style="font-size: 2em; color: #ffffff;"></i>
+                                    </div>
+                                    <h:panelGroup>
+                                        <p:inputText value="#{loginBenefactorControl.userName}" id="usN_"
+                                                     requiredMessage="Por Favor ingrese su usuario correo ." 
+                                                        class="estilo24" onclick="off" placeholder="Correo Electrónico o Usuario">   	
+
+                                        </p:inputText>  
+                                        <p:watermark for="usN_" value="Correo Electrónico" />
+                                        <p:message for="usN_"/>
+                                    </h:panelGroup>
+                                </div>
+
+
+                                <div id="incontrasena" class="estilo24">
+                                    <div id="imgpass">
+
+                                        <i class="fa fa-lock" style="font-size: 2em; color: #ffffff;"></i>
+                                    </div>
+                                    <h:panelGroup>
+                                        <p:password value="#{loginBenefactorControl.password}"  class="estilo24" id="usP_" required="true" requiredMessage="Por Favor ingrese una Contraseña ." placeholder="Contraseña " > 
+                                        </p:password>
+                                        <p:message for="usP_"/>
+                                    </h:panelGroup>
+                                </div>
+
+
+                                <div id="mensajeerror">
+                                    <h:outputText value="#{utilControl.msg}" escape="false" id="mensajes1" style="font-size: 1.5em;
+                                                  float: left;
+                                                  height: 12px;
+                                                  color: #de3636;
+                                                  text-align: center;
+                                                  width: 100%;
+                                                  font-weight: bold;
+                                                  font-family: 'CenturyGothic-Bold';
+                                                  opacity: 0.8;
+                                                  border-radius: 20px;" class="estilo5"/>
+
+
+                                </div>
+                                <div id="botonesuno">
+
+
+
+                                    <div id="btn_ingresar">  <p:commandButton value="Ingresar" ajax="false" style="background-color: #0f5574 !important;color:#ffffff !important;height: 35px !important" action= "#{loginBenefactorControl.validaIngreso()}"  /> </div>
+
+
+                                    <div id="ingresar">  
+                                        <p:commandButton value="Ingresar" ajax="false" action= "#{loginBenefactorControl.validaIngreso()}"  />
+                                    </div>
+
+                                    <div id="Registrarse"> 
+
+                                        <p:commandButton value="Registrarse"  ajax="true"  onclick="RegistrarseClave();" />
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="botonesdos">
+                                <div id="Olvido" > 
+                                    <a href="javascript:RecuperarClave();" >¿Olvidó Contraseña?</a>
+                                </div>
+
+                            </div>
+
+
+                            <br/>
+
+
+
+                        </h:form>
+
+                    </div>
+
+
+                </div>
+
+                <script type="text/javascript">
+
+                    function valida() {
+
+                        var formulario = document.getElementById("form_1");
+                        var usuario = document.getElementById("form_1:usN_").value;
+                        var contrasena = document.getElementById("form_1:usP_").value;
+                        var funciona = 'S';
+
+
+                        if (usuario == "") {
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'Por favor, ingrese su usuario'});
+
+                            formulario.usuario.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+
+
+                        if (contrasena == "") {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'Por favor, una contraseña .'});
+
+
+                            formulario.contrasena.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                    }
+
+
+                    function ValidarIngreso() {
+                        //  PF('groupDeleteConfirm').hide();
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/auth/registrarse.xhtml';
+                    }
+
+
+                    function RegistrarseClave() {
+                        //  PF('groupDeleteConfirm').hide();
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/auth/registrarse.xhtml';
+                    }
+
+                    function RecuperarClave() {
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/auth/password/recuperar.xhtml';
+                    }
+
+                    $(document).ready(function () {
+                        $('.estilo4').attr('autocomplete', 'off');
+                        $('.estilo4').bind("cut copy paste", function (e) {
+                            e.preventDefault();
+                        });
+                    });
+
+                </script>
+
+                <h:panelGroup rendered="#{loginBenefactorControl.successful}">
+                    <script type="text/javascript">
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';
+
+
+                    </script>
+                </h:panelGroup>
+
+
+
+
+
+            </div>
+            <div id="footer">
+                <div id="marco_pie" >
+
+                    <div id="desarrollo">
+                        <span><h:outputText value="©"/> 2019 - </span> 
+                        <span>
+                            <a target="_blank" href="http://www.tncolombia.com.co" style="color: #003366">
+                                <h:outputText value="Amigo Interno "/></a>
+                        </span> <br/>
+                        Sistema Recargas - V. #{propiedadControl.version} <i>Actualizado: #{propiedadControl.versionUpdated}</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+
+</html>

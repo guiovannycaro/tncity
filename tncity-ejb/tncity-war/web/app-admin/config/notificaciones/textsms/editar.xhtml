@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../../_templateBlank.xhtml">
+
+            <ui:define name="app-admin.contentBlank">
+
+
+            
+                        
+                        <h:outputText value="#{configControl.setObjParametrosSmSText(configControl.config(configControl.objParametrosSmSText))}"/>
+
+
+
+
+                <p:panel header="Configurar">
+                    <div align="center">
+                        <h:form>
+
+                            <p:panelGrid columns="2">
+
+
+  <h:outputText value="De:" styleClass="label"/>
+                            <h:panelGroup>
+                                <h:inputText value="#{configControl.objParametrosSmSText.from}"/>    
+                            </h:panelGroup>
+
+
+                                <h:outputText value="Mensaje :" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:inputText value="#{configControl.objParametrosSmSText.mensaje}" id="attr_mensaje"/>    
+                                 <p:message for="attr_mensaje"/>
+                                </h:panelGroup>
+
+
+
+
+                                <h:outputText value="Token Empresa:" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:inputText value="#{configControl.objParametrosSmSText.token_empresa}" id="attr_token"/>    
+                                  <p:message for="attr_token"/>
+                                </h:panelGroup>
+
+                            
+
+
+
+                                <h:outputText value="Tipo Mensaje:" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:selectOneMenu value="#{configControl.objParametrosSmSText.flash}" required="true" requiredMessage="Requerido!" id="attr_flash">
+                                        <f:selectItem itemValue="" itemLabel="--Seleccione Una Opcion --"/>
+                                        <f:selectItem itemValue="normal" itemLabel="flash"/>
+                                        <f:selectItem itemValue="null" itemLabel="vacio"/>
+
+                                    </h:selectOneMenu>
+                                    <p:message for="attr_flash"/>
+                                </h:panelGroup>
+
+
+                               
+
+
+
+
+                            </p:panelGrid>
+
+                            <br/><br/>
+                            <p:commandButton value="Guardar Cambios" ajax="false" action="#{configControl.guardar(configControl.objParametrosSmSText)}" icon="fa fa-save">
+                            </p:commandButton>
+                            <br/><br/>
+
+                        </h:form>
+                    </div>
+                </p:panel>
+
+                <h:panelGroup rendered="#{configControl.successful}">
+                    <script type="text/javascript">
+                        parent.document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/config/notificaciones/textsms/index.xhtml';
+                    </script>
+                </h:panelGroup>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:ejbjarproject2="http://www.netbeans.org/ns/j2ee-ejbjarproject/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <mkdir dir="${classes.dir}"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${j2ee.platform.wsimport.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-PagosInteligentesWS" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PagosInteligentesWS"/>
+        <property name="wsdl-PagosInteligentesWS" location="${meta.inf}/xml-resources/web-service-references/PagosInteligentesWS/wsdl/localhost_8080/tncity-war/PagosInteligentesWS.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PagosInteligentesWS" destdir="${build.generated.dir}/jax-wsCache/PagosInteligentesWS" wsdl="${wsdl-PagosInteligentesWS}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/tncity-war/PagosInteligentesWS?wsdl" xnocompile="true" xendorsed="true" package="WS">
+            <depends file="${wsdl-PagosInteligentesWS}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PagosInteligentesWS"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PagosInteligentesWS">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-PagosInteligentesWS" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/PagosInteligentesWS"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/WS"/>
+    </target>
+    <target name="wsimport-client-mainwebservicesV2" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/mainwebservicesV2"/>
+        <property name="wsdl-mainwebservicesV2" location="${meta.inf}/xml-resources/web-service-references/mainwebservicesV2/wsdl/ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/mainwebservicesV2" destdir="${build.generated.dir}/jax-wsCache/mainwebservicesV2" wsdl="${wsdl-mainwebservicesV2}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="https://ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-mainwebservicesV2}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/mainwebservicesV2"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/mainwebservicesV2">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-mainwebservicesV2" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/mainwebservicesV2"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/pagosinteligentes"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-PagosInteligentesWS, wsimport-client-mainwebservicesV2"/>
+</project>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.usuario.detalle.content">
+
+
+                <p:panel>
+                    <div align="center">
+                        <h:form>
+                            <p:panelGrid columns="2">
+
+                                <h:outputText value="Nueva Contraseña:"/>
+                                <h:panelGroup>
+                                    <p:password value="#{usuarioControl.pass1}" feedback="true" id="p1" required="true" requiredMessage="Requerido!"/>
+                                    <p:message for="p1"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Confirmar:"/>
+                                <h:panelGroup>
+                                    <p:password value="#{usuarioControl.pass2}" feedback="true" id="p2" required="true" requiredMessage="Requerido!"/>
+                                    <p:message for="p2"/>
+                                </h:panelGroup>
+
+
+                            </p:panelGrid>
+
+                            <br/><br/>
+                            <p:commandButton value="Cambiar Contraseña" icon="fa fa-key" ajax="false" action="#{usuarioControl.cambiarPass()}">
+                                <f:param name="idusuario_" value="#{param.idusuario_}"/>
+                            </p:commandButton>
+
+                            <br/><br/>
+                        </h:form>
+
+                        <h:panelGroup rendered="#{usuarioControl.successful}">
+                            <script type="text/javascript">
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/administracion/usuario/detalle/detalle.xhtml?idusuario_=#{usuarioControl.obj.idusuario}';
+                            </script>
+                        </h:panelGroup>
+
+                    </div>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

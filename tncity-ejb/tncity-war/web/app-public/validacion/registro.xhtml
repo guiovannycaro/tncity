@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+
+
+        <title>TNCity- Sistema De Recaudos</title>
+        <link rel="shortcut icon" href="#{utilControl.protocolHostPortContext}/img/app/logo3.png"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/baseCSS.css"/>
+
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+        <h:outputScript name="js/layout.js" library="ultima-layout" />
+
+        <style type="text/css">
+            .login-body {
+                background: url("#{utilControl.protocolHostPortPath}/img/app/bannerLogin.jpg") top left no-repeat #f7f7f7;
+                background-size: 100% auto; }
+            </style>
+        </h:head>
+
+        <h:body styleClass="login-body">
+
+        <h:form>
+    
+
+            <div class="card login-panel ui-fluid" style="background: rgba(255,255,255, 0.75); padding: 5px;width: 80%">
+
+                <div class="ui-g-12">
+                    <img src="#{utilControl.protocolHostPortPath}/img/app/logo.png" height="50"/>
+                </div>
+
+
+                <div align="center">
+                    <h:panelGrid id = "panel" columns = "6" border = "0"
+                                 cellpadding = "2" cellspacing = "1">
+
+                        <f:facet name = "header">
+                            <h:outputLabel value = "Registrarse"/>
+                        </f:facet>
+
+
+
+
+                        <h:outputText value="Nombres * " styleClass="label"/>
+                        <h:panelGroup>
+                            <p:inputText value="#{benefactorControl.obj.idpersona.nombres}" required="true" requiredMessage="El Campo Nombre Esta Vacio!" id="attr_nombre"
+                                         style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                         color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                         padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                         border-radius: 4px;opacity: 0.5;"
+                                
+                                         />
+
+                        </h:panelGroup>
+
+                        <h:outputText value="Apellidos * " styleClass="label"/>
+                        <h:panelGroup>
+                            <p:inputText value="#{benefactorControl.obj.idpersona.apellidos}" required="true" requiredMessage="El Campo Apellido Esta Vacio!" id="attr_ap"
+                                         style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                         color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                         padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                         border-radius: 4px;opacity: 0.5;"
+
+                                         />
+                        </h:panelGroup>
+
+                        <h:outputText value="Tipo de Documento * " styleClass="label"/>
+                        <h:selectOneMenu value="#{benefactorControl.obj.idpersona.tipodocumento}" required="true" requiredMessage="Debe Elegir Una Tipo de documento de la lista!" id="attr_tipodoc" 
+                                         style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                         color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                         padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                         border-radius: 4px;opacity: 0.5;"
+
+                                         >
+                            <f:selectItem 
+                                itemValue="" itemLabel="-Seleccione Una Opcion--" />
+                            <f:selectItem itemValue="CEDULA" itemLabel="CEDULA"/>
+                            <f:selectItem itemValue="PASAPORTE" itemLabel="PASAPORTE"/>
+                            <f:selectItem itemValue="CEDULA EXTRANGERIA" itemLabel="CED. EXTRANGERIA"/>
+
+                        </h:selectOneMenu>
+
+
+                        <h:outputText value="No. Documento * " styleClass="label"/>
+                        <p:inputText value="#{benefactorControl.obj.idpersona.numdocumento}" required="true" requiredMessage="Debe ingresar un numero de documento!" id="attr_nc"
+                                     style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                     color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                     padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                     border-radius: 4px;opacity: 0.5;"           
+
+                                     />
+
+
+
+                        <h:outputText value="E-mail" styleClass="label"/>
+
+                        <p:inputText value="#{benefactorControl.obj.idpersona.email}" required="true" requiredMessage="Debe Ingresar un correo electronico!" id="attr_email"
+                                     style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                     color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                     padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                     border-radius: 4px;opacity: 0.5;"             
+
+
+                                     />
+
+
+                        <h:outputText value="Teléfono" styleClass="label"/>
+
+                        <p:inputText value="#{benefactorControl.obj.idpersona.numTelefono}" required="true" requiredMessage="Debe Ingresar un numero Telefonico!" id="attr_tel"
+                                     style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                     color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                     padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                     border-radius: 4px;opacity: 0.5;"           
+
+                                     />
+
+
+
+
+
+
+                        <h:outputText value="Dirección" styleClass="label"/>
+
+                        <p:inputText value="#{benefactorControl.obj.idpersona.direccion}" required="false" requiredMessage="Debe Ingresar una direccion!" id="attr_direccion"
+                                     style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                     color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                     padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                     border-radius: 4px;opacity: 0.5;"           
+
+                                     />
+                        
+                          <h:outputText value="Parentesco" styleClass="label"/>
+                        
+                          <h:selectOneMenu value="#{benefactorControl.obj.parentesco}" required="true" requiredMessage="Requerido!" id="attr_parentesco"
+                              style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                     color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                     padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                     border-radius: 4px;opacity: 0.5;"                  
+                                           >
+                                    <f:selectItem itemValue="" itemLabel="---"/>
+                                    <f:selectItem itemValue="AMIGO(A)" itemLabel="AMIGO(A)"/>
+                                    <f:selectItem itemValue="FAMILIAR" itemLabel="FAMILIAR"/>
+                             </h:selectOneMenu>
+                        
+                        
+                    
+                        
+
+
+                        <!--<h:outputText value="Contraseña" styleClass="label"/>
+                        <p:password value="#{benefactorControl.password}" required="true" requiredMessage="Debe ingresar una contraseña!" id="attr_pass1"
+                                    style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                    color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                    padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;
+                                    border-radius: 4px;opacity: 0.5;"           
+                                    />
+
+
+
+                        <h:outputText value="Confirmar Contraseña" styleClass="label"/>
+                        <p:password value="#{benefactorControl.password2}" required="true" requiredMessage="Debe ingresar una contraseña!" id="attr_pass2"
+                                    style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                    color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                    padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;
+                                    border-radius: 4px;opacity: 0.5;"        
+
+                                    />-->
+
+                        
+                     
+                      
+                          
+                        <f:facet name = "footer">
+
+
+                            <h:panelGroup style = "display:block; text-align:center">
+
+                                
+                              
+                                <f:param value="#{param.idbenefactor_}" name="idbenefactor_"/>
+                                 
+                                <p:commandButton value="Guardar" action="#{benefactorControl.registrar()}" icon="fa fa-save" ajax="false" style="
+                                                 text-decoration: none;    width: 15%;
+                                                 height: 38px;float:left;
+                                                 padding: 2px 5px 1px 3px;
+                                                 font-weight: bold;
+                                                 font-size: 14px;
+                                                 color: #ffffff;
+                                                 background-color: #1883ba;
+                                                 border-radius: 6px;
+                                                 border: 1px solid black;
+                                                 margin-left: 306px;
+                                                 " />
+
+                                <p:commandButton type="reset" id = "reset" value = "Limpiar" icon="fa fa-paint-brush" style="
+                                                 text-decoration: none;width: 15%;height: 38px;float:right;
+                                                 padding: 3px;
+                                               font-weight: bold;
+                                                 font-size: 14px;
+                                                 color: #ffffff;
+                                                 background-color: #1883ba;
+                                                 border-radius: 6px;
+                                                 border: 1px solid black;
+                                                 margin-right: 290px;"/>
+
+                            </h:panelGroup>
+
+
+                            <h:panelGroup style = "display:block;margin-top: 4%;">
+
+                                <p:message for="attr_nombre"  style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+
+
+                                <p:message for="attr_ap" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                                <p:message for="attr_tipodoc" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                                <p:message for="attr_nc" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                              
+                            </h:panelGroup> 
+ 
+                                    <h:panelGroup style = "display:block;margin-top: 8%;">
+                                <p:message for="attr_email" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                                <p:message for="attr_tel" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                                <p:message for="attr_direccion" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                                <!--<p:message for="attr_pass1" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                                <p:message for="attr_pass2" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />-->
+
+
+                            </h:panelGroup> 
+                               <h:panelGroup style = "display:block;margin-top: 8%;">
+                              <h:outputText value="#{utilControl.msg}" escape="false"/>
+                              </h:panelGroup> 
+                        </f:facet>
+                    </h:panelGrid>
+                </div>
+
+
+
+
+                <br/>
+                <ui:include src="./../footer.xhtml" />
+
+            </div>   
+        </h:form>
+
+       <h:panelGroup rendered="#{benefactorControl.successful}">
+            <script type="text/javascript">
+                document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/login.xhtml';
+            </script>
+        </h:panelGroup>
+
+
+
+        <br/><br/><br/>
+
+
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{themeControl.theme}.css" library="ultima-layout" />
+    </h:body>
+
+</html>

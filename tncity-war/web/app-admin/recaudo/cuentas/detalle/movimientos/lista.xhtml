@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.cuentas.detalle.movimientos.content">
+         
+                <p:panel header="Lista de Movimientos Cuenta">
+                    <div align="center">
+
+                        <h:outputText value="#{movimientosControl.recuperaTotalmovimientosId(param.idbenefactor_,param.idcuenta_)}"/>
+                        Registros Encontrados (<b>#{movimientosControl.totalConsulta}</b>)
+
+                        <jc:pagList
+                            id="0"
+                            count="#{movimientosControl.totalConsulta}"
+                            urlPageData="#{utilControl.protocolHostPortContext}/app-admin/recaudo/cuentas/detalle/movimientos/listaPag.xhtml?idbenefactor_=#{param.idbenefactor_}&amp;idcuenta_=#{param.idcuenta_}"
+                            maxRegLista="#{movimientosControl.maxRegLista}"/>
+
+                    </div>
+                    <br/><br/>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

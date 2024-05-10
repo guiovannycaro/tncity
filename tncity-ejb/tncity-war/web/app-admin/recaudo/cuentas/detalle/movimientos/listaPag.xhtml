@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./../../../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+           
+                <h:outputText value="#{movimientosControl.recuperaCountTotalMovimientosId(param.idbenefactor_,param.idcuenta_)}"/>
+
+                <br/>
+                <div align="right">
+                    <a href="javascript:void();" onclick="$.colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/recaudo/cuentas/detalle/movimientos/crearmovimiento.xhtml?idbenefactor_=#{param.idbenefactor_}&amp;idcuenta_=#{param.idcuenta_}', iframe: true, title: 'Nuevo Movimiento', transition: 'fade', width: '75%', height: '95%'});">
+                        <b class="fa fa-plus-circle"> [Nuevo Movimiento...]</b>
+                    </a>
+                </div>
+                <br/>
+
+
+                <div>
+                    <p:dataTable reflow="true" var="lst" value="#{movimientosControl.lisMovCuenta}" tableStyle="width:auto">
+
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idmovimiento"
+                                attributeDisplay="Código Movimiento"
+                                />
+                            <h:panelGroup>
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/recaudo/cuentas/detalle/movimientos/detalle/detalle.xhtml?idbenefactor_=#{lst.idcuenta.idbenefactor.idbenefactor}&amp;idcuenta_=#{lst.idcuenta.idcuenta}&amp;idmov_=#{lst.idmovimiento}">
+                                    <h:outputText value="#{lst.idmovimiento} "/>
+
+
+                                </a>
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idcuenta"
+                                attributeDisplay="Código Cuenta"
+                                />
+                            <h:panelGroup>
+
+                                <h:outputText value="#{lst.idcuenta.idcuenta} "/>
+
+                            </h:panelGroup>
+                        </p:column>
+
+
+
+
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idbenefactor"
+                                attributeDisplay="Nombre Benefactor"
+                                />
+                            <h:panelGroup>
+
+                                <h:outputText value="#{lst.idcuenta.idbenefactor.idpersona.nombres}  #{lst.idcuenta.idbenefactor.idpersona.apellidos}"/>
+
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="isActiva"
+                                attributeDisplay="Estado Cuenta"
+                                />
+                            <h:panelGroup>
+
+
+                                <h:outputText value="Activa" rendered="#{lst.idcuenta.isActiva == true }"/>
+                                <h:outputText value="Inactiva" rendered="#{lst.idcuenta.isActiva == false }"/>
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="valor"
+                                attributeDisplay="Valor Movimiento"
+                                />
+                            <h:panelGroup>
+
+
+                                <h:outputText value="#{lst.valor}"/>
+
+                            </h:panelGroup>
+                        </p:column>
+
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="tipo"
+                                attributeDisplay="Movimiento"
+                                />
+                            <h:panelGroup>
+
+
+                                <h:outputText value="#{lst.tipo}"/>
+
+                            </h:panelGroup>
+                        </p:column>
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="estado"
+                                attributeDisplay="Estado"
+                                />
+                            <h:panelGroup>
+
+
+                                <h:outputText value="#{lst.estado}"/>
+
+                            </h:panelGroup>
+                        </p:column>
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="observacion"
+                                attributeDisplay="Observacion "
+                                />
+                            <h:panelGroup>
+
+
+                                <h:outputText value="#{lst.observacionesAnulacion}"/>
+
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="createdAt"
+                                attributeDisplay="Fecha"
+                                />
+                            <h:panelGroup>
+
+
+                                <h:outputText value="#{lst.createdAt}"/>
+
+                            </h:panelGroup>
+                        </p:column>
+
+
+                    </p:dataTable>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

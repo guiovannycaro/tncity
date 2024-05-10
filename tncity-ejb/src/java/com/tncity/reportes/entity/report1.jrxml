@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ace29ed-a831-4cac-afa8-98294b4ef74f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="18"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vista_recargas_tnpagos."idvista" AS vista_recargas_tnpagos_idvista,
+     vista_recargas_tnpagos."nombres" AS vista_recargas_tnpagos_nombres,
+     vista_recargas_tnpagos."apellidos" AS vista_recargas_tnpagos_apellidos,
+     vista_recargas_tnpagos."tipo_documento" AS vista_recargas_tnpagos_tipo_documento,
+     vista_recargas_tnpagos."numero_documento" AS vista_recargas_tnpagos_numero_documento,
+     vista_recargas_tnpagos."num_telefono" AS vista_recargas_tnpagos_num_telefono,
+     vista_recargas_tnpagos."email" AS vista_recargas_tnpagos_email,
+     vista_recargas_tnpagos."direccion" AS vista_recargas_tnpagos_direccion,
+     vista_recargas_tnpagos."ciudad_familiar" AS vista_recargas_tnpagos_ciudad_familiar,
+     vista_recargas_tnpagos."departamento_familiar" AS vista_recargas_tnpagos_departamento_familiar,
+     vista_recargas_tnpagos."pais_familiar" AS vista_recargas_tnpagos_pais_familiar,
+     vista_recargas_tnpagos."tipodocumento_ppl" AS vista_recargas_tnpagos_tipodocumento_ppl,
+     vista_recargas_tnpagos."numero_documento_ppl" AS vista_recargas_tnpagos_numero_documento_ppl,
+     vista_recargas_tnpagos."nombre_ppl" AS vista_recargas_tnpagos_nombre_ppl,
+     vista_recargas_tnpagos."idrecaudo" AS vista_recargas_tnpagos_idrecaudo,
+     vista_recargas_tnpagos."valor" AS vista_recargas_tnpagos_valor,
+     vista_recargas_tnpagos."estado" AS vista_recargas_tnpagos_estado,
+     vista_recargas_tnpagos."log" AS vista_recargas_tnpagos_log,
+     vista_recargas_tnpagos."created_at" AS vista_recargas_tnpagos_created_at,
+     vista_recargas_tnpagos."check_telefonia_at" AS vista_recargas_tnpagos_check_telefonia_at,
+     vista_recargas_tnpagos."establecimiento" AS vista_recargas_tnpagos_establecimiento,
+     vista_recargas_tnpagos."cod_pago" AS vista_recargas_tnpagos_cod_pago,
+     vista_recargas_tnpagos."telefonosms" AS vista_recargas_tnpagos_telefonosms,
+     vista_recargas_tnpagos."observacion" AS vista_recargas_tnpagos_observacion,
+     vista_recargas_tnpagos."observacion_adicional" AS vista_recargas_tnpagos_observacion_adicional,
+     vista_recargas_tnpagos."ciudad_ppl" AS vista_recargas_tnpagos_ciudad_ppl,
+     vista_recargas_tnpagos."nombre_pasarela" AS vista_recargas_tnpagos_nombre_pasarela,
+     vista_recargas_tnpagos."codtransaccion" AS vista_recargas_tnpagos_codtransaccion,
+     vista_recargas_tnpagos."formapago" AS vista_recargas_tnpagos_formapago,
+     vista_recargas_tnpagos."franquicia" AS vista_recargas_tnpagos_franquicia,
+     vista_recargas_tnpagos."descripcion" AS vista_recargas_tnpagos_descripcion,
+     vista_recargas_tnpagos."referencia1" AS vista_recargas_tnpagos_referencia1,
+     vista_recargas_tnpagos."fechapago" AS vista_recargas_tnpagos_fechapago,
+     vista_recargas_tnpagos."numerorecibo" AS vista_recargas_tnpagos_numerorecibo,
+     vista_recargas_tnpagos."codigo" AS vista_recargas_tnpagos_codigo,
+     vista_recargas_tnpagos."mensajeerror" AS vista_recargas_tnpagos_mensajeerror
+FROM
+     "public"."vista_recargas_tnpagos" vista_recargas_tnpagos]]>
+	</queryString>
+	<field name="vista_recargas_tnpagos_nombres" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_apellidos" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_tipo_documento" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_numero_documento" class="java.math.BigDecimal"/>
+	<field name="vista_recargas_tnpagos_num_telefono" class="java.math.BigDecimal"/>
+	<field name="vista_recargas_tnpagos_email" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_direccion" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_ciudad_familiar" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_departamento_familiar" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_pais_familiar" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_tipodocumento_ppl" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_numero_documento_ppl" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_nombre_ppl" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_idrecaudo" class="java.lang.Long"/>
+	<field name="vista_recargas_tnpagos_valor" class="java.lang.Double"/>
+	<field name="vista_recargas_tnpagos_estado" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_log" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_created_at" class="java.sql.Timestamp"/>
+	<field name="vista_recargas_tnpagos_check_telefonia_at" class="java.sql.Timestamp"/>
+	<field name="vista_recargas_tnpagos_establecimiento" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_cod_pago" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_telefonosms" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_observacion" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_observacion_adicional" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_ciudad_ppl" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_nombre_pasarela" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_codtransaccion" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_formapago" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_franquicia" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_descripcion" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_referencia1" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_fechapago" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_numerorecibo" class="java.lang.String"/>
+	<field name="vista_recargas_tnpagos_codigo" class="java.lang.Long"/>
+	<field name="vista_recargas_tnpagos_mensajeerror" class="java.lang.String"/>
+	<group name="vista_recargas_tnpagos_nombres">
+		<groupExpression><![CDATA[$F{vista_recargas_tnpagos_nombres}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#990099" uuid="79e159ca-79bc-4832-b429-f9003a6fe10a"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_nombres}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="3cf51eac-65d0-4bee-bf9b-c95118fa6878"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="121"/>
+		</groupFooter>
+	</group>
+	<group name="vista_recargas_tnpagos_email">
+		<groupExpression><![CDATA[$F{vista_recargas_tnpagos_email}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="4" width="460" height="20" uuid="0d6ab1ef-d81f-4b09-ae16-30aaf777eec0"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_email}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="vista_recargas_tnpagos_departamento_familiar">
+		<groupExpression><![CDATA[$F{vista_recargas_tnpagos_departamento_familiar}]]></groupExpression>
+	</group>
+	<group name="vista_recargas_tnpagos_direccion">
+		<groupExpression><![CDATA[$F{vista_recargas_tnpagos_direccion}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="465df607-1bde-4f33-ba5e-d48540d30f4b"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="eb8fbbfa-b44c-4095-bc7a-b7a591bd63e8"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Violet Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="a959e802-4bca-41f8-ab77-e0358cac02a5"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Leaf Violet SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="ec4cf0da-a24c-4a51-b560-e638c2513922"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="17" height="15" uuid="bd5caf52-280e-4ae7-85ca-944b0200d5b0"/>
+				<text><![CDATA[vista_recargas_tnpagos_apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="17" y="19" width="17" height="15" uuid="24c88985-ccd7-488c-84f3-538d1a3b42f2"/>
+				<text><![CDATA[vista_recargas_tnpagos_tipo_documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="34" y="19" width="17" height="15" uuid="9fa1e844-347e-4d10-bac2-6ff32a104025"/>
+				<text><![CDATA[vista_recargas_tnpagos_numero_documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="51" y="19" width="17" height="15" uuid="c437b926-9c50-438f-aa60-dbfb2526b63f"/>
+				<text><![CDATA[vista_recargas_tnpagos_num_telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="68" y="19" width="17" height="15" uuid="52b013ac-0914-4a85-929e-8dd70d8dd7a9"/>
+				<text><![CDATA[vista_recargas_tnpagos_ciudad_familiar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="85" y="19" width="17" height="15" uuid="b15a8cff-d3e6-49d5-9f7b-c1261b5fd353"/>
+				<text><![CDATA[vista_recargas_tnpagos_pais_familiar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="102" y="19" width="17" height="15" uuid="11733618-90d2-4264-b77a-bab929794988"/>
+				<text><![CDATA[vista_recargas_tnpagos_tipodocumento_ppl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="119" y="19" width="17" height="15" uuid="ab6ad220-433c-4ed4-8cb0-9c49dab5311e"/>
+				<text><![CDATA[vista_recargas_tnpagos_numero_documento_ppl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="136" y="19" width="17" height="15" uuid="5ffde4ad-0077-48b7-90ed-7df885102b10"/>
+				<text><![CDATA[vista_recargas_tnpagos_nombre_ppl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="153" y="19" width="17" height="15" uuid="a4116f96-333f-4aad-81f0-a59a38b2c741"/>
+				<text><![CDATA[vista_recargas_tnpagos_idrecaudo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="170" y="19" width="17" height="15" uuid="eaf70862-94d1-40f8-a7de-ff175278fb0d"/>
+				<text><![CDATA[vista_recargas_tnpagos_valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="187" y="19" width="17" height="15" uuid="1a48b4aa-1a97-480a-88ac-b13a66be564b"/>
+				<text><![CDATA[vista_recargas_tnpagos_estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="204" y="19" width="17" height="15" uuid="108a8aff-c8a6-446f-adf0-d78a4a7892f5"/>
+				<text><![CDATA[vista_recargas_tnpagos_log]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="221" y="19" width="17" height="15" uuid="7fa5d929-b1bc-494b-bf06-120ee1405c5a"/>
+				<text><![CDATA[vista_recargas_tnpagos_created_at]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="238" y="19" width="17" height="15" uuid="27cd5fe7-e321-4408-9009-1c87363f04a9"/>
+				<text><![CDATA[vista_recargas_tnpagos_check_telefonia_at]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="255" y="19" width="17" height="15" uuid="9e7fd027-55b8-4aa9-9f90-54ced1ba929d"/>
+				<text><![CDATA[vista_recargas_tnpagos_establecimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="272" y="19" width="17" height="15" uuid="db3df73e-fcf0-4ff9-b6d0-df812a2565db"/>
+				<text><![CDATA[vista_recargas_tnpagos_cod_pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="289" y="19" width="17" height="15" uuid="6d5c20a9-e38e-48f6-82c4-9548a34a2910"/>
+				<text><![CDATA[vista_recargas_tnpagos_telefonosms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="306" y="19" width="17" height="15" uuid="9a35e50f-8d84-4b63-85ef-38dbaaacf310"/>
+				<text><![CDATA[vista_recargas_tnpagos_observacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="323" y="19" width="17" height="15" uuid="106e0dd1-8dd6-47b2-9d52-ab3d742bc9be"/>
+				<text><![CDATA[vista_recargas_tnpagos_observacion_adicional]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="340" y="19" width="17" height="15" uuid="ba35c7cf-0789-4e34-b5c3-22090537d926"/>
+				<text><![CDATA[vista_recargas_tnpagos_ciudad_ppl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="357" y="19" width="17" height="15" uuid="a0940da6-18e8-4b15-94ee-48d4e76a46b7"/>
+				<text><![CDATA[vista_recargas_tnpagos_nombre_pasarela]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="374" y="19" width="17" height="15" uuid="dc996733-749a-429d-83a3-61e94153434f"/>
+				<text><![CDATA[vista_recargas_tnpagos_codtransaccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="391" y="19" width="17" height="15" uuid="3ab9efbc-45fe-412d-9402-fd9504d84109"/>
+				<text><![CDATA[vista_recargas_tnpagos_formapago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="408" y="19" width="17" height="15" uuid="c03305e7-776d-4e37-8689-b3c1029b4496"/>
+				<text><![CDATA[vista_recargas_tnpagos_franquicia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="425" y="19" width="17" height="15" uuid="3f36303d-fe4f-4baf-8d5d-18a9a2b471ba"/>
+				<text><![CDATA[vista_recargas_tnpagos_descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="442" y="19" width="17" height="15" uuid="2b06230f-4546-4c45-bb34-3d688549cd70"/>
+				<text><![CDATA[vista_recargas_tnpagos_referencia1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="459" y="19" width="17" height="15" uuid="53a8f3d2-6d95-401f-af8d-c9fc68cc6eb7"/>
+				<text><![CDATA[vista_recargas_tnpagos_fechapago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="476" y="19" width="17" height="15" uuid="3d1e3b19-e8fd-406d-a496-0e868dbcf477"/>
+				<text><![CDATA[vista_recargas_tnpagos_numerorecibo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="493" y="19" width="17" height="15" uuid="2c031e9b-2e5f-4be5-9901-8be8c066a637"/>
+				<text><![CDATA[vista_recargas_tnpagos_codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="510" y="19" width="17" height="15" uuid="32a391a3-7c14-4805-bf30-87a733a46871"/>
+				<text><![CDATA[vista_recargas_tnpagos_mensajeerror]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="83" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="fd4baa88-de55-4326-b411-fe1a515e9bfd"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="17" height="15" uuid="8c6e866f-480b-4b23-ad86-8b4e1abc7da5"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="17" y="0" width="17" height="15" uuid="d003c888-e3b5-4583-8fbd-0c37052c132d"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_tipo_documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="34" y="0" width="17" height="15" uuid="5d2685d9-12b2-4c25-ae53-c734986dfd7a"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_numero_documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="51" y="0" width="17" height="15" uuid="ee4b4952-ae6f-4c97-a00d-1103ce967ee5"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_num_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="68" y="0" width="17" height="15" uuid="8e84dc59-c0e0-4778-acd8-2d2faa4a4180"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_ciudad_familiar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="85" y="0" width="17" height="15" uuid="dd67ecd5-c99c-42fd-9444-e104d98c78bb"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_pais_familiar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="102" y="0" width="17" height="15" uuid="42d0d40f-f224-4452-8749-743d92012aa5"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_tipodocumento_ppl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="119" y="0" width="17" height="15" uuid="c3a67f9e-ae58-4e28-ab63-32dc6e0c32d3"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_numero_documento_ppl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="136" y="0" width="17" height="15" uuid="52475cfa-8130-4ede-aa3c-76de67d68c3d"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_nombre_ppl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="153" y="0" width="17" height="15" uuid="ad9a6ada-530f-4d1b-aa0e-28f272fe92b4"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_idrecaudo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="170" y="0" width="17" height="15" uuid="cf9d47a5-4991-4318-a680-fe82e9734fa9"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="187" y="0" width="17" height="15" uuid="fe0d0aeb-57b6-4a50-bea6-cecbd0395be2"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="204" y="0" width="17" height="15" uuid="453f1f2d-4273-4acc-aeb9-39f32719eb12"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_log}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="221" y="0" width="17" height="15" uuid="10860f13-dcf0-422e-95b0-81dd86197ba1"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_created_at}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="238" y="0" width="17" height="15" uuid="f2155728-787f-4413-a488-5b1f64b8a016"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_check_telefonia_at}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="255" y="0" width="17" height="15" uuid="aee6263a-1e74-4fe8-82a1-c1af4dd4a8a8"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_establecimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="272" y="0" width="17" height="15" uuid="2a8601c2-7255-4a44-9859-3620a0c760d0"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_cod_pago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="289" y="0" width="17" height="15" uuid="06eb147e-4c25-4f4e-89a5-537c1bb0f0ad"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_telefonosms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="306" y="0" width="17" height="15" uuid="de0d26cf-3631-4e7d-969c-cee355c64dd0"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_observacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="323" y="0" width="17" height="15" uuid="32682065-bc59-4725-b441-fe2a1d39d80b"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_observacion_adicional}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="340" y="0" width="17" height="15" uuid="feb50241-154b-430e-bafd-a2a75e9fad81"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_ciudad_ppl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="357" y="0" width="17" height="15" uuid="8ec3bf36-cbc5-4fc5-94a4-e814ca001724"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_nombre_pasarela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="374" y="0" width="17" height="15" uuid="9f88a5a9-58ef-4231-9835-595f20bac6ba"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_codtransaccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="391" y="0" width="17" height="15" uuid="2983d522-46b2-4d3b-a65b-6579ef8106e2"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_formapago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="408" y="0" width="17" height="15" uuid="0e93a918-9a82-46f2-aae1-9bbb002871e9"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_franquicia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="425" y="0" width="17" height="15" uuid="00d1ea9b-547a-4983-b3a6-78457e0fd91b"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="442" y="0" width="17" height="15" uuid="83b8af82-3666-4fa8-81fe-b17daff4dd74"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_referencia1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="459" y="0" width="17" height="15" uuid="a98f23b1-6170-4099-b80f-9ab4deff25f9"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_fechapago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="476" y="0" width="17" height="15" uuid="c38e671c-6be7-41c1-98b5-6ddbd78cedeb"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_numerorecibo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="493" y="0" width="17" height="15" uuid="d749ef5b-3545-4e4d-8a92-c96299f6ef96"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="510" y="0" width="17" height="15" uuid="c782988a-87ad-44b1-9841-796bc6e46aa5"/>
+				<textFieldExpression><![CDATA[$F{vista_recargas_tnpagos_mensajeerror}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="168" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="aef125d2-916e-4842-b925-5be9b3e59854"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="239fa667-3f7d-480b-905a-da7f92592619"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="492dfd00-6891-4c76-b9b4-b2e8c2989f7f"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="812fef04-4d1a-467a-a7bd-57425a94af6d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

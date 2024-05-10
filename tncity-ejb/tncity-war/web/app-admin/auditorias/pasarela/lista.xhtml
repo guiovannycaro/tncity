@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+            <ui:define name="app-admin.auditorias.pasarela.content">
+                <p:panel header="Lista de Auditorias Pasarela">
+                    <div align="center">
+
+                        <h:outputText value="#{vistarecaudoControl.recuperaConteoRegistros()}"/>
+                        Registros Encontrados (<b>#{vistarecaudoControl.totalConsulta}</b>)
+                        <div align="center">
+                            <h:outputText value="#{vistarecaudoControl.RecuperarTodosRecaudos()}"/>
+                            <br/>
+                            <div id="contenedor">
+                                <div style="float: right;width: 20%;height: 60px;">
+                                    <div style="float:right;width: 100%;height: 20px">
+                                        <center><b>Descargar</b></center>
+                                    </div>
+
+                                    <div style="float: left;width: 23%;
+                                         height: 35px;margin: 0% 0% 0% 0%;padding: 3% 0% 0% 21%;" >
+                                        <div style="float: left;width: 80%;height: 25px;margin: 0% 0% 0% 0%;
+                                             padding: 0% 0% 0% 0%;text-decoration: none;color: #ffffff;
+                                             background-color: #e8e3e3;border-radius: 6px;border: 
+                                             1px solid #bdbdbd;cursor: pointer;" >
+
+                                            <a href="#{utilControl.protocolHostPortContext}/app-admin/auditorias/pasarela/recaudo/recaudofecha/nueva.xhtml"
+                                               title="Reporte Fechas" >
+                                                <span class="fa fa-table" style="color: #5E9414;font-size: 18px;font-weight: bold;    margin: 15% 0% 0% 0%;"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div style="float: left;width: 22%;height: 35px;
+                                         margin: 0% 0% 0% 0%;padding: 3% 0% 0% 7%;" >
+
+
+                                        <div style="float: left;width: 80%;height: 25px;
+                                             margin: 0% 0% 0% 0%; padding: 0% 0% 0% 0%; text-decoration: none;
+                                             color: #ffffff;background-color: #e8e3e3;border-radius: 6px; 
+                                             border: 1px solid #bdbdbd;cursor: pointer;">
+                                            <a href="#" onclick="exportTableToExcel('tblData', 'ReporteRecaudo')" title="Reporte Completo">
+                                                <span class="fa fa-table" style="color: #5E9414;font-size: 18px;font-weight: bold; margin: 15% 0% 0% 0%;"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <table  id="tblData">
+                                    <tr>
+                                        <th>Codigo Recaudo</th>
+                                        <th>Valor Recaudo</th>
+                                        <th>Fecha Recaudo</th>
+                                        <th>NUmero Transaccion</th>
+                                        <th>Estado</th>
+                                        <th>Log</th>
+                                        <th>Nombre Familiar</th>
+                                        <th>Apellido Familiar</th>
+                                        <th>Tipo Documento Familiar</th>
+                                        <th>Documento Familiar</th>
+                                        <th>Telefono Familiar</th>
+                                        <th>Correo Familiar</th>
+                                        <th>Nombres Beneficiario</th>
+                                        <th>TD Beneficiario</th>
+                                        <th>PIN Beneficiario</th>
+                                        <th>Establecimiento</th>
+                                        <th>Codigo Pago</th>
+                                        <th>Telefonosms</th>
+                                        <th>Valor Comision</th>
+                                        <th>Valor Promocion</th>
+                                        <th>Calculo Promocion</th>
+
+                                    </tr>
+                                    <ui:repeat value="#{vistarecaudoControl.listrecaudotrans }" var="lst"> 
+                                        <tr>
+                                            <td>#{lst.idrecaudo}</td>
+                                            <td>#{lst.valor}</td>
+                                            <td>
+
+
+                                                <h:outputText value="#{lst.createdAt}"> 
+                                                    <f:convertDateTime pattern="MM/dd/yyyy" type="date" /> 
+                                                </h:outputText> 
+                                            </td>
+                                            <td>#{lst.numtransaccion}</td>
+                                            <td>#{lst.estado}</td>
+                                            <td>#{lst.log}</td>
+                                            <td>#{lst.nombreFamiliar}</td>
+                                            <td>#{lst.apellidoFamiliar}</td>
+                                            <td>#{lst.tipodocumentoFamiliar}</td>
+                                            <td>#{lst.numdocumentoFamiliar}</td>
+                                            <td>#{lst.telefonoFamiliar}</td>
+                                            <td>#{lst.correoFamilar}</td>
+                                            <td>#{lst.nombresApellidos}</td>
+                                            <td>#{lst.td}</td>
+                                            <td>#{lst.pin}</td>
+                                            <td>#{lst.establecimiento}</td>
+                                            <td>#{lst.codPago}</td>
+                                            <td>#{ lst.telefonosms}</td>
+                                            <td>#{ lst.valorcomision}</td>
+                                            <td>#{ lst.valorpromocion}</td>
+                                            <td>#{ lst.promo}</td>
+                                        </tr>
+                                    </ui:repeat>
+                                </table>
+                            </div>
+                        </div>   
+
+                        <br/>
+
+                        <style type="text/css">
+
+                            body.layout-compact .ui-button.ui-button-text-icon-left {
+                                padding-left: 26px;
+                            }
+
+                            .panelgrid-dotted-border{
+
+                                border-spacing: 0;
+                                border: 0px;
+                            }
+                            .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                                border: 0px;
+                            }
+
+                            #contenedor{
+                                background-color: #eee;
+                                width: 100%;
+                                height:300px;
+                                margin: 2% 0% 0% 0%;
+                                border: 1px dotted black;
+                                overflow: scroll;
+                            }
+
+                            th{
+                                background: 
+                                    #d4d4d4 !important;
+
+                            }
+                            body .ui-button .ui-icon {
+                                color: #247348;
+                            }
+
+                            body .ui-button {
+                                overflow: hidden;
+                                background-color: #ffffff;
+                                color: #5E9414;
+                                font-size: 16px;
+                                height: 36px;
+                                width: 40%;
+                                padding: 0 16px;
+                                border: 0 none;
+                                border-radius: 20px;
+                                -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                                -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                                box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                                -moz-transition: background-color 0.3s;
+                                -o-transition: background-color 0.3s;
+                                -webkit-transition: background-color 0.3s;
+                                transition: background-color 0.3s;
+                            }
+
+                        </style>
+
+                        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+                        <script src="http://demos.codexworld.com/includes/js/bootstrap.js"></script>
+                        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+                        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+                        <script>
+
+                                                function exportTableToExcel(tableID, filename = '') {
+                                                    var downloadLink;
+                                                    var dataType = 'application/vnd.ms-excel';
+                                                    var tableSelect = document.getElementById(tableID);
+                                                    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                                                    // Specify file name
+                                                    filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                                                    // Create download link element
+                                                    downloadLink = document.createElement("a");
+
+                                                    document.body.appendChild(downloadLink);
+
+                                                    if (navigator.msSaveOrOpenBlob) {
+                                                        var blob = new Blob(['\ufeff', tableHTML], {
+                                                            type: dataType
+                                                        });
+                                                        navigator.msSaveOrOpenBlob(blob, filename);
+                                                    } else {
+                                                        // Create a link to the file
+                                                        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                                                        // Setting the file name
+                                                        downloadLink.download = filename;
+
+                                                        //triggering the function
+                                                        downloadLink.click();
+                                                }
+
+                                                }
+
+                                                function GenerarPdf() {
+                                                    html2canvas(document.getElementById('tblData'), {
+                                                        onrendered: function (canvas) {
+                                                            var data = canvas.toDataURL();
+                                                            var docDefinition = {
+                                                                content: [{
+                                                                        image: data,
+
+                                                                        pageOrientation: 'portrait',
+                                                                        pageSize: 'A4',
+                                                                        widths: ['*', 'auto', 100, '*'],
+                                                                    }]
+                                                            };
+                                                            pdfMake.createPdf(docDefinition).download("reporteRecargasFechas.pdf");
+                                                        }
+                                                    });
+
+                                                }
+
+
+
+
+                        </script>
+
+                    </div>
+                    <br/>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
+

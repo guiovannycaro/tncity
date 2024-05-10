@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.auditorias.pasarela.recaudo.recaudofecha.content">
+                <p:panel header="Parametros Auditoria">
+                    <div align="center">
+                        <h:form id="form_">
+                            
+                            <p:panelGrid columns="2">
+
+                                <h:panelGroup>
+                                    <h:outputText value="Desde" styleClass="label"/>
+                                    <span class="oblig">*</span>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:calendar autocomplete="off" id="desde" required="true" requiredMessage="Por favor, Debe seleccionar la fecha de inicio de la auditoria!" value="#{vistarecaudoControl.desde}" pattern="yyyy-MM-dd " locale="es"  navigator="true"/>
+                                    <p:messages for="desde"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Hasta" styleClass="label"/>
+                                    <span class="oblig">*</span>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:calendar autocomplete="off" id="hasta" required="true" requiredMessage="'Por favor, Debe seleccionar la fecha de final de la auditoria!" value="#{vistarecaudoControl.hasta}" pattern="yyyy-MM-dd " locale="es"  navigator="true"/>
+                                    <p:messages for="hasta"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Familiar / SubDistribuidor" styleClass="label"/>
+                                    <span class="oblig"></span>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <h:outputText value="#{recaudoControl.RecuperaBenefactoresId(1)}"/>
+                                    
+                                    <p:selectOneMenu id="idbenefactor"  required="true" requiredMessage="Por favor, Debe seleccionar Un Familiar De La Lista!" value="#{vistarecaudoControl.idbenefactor}" >
+                                        <f:selectItem itemLabel="Selecione Una Opción.." />
+                                        <f:selectItems value="#{recaudoControl.lisbenfactor}" var="lst" itemValue="#{lst.idbenefactor.idpersona.nombres} #{lst.idbenefactor.idpersona.apellidos}" itemLabel="#{lst.idbenefactor.idpersona.nombres} #{lst.idbenefactor.idpersona.apellidos}"/>
+                                    </p:selectOneMenu>
+                                    <p:messages for="idbenefactor"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Pasarela pago" styleClass="label"/>
+                                    <span class="oblig">*</span>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <h:outputText value="#{recaudoControl.RecuperaPasarelasId()}"/>
+
+                                    <p:selectOneMenu id="idpasarela" value="#{vistarecaudoControl.idpasarela}"  required="true" requiredMessage="Por favor, Debe seleccionar Una Pasarela De La lista.!">
+                                        <f:selectItem itemLabel="Selecione Una Opción.." />
+                                        <f:selectItems value="#{recaudoControl.lispasarelapago}" var="lst" itemValue="#{lst.idpasarela}" itemLabel="#{lst.nombre} "/>
+                                    </p:selectOneMenu>
+                                    <p:messages for="idpasarela"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Estado Recaudo" styleClass="label"/>
+                                    <span class="oblig"></span>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+                                    <p:selectOneMenu id="idestado" value="#{vistarecaudoControl.idestado}"  required="true" requiredMessage="Por favor, Debe seleccionar Una Pasarela De La lista.!">
+                                        <f:selectItem itemLabel="Selecione Una Opción.." />
+                                        <f:selectItem itemValue="VALIDO" itemLabel="VALIDO"/>
+                                        <f:selectItem itemValue="RECHAZADO"  itemLabel="RECHAZADO"/>
+                                        <f:selectItem itemValue="PENDIENTE PAGO"  itemLabel="PENDIENTE PAGO "/>
+                                    </p:selectOneMenu>
+                                    <p:messages for="idestado"/>
+                                </h:panelGroup>
+
+                            </p:panelGrid>
+                            <br/><br/>
+                            <div id="botones">
+                                <div id="txtregresar"> 
+                                    <p:commandButton value="REGRESAR" id="regresar"  ajax="true" onclick="regresar();"  />
+                                </div>
+                                <div id="txtenviar"> 
+                                    <p:commandButton value="SIGUIENTE" onclick="enviarf();" class="sigui" icon="fa fa-arrow-right"  >
+                                    </p:commandButton>
+                                </div>
+                            </div>
+                            <br/><br/>
+                            <p:message for="form_"/>
+                        </h:form>
+
+                        <script>
+
+                            PrimeFaces.locales['es'] = {
+                                closeText: 'Cerrar',
+                                prevText: 'Anterior',
+                                nextText: 'Siguiente',
+                                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                                dayNamesMin: ['D', 'L', 'M', 'Mi', 'J', 'V', 'S'],
+                                weekHeader: 'Semana',
+                                firstDay: 1,
+                                isRTL: false,
+                                showMonthAfterYear: false,
+                                yearSuffix: '',
+                                timeOnlyTitle: 'Sólo hora',
+                                timeText: 'Tiempo',
+                                hourText: 'Hora',
+                                minuteText: 'Minuto',
+                                secondText: 'Segundo',
+                                currentText: 'Fecha actual',
+                                ampm: false,
+                                month: 'Mes',
+                                week: 'Semana',
+                                day: 'Día',
+                                allDayText: 'Todo el día'
+                            };
+
+                            function regresar() {
+
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/auditorias/pasarela/lista.xhtml'
+                            }
+
+                            function enviarf() {
+
+
+                                var desde = document.getElementById("form_:desde_input").value;
+                                var hasta = document.getElementById("form_:hasta_input").value;
+                                var idbenefactor = document.getElementById("form_:idbenefactor_input").value;
+
+                                var idpasarela = document.getElementById("form_:idpasarela_input").value;
+                                var idestado = document.getElementById("form_:idestado_input").value;
+
+
+                                var funciona = 'S';
+
+                                if (desde == "") {
+                                    swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Debe seleccionar la fecha de inicio de la auditoria.'});
+                                    formulario.desde.focus();
+                                    funciona = 'N';
+                                    return false;
+                                }
+
+                                if (hasta == "") {
+                                    swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Debe seleccionar la fecha de final de la auditoria.'});
+                                    formulario.hasta.focus();
+                                    funciona = 'N';
+                                    return false;
+                                }
+
+                                if (idpasarela == "") {
+                                    swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Debe seleccionar Una Pasarela De La lista.'});
+                                    formulario.idpasarela.focus();
+                                    funciona = 'N';
+                                    return false;
+                                }
+
+                                if (funciona == 'S') {
+                                    var som = '/app-admin/auditorias/pasarela/recaudo/recaudofecha/generarinforme.xhtml?desde_=' + desde + '&amp;hasta_=' + hasta + '&amp;idbenefactor_=' + idbenefactor + '&amp;estado_=' + idestado + '&amp;idpasarela_=' + idpasarela;
+                                    var url = '#{utilControl.protocolHostPortContext}' + som;
+                                    document.location.href = url;
+                                }
+                            }
+
+                        </script>
+                        <style>
+                            #botones{
+                                float: left;
+                                width: 100%;
+                                height: 50px;
+                                margin: 0% 0% 0% 0%;
+                                padding:  0% 0% 0% 0%;
+                            }
+
+                            #txtregresar{
+                                float: left;
+                                width: 30%;
+                                height: 34px;
+                                margin: 0% 0% 0% 17%;
+                                padding: 0% 0% 0% 0%;
+                            }  
+
+                            #txtenviar{
+                                float: right;
+                                width: 36%;
+                                height: 35px;
+                                margin: 0% 17% 0% 0%;
+                                padding: 0% 0% 0% 0%;
+                            }
+
+                        </style>
+
+                    </div>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

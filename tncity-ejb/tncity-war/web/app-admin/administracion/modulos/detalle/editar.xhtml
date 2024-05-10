@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.modulos.detalle.content">
+           
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <p:panelGrid columns="2">
+
+                            <h:panelGroup>
+                                    <h:outputText value="Nombre" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{modulosControl.obj.nombre}" required="true" requiredMessage="Requerido!" id="attr_nombre"/>
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Imagen Font AwaveZone" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                <h:panelGroup>
+                                    <p:inputText value="#{modulosControl.obj.imagen}" required="true" requiredMessage="Requerido!" id="attr_imagen"/>
+                                    <p:message for="attr_imagen"/>
+                                </h:panelGroup>
+
+                                
+                                  <h:panelGroup>
+                                    <h:outputText value="Link" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+     <h:panelGroup>
+                                    <p:inputText value="#{modulosControl.obj.url}" required="true" requiredMessage="Requerido!" id="attr_link"/>
+                                    <p:message for="attr_link"/>
+                                </h:panelGroup>
+                           
+                                
+                                
+                                  <h:panelGroup>
+                                    <h:outputText value="Nombre Visual" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                
+                                <h:panelGroup>
+                                    <p:inputText value="#{modulosControl.obj.nombrevisual}" required="true" requiredMessage="Requerido!" id="attr_nvisula"/>
+                                    <p:message for="attr_nvisula"/>
+                                </h:panelGroup>
+                                
+                                
+                                
+                                  <h:panelGroup>
+                                    <h:outputText value="Estado" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                
+                                <h:panelGroup>
+                                     <h:selectOneMenu value="#{modulosControl.obj.estado}" required="true" requiredMessage="Requerido!" id="attr_iddepartamento">
+                                         <f:selectItem itemLabel="Seleccione una opcion" itemValue=""  />
+                                         <f:selectItem itemLabel="Activo" itemValue="true"/>
+                                         <f:selectItem itemLabel="Inactivo" itemValue="false"/>
+                                    </h:selectOneMenu>
+                                </h:panelGroup>
+
+                        </p:panelGrid>
+                        <br/><br/>
+
+                        <h:inputHidden value="#{modulosControl.obj.idmodulo}"/>
+
+                        <p:commandButton value="Guardar Cambios" action="#{modulosControl.editar()}" icon="fa fa-save" ajax="false">
+                            <f:param name="idmodulo_" value="#{param.idmodulo_}"/>
+                        </p:commandButton>
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+                    <h:panelGroup rendered="#{modulosControl.successful}">
+                        <script type="text/javascript">
+                            document.location.href =
+                                    '#{utilControl.protocolHostPortContext}/app-admin/administracion/modulos/detalle/detalle.xhtml?idmodulo_=#{modulosControl.obj.idmodulo}';
+                        </script>
+                    </h:panelGroup>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

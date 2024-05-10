@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+
+                <h:outputText value="#{informexControl6.TotalInformesFechas(param.desde_,param.hasta_,param.idbenefactor_,param.idpasarela_)}"/>
+
+
+                <br/>
+
+
+                <div style="width: 100%;height: auto;
+                     float:left;margin: 0% 0% 0% 0%;padding: 0% 0% 0% 0%">
+
+                    <h:form>
+
+                        <p:panelGrid style="width: 100%;" styleClass="panelgrid-dotted-border">
+
+                            <p:row> 
+                                <p:column>     
+
+
+                                    <h:panelGroup rendered="#{param.totalconsulta_ > 0 }">
+
+
+                                        <div style="float: right;
+                                             width: 20%;
+                                             height: auto;">
+                                            <div style="float:right;width: 100%;height: 12px"><center><b>Descargas</b></center></div>
+
+
+
+
+
+                                            <div style="    float: left;
+                                                 width: 28%;
+                                                 height: 36px;
+                                                 margin: 12% 0% 0% 0%;
+                                                 padding: 0% 15% 0% 14%;" >
+
+
+
+                                                <p:commandButton  onclick="$.colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/informex/informe6/detalle/crearExel.xhtml?desde_=#{param.desde_}&amp;hasta_=#{param.hasta_}&amp;idbenefactor_=#{param.idbenefactor_}&amp;idpasarela_=#{param.idpasarela_}', iframe: true, title: 'Configurar', transition: 'fade', width: '75%', height: '95%'});" icon="fa fa-table" ajax="true">
+                                                    <f:param name="desde_" value="#{param.desde_}"/>
+                                                    <f:param name="hasta_" value="#{param.hasta_}"/>
+                                                    <f:param name="idbenefactor_" value="#{param.idbenefactor_}"/>
+                                                    <f:param name="idpasarela_" value="#{param.idpasarela_}"/>
+                                                </p:commandButton>
+
+                                            </div>
+
+
+
+                                            <div style="    width: 8%;
+                                                 height: 11px;
+                                                 margin: 13% 0% 0% -10%;
+                                                 padding: 0% 0% 0% 0%;
+                                                 float: left;">   - </div>
+
+                                            <div style="float:left;width: 23%;height: 30px;margin:12% 0% 0% 0%;padding: 0% 5% 0% 0%" >
+
+                                                <p:commandButton  onclick="$.colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/informex/informe6/detalle/crearPdf.xhtml?desde_=#{param.desde_}&amp;hasta_=#{param.hasta_}&amp;idbenefactor_=#{param.idbenefactor_}&amp;idpasarela_=#{param.idpasarela_}', iframe: true, title: 'Configurar', transition: 'fade', width: '75%', height: '95%'});" icon="fa fa-file-pdf-o" ajax="true">
+                                                    <f:param name="desde_" value="#{param.desde_}"/>
+                                                    <f:param name="hasta_" value="#{param.hasta_}"/>
+                                                    <f:param name="idbenefactor_" value="#{param.idbenefactor_}"/>
+                                                    <f:param name="idpasarela_" value="#{param.idpasarela_}"/>
+                                                </p:commandButton>
+
+                                            </div>
+
+                                        </div>
+                                    </h:panelGroup>
+                                </p:column>
+                            </p:row>
+
+                        </p:panelGrid>
+                    </h:form>
+                    <div id="contenedor">
+                        <h:form>
+                            <p:dataTable id="cars" var="lst" value="#{informexControl6.lstrecaudos}" rows="15"
+                                         paginator="false"
+                                         paginatorTemplate="  {RowsPerPageDropdown}"
+                                         rowsPerPageTemplate="5,10,15,25"
+                                         style="width: 1750px">
+
+                                <p:column  style="width: 10%" headerText="Nombres" >
+
+                                    <h:outputText value="#{lst.nombres}" />
+
+                                </p:column>
+
+                                <p:column style="width: 10%" headerText="Apellidos">
+
+                                    <h:outputText value="#{lst.apellidos}" />
+
+                                </p:column>
+
+                                <p:column style="width: 10%" headerText="Tipo Documento">
+
+                                    <h:outputText value="#{lst.tipodocumento}" />
+
+                                </p:column>
+
+                                <p:column style="width: 10%" headerText="Numero Documento">
+
+                                    <h:outputText value="#{lst.numdocumento}" />
+
+                                </p:column>
+
+                                <p:column style="width: 5%" headerText="Num. Telefono">
+
+                                    <h:outputText value="#{lst.num_telefono}" />
+
+                                </p:column>
+
+
+                                <p:column style="width: 5%" headerText="Celular">
+
+                                    <h:outputText value="#{lst.num_telefono2}" />
+
+                                </p:column>
+
+                                <p:column style="width: 10%" headerText="Correo">
+
+                                    <h:outputText value="#{lst.email}" />
+
+                                </p:column>
+
+                                <p:column style="width: 10%" headerText="Estado">
+
+                                    <h:outputText value="#{lst.estado}" />
+
+                                </p:column>
+
+                                <p:column style="width: 10%" headerText="Conteo Recaudo">
+
+                                    <h:outputText value="#{lst.conteo_recaudo}" />
+
+                                </p:column>
+                                <p:column style="width: 10%" headerText="Telefono Sms">
+
+                                    <h:outputText value="#{lst.telefonosms}" />
+
+                                </p:column>
+
+                                <f:facet name="paginatorTopLeft">
+                                    <p:commandButton type="button" icon="pi pi-refresh" />
+                                </f:facet>
+
+                                <f:facet name="paginatorBottomRight">
+                                    <p:commandButton type="button" icon="pi pi-cloud-upload" />
+                                </f:facet>
+
+
+
+                            </p:dataTable>
+
+                        </h:form>
+
+
+
+
+
+
+                    </div>
+
+                    <script>
+                        function descargar() {
+                            var file = document.getElementById("archivo").value;
+                            alert(file);
+                            window.open(file, "width=300,height=300");
+
+
+
+                        }
+                    </script>
+
+
+
+
+
+
+
+
+                </div>
+
+                <style type="text/css">
+
+                    body.layout-compact .ui-button.ui-button-text-icon-left {
+                        padding-left: 26px;
+                    }
+
+                    .panelgrid-dotted-border{
+
+                        border-spacing: 0;
+                        border: 0px;
+                    }
+                    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                        border: 0px;
+                    }
+
+                    #contenedor{
+                        background-color: #eee;
+                        width: 100%;
+                        height:300px;
+                        border: 1px dotted black;
+                        overflow: scroll;
+                    }
+
+                    th{
+                        background: 
+                            #d4d4d4 !important;
+
+                    }
+                    body .ui-button .ui-icon {
+                        color: #247348;
+                    }
+
+                    body .ui-button {
+                        overflow: hidden;
+                        background-color: #ffffff;
+                        color: #5E9414;
+                        font-size: 16px;
+                        height: 36px;
+                        width: 40%;
+                        padding: 0 16px;
+                        border: 0 none;
+                        border-radius: 20px;
+                        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        -moz-transition: background-color 0.3s;
+                        -o-transition: background-color 0.3s;
+                        -webkit-transition: background-color 0.3s;
+                        transition: background-color 0.3s;
+                    }
+
+                </style>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

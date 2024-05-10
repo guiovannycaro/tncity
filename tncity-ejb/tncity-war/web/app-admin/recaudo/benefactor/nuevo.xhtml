@@ -1,0 +1,511 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body >
+        <h:head>
+
+            <script name="jquery/jquery.js" library="primefaces"></script>
+
+        </h:head>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.benefactor.content">
+      
+
+
+                <p:panel header="Nuevo benefactor">
+                    <div align="center">
+                        <h:form id="form2">
+                            <p:panelGrid columns="2">
+
+                                <h:panelGroup>
+                                    <h:outputText value="Nombres" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                     
+
+                                    
+                                      <p:inputText value="#{benefactorControl.obj.idpersona.nombres}" required="true" requiredMessage="El Campo Nombre Esta Vacio!" id="attr_nombre"
+                                                         maxlength="45" placeholder="Nombres" > 
+
+                                                <p:keyFilter regEx="/^[a-zA-Z\s]+$/"/>  
+                                            </p:inputText>
+                                    
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Apellidos" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{benefactorControl.obj.idpersona.apellidos}" required="true" placeholder="Apellidos" requiredMessage="Requerido!" id="attr_ap">
+                                        <p:keyFilter regEx="/^[a-zA-Z\s]+$/"/>  
+                                    </p:inputText>
+                                    <p:message for="attr_ap"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Tipo de Documento" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <h:selectOneMenu value="#{benefactorControl.obj.idpersona.tipodocumento}" required="true" requiredMessage="Requerido!" id="attr_tipodoc">
+                                        <f:selectItem itemValue="" itemLabel="---"/>
+                                        <f:selectItem itemLabel="Cédula de ciudadanía" itemValue="CEDULA"/>
+                                        <f:selectItem itemLabel="Cédula de extranjería" itemValue="CEDULA EXTRANGERIA"/>
+                                        <f:selectItem itemLabel="Pasaporte" itemValue="PASAPORTE"/>
+                                    </h:selectOneMenu>
+                                    <p:message for="attr_tipodoc"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="No. Documento" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{benefactorControl.obj.idpersona.numdocumento}" required="true" placeholder="Número Documento" requiredMessage="Requerido!" id="attr_nc">
+                                        <p:keyFilter regEx="/[0-9]/i"/>  
+                                    </p:inputText>
+                                    <p:message for="attr_nc"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Teléfono 1" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{benefactorControl.obj.idpersona.numTelefono}" required="true" placeholder="Celular" requiredMessage="Requerido!" id="attr_t1">
+                                        <p:keyFilter regEx="/[0-9]/i"/>  
+                                    </p:inputText>
+
+                                    <p:message for="attr_t1"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Teléfono 2" styleClass="label"/>
+
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{benefactorControl.obj.idpersona.numTelefono2}"  requiredMessage="Requerido!" id="attr_t2">
+                                        <p:keyFilter regEx="/[0-9]/i"/>  
+                                    </p:inputText>
+                                    <p:message for="attr_t2"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Ciudad" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+
+                                    <p:autoComplete value="#{benefactorControl.obj.idpersona.idciudad}"
+                                                    completeMethod="#{ciudadControl.autoCompleteAllLight}"  
+                                                    styleClass="autocomplete_" forceSelection="true" var="obj" 
+                                                    itemLabel="#{obj.nombre} #{obj.iddepartamento.nombre} #{obj.iddepartamento.idpais.nombre}" 
+                                                    itemValue="#{obj}" id="attr_ciu"
+                                                    required="true" requiredMessage="Requerido !"/>  
+
+                                    <p:message for="attr_ciu"/>
+                                </h:panelGroup>
+
+
+                                
+                                <h:panelGroup>
+                                    <h:outputText value="Direccion " styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+
+                                    <p:inputText value="#{benefactorControl.obj.idpersona.direccion}" required="true" id="attr_direccion"
+                                                 requiredMessage="Por Favor ingrese una direccion ." 
+                                                 >   	
+                                      
+                                    </p:inputText>
+
+                                    <p:message for="attr_direccion"/>
+                                </h:panelGroup>
+                                
+                                
+                                <h:panelGroup>
+                                    <h:outputText value="Correo Electronico" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+
+
+                                    <p:inputText value="#{benefactorControl.correo}" required="true" id="attr_correo"
+                                                 requiredMessage="Por Favor ingrese un correo ." 
+                                                 validatorMessage="El Formato del Correo es Incorrecto" >   	
+                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                    </p:inputText>
+
+                                    <p:message for="attr_correo"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Confirmar Correo Electronico" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{benefactorControl.con_correo}" required="true" id="attr_ccorreo"
+                                                 requiredMessage="Por Favor ingrese un correo ." 
+                                                 validatorMessage="El Formato del Correo es Incorrecto" >   	
+                                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                    </p:inputText>
+                                    <p:message for="attr_ccorreo"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText  class="fa fa-pencil" style="float: left" title="Digite 8 caracteres como minimo 1 letra mayuscula 1 caracter especial ($,@)"></h:outputText> 
+                                    - 
+                                    <h:outputText value="Contraseña *" styleClass="label"/>
+                               
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:password value="#{benefactorControl.contra}" required="true" requiredMessage="Requerido!" id="attr_contra"/>
+                                          <a href="javascript:mostrarContrasena()" ><i class="fa fa-eye-slash" style="color:#000000" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                    <p:message for="attr_contra"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <h:outputText  class="fa fa-pencil" style="float: left" title="Digite 8 caracteres como minimo 1 letra mayuscula 1 caracter especial ($,@)"></h:outputText> 
+                                    -  <h:outputText value="Confirmar Contraseña" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:password value="#{benefactorControl.con_contra}" required="true" requiredMessage="Requerido!" id="attr_ccontra"/>
+                                     <a href="javascript:mostrarConfContrasena()" ><i class="fa fa-eye-slash" style="color:#000000" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                    <p:message for="attr_ccontra"/>
+                                </h:panelGroup>
+
+
+                            </p:panelGrid>
+                            <br/><br/>
+                            <p:commandButton value="Guardar" ajax="true" onclick="registro();" icon="fa fa-save" />
+                            <br/><br/>
+                        </h:form>
+
+                        <h:panelGroup rendered="#{benefactorControl.successful}">
+                            <script type="text/javascript">
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/recaudo/benefactor/detalle/detalle.xhtml?idbenefactor_=#{benefactorControl.obj.idbenefactor}';
+                            </script>
+                        </h:panelGroup>
+
+                    </div>
+                </p:panel>
+
+
+                <script>
+                    function mostrarContrasena() {
+                        var tipo = document.getElementById("form2:attr_contra");
+                        if (tipo.type == "password") {
+                            tipo.type = "text";
+                        } else {
+                            tipo.type = "password";
+                        }
+
+                    }
+
+                    function mostrarConfContrasena() {
+                        var tipo = document.getElementById("form2:attr_ccontra");
+                        if (tipo.type == "password") {
+                            tipo.type = "text";
+                        } else {
+                            tipo.type = "password";
+                        }
+                    }
+
+                    function actualizar() {
+                        setTimeout("location.reload(true);", 1000);
+                    }
+
+
+
+                    function registro() {
+
+
+                        var formulario = document.getElementById("form2");
+
+                        var nombre = document.getElementById("form2:attr_nombre").value;
+
+
+
+
+                        var apellidos = document.getElementById("form2:attr_ap").value;
+                        var tipdoc = document.getElementById("form2:attr_tipodoc").value;
+
+
+                        var numdoc = document.getElementById("form2:attr_nc").value;
+                        var tel1 = document.getElementById("form2:attr_t1").value;
+                        var tel2 = document.getElementById("form2:attr_t2").value;
+
+
+                        var correo = document.getElementById("form2:attr_correo").value;
+                        var contra = document.getElementById("form2:attr_contra").value;
+
+                        var ccorreo = document.getElementById("form2:attr_ccorreo").value;
+                        var ccontra = document.getElementById("form2:attr_ccontra").value;
+
+                        var ciudad = document.getElementById("form2:attr_ciu_input").value;
+
+                        var direccion = document.getElementById("form2:attr_direccion").value;
+
+                        var funciona = 'S';
+
+
+                        if (nombre == "") {
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'Por favor, ingrese su nombre.'});
+
+                            formulario.nombre.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+
+
+                        if (apellidos == "") {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'Por favor, ingrese su apellido.'});
+
+
+                            formulario.apellidos.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (tipdoc == "")
+                        {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '¡Por favor Seleccione un tipo de identificación!'});
+
+
+                            formulario.tipdoc.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (numdoc == "")
+                        {
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'Por Favor digite su número de documento'});
+
+                            formulario.numdoc.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+
+
+                        if (tel1 == "")
+                        {
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '!Por favor digite su numero De Celular!'});
+                            formulario.tel1.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+
+                        if (tel2 == "")
+                        {
+                            tel2 = "0";
+                        }
+
+                        var mailRegex = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+                        if (correo == "")
+                        {
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'Por favor Digite un Correo Electronico'});
+
+                            formulario.correo.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+
+                        if (!mailRegex.exec(correo)) {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'La dirección de email es incorrecta.'});
+
+
+
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (ccorreo == "")
+                        {
+                            swal({type: "info", title: '¡Mensaje De Error!', text: 'Por favor Digite un Correo Electronico'});
+
+                            formulario.ccorreo.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (!mailRegex.exec(ccorreo)) {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '"La dirección de email es incorrecta.'});
+
+
+
+                            funciona = 'N';
+                            return false;
+                        }
+
+
+                        if (correo != ccorreo) {
+
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '"El Correo electronico no coincide'});
+
+
+
+                            formulario.correo.focus();
+                            funciona = 'N';
+                            return false;
+
+                        }
+
+
+                        if (contra == "")
+                        {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '"Por favor Digite Una Contraseña'});
+
+                            formulario.contra.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (ccontra == "")
+                        {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '"Por favor Digite Una Contraseña'});
+
+
+                            formulario.ccontra.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (contra != ccontra) {
+
+
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '"Las Contraseñas Deben ser Iguales'});
+
+                            formulario.correo.focus();
+                            funciona = 'N';
+                            return false;
+
+                        }
+
+
+                        if (ciudad == "")
+                        {
+
+                            swal({type: "info", title: '¡Mensaje De Error!', text: '"Por favor Seleccione una Ciudad'});
+
+                            formulario.ciudad.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+
+                        if (funciona == 'S') {
+
+                            document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/recaudo/benefactor/registro.xhtml?nombre_=' + nombre + '&amp;apellidos_=' + apellidos + '&amp;tipdoc_=' + tipdoc + '&amp;numdoc_=' + numdoc + '&amp;tel1_=' + tel1 + '&amp;tel2_=' + tel2 + '&amp;correo_=' + correo + '&amp;contra_=' + contra + '&amp;ccorreo_=' + ccorreo + '&amp;ccontra_=' + ccontra + '&amp;ciudad_=' + ciudad + '&amp;direccion_='+direccion;
+                        }
+                    }
+
+
+                </script>
+                <style>
+
+                    /* The container */
+                    .container {
+                        display: block;
+                        position: relative;
+                        padding-left: 35px;
+                        margin-bottom: 12px;
+                        cursor: pointer;
+                        font-size: 1em;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        color: #1b1a1a;
+                    }
+                    /* Hide the browser's default checkbox */
+                    .container input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+
+                    /* Create a custom checkbox */
+                    .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 25px;
+                        width: 25px;
+                        background-color: #eee;
+                    }
+
+                    /* On mouse-over, add a grey background color */
+                    .container:hover input ~ .checkmark {
+                        background-color: #ccc;
+                    }
+
+                    /* When the checkbox is checked, add a blue background */
+                    .container input:checked ~ .checkmark {
+                        background-color: #2196F3;
+                    }
+
+                    /* Create the checkmark/indicator (hidden when not checked) */
+                    .checkmark:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+
+                    /* Show the checkmark when checked */
+                    .container input:checked ~ .checkmark:after {
+                        display: block;
+                    }
+
+                    /* Style the checkmark/indicator */
+                    .container .checkmark:after {
+                        left: 9px;
+                        top: 5px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                </style>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

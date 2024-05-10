@@ -1,0 +1,1846 @@
+@charset "utf-8";
+
+img, object, embed, video {
+    max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+    width:100%;
+}
+
+/*
+        Propiedades de cuadrícula fluida de Dreamweaver
+        ----------------------------------
+        dw-num-cols-mobile:		5;
+        dw-num-cols-tablet:		8;
+        dw-num-cols-desktop:	10;
+        dw-gutter-percentage:	25;
+        
+        Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+        http://www.alistapart.com/articles/responsive-web-design
+        
+        y Golden Grid System de Joni Korpi
+        http://goldengridsystem.com/
+*/
+
+body {
+    background-image: url(../imagenes/finternomovil.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position:top center;
+    font-size: 8px;
+    padding:0px;
+    margin:0px;
+    width:100%
+}
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;/*
+    padding-right: 1.82%;*/
+}
+
+#contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#contenedorprincipal{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    border: 1px solid #ffffff;
+    display: block;
+
+}
+
+#contenedorsuperior{
+    float:left;
+    width: 100%;
+    height:40px;
+    margin: 0% 0% 0% 0%;
+    padding: 1% 0% 0% 1%;
+    display: none;
+
+}
+
+#pestana1{
+    float: left;
+    width: 90%;
+    height: 31px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: none;
+
+}
+
+#txtpu{
+    float: left;
+    width: 100%;
+    height: 38px;
+    margin: 0% 0% 0% 0%;
+    padding: 4% 0% 0% 0%;
+    text-align: center;
+    display: none;
+
+}
+
+#pestana2{
+    float: left;
+    width: 90%;
+    height: 31px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: none;
+}
+
+#txtpd{
+    float: left;
+    width: 100%;
+    height: 38px;
+    margin: 0% 0% 0% 0%;
+    padding: 4% 0% 0% 0%;
+    text-align: center;
+    display: none;
+}
+
+#pestana3{
+    float: left;
+    width: 90%;
+    height: 31px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: none;
+}
+
+#txtpt{
+    float: left;
+    width: 100%;
+    height: 38px;
+    margin: 0% 0% 0% 0%;
+    padding: 4% 0% 0% 0%;
+    text-align: center;
+    display: none;
+
+}
+
+#lineapestana{
+    height: 5px;
+    width: 85%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+    background-color:#0B637A;
+    display:block;
+}
+
+#contenedormedio{
+    float:left;
+    width: 100%;
+    height:40px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#marcorecaudo {
+    height: 1437px;
+    width: 100%;
+    float: left;
+    background-image: url(../imagenes/fondpasosmovil.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#errortrans{
+    float: left; 
+    width: 100%;
+    height: 50px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+    border: 1px solid #f50303;
+    background-color: #f5c2c2;
+    border-radius: 4px;
+    opacity: 0.5;
+    color: #f10505;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+
+
+}
+
+#cont_boton{
+    float: left; 
+    width: 100%;
+    height: 35px;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+    display: block;      
+}
+
+#btn1{
+    float: left;
+    width: 60%;
+    height: 35px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 20% 0% 20%;
+    color: #4d4d4d;
+    background-color:#0B637A;
+    border-radius: 20px;
+    border: 1px solid #f5eded;
+    display: block;
+}
+
+
+#marco_detalle{
+    float: left;
+    width: 90%;
+    height: 474px;
+    padding: 0% 5% 0% 5%;
+    margin: 6% 0% 0% 7%;
+    display: block;
+}
+
+#marco_titulo{
+    float: left; 
+    width: 100%;
+    height: 80px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txt_titulo{
+    float: left; 
+    width: 100%;
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txt_titulosub{
+    float: left; 
+    width: 100%;
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txt_titulolin{
+    float: left; 
+    width: 100%;
+    height: 5px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    background-color:  #ffffff;
+    border: 1px solid #ffffff;
+    display: block;
+}
+
+
+#marco_subtitulo{
+    float: left;
+    width: 100%;
+    height: 116px;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% 0%;
+    display: block;
+}
+
+
+#txt_subtitulosub{
+    float: left; 
+    width: 100%;
+    height: 21px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txt_subtitulosval{
+    float: left; 
+    width: 100%;
+    height: 21px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txt_subtitulostotl{
+    float: left; 
+    width: 100%;
+    height: 21px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txt_subtitulosmonto{
+    float: left; 
+    width: 100%;
+    height: 30px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#marco_datos{
+    float: left;
+    width: 100%;
+    height: 22px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txtdatos_subtitulostxtdat{
+    float: left;
+    width: 100%;
+    height: 20px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txtdatos_subtitulostxtaut{
+    float: left;
+    width: 100%;
+    height: 18px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txtdatos_subtitulosvalauth{
+    float: left;
+    width: 100%;
+    height: 41px;
+    padding: 0% 0% 0% 0%;
+    margin: 3% 0% 0% 0%;
+    display: block;
+}
+
+#marco_detdatos{
+    float: left;
+    width: 100%;
+    height: 20px;
+    padding: 0% 0% 0% 0%;
+    margin: 26% 0% 0% 0%;
+    display: block;
+}
+#txtdet_subtitulosval{
+    float: left; 
+    width: 100%;
+    height: 20px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#txtdet_subtitulostotl{
+    float: left; 
+    width: 100%;
+    height: 20px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#marco_boton{
+    float: left;
+    width: 100%;
+    height: 40px;
+    padding: 0% 0% 0% 0%;
+    margin: 25% 0% 0% 0%;
+    display: block;
+}
+
+#btn_fin{
+    float: left; 
+    width: 100%;
+    height: 25px;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+
+
+@media only screen and (min-width: 481px) {
+
+
+    body {
+        background-image: url(../imagenes/finternotablet.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+
+        width:100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #contenedorprincipal{
+        float: left;
+        width: 90%;
+        height: 439px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid #bdbdbd;
+        display: block;
+
+    }
+
+    #contenedorsuperior{
+  float: left;
+    width: 94%;
+    height: 40px;
+    margin: 0% 0% 0% 3%;
+    padding: 1% 0% 0% 1%;
+    display: block;
+
+    }
+
+    #pestana1{
+        float: left;
+        width: 19%;
+        height: 31px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txtpu{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #pestana2{
+        float: left;
+        width: 30%;
+        height: 31px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpd{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #pestana3{
+        float: left;
+        width: 30%;
+        height: 31px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpt{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+    
+    #lineapestana{
+    height: 5px;
+    width: 85%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+    background-color:#0B637A;
+    display:block;
+}
+
+    #contenedormedio{
+        float:left;
+        width: 100%;
+        height:40px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        height: 519px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/panelrtapc.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 1% 0% 0% 1%;
+        margin: -1% 0% 0% 1.0%;
+        display: block;
+    }
+
+
+    #errortrans{
+        float: left; 
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+        border: 1px solid #f50303;
+        background-color: #f5c2c2;
+        border-radius: 4px;
+        opacity: 0.5;
+        color: #f10505;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+
+    }
+
+    #cont_boton{
+        float: left; 
+        width: 100%;
+        height: 35px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        display: block;      
+    }
+
+
+    #btn1{
+        float: left;
+        width: 30%;
+        height: 35px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 35% 0% 35%;
+        color: #4d4d4d;
+        background-color: #0B637A;
+        border-radius: 20px;
+        border: 1px solid #f5eded;
+        display: block;     
+    }
+
+    #marco_detalle{
+        float: left;
+        width: 97%;
+        height: 353px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_titulo{
+        float: left;
+        width: 100%;
+        height: 66px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulo{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulosub{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulolin{
+        float: left; 
+        width: 100%;
+        height: 5px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color:  #ffffff;
+        border: 1px solid #ffffff;
+        display: block;
+    }
+
+
+    #marco_subtitulo{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosub{
+        float: left;
+        width: 100%;
+        height: 19px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosval{
+        float: left;
+        width: 100%;
+        height: 21px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulostotl{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosmonto{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_datos{
+        float: left;
+        width: 100%;
+        height: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdatos_subtitulostxtdat{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdatos_subtitulostxtaut{
+        float: left;
+        width: 100%;
+        height: 24px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdatos_subtitulosvalauth{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #marco_detdatos{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+    #txtdet_subtitulosval{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdet_subtitulostotl{
+        float: left;
+        width: 100%;
+        height: 23px;
+        padding: 0% 0% 0% 0%;
+        margin: -10% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_boton{
+        float: left;
+        width: 30%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 7% 35% 0% 35%;
+        display: block;
+    }
+
+    #btn_fin{
+        float: left; 
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+
+    body {
+        background-image: url(../imagenes/fondointerno.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #contenedorprincipal{
+        float:left;
+        width: 90%;
+        height: auto;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid  #bdbdbd;
+        display: block;
+
+    }
+
+    #contenedorsuperior{
+        float: left;
+        width: 94%;
+        height: 40px;
+        margin: 0% 0% 0% 4%;
+        padding: 1% 0% 0% 1%;
+        display: block;
+
+    }
+
+    #pestana1{
+        float: left;
+        width: 19%;
+        height: 31px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txtpu{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #pestana2{
+        float: left;
+        width: 30%;
+        height: 31px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpd{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #pestana3{
+        float: left;
+        width: 30%;
+        height: 31px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpt{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #lineapestana{
+    height: 5px;
+    width: 85%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+    background-color:#0B637A;
+    display:block;
+}
+    #contenedormedio{
+        float:left;
+        width: 100%;
+        height:40px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        height: 954px;
+        width: 100%;
+        float: left;
+        background-image: url(../imagenes/panelrtapc.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 1% 0% 0% 1%;
+        margin: 0% 0% 0% 1.0%;
+        display: block;
+    }
+
+
+    #errortrans{
+        float: left; 
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+        border: 1px solid #f50303;
+        background-color: #f5c2c2;
+        border-radius: 4px;
+        opacity: 0.5;
+        color: #f10505;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+
+    }
+
+    #cont_boton{
+        float: left; 
+        width: 100%;
+        height: 35px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        display: block;      
+    }
+
+
+    #btn1{
+        float: left;
+        width: 30%;
+        height: 35px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 35% 0% 35%;
+        color: #4d4d4d;
+        background-color:#0B637A;
+        border-radius: 20px;
+        border: 1px solid #f5eded;
+        display: block; 
+    }
+
+    #marco_detalle{
+        float: left;
+        width: 96%;
+        height: 477px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_titulo{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulo{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulosub{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+
+    #txt_titulolin{
+        float: left; 
+        width: 100%;
+        height: 5px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color:  #ffffff;
+        border: 1px solid #ffffff;
+        display: block;
+    }
+
+
+    #marco_subtitulo{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #txt_subtitulosub{
+        float: left; 
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosval{
+        float: left;
+        width: 100%;
+        height: 22px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulostotl{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosmonto{
+        float: left;
+        width: 100%;
+        height: 16px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_datos{
+        float: left;
+        width: 100%;
+        height: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 6% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #txtdatos_subtitulostxtdat{
+        float: left;
+        width: 100%;
+        height: 16px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdatos_subtitulostxtaut{
+        float: left;
+        width: 100%;
+        height: 22px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdatos_subtitulosvalauth{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #marco_detdatos{
+        float: left;
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 6% 0% 0% 0%;
+        display: block;
+    }
+    #txtdet_subtitulosval{
+        float: left;
+        width: 100%;
+        height: 15px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdet_subtitulostotl{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_boton{
+        float: left;
+        width: 30%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 35% 0% 35%;
+        display: block;
+    }
+
+    #btn_fin{
+        float: left; 
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+}
+
+@media only screen and (min-width: 1900px) {
+
+    body {
+        background-image: url(../imagenes/fondointerno.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #contenedorprincipal{
+        float:left;
+        width: 90%;
+        height: auto;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid  #bdbdbd;
+        display: block;
+
+    }
+
+    #contenedorsuperior{
+        float: left;
+        width: 90%;
+        height: 40px;
+        margin: 0% 0% 0% 3%;
+        padding: 1% 0% 0% 1%;
+        display: block;
+
+    }
+
+    #pestana1{
+        float: left;
+        width: 19%;
+        height: 40px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txtpu{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #pestana2{
+        float: left;
+        width: 30%;
+        height: 40px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpd{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #pestana3{
+        float: left;
+        width: 30%;
+        height: 40px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtpt{
+        float: left;
+        width: 100%;
+        height: 38px;
+        margin: 0% 0% 0% 0%;
+        padding: 4% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #lineapestana{
+    height: 5px;
+    width: 85%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 0%;
+    background-color:#0B637A;
+    display:block;
+}
+
+    #contenedormedio{
+        float:left;
+        width: 100%;
+        height: 571px;
+        margin: 1% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        float: left;
+        width: 100%;
+        height: 1010px;
+        background-image: url(../imagenes/panelrtapc.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 1% 0% 0% 1%;
+        margin: 0% 0% 0% 1.0%;
+        display: block;
+    }
+
+    #errortrans{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+        border: 1px solid #f50303;
+        background-color: #f5c2c2;
+        border-radius: 4px;
+        opacity: 0.5;
+        color: #f10505;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: capitalize;
+
+    }
+
+    #cont_boton{
+        float: left; 
+        width: 100%;
+        height: 35px;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 0%;
+        display: block;      
+    }
+
+
+    #btn1{
+        float: left;
+        width: 30%;
+        height: 35px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 35% 0% 35%;
+        color: #4d4d4d;
+        background-color: #0B637A;
+        border-radius: 20px;
+        border: 1px solid #f5eded;
+        display: block;  
+    }
+
+    #marco_detalle{
+        float: left;
+        width: 96%;
+        height: 489px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_titulo{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulo{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulosub{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulolin{
+        float: left; 
+        width: 100%;
+        height: 5px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        background-color:  #ffffff;
+        border: 1px solid #ffffff;
+        display: block;
+    }
+
+    #marco_subtitulo{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulo{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosub{
+        float: left;
+        width: 100%;
+        height: 20px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosval{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulostotl{
+        float: left; 
+        width: 100%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_subtitulosmonto{
+        float: left;
+        width: 98%;
+        height: 30px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 2%;
+        display: block;
+    }
+
+    #marco_datos{
+        float: left;
+        width: 100%;
+        height: 29px;
+        padding: 0% 0% 0% 0%;
+        margin: 5% 0% 0% 0%;
+        display: block;
+    }
+
+
+
+    #txtdatos_subtitulostxtdat{
+        float: left;
+        width: 100%;
+        height: 28px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdatos_subtitulostxtaut{
+        float: left;
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdatos_subtitulosvalauth{
+        float: left;
+        width: 100%;
+        height: 16px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_detdatos{
+        float: left;
+        width: 100%;
+        height: 50px;
+        padding: 0% 0% 0% 0%;
+        margin: 4% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdet_subtitulosval{
+        float: left;
+        width: 100%;
+        height: 26px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txtdet_subtitulostotl{
+        float: left; 
+        width: 100%;
+        height: 80px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marco_boton{
+        float: left;
+        width: 30%;
+        height: 40px;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 35% 0% 35%;
+        display: block;
+    }
+
+    #btn_fin{
+        float: left; 
+        width: 100%;
+        height: 25px;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+}
+
+
+a:link
+{
+    text-decoration:none;
+
+    color:#0B637A;
+}
+
+.panelgrid-dotted-border{
+
+    border-spacing: 0;
+    border: 0px;
+}
+.panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+    border: 0px;
+}
+
+body .ui-chkbox .ui-chkbox-box {
+    border: 2px solid #FFFFFF;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-chkbox .ui-chkbox-box.ui-state-active {
+    border-color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+body .ui-message.ui-message-error {
+    font-size: 10px;
+    float: left;
+    height: 3px;
+    color: #fff8f8;
+    background-color: #f45f56;
+    width: 95%;
+    margin: 1% 0% 0% 0%;
+    font-weight: bold;
+    font-family: 'CenturyGothic-Bold';
+}
+
+
+
+body .ui-inputfield.ui-state-focus {
+    border-width: 0% 0% 0% 0%;
+    border-color: #ffffff;
+    padding-bottom: 0px;
+}    
+
+body .ui-button {
+    width: 100%;
+    height: 30px;
+    color: #ffffff;
+    font-family: 'CenturyGothic';
+    border: 1px solid black;
+    float: left;
+    margin-top: 0%;
+    margin-left: 0%;
+    overflow: hidden;
+    background-color: #788588;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+    width: 80%;
+    height: 19px;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    border-width: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 7%;
+
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transi45854641565410tion: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 20px;
+
+}
+
+button, select, textarea {
+    width: 90%;
+    height: 35px;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #ffffff;
+
+
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 4%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+
+
+}
+
+
+.ui-md-8 {
+    width: 100%;
+}
+
+
+
+
+option {
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    padding: 0px 2px 1px;
+}
+
+select {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #0e0e0e;
+}
+
+.ui-autocomplete {
+    width: auto;
+    zoom: 1;
+    cursor: pointer;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    display: inline-block;
+    background-color: #e6f0f2;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+}
+
+
+body .ui-widget, body .ui-widget .ui-widget {
+    font-family: 'CenturyGothic';
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+input:-internal-autofill-selected {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+}
+
+
+body .ui-radiobutton .ui-radiobutton-box {
+    border: 2px solid #ffffff;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+    background-color: #ffffff;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.24) !important;
+    border: 1px solid #e2d6d6 !important;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 2px solid black;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #e8edef;
+    border: 1px;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+body .ui-message {
+    min-height: 14px;
+}
+
+body .ui-message .ui-message-error-icon {
+    margin-top: 0px;
+    font-size: 18px;
+    right: 1px;
+}
+
+body .ui-messages .ui-messages-error-icon, body .ui-message .ui-message-error-icon {
+    background: none;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    font-size: 13px;
+    color: #fff;
+    margin-top: -2px;
+}
+
+body .ui-state-error, body .ui-widget.ui-state-error, body .ui-widget-content .ui-state-error, body .ui-widget-header .ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-inputfield.ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-button {
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #4d4d4d;
+    font-size: 16px;
+    height: 36px;
+    width: 100%;
+    padding: 0 16px;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+    background: transparent;
+    border-width: 0 0 1px 0;
+    padding: 2px 1px 2px 20px;
+    font-size: 16px;
+    border-color: transparent !important;
+    border-style: solid;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}

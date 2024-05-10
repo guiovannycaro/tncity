@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.perfiles.detalle.content">
+
+           
+                <div class="ui-g">
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                    <div class="ui-g-12 ui-md-12 ui-lg-8">
+                        <p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-3,ui-grid-col-9">
+
+                            <h:outputText value="Nombre" class="label"/>
+                            <h:outputText value="#{perfilControl.obj.nombre} "/>
+
+                          <h:outputText value="Observacion" class="label"/>
+                            <h:outputText value="#{perfilControl.obj.observaciones}"/>
+                            
+                             
+                           
+
+                            
+                        </p:panelGrid>
+                        <br/><br/><br/>
+                    </div>
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

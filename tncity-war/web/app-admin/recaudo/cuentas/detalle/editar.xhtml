@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.cuentas.detalle.content">
+             
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <p:panelGrid columns="2">
+
+                 
+                            
+                            <h:panelGroup>
+                                <h:outputText value="Estado" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+                        
+                             <h:panelGroup>
+                                    <p:selectOneMenu value="#{cuentasControl.obj.isActiva}" required="true" requiredMessage="Requerido!" id="attr_estado">
+                                        <f:selectItem itemLabel="Activa" itemValue="true" />
+                                         <f:selectItem itemLabel="Inactiva" itemValue="false" />
+                                    </p:selectOneMenu>
+                                </h:panelGroup>
+                  
+   <h:panelGroup>
+                                <h:outputText value="Comisión %" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+                        
+                             <h:panelGroup>
+                                   
+                                   <p:inputText value="#{cuentasControl.obj.valcomision}" required="true" requiredMessage="Requerido!" id="attr_comision"/>
+                                    <p:message for="attr_comision"/>
+                                </h:panelGroup>
+                           
+                        </p:panelGrid>
+                        <br/><br/>
+
+                        <h:inputHidden value="#{cuentasControl.obj.idcuenta}"/>
+
+                        <p:commandButton value="Guardar Cambios" action="#{cuentasControl.editarcuenta()}" icon="fa fa-save" ajax="false">
+                            <f:param name="idcuenta_" value="#{param.idcuenta_}"/>
+                              <f:param name="idbenefactor_" value="#{param.idbenefactor_}"/>
+                        </p:commandButton>
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+                    <h:panelGroup rendered="#{cuentasControl.successful}">
+                        <script type="text/javascript">
+                            document.location.href = 
+             '#{utilControl.protocolHostPortContext}/app-admin/recaudo/cuentas/detalle/detalle.xhtml?idbenefactor_=#{param.idbenefactor_}&amp;idcuenta_=#{cuentasControl.obj.idcuenta}';
+                        </script>
+                    </h:panelGroup>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

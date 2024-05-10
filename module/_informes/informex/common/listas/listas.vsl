@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="${model.pageWidth}" pageHeight="${model.pageHeight}" isIgnorePagination="${model.isIgnorePagination}" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" orientation="${model.orientation}">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>    
+    <style name="table">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    
+    <!--Parameters -->
+    <parameter name="observaciones" class="java.lang.String"/>
+    
+    
+    <!-- Campos -->
+    <field name="dataField" class="java.util.List">
+        <fieldDescription><![CDATA[values]]></fieldDescription>
+    </field>
+    <!--Variables -->
+    #set ($i=0)
+    #foreach($c in $model.columns)
+    #if(${c.totalAutoSumEnabled})
+    <variable name="v$i" class="java.lang.Double" calculation="Sum">
+        <variableExpression><![CDATA[$F{dataField}.get($i)]]></variableExpression>
+        <initialValueExpression><![CDATA[0]]></initialValueExpression>
+    </variable>
+    #end
+    #set ($i=$i+1)
+    #end
+    
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="96" splitType="Stretch">
+            <image>
+                <reportElement x="0" y="0" width="130" height="96" uuid="177d6f05-70ef-4f1b-8f9f-ad23fd577c23"/>
+                <box>
+                    <pen lineWidth="0.0"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <imageExpression><![CDATA["${model.getParam('path_logo')}"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="141" y="0" width="95" height="20" uuid="92859cae-f51d-4acb-974c-16fdde27595e"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" isPdfEmbedded="false"/>
+                </textElement>
+                <text><![CDATA[Id. Informe:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="236" y="0" width="40" height="20" uuid="f1d3556d-96ad-4846-bd47-6b88bda2342d"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[${model.id}]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="276" y="0" width="134" height="20" uuid="152df515-6977-4d8b-a3b2-e537ef1c6c10"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Fecha de Generación:]]></text>
+            </staticText>
+            <textField pattern="dd-MMM-yyyy HH:mm">
+                <reportElement x="410" y="0" width="145" height="20" uuid="f13d86bf-421f-4efe-9423-2cbabd289bee"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="141" y="20" width="414" height="28" uuid="e34bed85-0389-4d1a-9585-ade639d94992"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" isItalic="false"/>
+                </textElement>
+                <text><![CDATA[${model.title}]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="141" y="48" width="95" height="20" uuid="1295fa74-d413-428d-8c39-0ab912174479"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Total Registros:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="141" y="68" width="95" height="28" uuid="3ed71f68-b523-4765-8172-478665be6065"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                </textElement>
+                <text><![CDATA[${model.totalReg}]]></text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="236" y="48" width="79" height="24" uuid="871bb15d-45c8-4652-b2df-e6d42e2c1838"/>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text0')}"]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="236" y="72" width="79" height="24" uuid="d01a0e43-005a-4f3d-8987-37711a18cf78"/>
+                <box>
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text4')}"]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="315" y="48" width="80" height="24" uuid="0e7b8da5-eb99-461b-80ac-86c74e6be54a"/>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text1')}"]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="395" y="48" width="79" height="24" uuid="90f9f31a-f316-4be4-b41e-9c0fd863c039"/>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text2')}"]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="474" y="48" width="81" height="24" uuid="59d5b850-0653-41fc-b86b-08b31d346924"/>
+                <box>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text3')}"]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="315" y="72" width="80" height="24" uuid="7bf8e2ee-9538-4323-941d-f4410b3c026b"/>
+                <box>
+                    <bottomPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text5')}"]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="395" y="72" width="79" height="24" uuid="b54a2d1c-c77f-4af2-be57-0d6eb98688e7"/>
+                <box>
+                    <bottomPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text6')}"]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement x="474" y="72" width="81" height="24" uuid="ea73b98e-ce6a-47cf-aa65-ab0b0ef06510"/>
+                <box>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement verticalAlignment="Middle" textAlignment="Center" />
+                <textFieldExpression><![CDATA["${model.getParam('params_text7')}"]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="36" splitType="Stretch"/>
+    </pageHeader>
+    
+    #if(${model.showColumnsHeaders})
+    <columnHeader>
+        <band height="29" splitType="Stretch">
+            #foreach($c in $model.columns)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="29" backcolor="#CCCCCC" mode="Opaque" stretchType="RelativeToTallestObject"/>
+                <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+                    <pen lineWidth="0.5" lineStyle="Solid"/>
+                    <topPen lineWidth="0.5" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.5" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.5" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.5" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["${c.headerText}"]]></textFieldExpression>
+            </textField>
+            #end
+        </band>
+    </columnHeader>
+    #end
+    
+    <detail>
+        <band height="${model.detailHeight}" splitType="Stretch">
+            #set ($i=0)
+            #foreach($c in $model.columns)
+            #if($c.dataType != $c.DATATYPE_MODEL)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true" pattern="${c.pattern}">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="20" isPrintWhenDetailOverflows="true" stretchType="RelativeToBandHeight"/>
+                <box leftPadding="3" rightPadding="3">
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="${c.textAlignment}" verticalAlignment="${c.verticalAlignment}"/>
+                <textFieldExpression><![CDATA[$F{dataField}.get($i)]]></textFieldExpression>
+            </textField>
+            #else
+            <rectangle>
+                <reportElement mode="Transparent" stretchType="RelativeToBandHeight" x="${c.x}" y="${c.y}" width="${c.width}" height="20" uuid="8b353e7c-808e-4d02-8563-477790a5f721"/>
+                <graphicElement>
+                    <pen lineWidth="0.5"/>
+                </graphicElement>
+            </rectangle>
+            <subreport>
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}"  isPrintWhenDetailOverflows="true" height="20" uuid="9bde9907-0b1d-43cc-8e9e-53ba1140406e" stretchType="RelativeToBandHeight"/>
+                <dataSourceExpression><![CDATA[$F{dataField}.get($i)]]></dataSourceExpression>
+                <subreportExpression><![CDATA["${c.pathJasperFile}"]]></subreportExpression>
+            </subreport>
+            #end
+            #set ($i=$i+1)
+            #end
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="43" splitType="Stretch">
+            <textField>
+                <reportElement x="205" y="17" width="80" height="20" uuid="463b0cf6-4c54-4de6-92db-68d187318fb3"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="285" y="17" width="40" height="20" uuid="42277aa8-343b-487e-a708-e1f0428a427a"/>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="416" y="23" width="139" height="20" uuid="c06fd3d6-e59b-4ec0-b957-c801b9548fa8"/>
+                <textElement>
+                    <font isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Generado por ${model.getParam('impl_name')}]]></text>
+            </staticText>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="${model.sumaryHeight}" splitType="Stretch">
+            #if(${model.showAutoSum})
+            #set ($i=0)
+            #foreach($c in $model.columns)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true" pattern="${c.pattern}">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="22" uuid="afe73864-dbf8-48cc-b5db-3f20984e3cdd"  positionType="Float"/>
+                <box leftPadding="3" rightPadding="3">
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="${c.textAlignment}" verticalAlignment="${c.verticalAlignment}"/>
+                #if(${c.totalAutoSumEnabled})
+                <textFieldExpression><![CDATA[$V{v$i}]]></textFieldExpression>
+                #else
+                #if($i==0)  
+                <textFieldExpression><![CDATA["Total"]]></textFieldExpression>
+                #else
+                <textFieldExpression><![CDATA[]]></textFieldExpression>
+                #end
+                #end
+            </textField>
+            #set ($i=$i+1)
+            #end
+            #end
+            
+            #if(${model.observacionesShow})
+            <!-- Observaciones -->   
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+                <reportElement x="${model.observacionesX}" y="${model.observacionesY}" width="${model.observacionesWidth}" height="22" uuid="afe73864-dbf8-48cc-b5db-3f20984e3cdd"  positionType="Float"/>
+                <box leftPadding="3" rightPadding="3">
+                    <pen lineWidth="0.0"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textFieldExpression><![CDATA[$P{observaciones}]]></textFieldExpression>
+            </textField>
+            #end
+            
+            <!-- Charts -->
+            #foreach($ch in $model.charts)
+            
+            #if($ch.type==$ch.TYPE_PIE3D)
+            <pie3DChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement uuid="d7e6dc4a-570c-4d81-8702-9f0caa1d57a5" x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartLegend/>
+                </chart>
+                <pieDataset>
+                    <keyExpression><![CDATA[$F{dataField}.get(${ch.keyColumn.id})]]></keyExpression>
+                    <valueExpression><![CDATA[$F{dataField}.get(${ch.valueColumn.id})]]></valueExpression>
+                    <labelExpression><![CDATA[$F{dataField}.get(${ch.labelColumn.id})+""]]></labelExpression>
+                </pieDataset>
+                <pie3DPlot isShowLabels="${ch.showLabel}">
+                    <plot/>
+                    <itemLabel/>
+                </pie3DPlot>
+            </pie3DChart>
+            #end 
+            
+            #if($ch.type==$ch.TYPE_BAR)
+            <barChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement uuid="37913e28-39e4-4f16-991c-8875a4b5f7ae" x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    #foreach($s in $ch.lstSeries)
+                    <categorySeries>
+                        <seriesExpression><![CDATA["${s.serieExpression}"]]></seriesExpression>
+                        <categoryExpression><![CDATA[$F{dataField}.get(${s.categoryColumn.id})]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{dataField}.get(${s.valueColumn.id})]]></valueExpression>
+                    </categorySeries>
+                    #end
+                </categoryDataset>
+                <barPlot>
+                    <plot labelRotation="90.0" orientation="${ch.orientation}"/>
+                    <itemLabel/>
+                </barPlot>
+            </barChart>
+            #end
+            
+            #if($ch.type==$ch.TYPE_LINE)
+            <lineChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement uuid="a52dda0a-2bbd-49ae-9c42-0a7bcdbd69b1" x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartSubtitle/>
+                    <chartLegend position="Top"/>
+                </chart>
+                <categoryDataset>
+                    #foreach($s in $ch.lstSeries)
+                    <categorySeries>
+                        <seriesExpression><![CDATA["${s.serieExpression}"]]></seriesExpression>
+                        <categoryExpression><![CDATA[$F{dataField}.get(${s.categoryColumn.id})]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{dataField}.get(${s.valueColumn.id})]]></valueExpression>
+                    </categorySeries>
+                    #end
+                </categoryDataset>
+                <linePlot>
+                    <plot labelRotation="90.0" orientation="${ch.orientation}"/>
+                </linePlot>
+            </lineChart>
+            #end
+            
+            #if($ch.type==$ch.TYPE_AREA)
+            <areaChart>
+                <chart isShowLegend="${ch.showLegend}">
+                    <reportElement x="${ch.x}" y="${ch.y}" width="${ch.width}" height="${ch.height}"/>
+                    <chartTitle>
+                        <titleExpression><![CDATA["${ch.title}"]]></titleExpression>
+                    </chartTitle>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    #foreach($s in $ch.lstSeries)
+                    <categorySeries>
+                        <seriesExpression><![CDATA["${s.serieExpression}"]]></seriesExpression>
+                        <categoryExpression><![CDATA[$F{dataField}.get(${s.categoryColumn.id})]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{dataField}.get(${s.valueColumn.id})]]></valueExpression>
+                    </categorySeries>
+                    #end
+                </categoryDataset>
+                <areaPlot>
+                    <plot  labelRotation="90.0" orientation="${ch.orientation}"/>
+                    <categoryAxisFormat>
+                        <axisFormat/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat/>
+                    </valueAxisFormat>
+                </areaPlot>
+            </areaChart>
+            #end
+             
+            #end
+        </band>
+    </summary>
+</jasperReport>

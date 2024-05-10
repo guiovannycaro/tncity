@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+             
+
+                <h:outputText value="#{recaudoControl.recuperaAllRegPaginationNoLight()}"/>
+                <br/>
+                <div>
+                    <h:form>
+                        <p:dataTable reflow="true" var="r" value="#{recaudoControl.lst}" tableStyle="width:auto">
+                            <p:column headerText="Codigo Recaudo">
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/recaudo/recaudo/detalle/detalle.xhtml?idrecaudo_=#{r.idrecaudo}">
+                                    <h:outputText value="#{r.idrecaudo}" />
+                                </a>
+                            </p:column>
+                            <p:column headerText="Valor Recaudo">
+                                <h:outputText value="#{r.valor}" />
+                            </p:column>
+                             <p:column headerText="Fecha Recaudo">
+                                <h:outputText value="#{r.createdAt}" />
+                            </p:column>
+                             <p:column headerText="Numero Recaudo">
+                                <h:outputText value="#{r.numtransaccion}" />
+                            </p:column>
+                            <p:column headerText="Estado Recaudo">
+                                <h:outputText value="#{r.estado}" />
+                            </p:column>
+                 
+                            <p:column headerText="Log Recaudo">
+                                <h:outputText value="#{r.log}" />
+                            </p:column>
+                             <p:column headerText="Nombre Benefactor">
+                                <h:outputText value="#{r.idbenefactor.idpersona.nombres}" />
+                            </p:column>
+                              <p:column headerText="Apellidos Benefactor">
+                                <h:outputText value="#{r.idbenefactor.idpersona.apellidos}" />
+                            </p:column>
+                              <p:column headerText="Nombres Beneficiario">
+                                <h:outputText value="#{r.idbeneficiario.nombresApellidos}" />
+                            </p:column>
+                             <p:column headerText="TD Beneficiario">
+                                <h:outputText value="#{r.idbeneficiario.td}" />
+                            </p:column>
+                             <p:column headerText="PIN Beneficiario">
+                                <h:outputText value="#{r.idbeneficiario.pin}" />
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

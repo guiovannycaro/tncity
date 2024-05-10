@@ -1,0 +1,555 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+
+
+        <ui:composition template="./_templatepaso2.xhtml">
+
+            <ui:define name="app-familiar.admin.recaudo.content">
+
+                <div class="gridContainer clearfix"><!--inicio-contenedor-->
+                    <div class="cajacontenedor"><!--inicio-contenedor-->
+                        <div id="contenedorprincipal">
+                            <div id="contenedormedio"><!--inicio_contenedorsuperior-->
+                                <div id="marcorecaudo">
+                                    <div id="contenedorsuperior"><!--inicio_contenedorsuperior-->
+                                        <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml">
+                                            <div id="pestana1">
+                                                <div id="txtpu" class="estilo28">
+                                                    DATOS PPL  <h:outputText  class="fa fa-address-card-o" ></h:outputText>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div id="pestana2" class="estilo27">
+                                            <div id="txtpd" >
+                                                RECARGA <h:outputText  class="fa fa-usd" ></h:outputText>  
+                                            </div>
+                                                 <div id="lineapestana"></div>
+                                        </div>
+                                        <div id="pestana3" class="estilo28">
+                                            <div id="txtpt">
+                                                TRANSACCIÓN  <h:outputText  class="fa fa-usd" ></h:outputText>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="cuadrocontenedor">
+                                        <div id="marcotitulo">
+                                            <div id="titulo_marco" class="estilo27"> RECARGA 
+                                                <div id="lineapestana"></div>
+                                            </div>
+                                            
+                                            <div id="titulo_imagen">     <h:outputText  class="fa fa-dollar" style="font-size: 2em; color: #0B637A;float:left"></h:outputText>   </div>
+
+
+                                            <div id="titulo_contraer"> 
+                                                <a href="#" onclick="mostrar()" >
+                                                    <h:outputText  class="fa fa-chevron-down "  style="font-size: 2em; color: #0B637A;float:left;font-weight:bold;display:none" id="abajo" ></h:outputText> 
+                                                </a>
+                                                <a href="#" onclick="ocultar()">
+                                                    <h:outputText  class="fa fa-chevron-up " style="font-size: 2em; color: #0B637A;float:left;font-weight:bold;display:block" id="arriba"></h:outputText> 
+                                                </a>
+                                            </div>
+
+                                        </div>
+ 
+                                        <h:outputText value="#{beneficiarioControl.recuperaIdPPLInterno(param.numdoc_,param.tdoc_)}"/>
+                                        <h:outputText value="#{benefactorControl.RecuperaSubdistribuidor(loginBenefactorControl.usLog.idbenefactor)}"/>
+
+                                        <h:form id="form3_">
+                                            <div id="area_movil" >
+                                                <div id="contenedor_area1">
+                                                    <div id="contenedor_figuras">
+
+
+                                                        <div id="contenedor_cantidadveintemil">
+                                                            <div id="figura_veintemil"></div>
+                                                            <div id="cantidad_veintemil">
+                                                                <div id="cantidadveinte_titulo" class="estilo29">
+                                                                    CANTIDAD
+                                                                </div>
+                                                                <div id="cantidadveinte_subtitulo" class="estilo29">
+                                                                    <h:panelGroup>
+                                                                        <h:selectOneMenu id="valor1" class="selu"  onchange="selectV1()" required="false" requiredMessage="Debe Elegir Una Tipo de documento de la lista!"  
+                                                                                         >
+                                                                            <f:selectItem 
+                                                                                itemValue="" itemLabel="0" />
+                                                                            <f:selectItem itemValue="1" itemLabel="1"/>
+                                                                            <f:selectItem itemValue="2" itemLabel="2"/>
+                                                                            <f:selectItem itemValue="3" itemLabel="3"/>
+                                                                            <f:selectItem itemValue="4" itemLabel="4"/>
+                                                                            <f:selectItem itemValue="5" itemLabel="5"/>
+                                                                            <f:selectItem itemValue="6" itemLabel="6"/>
+                                                                            <f:selectItem itemValue="7" itemLabel="7"/>
+                                                                            <f:selectItem itemValue="8" itemLabel="8"/>
+                                                                            <f:selectItem itemValue="9" itemLabel="9"/>
+                                                                            <f:selectItem itemValue="10" itemLabel="10"/>
+                                                                        </h:selectOneMenu>
+
+                                                                    </h:panelGroup>   
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div id="contenedor_cantidadcincuentamil">
+                                                            <div id="figura_cincuentamil"></div>
+
+                                                            <div id="cantidad_cincuentamil">
+                                                                <div id="cantidadcincuenta_titulo" class="estilo29">
+                                                                    CANTIDAD
+                                                                </div>
+                                                                <div id="cantidadcincuenta_subtitulo" class="estilo29">
+                                                                    <h:panelGroup>
+                                                                        <h:selectOneMenu id="valor2" class="seld" onchange="selectV1()" required="false" requiredMessage="Debe Elegir Una Tipo de documento de la lista!"  
+                                                                                         >
+                                                                            <f:selectItem 
+                                                                                itemValue="" itemLabel="0" />
+                                                                            <f:selectItem itemValue="1" itemLabel="1"/>
+                                                                            <f:selectItem itemValue="2" itemLabel="2"/>
+                                                                            <f:selectItem itemValue="3" itemLabel="3"/>
+                                                                            <f:selectItem itemValue="4" itemLabel="4"/>
+                                                                            <f:selectItem itemValue="5" itemLabel="5"/>
+                                                                            <f:selectItem itemValue="6" itemLabel="6"/>
+                                                                            <f:selectItem itemValue="7" itemLabel="7"/>
+                                                                            <f:selectItem itemValue="8" itemLabel="8"/>
+                                                                            <f:selectItem itemValue="9" itemLabel="9"/>
+                                                                            <f:selectItem itemValue="10" itemLabel="10"/>
+                                                                        </h:selectOneMenu>
+                                                                    </h:panelGroup>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="contenedor_cantidadcienmil">
+                                                            <div id="figura_cienmilmil"></div>
+                                                            <div id="cantidad_cienmilmil">
+                                                                <div id="cantidadcienmil_titulo" class="estilo29">
+                                                                    CANTIDAD
+                                                                </div>
+                                                                <div id="cantidadcienmil_subtitulo" class="estilo29">
+                                                                    <h:panelGroup>
+                                                                        <h:selectOneMenu id="valor3" onchange="selectV1()" class="selt" required="false" requiredMessage="Debe Elegir Una Tipo de documento de la lista!"  
+
+                                                                                         >
+                                                                            <f:selectItem 
+                                                                                itemValue="" itemLabel="0" />
+                                                                            <f:selectItem itemValue="1" itemLabel="1"/>
+                                                                            <f:selectItem itemValue="2" itemLabel="2"/>
+                                                                            <f:selectItem itemValue="3" itemLabel="3"/>
+                                                                            <f:selectItem itemValue="4" itemLabel="4"/>
+                                                                            <f:selectItem itemValue="5" itemLabel="5"/>
+                                                                            <f:selectItem itemValue="6" itemLabel="6"/>
+                                                                            <f:selectItem itemValue="7" itemLabel="7"/>
+                                                                            <f:selectItem itemValue="8" itemLabel="8"/>
+                                                                            <f:selectItem itemValue="9" itemLabel="9"/>
+                                                                            <f:selectItem itemValue="10" itemLabel="10"/>
+                                                                        </h:selectOneMenu>
+                                                                    </h:panelGroup>  
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div id="contenedor_otromonto">                     
+                                                        <div id="otromonto_titulo" class="estilo20">
+                                                            Otro Monto Recarga:
+                                                        </div>
+                                                        <div id="otromonto_subtitulo" class="estilo10">
+                                                            <h:panelGroup>
+                                                                <p:inputText value="#{recaudoControl.otromonto}"  onchange="selectV1()" placeholder="0" required="false" id="otromonto" class="otromonto"
+                                                                             >   
+
+
+                                                                    <p:keyFilter regEx="/^([0-9])*$/" />
+                                                                </p:inputText>  
+                                                                <p:message for="otromonto"/>
+                                                            </h:panelGroup>
+                                                        </div>         
+
+
+                                                    </div>
+
+                                                </div>
+                                                <div id="lineasdiv"></div>
+
+                                                <div id="contenedor_area2"> 
+                                                    <div id="contenedor_total">
+                                                        <div   id="total_titulo" class="estilo20" >Monto a Recargar:</div>
+                                                        <div   id="total_subtitulo" class="estilo29" >Total:  </div>
+                                                        <div   id="total_valorapagar" class="estilo29" >   <div  id="total_" class="estilo11">0</div></div>
+                                                        <div   id="total_moneda" class="estilo29" >Moneda Pesos Colombianos</div>
+                                                    </div>
+                                                </div>
+                                                <div id="lineasdiv"></div>
+                                                <div id="contenedor_area3">
+                                                    <div   id="contenedor_tipodistribuidor" >
+                                                        <div id="tipodistribuidor_titulo" class="estilo20" >Medio de Pago:</div>
+                                                        <div id="tipodistribuidor_tipo">
+
+                                                            <h:panelGroup rendered="#{benefactorControl.subdistribuidor == 'false' }">
+
+                                                                <div id="tipo_label"  class="estilo29" >Pagos En línea</div>
+                                                                <div id="tipo_radio">
+                                                                    <label class="radio">
+
+                                                                        <input type="hidden" value="1" name="PagosLinea"   id="PagosLinea" />
+                                                                        <input type="radio" value="1" name="Radio"   id="Radio" checked="checked" style="display: none"/>
+                                                                        <span class="check"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </h:panelGroup>
+                                                            <h:panelGroup rendered="#{benefactorControl.subdistribuidor == 'true' }">
+                                                                <div id="tipo_label" class="estilo29">Subdistribuidor</div>
+                                                                <div id="tipo_radio" class="estilo29" >
+                                                                    <label class="radio">
+                                                                        <input type="radio" value="0" name="Radio"   id="Radio" checked="checked" style="display: none"/>
+
+                                                                        <input type="hidden" value="0" name="PagosLinea"   id="PagosLinea" />
+                                                                        <span class="check"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </h:panelGroup>
+
+                                                        </div>
+
+                                                    </div>       
+                                                </div>  
+                                                <h:panelGroup rendered="#{benefactorControl.subdistribuidor == 'true' }">
+                                                    <div id="lineasdiv"></div>
+
+                                                    <div id="contenedor_area4">   
+
+
+                                                        <div id="subdistribuidor_saldos">
+
+                                                            <div id="saldo_actual" >
+                                                                <div id="saldo_label" class="estilo29" >Su Saldo Actual</div>
+                                                                <div id="saldo_valor" class="estilo29" >
+                                                                    <b><p:inputNumber id="attr_valor" value="#{benefactorControl.recuperaSaldoSub(loginBenefactorControl.usLog.idbenefactor)}" style="font-weight: bold" decimalSeparator="," thousandSeparator="." readonly='TRUE'>  
+                                                                        </p:inputNumber>  </b>
+                                                                    <p:message for="attr_valor"/>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="valor_pagar">
+                                                                <div id="pagar_label" class="estilo29" >Valor a Recargar</div>
+                                                                <div id="pagar_valor" class="estilo29" >  <div  id="total2_" class="estilo11">0</div></div>
+                                                            </div>
+
+                                                            <div id="saldo_posterior">
+                                                                <div id="saldoposterior_label" class="estilo29" >Saldo Posterior </div>
+                                                                <div id="saldoposterior_valor" class="estilo29" ><div  id="saldo_" class="estilo11">0</div></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </h:panelGroup>
+
+
+                                                <div id="lineasdiv"></div>
+                                                <div id="contenedor_area4">
+
+                                                    <h:panelGroup>
+                                                        <p:inputText  type="hidden" value="#{recaudoControl.valor}"  id="total_"/>
+
+
+
+                                                        <p:inputText  type="hidden" id="carga2_" value="#{benefactorControl.saldo}"/>
+                                                        <p:message for="total_"  id="message"/>
+                                                    </h:panelGroup>
+
+                                                    <div id="contenedor_botones">
+                                                        <div id="botones_regresar" class="estilo10" >
+                                                            <p:commandButton value="Regresar"  ajax="true" onclick="regresar();" icon="fa fa-arrow-left"   >
+                                                            </p:commandButton>
+                                                        </div>
+                                                        <div id="botones_siguiente" class="estilo10" >
+                                                            <p:commandButton value="Siguiente" onclick="enviarf();" class="sigui" icon="fa fa-arrow-right"  >
+                                                            </p:commandButton>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </h:form>  
+                                    </div>
+
+                                    <script type="text/javascript">
+
+
+
+                                        function selectV1() {
+                                            var v1 = document.getElementById("form3_:valor1").value;
+                                            var v2 = document.getElementById("form3_:valor2").value;
+                                            var v3 = document.getElementById("form3_:valor3").value;
+
+                                            var otro = document.getElementById("form3_:otromonto").value;
+                                            var suma1 = 0;
+                                            var suma2 = 0;
+                                            var suma3 = 0;
+                                            var suma4 = 0;
+                                            var total = 0;
+                                            if (isNaN(otro)) {
+                                                otro = 0;
+                                            }
+
+                                            if (isNaN(v1)) {
+                                                v1 = 0;
+                                            }
+                                            if (isNaN(v2)) {
+                                                v2 = 0;
+                                            }
+                                            if (isNaN(v3)) {
+                                                v3 = 0;
+                                            }
+
+
+
+
+                                            if (v1 != '') {
+                                                var valor1 = 20000;
+                                                suma1 = valor1 * v1;
+                                            } else {
+
+                                                suma1 = 0;
+                                            }
+
+                                            if (v2 != '') {
+                                                var valor2 = 50000;
+                                                suma2 = valor2 * v2;
+                                            } else {
+                                                suma2 = 0;
+                                            }
+
+                                            if (v3 != '') {
+                                                var valor3 = 100000;
+                                                suma3 = valor3 * v3;
+                                            } else {
+                                                suma3 = 0;
+                                            }
+
+                                            if (otro != '') {
+
+                                                suma4 = otro;
+                                            } else {
+                                                suma4 = 0;
+                                            }
+
+                                            var total = parseFloat(suma1) + parseFloat(suma2) + parseFloat(suma3) + parseFloat(suma4);
+
+
+
+                                            if (total >= 20000) {
+
+
+
+
+
+                                                var valor = document.getElementById("form3_:total_").value = total;
+
+
+
+                                                $("#total_").html(formatNumber.new(valor));
+                                                $("#total2_").html(formatNumber.new(valor));
+
+                                                var elementos = document.getElementById("PagosLinea").value;
+
+                                                if (elementos == 0) {
+                                                    var vsaldoact = document.getElementById("form3_:carga2_").value;
+
+                                                    var operacion = parseFloat(vsaldoact) - parseFloat(valor);
+
+                                                    var operacion = parseFloat(vsaldoact) - parseFloat(valor);
+                                                    $("#saldo_").html(formatNumber.new(operacion));
+                                                    if (vsaldoact > valor) {
+
+                                                        var operacion = parseFloat(vsaldoact) - parseFloat(valor);
+                                                        $("#saldo_").html(formatNumber.new(operacion));
+                                                    } else {
+                                                        var vsaldo = 0;
+                                                        var operacion = parseFloat(vsaldo);
+                                                        $("#saldo_").html(formatNumber.new(operacion));
+
+                                                        swal({type: "info", title: '¡Mensaje De Error!', text: 'Su Saldo Actual Es Insuficiente para realizar la recarga por favor recarge su cuenta para poder realizar esta transaccion'});
+
+
+                                                        if (operacion === 0) {
+
+
+                                                            $(".sigui").css("display", "none");
+
+                                                        }
+
+                                                        if (vsaldoact >= operacion) {
+                                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Su Saldo Actual Es Insuficiente para realizar la recarga por favor recarge su cuenta para poder realizar esta transaccion'});
+
+                                                        }
+                                                    }
+                                                }
+                                            } else {
+
+                                                swal({type: "error", title: '¡Mensaje De Error!', text: 'El monto de la recarga debe ser mayor de 20000'});
+
+                                            }
+
+
+
+                                        }
+
+
+
+
+
+
+                                        function regresar() {
+                                            document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml'
+                                        }
+
+
+                                        var formatNumber = {
+                                            separador: ".", // separador para los miles
+                                            sepDecimal: ',', // separador para los decimales
+                                            formatear: function (num) {
+                                                num += '';
+                                                var splitStr = num.split('.');
+                                                var splitLeft = splitStr[0];
+                                                var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+                                                var regx = /(\d+)(\d{3})/;
+                                                while (regx.test(splitLeft)) {
+                                                    splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+                                                }
+                                                return this.simbol + splitLeft + splitRight;
+                                            },
+                                            new : function (num, simbol) {
+                                                this.simbol = simbol || '';
+                                                return this.formatear(num);
+                                            }
+                                        }
+
+                                        $(document).ready(function () {
+                                            $('.otromonto').attr('autocomplete', 'off');
+
+                                            $('.otromonto').on("cut copy paste", function (e) {
+                                                e.preventDefault();
+                                            });
+
+
+
+                                        });
+
+
+
+                                        function enviarf() {
+
+                                            var elementos = document.getElementById("PagosLinea").value;
+
+                                            if (elementos == 1) {
+                                                var valor = document.getElementById("form3_:total_").value;
+
+
+
+                                                if (valor == 0) {
+
+                                                    swal({type: "error", title: '¡Mensaje De Error!', text: 'El monto de la recarga debe ser mayor de 20000'});
+                                                } else {
+                                                    var id = '#{recaudoControl.codificar(loginBenefactorControl.usLog.idbenefactor)}';
+                                                    var tdoc = '#{recaudoControl.codificar(param.tdoc_)}';
+                                                    var numdoc = '#{recaudoControl.codificar(param.numdoc_)}';
+                                                    var telrec = '#{recaudoControl.codificar(param.telrec_)}';
+                                                    var numdoc = '#{recaudoControl.codificar(param.numdoc_)}';
+
+                                                    var som = '/app-familiar/admin/recaudo/recaudo3.xhtml?id_=' + id + '&amp;tdoc_=' + tdoc + '&amp;numdoc_=' + numdoc + '&amp;telrec_=' + telrec + '&amp;valor_=' + valor + '&amp;comision_=#{recaudoControl.obtenercomision()} ';
+                                                    var url = '#{utilControl.protocolHostPortContext}' + som;
+
+                                                    document.location.href = url;
+                                                }
+                                            }
+
+
+                                            if (elementos == 0) {
+                                                var valor = document.getElementById("form3_:total_").value;
+
+                                                if (valor == 0) {
+                                                    swal({type: "error", title: '¡Mensaje De Error!', text: 'El monto de la recarga debe ser mayor de 20000'});
+                                                } else {
+                                                    var id = '#{recaudoControl.codificar(loginBenefactorControl.usLog.idbenefactor)}';
+                                                    var tdoc = '#{recaudoControl.codificar(param.tdoc_)}';
+                                                    var numdoc = '#{recaudoControl.codificar(param.numdoc_)}';
+                                                    var telrec = '#{recaudoControl.codificar(param.telrec_)}';
+                                                    var numdoc = '#{recaudoControl.codificar(param.numdoc_)}';
+
+
+
+                                                    var som = '/app-familiar/admin/recaudo/recaudo3_1.xhtml?id_=' + id + '&amp;tdoc_=' + tdoc + '&amp;numdoc_=' + numdoc + '&amp;telrec_=' + telrec + '&amp;valor_=' + valor + '&amp;comision_=#{recaudoControl.obtenercomision()} ';
+                                                    var url = '#{utilControl.protocolHostPortContext}' + som;
+
+                                                    document.location.href = url;
+                                                }
+
+                                            }
+                                        }
+
+                                    </script>
+
+
+
+
+
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+                 <style>
+                    body.layout-compact .ui-button.ui-button-text-icon-left .ui-icon, body.layout-compact .ui-button.ui-button-text-icon-right .ui-icon {
+                        width: 20px;
+                        height: 20px;
+                        font-size: 20px;
+                        margin-top: -10px;
+                        color: #FFFFFF;
+                    }
+                </style>
+
+                <script type='text/JavaScript'>
+
+                    function ocultar(){
+                    document.getElementById('area_movil').style.display = 'none';
+                    document.getElementById('abajo').style.display = 'block';
+                    document.getElementById('arriba').style.display = 'none';
+                    }
+
+                    function mostrar(){
+                    document.getElementById('area_movil').style.display = 'block';
+                    document.getElementById('abajo').style.display = 'none';
+                    document.getElementById('arriba').style.display = 'block';
+                    }
+
+
+
+                </script>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
+

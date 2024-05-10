@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+    <application>
+        <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+    </application>
+    <managed-bean>
+        <managed-bean-name>loginForm</managed-bean-name>
+        <managed-bean-class>com.captcha.botdetect.examples.jsf.login_form_filter.view.LoginForm</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>secured/index</from-outcome>
+            <to-view-id>/secured/index.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

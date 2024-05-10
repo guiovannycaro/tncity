@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+      
+                <h:outputText value="#{beneficiarioControl.recuperaAllRegPaginationNoLight()}"/>
+
+                <br/>
+                <div>
+                    <p:dataTable reflow="true" var="lst" value="#{beneficiarioControl.lst}" tableStyle="width:auto">
+ <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idbeneficiario"
+                                attributeDisplay="Codigo"
+                                />
+                            <h:panelGroup>
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/recaudo/beneficiario/detalle/detalle.xhtml?idbeneficiario_=#{lst.idbeneficiario}">
+                                    <h:outputText value="#{lst.idbeneficiario}"/>
+                                </a>
+                            </h:panelGroup>
+                        </p:column>
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="nombresApellidos"
+                                attributeDisplay="Beneficiario"
+                                />
+                            <h:panelGroup>
+                               
+                                    <h:outputText value="#{lst.nombresApellidos}"/>
+                               
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idpersona"
+                                attributeDisplay="Benefactor"
+                                value="#{lst.idpersona.nombres} #{lst.idpersona.apellidos}"
+                                />
+                        </p:column>
+
+                        
+                        
+                         <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="td"
+                                attributeDisplay="TD"
+                                value="#{lst.td}"
+                                />
+                        </p:column>
+
+                        
+                         <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="pin"
+                                attributeDisplay="Pin"
+                                value="#{lst.pin}"
+                                />
+                        </p:column>
+
+      
+
+
+
+                    </p:dataTable>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

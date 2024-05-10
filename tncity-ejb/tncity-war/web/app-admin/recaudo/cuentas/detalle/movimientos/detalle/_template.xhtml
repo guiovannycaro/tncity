@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../../_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.cuentas.content">
+
+                <h:outputText value="#{benefactorControl.recuperaById()}"/>
+
+                <p:panel header="Movimientos Cuenta">
+                    <h:outputText value="Codigo Cuenta: #{param.idcuenta_}" style="font-size: 20px;"/>
+                    <p:separator/>
+                    
+                        <div style="width: 100%;height: 35px;margin: 5% 0% 0% 0%;
+                         padding: 0% 0% 0% 0%; border: 1px solid #bdbdbd;
+                         background-color: #ffffff;">
+                  <h:outputText value="#{PermisosControl.validarSeccionesSubSecciones(loginAdminControl.usLog.idpersona.idpersona,'Inicio','Recaudo','Cuentas')}"/>
+                        <ui:repeat  var="lst" value="#{PermisosControl.lstsubsecciones}" >  
+
+                          
+                             <h:panelGroup rendered="#{lst.consulta == 'true' }"> 
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/recaudo/cuentas/detalle/movimientos/lista.xhtml?idbenefactor_=#{param.idbenefactor_}&amp;idcuenta_=#{param.idcuenta_}">
+                                    <div style="float: left;width: 15%;height: 33px;margin: 0% 0% 0% 0%;
+                                         padding: 0% 0% 0% 0%; 
+                                         background-color: #ffffff;"> 
+                                        <div style="float: left;width: 90%;height: 20px;margin: 6% 0% 0% 9%;padding: 0% 0% 0% 0%;font-size: 15x;color:#000000 !important">
+                                            <span class="fa fa-pencil-square-o" style="font-size: 20px;color:#757575"></span>   Movimientos
+                                        </div>
+                                    </div>
+                                </a>
+                            </h:panelGroup> 
+
+                        </ui:repeat> 
+                    </div>
+                    <br/>     
+                    
+               
+                    <ui:insert name="app-admin.recaudo.cuentas.detalle.movimientos.detalle.content"></ui:insert>
+                </p:panel>
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

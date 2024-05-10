@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report-name" pageWidth="${model.pageWidth}" pageHeight="${model.pageHeight}" isIgnorePagination="true" columnWidth="0" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d6fe2cd6-3ba7-429b-8915-46a2c9e38b60">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    
+    <!-- Campos -->
+    <field name="dataFieldSub" class="java.util.List">
+        <fieldDescription><![CDATA[values]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    
+    #if(${model.showColumnsHeaders})
+    <columnHeader>
+        <band height="29" splitType="Stretch">
+            #foreach($c in $model.columns)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="29" backcolor="#CCCCCC" mode="Opaque" stretchType="RelativeToTallestObject"/>
+                <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+                    <pen lineWidth="0.5" lineStyle="Solid"/>
+                    <topPen lineWidth="0.5" lineStyle="Solid"/>
+                    <leftPen lineWidth="0.5" lineStyle="Solid"/>
+                    <bottomPen lineWidth="0.5" lineStyle="Solid"/>
+                    <rightPen lineWidth="0.5" lineStyle="Solid"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["${c.headerText}"]]></textFieldExpression>
+            </textField>
+            #end
+        </band>
+    </columnHeader>
+    #end
+    
+    <detail>
+        <band height="20" splitType="Stretch">
+            #set ($i=0)
+            #foreach($c in $model.columns)
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true" pattern="${c.pattern}">
+                <reportElement x="${c.x}" y="${c.y}" width="${c.width}" height="20" isPrintWhenDetailOverflows="true" stretchType="RelativeToBandHeight"/>
+                <box leftPadding="3" rightPadding="3">
+                    <pen lineWidth="0.5"/>
+                    <topPen lineWidth="0.5"/>
+                    <leftPen lineWidth="0.5"/>
+                    <bottomPen lineWidth="0.5"/>
+                    <rightPen lineWidth="0.5"/>
+                </box>
+                <textElement textAlignment="${c.textAlignment}" verticalAlignment="${c.verticalAlignment}"/>
+                <textFieldExpression><![CDATA[$F{dataFieldSub}.get($i)]]></textFieldExpression>
+            </textField>
+            #set ($i=$i+1)
+            #end
+        </band>
+    </detail>
+</jasperReport>

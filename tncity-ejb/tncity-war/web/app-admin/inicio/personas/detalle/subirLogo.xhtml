@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../../_templateBlank.xhtml">
+
+            <ui:define name="app-admin.contentBlank">
+                <div align="center">
+                    <p:panel header="Subir Imagen ">
+                        <h:form enctype="multipart/form-data">
+                            Por favor seleccione una Imagen.<br/>
+                            <p:fileUpload id="file_" required="true" requiredMessage="Requerido!" value="#{personaControl.imagenavatar}" 
+                                          mode="simple" 
+                                          skinSimple="true" 
+                                           allowTypes="/(\.|\/)(gif|jpe?g|png|jpeg)$/"
+                                          
+                                          label="Examinar..."/>
+                            <p:message for="file_"/>
+                            <br/>
+                            <h:outputText value="#{personaControl.imgusuario(param.idpersona_)}" style="display: none"/>
+               
+                           
+                              <p:graphicImage  height="96" width="96" value="#{utilControl.protocolHostPortContext}/documentos/#{personaControl.obj.imagen}" /> - 
+<br/><br/>
+                            <p:commandButton value="Actualizar Imagen" ajax="false" action="#{personaControl.subirImagen()}">
+                                <f:param name="idpersona_" value="#{param.idpersona_}"/>
+                            </p:commandButton>
+                            <br/><br/>
+                        </h:form>
+                    </p:panel>
+
+                    <h:panelGroup rendered="#{personaControl.successful}">
+                        <script type="text/javascript">
+                            parent.document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/inicio/personas/detalle/detalle.xhtml?idpersona_=#{param.idpersona_}';
+                        </script>
+                    </h:panelGroup>
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

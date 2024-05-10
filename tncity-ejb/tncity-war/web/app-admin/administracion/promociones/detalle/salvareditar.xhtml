@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title> </title>
+    </h:head>
+    <style>
+
+    #mensajes{
+        float: left;
+        height: 80px;
+        width: 100%;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        opacity: 0.8;
+
+    }
+</style>
+    <h:body>
+        <b>Procesando...</b>
+
+
+
+       <h:outputText value="#{promocionesControl.editarpromocion(
+                          param.nombre_,param.tipopromo_,param.valorpromouno_,
+                          param.finicial_,param.ffinal_,param.estado_,param.observacion_, 
+                          param.cero_,param.uno_,param.dos_,param.tres_,param.cuatro_,
+                          param.cinco_,param.seis_,param.siete_,param.ocho_,param.nueve_,
+                          param.taplica_,param.caplicaa_,param.idpromocion_,param.promocion_
+
+                            )}"/>
+       
+    
+
+        <div id="mensajes">
+
+            <h:outputText value="#{utilControl.msg}" escape="false" id="mensajes" style="font-size: 1em;float: left;height: 39px;color: #f45f56;text-align: center;width: 96%;margin-top: 4%;margin-left: 0%;font-weight: bold;font-family: 'CenturyGothic-Bold';opacity: 0.8;border-radius: 20px" class="estilo5"/>
+        </div >
+
+
+
+       <h:panelGroup rendered="#{promocionesControl.successful}">
+            <script type="text/javascript">
+                setTimeout(function(){parent.document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/administracion/promociones/lista.xhtml';}, 1000);
+            </script>
+
+        </h:panelGroup>
+
+
+
+
+    </h:body>
+</html>

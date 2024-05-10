@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <body>
+        <h:outputScript library="primefaces" name="jquery/jquery.js"
+                        target="head" />
+        <ui:composition template="./_template.xhtml">
+
+
+
+            <ui:define name="app-familiar.auth.password.content">
+
+                <div class="gridContainer clearfix"><!--inicio-contenedor-->
+                    <div class="contenedor"><!--inicio-contenedor-->
+                        <div id="contenedorsuperior"><!--inicio_contenedorsuperior-->
+                            <div id="txtcontenedor" class="estilo3"><!--inicio_datos1-->
+                                Cambio de Contraseña
+                            </div><!--fin_datos1-->
+
+                        </div><!--fin_contenedorsuperior-->
+
+
+
+
+
+                        <div id="contenedormedio"><!--inicio_contenedormedio-->
+                            <div id="marcorecaudo">
+
+                                <h:form id="ff"> 
+                                    <div id="contcambipass">
+                                        <div id="contantigua"> 
+
+                                            <div id="txt-antigua" class="estilo11">Antigua Contraseña *</div>
+                                            <div id="input-antigua">
+                                                <div id="ver1">
+                                                    <a href="javascript:mostrarContrasena1()" ><i class="fa fa-eye-slash" style="color:#ffffff" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                                </div>
+
+                                                <h:outputText   style="float: left" title="Digite 4 caracteres como minimo 1 letra mayuscula  "></h:outputText> 
+
+                                                <h:panelGroup>
+                                                    <p:password value="#{benefactorControl.antcontra}" feedback="true" id="ap1" required="true" requiredMessage="Digite Una  Contraseña"
+                                                                style="    width: 91%;height: 40px;float: left;border: 1px solid black;
+                                                                color: #000000;font-family: 'Century';font-size: 1.0em;text-align: center;padding: 2px 5px
+                                                                ;background-color: #ffffff;text-decoration: none;border-radius: 20px;margin-left: 2%;
+                                                                margin-top: -1%;z-index: 999;position: relative"
+                                                                placeholder="Contraseña Actual"
+
+                                                                />
+                                                    <p:message for="ap1"/>
+                                                </h:panelGroup>
+                                            </div>
+                                        </div>
+
+                                        <div id="contnueva">   
+
+                                            <div id="txt-antigua" class="estilo11">Nueva Contraseña *</div>
+                                            <div id="input-antigua">
+                                                <div id="ver1">
+                                                    <a href="javascript:mostrarContrasena2()" ><i class="fa fa-eye-slash" style="color:#ffffff" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                                </div>
+
+                                                <h:outputText   style="float: left" title="Digite 4 caracteres como minimo 1 letra mayuscula "></h:outputText> 
+
+                                                <h:panelGroup>
+                                                    <p:password value="#{benefactorControl.contra}" feedback="true" id="p1" required="true" requiredMessage="Digite Una  Contraseña"
+                                                                style="    width: 91%;height: 40px;float: left;border: 1px solid black;
+                                                                color: #000000;font-family: 'Century';font-size: 1.0em;text-align: center;padding: 2px 5px
+                                                                ;background-color: #ffffff;text-decoration: none;border-radius: 20px;margin-left: 2%;
+                                                                margin-top: -1%;z-index: 999;position: relative"  placeholder="Nueva Contraseña "
+                                                                />
+                                                    <p:message for="p1"/>
+                                                </h:panelGroup>
+                                            </div>
+                                        </div>
+
+                                        <div id="contconfirmar">   
+                                            <div id="txt-antigua" class="estilo11">Confirmar Contraseña *</div>
+                                            <div id="input-antigua">
+                                                <div id="verc">
+                                                    <a href="javascript:mostrarContrasena3()" ><i class="fa fa-eye-slash" style="color:#ffffff" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                                </div>
+
+                                                <h:outputText   style="float: left" title="Digite 4 caracteres como minimo 1 letra mayuscula )"></h:outputText> 
+
+                                                <h:panelGroup>
+                                                    <p:password value="#{benefactorControl.con_contra}" feedback="true" id="p2" required="true" requiredMessage="Confirme la Nueva Contraseña"
+                                                                style="    width: 91%;height: 40px;float: left;border: 1px solid black;
+                                                                color: #000000;font-family: 'Century';font-size: 1.0em;text-align: center;padding: 2px 5px
+                                                                ;background-color: #ffffff;text-decoration: none;border-radius: 20px;margin-left: 2%;
+                                                                margin-top: -1%;z-index: 999;position: relative"  placeholder="Nueva Contraseña "
+                                                                />
+                                                    <p:message for="p2"/>
+                                                </h:panelGroup>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div id="contbotonescambio">    
+
+                                            <p:commandButton value="Cambiar Contraseña"  ajax="false" action="#{benefactorControl.cambiarPassCurrentUser()}"
+
+                                                             style="
+                                                             width: 100%;height: 41px;background-color: #E0E1E1;color:#000;font-weight: bold;font-size: 15px;font-family: 'CenturyGothic-Bold';
+
+                                                             "     
+                                                             >
+                                                <f:param name="id_" value="#{param.id_}"/>
+                                            </p:commandButton> 
+                                        </div>
+                                        <div id="contenedorinputt">
+
+
+
+                                        </div>
+                                    </div>
+
+                                </h:form>
+
+                                <script>
+                                    function mostrarContrasena1() {
+                                        var tipo = document.getElementById("ff:ap1");
+                                        if (tipo.type == "password") {
+                                            tipo.type = "text";
+                                        } else {
+                                            tipo.type = "password";
+                                        }
+
+                                    }
+                                    function mostrarContrasena2() {
+                                        var tipo = document.getElementById("ff:p1");
+                                        if (tipo.type == "password") {
+                                            tipo.type = "text";
+                                        } else {
+                                            tipo.type = "password";
+                                        }
+
+                                    }
+                                    function mostrarContrasena3() {
+                                        var tipo = document.getElementById("ff:p2");
+                                        if (tipo.type == "password") {
+                                            tipo.type = "text";
+                                        } else {
+                                            tipo.type = "password";
+                                        }
+
+                                    }
+
+                                    $(function () {
+                                        PrimeFaces.cw("Password", "ui_widget_ff_ap1_panel", {id: "ff:ap1_panel", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña  Normal", strongLabel: "Contraseña Fuerte"});
+                                    });
+                                    $(function () {
+                                        PrimeFaces.cw("Password", "ui_widget_ff_p1_panel", {id: "ff:p1_panel", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña Normal", strongLabel: "Contraseña Fuerte"});
+                                    });
+
+                                    $(function () {
+                                        PrimeFaces.cw("Password", "ui_widget_ff_p2_panel", {id: "ff:p2_panel", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña Normal", strongLabel: "Contraseña Fuerte"});
+                                    });
+                                </script>
+                                <script type="text/javascript">
+
+
+
+                                    document.getElementById('ff:pss_').type = 'password';
+                                </script>
+                                <h:panelGroup rendered="#{benefactorControl.successful}">
+                                    <script type="text/javascript">
+
+                                        //   document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';
+                                    </script>
+                                </h:panelGroup>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <style>
+                    .info-red{
+                        font-size: 1em;
+                        float: left;
+                        height: 34px;
+                        color: #ffffff;
+                        text-align: center;
+                        width: 52%;
+                        margin-top: -27%;
+                        margin-left: 25%;
+                        font-weight: bold;
+                        font-family: 'CenturyGothic-Bold';
+                    }
+                </style>
+                <script>
+                    $(function () {
+                        PrimeFaces.cw("Password", "widget_ff_ap1", {id: "ff:ap1", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña  Normal", strongLabel: "Contraseña Fuerte"});
+                    });
+                    $(function () {
+                        PrimeFaces.cw("Password", "widget_ff_p1", {id: "ff:p1", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña  Normal", strongLabel: "Contraseña Fuerte"});
+                    });
+                    $(function () {
+                        PrimeFaces.cw("Password", "widget_ff_p2", {id: "ff:p2", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayuscula ", weakLabel: "Contraseña Debil", goodLabel: "Contraseña Normal", strongLabel: "Contraseña Fuerte"});
+                    });
+                </script>
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>

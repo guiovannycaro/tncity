@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../_template.xhtml">
+
+            <ui:define name="head">
+
+            </ui:define>
+
+            <ui:define name="app-familiar.content">
+                <ui:insert name="app-familiar.admin.content"/>
+            </ui:define>
+
+            <ui:define name="app-familiar.menu">
+                <h:form>
+                    <p:menu style="width: 98%" toggleable="true">
+
+
+                        <p:submenu label="Menu Recaudo">
+                            <p:menuitem  ajax="false" icon="fa fa-handshake-o" value="Beneficiario"  url="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/beneficiario/lista.xhtml"/>
+                            <p:menuitem ajax="false" icon="fa fa-university " value="Benefactor"  url="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/benefactor/lista.xhtml"/>
+                            <p:menuitem  ajax="false" icon="fa fa fa-money" value="Recaudo"  url="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/lista.xhtml?id_=#{loginBenefactorControl.usLog.idbenefactor}"/>
+
+                        </p:submenu>
+                    </p:menu>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,1811 @@
+@charset "utf-8";
+
+img, object, embed, video {
+    max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+    width:100%;
+}
+
+/*
+        Propiedades de cuadrícula fluida de Dreamweaver
+        ----------------------------------
+        dw-num-cols-mobile:		5;
+        dw-num-cols-tablet:		8;
+        dw-num-cols-desktop:	10;
+        dw-gutter-percentage:	25;
+        
+        Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+        http://www.alistapart.com/articles/responsive-web-design
+        
+        y Golden Grid System de Joni Korpi
+        http://goldengridsystem.com/
+*/
+
+body {
+    background-image: url(../imagenes/bg_01movil.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position:top center;
+    font-size: 8px;
+    padding:0px;
+    margin:0px;
+    width:100%;
+}
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;/*
+    padding-right: 1.82%;*/
+}
+
+#contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#cabezote {
+    float: left;
+    width: 100%;
+    height: 15px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#tit_cabezote{
+    float: right;
+    width: 52%;
+    height: 50px;
+    font-size: 3em !important;
+    margin: 11% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display:none;
+
+}
+
+#stit_cabezote{
+    float: left;
+    width: 90%;
+    height: 50px;
+    font-size: 2em !important;
+    margin: 46% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: none;
+
+}
+
+#marcocontenendor{
+    float: left;
+    width: 100%;
+    height: 620px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+
+
+
+
+
+#bannerlog{
+    background-image: url(../imagenes/logoamigo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: left;
+    width: 30%;
+    height: 55px;
+    margin: 0% 35% 0% 35%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#marcocabezote{
+    float: left;
+    width: 100%;
+    height: 40px;
+    margin: 3% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#stit_marcocabezote{
+    float: left;
+    width: 100%;
+    height:30px;
+    margin: 0% 0% 0% 0%;
+    padding:0% 0% 0% 0%;
+    display: block;
+}
+
+
+
+#marcologin {
+    float: left;
+    width: 90%;
+    height: 702px;
+    background-image: url(../imagenes/bg_2movil.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0% 5% 7% 5%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#contenedorlogeo{
+    float: left;
+    width: 100%;
+    height: 190px;
+    margin: 65% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+
+
+#subtitulo_marco{
+    float: left;
+    width: 90%;
+    height: 25px;
+    margin: -4% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    visibility: hidden;
+    text-align: center;
+    display: none;
+
+}
+
+#btnsubtitulo_marco{
+    float: left;
+    width: 30%;
+    height: 37px;
+    background-image: url(../imagenes/boto-reg.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 2% 35% 0% 35%;
+    padding: 0 0% 0% 0%;
+    display: block;
+
+}
+
+#txt_titulo{
+    float: left;
+    width: 91%;
+    height: 92px;
+    margin: 35% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#titimagen{
+    float: left;
+    width: 90%;
+    height: 48px;
+    background-image: url(../img/app/logoblanco.png);
+    background-size: 95%;
+    background-repeat: no-repeat;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#txt_stitulo{
+    float: left;
+    width: 90%;
+    height: 25px;
+    margin: 5% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+
+}
+
+#inusuario{
+    float: left;
+    width: 84%;
+    height: 30px;
+    margin: 2% 8% 0% 8%;
+    padding: 0% 0% 0% 0%;
+    border: 1px solid #44748b;
+    background-color: #44748b;
+    border-radius: 20px;
+    text-align: center;
+    display: block;
+}
+
+#imgusu{
+    float: left;
+    width: 7%;
+    height: 32px;
+    margin: 2% 0% 0% 3%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+
+}
+
+#incontrasena{
+    float: left;
+    width: 84%;
+    height: 30px;
+    margin: 4% 8% 0% 8%;
+    padding: 0% 0% 0% 0%;
+    border: 1px solid #44748b;
+    background-color: #44748b;
+    border-radius: 20px;
+    text-align: center;
+    display: block;
+}
+
+#imgpass{
+    float: left;
+    width: 7%;
+    height: 32px;
+    margin: 2% 0% 0% 3%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+
+
+}
+
+#mensajeerror{
+    float: left;
+    width: 91%;
+    height: 25px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+
+#botonesuno{
+    float: left;
+    width: 91%;
+    height: 38px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#btn_ingresar{
+    float: left;
+    width: 100%;
+    height: 30px;
+
+    margin: 0% 0% 0% 0%;
+    padding: 0 0% 0% 0%;
+    display: none;
+
+}
+
+
+
+#ingresar{
+    float: left;
+    width: 40%;
+    height: 39px;
+    margin: 0% 30% 0% 30%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#Registrarse{
+    float: right;
+    width: 40%;
+    height: 25px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: none;
+}
+
+
+#mensajes{
+    float: left;
+    width: 91%;
+    height: 25px;
+    margin: 5% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#botonesdos{
+    float: left;
+    width: 91%;
+    height: 25px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#Olvido{
+    float: left;
+    width: 91%;
+    height: 25px;
+    margin: 5% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    font-family: 'CenturyGothic';
+    color:#44748b;
+    font-size: 1em;
+    display: block;
+}
+
+a:link {
+    text-decoration: none;
+    font-size: 1.3em;
+    color:  #44748b !important;;
+}
+
+#footer{
+    text-align: center;
+    width: 100%;
+    height: 42px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    margin-right: auto;
+    margin-left: auto;
+    position:relative;
+    clear: both;
+}
+
+#marco_pie{
+    float: left;
+    width: 96%;
+    height: 266px;
+    margin: 10% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+
+} 
+
+#desarrollo {
+    height:auto;
+    width:100%;
+    float: left;
+    margin: 0% 0% 0% 0%;
+    padding:5% 0% 0% 5%;
+    text-align:center;
+    display:block;
+}
+
+
+@media only screen and (min-width: 481px) {
+
+
+    body {
+        background-image: url(../imagenes/bg_04.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+
+        width:100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #cabezote {
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #tit_cabezote{
+        float: left;
+        width: 100%;
+        height:50px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display:none;
+
+    }
+
+    #stit_cabezote{
+        float: left;
+        width: 100%;
+        height: 67px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: none;
+
+    }
+
+    #marcocontenendor{
+        float: left;
+        width: 40%;
+        height: 474px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 3%;
+        display: block;
+    }
+
+    #bannerlog{
+        background-image: url(../imagenes/logoamigo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        float: left;
+        width: 20%;
+        height: 92px;
+        margin: -1% 0% 0% 7%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcocabezote{
+        float: left;
+        width: 100%;
+        height:30px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display: block;
+    }
+
+    #stit_marcocabezote{
+        float: left;
+        width: 100%;
+        height:30px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display:block;
+    }
+
+    #marcologin {
+        float: left;
+        width: 90%;
+        height: 525px;
+        background-image: url(../imagenes/bg_022tablet.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 30% 0% 6%;
+        padding: 0 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorlogeo{
+        float: left;
+        width: 90%;
+        height: auto;
+        margin: 78% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+
+
+
+
+    #subtitulo_marco{
+        float: left;
+        width: 90%;
+        height: 25px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        visibility: visible;
+        text-align: center;
+        display: none;
+
+    }
+
+    #btnsubtitulo_marco{
+        float: left;
+        width: 30%;
+        height: 34px;
+        background-image: url(../imagenes/boto-reg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 35% 0% 39%;
+        padding: 0 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_titulo{
+        float: left;
+        width: 89%;
+        height: 92px;
+        margin: 16% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #titimagen{
+        float: left;
+        width: 90%;
+        height: 45px;
+        background-image: url(../img/app/logoblanco.png);
+        background-size: 95%;
+        background-repeat: no-repeat;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_stitulo{
+        float: left;
+        width: 89%;
+        height: 25px;
+        margin: 2% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+    #inusuario{
+        float: left;
+        width: 90%;
+        height: 30px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid #44748b;
+        background-color: #44748b;
+        border-radius: 20px;
+        text-align: center;
+        display: block; 
+    }
+
+    #imgusu{
+        float: left;
+        width: 3%;
+        height: 23px;
+        margin: 2% 0% 0% 3%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #incontrasena{
+        float: left;
+        width: 91%;
+        height: 30px;
+        margin: 6% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid #44748b;
+        background-color: #44748b;
+        border-radius: 20px;
+        text-align: center;
+        display: block;
+    }
+
+    #imgpass{
+        float: left;
+        width: 3%;
+        height: 23px;
+        margin: 2% 0% 0% 3%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #mensajeerror{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesuno{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 13% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #btn_ingresar{
+        float: left;
+        width: 35%;
+        height: 37px;
+        margin: -12% 0% 0% 33%;
+        padding: 0 0% 0% 0%;
+        display: block;
+
+    }
+
+    #ingresar{
+        float: left;
+        width: 30%;
+        height: 25px;
+        margin: -9% 35% 0% 35%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: none;
+    }
+
+    #Registrarse{
+        float: right;
+        width: 35%;
+        height: 30px;
+        margin: 0% 16% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: none;
+    }
+
+    #mensajes{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesdos{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: -8% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #Olvido{
+        float: right;
+        width: 50%;
+        height: 25px;
+        margin: 3% 25% 0% 25%;
+        padding: 0% 0% 0% 0%;
+        font-family: 'CenturyGothic';
+        color: #FFFFFF;
+        font-size: 1em;
+        text-align: right;
+        display: block;
+    }
+
+    a:link {
+        text-decoration: none;
+        font-size: 1.3em;
+        color: #44748b !important;
+    }
+
+    #footer{
+       	text-align: center;
+        width: 100%;
+        height:138px;
+        margin-right: auto;
+        margin-left: auto;
+        position:relative;
+        clear: both;
+    }
+
+    #marco_pie{
+        float: left;
+        width:96%;
+        height:138px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+
+    } 
+
+    #desarrollo {
+        height: 40px;
+        width: 100%;
+        float: left;
+        margin: 0% 0% 0% 0%;
+        padding: 5% 0% 0% 5%;
+        text-align: center;
+        display: block;
+    }
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+
+    body {
+        background-image: url(../imagenes/bg_06.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #cabezote {
+        float: left;
+        width: 100%;
+        height: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #tit_cabezote{
+        float: left;
+        width: 100%;
+        height:50px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display:none;
+
+    }
+
+    #stit_cabezote{
+        float: left;
+        width: 100%;
+        height: 50px;
+        margin:0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: none;
+    }
+
+
+
+
+
+    #marcocontenendor{
+        float: left;
+        width: 28%;
+        height: 675px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 2%;
+        display: block;
+    }
+
+
+    #bannerlog{
+        background-image: url(../imagenes/logoamigo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        float: left;
+        width: 23%;
+        height: 170px;
+        margin: 0% 0% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block; 
+    }
+
+    #marcocabezote{
+        float: left;
+        width: 100%;
+        height: 60px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #stit_marcocabezote{
+        float: left;
+        width: 80%;
+        height: 30px;
+        margin: 3% 10% 0% 10%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcologin {
+        float: left;
+        width: 100%;
+        height: 710px;
+        background-image: url(../imagenes/bg_022.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 30% 0% 4%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #contenedorlogeo{
+        float: left;
+        width: 90%;
+        height: auto;
+        margin: 60% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+
+
+
+
+
+    #subtitulo_marco{
+        float: left;
+        width: 90%;
+        height: 25px;
+        margin: 15% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        visibility:visible;
+        text-align: center;
+        display:none;
+
+    }
+
+    #btnsubtitulo_marco{
+        float: left;
+        width: 30%;
+        height: 37px;
+        background-image: url(../imagenes/boto-reg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 35% 0% 35%;
+        padding: 0 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulo{
+        float: left;
+        width: 89%;
+        height: 99px;
+        margin: 15% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #titimagen{
+        float: left;
+        width: 91%;
+        height: 69px;
+        background-image: url(../img/app/logoblanco.png);
+        background-size: 95%;
+        background-repeat: no-repeat;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_stitulo{
+        float: left;
+        width: 90%;
+        height: 25px;
+        margin: 1% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #inusuario{
+        float: left;
+        width: 70%;
+        height: 36px;
+        margin: 4% 15% 0% 15%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid #44748b;
+        background-color: #44748b;
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+
+    }
+
+    #imgusu{
+        float: left;
+        width: 3%;
+        height: 23px;
+        margin: 1% 0% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #incontrasena{
+        float: left;
+        width: 70%;
+        height: 35px;
+
+        margin: 4% 15% 0% 15%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid #44748b;
+        background-color: #44748b;
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+    }
+
+    #imgpass{
+        float: left;
+        width: 3%;
+        height: 23px;
+        margin: 1% 0% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #mensajeerror{
+        float: left;
+        width: 100%;
+        height: 40px;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesuno{
+        float: left;
+        width: 100%;
+        height: 40px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #btn_ingresar{
+        float: left;
+        width: 30%;
+        height: 24px;
+        margin: -8% 35% 0% 35%;
+        padding: 0 0% 0% 0%;
+        display: block;
+
+    }
+
+    #ingresar{
+        float: left;
+        width: 25%;
+        height: 40px;
+        margin: -7% 37% 0% 37%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: none;
+    }
+
+    #Registrarse{
+        float: right;
+        width: 32%;
+        height: 25px;
+        margin: 0% 21% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: none;
+    }
+
+    #mensajes{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesdos{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: -6% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #Olvido{
+        float: right;
+        width: 100%;
+        height: 21px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        font-family: 'CenturyGothic';
+        color: #44748b;
+        font-size: 1em;
+        display: block;
+    }
+
+    a:link {
+        text-decoration: none;
+        font-size: 1.2em !important;
+        color: #44748b !important; 
+    }
+
+    #footer{
+        text-align: center;
+        width: 100%;
+        height:27px;
+        margin-right: auto;
+        margin-left: auto;
+        position:relative;
+        clear: both;
+    }
+
+    #marco_pie{
+        float: left;
+        width:100%;
+        height:28px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+
+    } 
+
+    #desarrollo {
+        height: 32px;
+        width: 94%;
+        float: left;
+        margin: -4% 0% 0% 0%;
+        padding: 5% 0% 0% 5%;
+        text-align: center;
+        display: block;
+    }
+}
+
+
+@media only screen and (min-width: 1900px) {
+
+    body {
+        background-image: url(../imagenes/bg_06.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #cabezote {
+        float: left;
+        width: 100%;
+        height: 80px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #tit_cabezote{
+        float: left;
+        width: 100%;
+        height:50px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display: none;
+
+    }
+
+    #stit_cabezote{
+        float: left;
+        width: 100%;
+        height:50px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display: none;
+
+    }
+
+    #marcocontenendor{
+        float: left;
+        width: 43%;
+        height: 806px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 1%;
+        display: block;
+    }
+
+    #bannerlog{
+        background-image: url(../imagenes/logoamigo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        float: left;
+        width: 20%;
+        height: 305px;
+        margin: 0% 0% 0% 4%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcocabezote{
+        float: left;
+        width: 100%;
+        height:50px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display: block;
+    }
+
+    #stit_marcocabezote{
+        float: left;
+        width: 80%;
+        height:30px;
+        margin: 3% 10% 0% 10%;
+        padding:0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcologin {
+        float: left;
+        width: 50%;
+        height: 810px;
+        background-image: url(../imagenes/bg_022.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 25% 7% 9%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorlogeo{
+        float: left;
+        width: 90%;
+        height: auto;
+        margin: 65% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #subtitulo_marco{
+        float: left;
+        width: 90%;
+        height: 41px;
+        margin: 15% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        visibility:visible;
+        display: none;
+
+    }
+
+    #btnsubtitulo_marco{
+        float: left;
+        width: 30%;
+        height: 80px;
+        background-image: url(../imagenes/boto-reg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 35% 0% 35%;
+        padding: 0 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_titulo{
+        float: left;
+        width: 90%;
+        height: 138px;
+        margin: 20% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #titimagen{
+        float: left;
+        width: 90%;
+        height: 171px;
+        background-image: url(../img/app/logoblanco.png);
+        background-size: 95%;
+        background-repeat: no-repeat;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_stitulo{
+        float: left;
+        width: 89%;
+        height: 25px;
+        margin: -3% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #inusuario{
+        float: left;
+        width: 70%;
+        height:40px;
+        margin: -5% 0% 0% 16%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid #44748b;
+        background-color: #44748b;
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+
+    }
+
+    #imgusu{
+        float: left;
+        width: 3%;
+        height: 23px;
+        margin: 0% 0% 0% 2%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #incontrasena{
+        float: left;
+        width: 70%;
+        height: 40px;
+
+        margin: 5% 0% 0% 16%;
+        padding: 0% 0% 0% 0%;
+        border: 1px solid #44748b;
+        background-color: #44748b;
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+
+    }
+
+
+    #imgpass{
+        float: left;
+        width: 3%;
+        height: 23px;
+        margin: 0% 0% 0% 2%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #mensajeerror{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesuno{
+        float: left;
+        width: 91%;
+        height: 38px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+    #btn_ingresar{
+        float: left;
+        width: 50%;
+        height: 45px;
+        margin: 0% 25% 0% 25%;
+        padding: 0 0% 0% 0%;
+        display: block;
+
+    }
+
+    #ingresar{
+        float: left;
+        width: 20%;
+        height: 25px;
+        margin: 0% 40% 0% 40%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: none;
+    }
+
+    #Registrarse{
+        float: right;
+        width: 20%;
+        height: 25px;
+        margin: 0% 29% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: none;
+    }
+
+
+    #mensajes{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesdos{
+        float: left;
+        width: 91%;
+        height: 44px;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: right;
+        display: block;
+
+    }
+
+    #Olvido{
+        float: right;
+        width: 50%;
+        height: 25px;
+        margin: 0% 25% 0% 25%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        font-family: 'CenturyGothic';
+        color: #44748b;
+        font-size: 1em;
+        display: block;
+    }
+
+
+    a:link {
+        text-decoration: none;
+        font-size: 1.3em;
+        color: #44748b;
+    }
+
+    #footer{
+
+
+
+        text-align: center;
+        width: 100%;
+        height: 45px;
+        margin-right: auto;
+        margin-left: auto;
+        position:relative;
+        clear: both;
+
+    }
+
+    #marco_pie{
+        float: left;
+        width: 100%;
+        height: 45px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    } 
+
+    #desarrollo {
+        float: left;
+        width: 100%;
+        height: 44px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+
+}
+
+
+a:link
+{
+    text-decoration:none;
+    font-size: 1.3em;
+    color:#ffffff;
+}
+
+.panelgrid-dotted-border{
+
+    border-spacing: 0;
+    border: 0px;
+}
+.panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+    border: 0px;
+}
+
+body .ui-chkbox .ui-chkbox-box {
+    border: 2px solid #FFFFFF;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-chkbox .ui-chkbox-box.ui-state-active {
+    border-color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+body .ui-message.ui-message-error {
+    font-size: 10px;
+    float: left;
+    height: 3px;
+    color: #fff8f8;
+    background-color: #f45f56;
+    width: 95%;
+    margin: -3% 0% 0% 0%;
+    font-weight: bold;
+    font-family: 'CenturyGothic-Bold';
+}
+
+
+
+body .ui-inputfield.ui-state-focus {
+    border-width: 0% 0% 0% 0%;
+    border-color: #44748b;
+    padding-bottom: 0px;
+}    
+
+body .ui-button {
+    width: 100%;
+    height: 30px;
+    color: #ffffff;
+    font-family: 'CenturyGothic';
+    border: 1px solid black;
+    float: left;
+    margin-top: 0%;
+    margin-left: 0%;
+    overflow: hidden;
+    background-color: #788588;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+    width: 76%;
+    height: 27px;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 2em;
+    background-color: #44748b !important;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    border-width: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 5%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transi45854641565410tion: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 20px;
+
+}
+
+button, select, textarea {
+    width: 90%;
+    height: 35px;
+    float: left;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #ffffff;
+
+
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 4%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+
+
+}
+
+
+.ui-md-8 {
+    width: 100%;
+}
+
+
+
+
+option {
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    padding: 0px 2px 1px;
+}
+
+select {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #0e0e0e;
+}
+
+.ui-autocomplete {
+    width: auto;
+    zoom: 1;
+    cursor: pointer;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    display: inline-block;
+    background-color: #e6f0f2;
+    font-family: 'CenturyGothic';
+    font-size: 1.2em;
+    color: #afa0a0;
+}
+
+
+body .ui-widget, body .ui-widget .ui-widget {
+    font-family: 'CenturyGothic';
+    font-size: 1em;
+    color: #1a1919;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+input:-internal-autofill-selected {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+}
+
+
+body .ui-radiobutton .ui-radiobutton-box {
+    border: 2px solid #ffffff;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+    background-color: #ffffff;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.24) !important;
+    border: 1px solid #e2d6d6 !important;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 2px solid black;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #e8edef;
+    border: 1px;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+body .ui-message {
+    min-height: 14px;
+}
+
+body .ui-message .ui-message-error-icon {
+    margin-top: 0px;
+    font-size: 18px;
+    right: 1px;
+}
+
+body .ui-messages .ui-messages-error-icon, body .ui-message .ui-message-error-icon {
+    background: none;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    font-size: 13px;
+    color: #fff;
+    margin-top: -2px;
+}
+
+body .ui-state-error, body .ui-widget.ui-state-error, body .ui-widget-content .ui-state-error, body .ui-widget-header .ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-inputfield.ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-button {
+    overflow: hidden;
+    background-color: #0f5574 !important;
+    color: #ffffff;
+    font-size: 16px;
+    height: 36px;
+    width: 100%;
+    padding: 0 16px;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+    background: transparent;
+    border-width: 0 0 1px 0;
+    padding: -1px 2px 1px 23px;
+    font-size: 14px;
+    border-color: #44748b;
+    border-style: solid;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}

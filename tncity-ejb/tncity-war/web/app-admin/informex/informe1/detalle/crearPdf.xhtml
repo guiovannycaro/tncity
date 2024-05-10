@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../../_templateBlank.xhtml">
+
+            <ui:define name="app-admin.contentBlank">
+
+
+                <h:outputText value="#{informexControl.generarPdf(param.desde_,param.hasta_,param.idbenefactor_,param.documento_,param.idpasarela_)}"/>
+
+                <p:panel header="Descargar Pdf">
+
+                    <div align="center">
+                        <h:form>
+                            <h:outputText value="#{informexControl.recuperaPDF()}"/>
+                            <p:panelGrid columns="1">
+
+                                <a  href="#{informexControl.urlPdf}" onclick="descargar()">Download</a>
+
+                                <p:commandButton type="button" value="Cerrar" id="cerrar" style="width: 100%;height: 30px;color:#2f4050 !important" ajax="true" onclick="cerrar()"  />
+                            </p:panelGrid>
+                        </h:form>
+
+                        <script type="text/javascript">
+                            function cerrar() {
+                                parent.document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/informex/informe1/detalle/generarinforme.xhtml?desde_=#{param.desde_}&amp;hasta_=#{param.hasta_}&amp;idbenefactor_=#{param.idbenefactor_}&amp;documento_=#{param.documento_}&amp;idpasarela_=#{param.idpasarela_}';
+                                    }
+                                    ;
+                        </script>
+
+
+
+                        <script>
+                            function descargar() {
+                                swal({type: "success", title: '¡Mensaje!', text: '"Archivo Descargado..'});
+                                setTimeout(mostrarAlerta, 3000);
+                            }
+
+                            function mostrarAlerta() {
+                                parent.$.fn.colorbox.close();
+                            }
+                        </script>
+                    </div>
+
+                </p:panel>
+
+                <style type="text/css">
+
+                    body .ui-button {
+                        overflow: hidden;
+                        background-color: #2f4050 !important;
+                        color: #ffffff  !important;
+                        font-size: 16px;
+                        height: 36px;
+                        width: 40%;
+                        padding: 0 16px;
+                        border: 0 none;
+                        border-radius: 20px;
+                        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        -moz-transition: background-color 0.3s;
+                        -o-transition: background-color 0.3s;
+                        -webkit-transition: background-color 0.3s;
+                        transition: background-color 0.3s;
+                    }
+
+                    .ui-button .ui-button-text {
+                        display: block;
+                        line-height: normal;
+                        color: #ffffff;
+                    }
+
+
+                </style>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

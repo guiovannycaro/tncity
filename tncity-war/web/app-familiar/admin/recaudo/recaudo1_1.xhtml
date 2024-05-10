@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-familiar.admin.recaudo.content">
+ 
+                <h:outputText value="#{benefactorControl.validarPrimerIngreso(loginBenefactorControl.usLog.idbenefactor)}"/>
+
+                <h:panelGroup rendered="#{benefactorControl.redirigir == 'true' }">
+                
+                        <script>
+                            $('.tab1-class').css('background-color', '#05687f');
+                            $('.tab1-class').css('color', '#ffffff');
+                        </script>
+
+
+                        <script type="text/javascript">
+
+                            $(document).ready(function () {
+                                swal('Ha ingresado al sistema de recaudo, \nPara poder acceder al Sistema de Recargas es necesario que cambie la contraseña..');
+
+                                abrir('actinfo');
+                            });
+
+
+                            function abrir(tp)
+                            {
+                                var modal = document.getElementById('modal');
+                                var receptor = document.getElementById('form2_');
+                                if (tp == "actinfo")
+                                {
+                                    receptor.src = $.colorbox({href: '#{utilControl.protocolHostPortContext}/app-familiar/auth/password/cambiarPass.xhtml?id_=#{loginBenefactorControl.usLog.idbenefactor}', iframe: true, title: 'Cambiar Password', transition: 'fade', width: '75%', height: '95%'});
+                                            }
+
+                                        }
+
+                                        function cerrar()
+                                        {
+                                            var modal = document.getElementById('modal');
+                                            modal.style.display = 'none';
+
+                                        }
+
+                        </script>
+
+
+
+   
+
+                </h:panelGroup>
+
+
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
+

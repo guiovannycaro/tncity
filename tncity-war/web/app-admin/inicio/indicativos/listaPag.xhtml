@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+        
+                <h:outputText value="#{indicativosControl.TotalIndicativosPaises()}"/>
+
+                <br/>
+
+
+
+                <div>
+                    <p:dataTable reflow="true" var="lst" value="#{indicativosControl.lstindicativos}" tableStyle="width:auto">
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idindicativo"
+                                attributeDisplay="Codigo"
+                                />
+                            <h:panelGroup>
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/inicio/indicativos/detalle/detalle.xhtml?idindicativo_=#{lst.idindicativo}">
+                                    <h:outputText value="#{lst.idindicativo} "/>
+                                </a>
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idpais"
+                                attributeDisplay="Pais"
+                                />
+                            <h:panelGroup>
+                                <h:outputText value="#{lst.idpais.nombre} "/>
+                            </h:panelGroup>
+                        </p:column>
+
+ <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="iddepartamento"
+                                attributeDisplay="Departamento"
+                                />
+                            <h:panelGroup>
+                                <h:outputText value="#{lst.iddepartamento.nombre} "/>
+                            </h:panelGroup>
+                        </p:column>
+                        
+                         <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idciudad"
+                                attributeDisplay="Ciudad"
+                                />
+                            <h:panelGroup>
+                                <h:outputText value="#{lst.idciudad.nombre} "/>
+                            </h:panelGroup>
+                        </p:column>
+
+                        
+                         <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="codindicativo"
+                                attributeDisplay="Indicativo"
+                                />
+                            <h:panelGroup>
+                                <h:outputText value="#{lst.codindicativo} "/>
+                            </h:panelGroup>
+                        </p:column>
+
+                        
+                             <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="codarea"
+                                attributeDisplay="Codigo Area"
+                                />
+                            <h:panelGroup>
+                                <h:outputText value="#{lst.codarea} "/>
+                            </h:panelGroup>
+                        </p:column>
+
+                    </p:dataTable>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

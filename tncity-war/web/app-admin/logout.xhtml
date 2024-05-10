@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>jCLUB - Administrador de Casinos</title>
+        <link rel="shortcut icon" href="#{utilControl.protocolHostPortContext}/img/app/logo3.png"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/baseCSS.css"/>
+    </h:head>
+    <h:body>
+        <b>Direccionando...</b>
+
+        <h:outputText value="#{loginAdminControl.salir()}"/>
+
+        <script type="text/javascript">
+            document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/login.xhtml';
+        </script>
+
+    </h:body>
+</html>
+

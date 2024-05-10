@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.informex.informe4.content">
+          
+                <p:panel header="Lista de Informes">
+                    <div align="center">
+
+                        <h:outputText value="#{informexControl4.recuperaTotalInforme1()}"/>
+                        Registros Encontrados (<b>#{informexControl4.totalConsulta}</b>)
+
+                        <jc:pagList
+                            id="0"
+                            count="#{informexControl4.totalConsulta}"
+                            urlPageData="#{utilControl.protocolHostPortContext}/app-admin/informex/informe4/listaPag.xhtml"
+                            maxRegLista="#{informexControl4.maxRegLista}"/>
+
+                    </div>
+                    <br/><br/>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

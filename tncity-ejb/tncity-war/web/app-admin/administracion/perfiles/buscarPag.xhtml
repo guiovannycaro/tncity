@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+            
+                <h:outputText value="#{perfilControl.setValBusq(param.query_)}"/>
+                <h:outputText value="#{perfilControl.buscarFullText()}"/>
+
+                <br/>
+                <div>
+                    <ui:repeat var="lst" value="#{perfilControl.lstperfiles}" >
+                        <p:panel>
+                            <div align="left">
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/administracion/perfil/detalle/detalle.xhtml?idperfil_=#{lst.idperfil}">
+                                    <h:outputText value="#{lst.nombre} " class="busqBlue"/>
+                                </a>
+                                <p:separator/>
+                              <div class="busqGreen">
+                                    Nombre: <h:outputText value="#{lst.nombre}"/>
+                                </div>
+                                <div class="busqGreen">
+                                    Observacion <h:outputText value="#{lst.observaciones}"/>
+                                </div>
+
+                            </div>
+                        </p:panel>    
+                        <br/>
+                    </ui:repeat>
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

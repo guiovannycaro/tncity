@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.subsecciones.detalle.content">
+
+            
+                <div class="ui-g">
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                    <div class="ui-g-12 ui-md-12 ui-lg-8">
+                        
+                      <h:outputText value="#{SubSeccionControl.RecuperaSubseccionesById(param.idsubseccion_)}"/>
+     
+                
+                      
+                     <ui:repeat value="#{SubSeccionControl.lstmodsecsub}" var="lst">  
+                      <p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-3,ui-grid-col-9">
+              
+ 
+                         <h:outputText value="Nombre" class="label"/>
+                            <h:outputText value="#{lst.idsubseccion.nombre}"/>
+                            
+                          
+
+                            <h:outputText value="Nombre Visual" class="label"/>
+                            <h:outputText value="#{lst.idsubseccion.nombrevisual}"/>
+                            
+                             <h:outputText value="Imagen" class="label"/>
+                            <h:outputText value="#{lst.idsubseccion.imagen}"/>
+                            
+                             <h:outputText value="Link" class="label"/>
+                            <h:outputText value="#{lst.idsubseccion.url}"/>
+
+                            <h:outputText value="Estado" class="label"/>
+                            <h:outputText value="#{lst.idsubseccion.estado}"/>
+                            
+                             <h:outputText value="Modulo" class="label"/>
+                             <h:outputText value="#{lst.idmodulo.nombre}"/>
+                             
+                            <h:outputText value="Seccion" class="label"/>
+                            <h:outputText value="#{lst.idseccion.nombre}"/>
+
+                        </p:panelGrid>
+                         </ui:repeat> 
+                        <br/><br/><br/>
+                    </div>
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

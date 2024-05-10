@@ -1,0 +1,3457 @@
+@charset "utf-8";
+
+img, object, embed, video {
+    max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+    width:100%;
+}
+
+/*
+        Propiedades de cuadrícula fluida de Dreamweaver
+        ----------------------------------
+        dw-num-cols-mobile:		5;
+        dw-num-cols-tablet:		8;
+        dw-num-cols-desktop:	10;
+        dw-gutter-percentage:	25;
+        
+        Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+        http://www.alistapart.com/articles/responsive-web-design
+        
+        y Golden Grid System de Joni Korpi
+        http://goldengridsystem.com/
+*/
+
+body {
+    background-image: url(../imagenes/bg_01movilreg.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position:top center;
+    font-size: 8px;
+    padding:0px;
+    margin:0px;
+    width:100%
+}
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;/*
+    padding-right: 1.82%;*/
+}
+
+#contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#cabezote {
+    float: left;
+    width: 100%;
+    height: 28px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#tit_cabezote{
+    float: right;
+    width: 60%;
+    height: 28px;
+    font-size: 3em !important;
+    margin: 0% 20% 0% 20%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#stit_cabezote{
+    float: right;
+    width: 100%;
+    height: 25px;
+    margin: 3% 3% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: none;
+
+}
+
+#marcocontenendor{
+    float: left;
+    width: 100%;
+    height: 1150px;
+    margin: 18% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#bannerlog{
+    background-image: url(../imagenes/logoamigo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: left;
+    width: 30%;
+    height:50px;
+    margin: 5% 35% 0% 35%;
+    padding:0% 0% 0% 0%;
+    display: block;  
+}
+
+#marcologin {
+    float: left;
+    width: 90%;
+    height: 1125px;
+    background-image: url(../imagenes/fondoregistrarse.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0% 5% 7% 5%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#txt_titulo{
+    float: left;
+    width: 91%;
+    height: 64px;
+    margin: 67% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#titimagen{
+    float: left;
+    width: 90%;
+    height: 48px;
+    background-image: url(../img/app/logoblanco.png);
+    background-size: 95%;
+    background-repeat: no-repeat;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#txt_stitulo{
+    float: left;
+    width: 90%;
+    height: 25px;
+    margin: -4% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+
+}
+
+
+
+#continputs{
+    float: left;
+    width: 80%;
+    height: auto;
+    margin: 20% 10% 0% 10%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+
+#contenedorinputu{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#contenedorinputd{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#contenedorinputdt{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 4% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+
+#contenedor_capcha{
+    float: left;
+    width: 100%;
+    height: 30px;
+    margin: 0% 0% 0% 0%;
+    padding: 1% 0% 0% 0%;
+    display: block;
+
+}
+
+#imgleftt{
+    float: left;
+    width: 11%;
+    height: auto;
+    margin: 0% 0% 0% 17%;
+    padding: 0% 0% 0% 0%;
+    position: absolute;
+    z-index: 27;
+    display: block;
+}
+
+
+
+#imgcapcha{
+    float: left;
+    width: 55%;
+    height: 30px;
+    background-image: url(../img/racpcha.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 8px; 
+    position: relative;
+    z-index: 3;
+    margin: -10% 0% 0% 50%;
+    display: block;
+
+}
+
+#contenedorinputc{
+    float: left;
+    width: 100%;
+    height: auto;
+    margin: 4% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#inputleft{
+    float: left;
+    width: 100%;
+    height: 41px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#imgleft{
+    float: left;
+    width: 3%;
+    height: auto;
+    margin: 3% 0% 0% 2%;
+    padding: 0% 0% 0% 0%;
+    position: absolute;
+    z-index: 30;
+    display: block;
+}
+
+#imgleftd{
+    float: left;
+    width: 3%;
+    height: auto;
+    margin: 2% 0% 0% 10%;
+    padding: 0% 0% 0% 0%;
+    position: absolute;
+    z-index: 12;
+    display: block;
+
+}
+
+#imgleftdt{
+    float: left;
+    width: 3%;
+    height: auto;
+    margin: 2% 0% 0% 10%;
+    padding: 0% 0% 0% 0%;
+    position: absolute;
+    z-index: 29;
+    display: block;
+
+}
+
+
+#txtleft{
+    float: left;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #827d7d;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+
+}
+
+#inputrigth{
+    float: right;
+    width: 100%;
+    height: auto;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#imgrigth{
+    float: right;
+    width: 2%;
+    height: auto;
+    margin: 3% 0% 0% 2%;
+    padding: 0% 0% 0% 0%;
+    position: absolute;
+    z-index: 6;
+    display: block;
+}
+
+#imgrigthd{
+    float: right;
+    width: 2%;
+    height: auto;
+    margin: 2% 0% 0% 2%;
+    padding: 0% 0% 0% 0%;
+    position: absolute;
+    z-index: 2;
+    display: block;
+}
+
+#txtrigth{
+    float: right;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #827d7d;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+
+#txtrigthd{
+    float: right;
+    width: 90%;
+    height: auto;
+    border: 1px solid #827d7d;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+    position: relative;
+    z-index: 4;
+}
+
+#ver{
+    float: right;
+    width: 5%;
+    height: 5px;
+    margin: 4% 0% 0% 66%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+    position: absolute;
+    z-index: 12000;
+}
+
+#contterminos{
+    float: left;
+    width: 40%;
+    height: 12px;
+    margin: 2% 30% 0% 30%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+
+    display: block;
+
+}
+
+
+
+#cont_termiosycond{
+
+    float: left;
+    width: 100%;
+    height: 17px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+}
+
+#txtterminos{
+    float: right;
+    width: 100%;
+    height: 12px;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: block;
+}
+
+#seguridad{
+    float: right;
+    width: 100%;
+    height: 12px;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#imgcapcha{
+    float: right;
+    width: 53%;
+    height: 26px;
+    margin: 0% 6% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    display: block;
+}
+
+#mainCaptcha{
+    float: right;
+    width: 100%;
+    height: 26px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#botonesuno{
+    float: left;
+    width: 91%;
+    height: 25px;
+    margin: 5% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#regresar{
+    float: left;
+    width: 90%;
+    height: 36px;
+    margin: 0% 0% 0% 7%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    border: 1px solid #827d7d;
+    border-radius: 20px;
+    display: block;
+
+
+}
+
+#ingresar{
+    float: left;
+    width: 90%;
+    height: 36px;
+    margin: 3% 0% 0% 7%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    border: 1px solid #827d7d;
+    border-radius: 20px;
+    display: block;
+}
+
+#Registrarse{
+    float: right;
+    width: 90%;
+    height: 36px;
+    margin: 3% 3% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    border: 1px solid #827d7d;
+    border-radius: 20px;
+    display: block;
+}
+
+#mensajes{
+    float: left;
+    width: 91%;
+    height: 25px;
+    margin: 5% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;
+    text-align: center;
+    display: block;
+}
+
+#footer{
+    float: left;
+    width: 100%;
+    height: 42px;
+    margin: 41% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    position: relative;
+
+    bottom: 0;
+    clear: both;
+}
+
+#marco_pie{
+    float: left;
+    width:96%;
+    height:266px;
+    margin: 0% 0% 0% 0%;
+    padding:0% 0% 0% 0%;
+
+} 
+
+#desarrollo {
+    height:auto;
+    width:100%;
+    float: left;
+    margin: 0% 0% 0% 0%;
+    padding:5% 0% 0% 5%;
+    text-align:center;
+    display:block;
+}
+
+
+
+a:link
+{
+    text-decoration:none;
+
+    color:#16647a;
+}
+
+.panelgrid-dotted-border{
+
+    border-spacing: 0;
+    border: 0px;
+}
+.panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+    border: 0px;
+}
+
+body .ui-chkbox .ui-chkbox-box {
+    border: 2px solid #FFFFFF;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-chkbox .ui-chkbox-box.ui-state-active {
+    border-color: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+body .ui-message.ui-message-error {
+    font-size: 10px;
+    float: left;
+    height: 3px;
+    color: #fff8f8;
+    background-color: #f45f56;
+    width: 95%;
+    margin: 0% 0% 0% 0%;
+    font-weight: bold;
+    font-family: 'GOTHIC';
+}
+
+
+
+body .ui-inputfield.ui-state-focus {
+    border-width: 0% 0% 0% 0%;
+    border-color: #ffffff;
+    padding-bottom: 0px;
+}    
+
+body .ui-button {
+    width: 100%;
+    height: 30px;
+    color: #ffffff;
+    font-family: 'GOTHIC';
+    border: 1px solid black;
+    float: left;
+    margin-top: 0%;
+    margin-left: 0%;
+    overflow: hidden;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+
+    width: 80%;
+    height: 25px;
+    float: left;
+    font-family: 'GOTHIC';
+    font-size: 2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+    border-radius: 20px;
+    border-width: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 8%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transi45854641565410tion: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 20px;
+
+}
+
+button, select, textarea {
+    width: 83%;
+    height: 25px;
+    float: left;
+    font-family: 'GOTHIC' !important;
+    font-size: 1.2em;
+    color: #151414;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid #ffffff;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 8%;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+
+
+}
+
+
+.ui-md-8 {
+    width: 100%;
+}
+
+
+
+
+option {
+    font-family: 'GOTHIC';
+    font-size: 14px;
+    color: #bdbdbd;
+    font-weight: bold;
+    display: block;
+    white-space: pre;
+    padding: 0px 2px 1px;
+}
+
+select {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'GOTHIC' !important;
+    font-size: 14px !important;
+    color: #bdbdbd;
+    font-weight: bold;
+}
+
+.ui-autocomplete {
+    width: auto;
+    zoom: 1;
+    cursor: pointer;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    display: inline-block;
+    background-color: #e6f0f2;
+    font-family: 'GOTHIC';
+    font-size: 1.2em;
+    color: #afa0a0;
+}
+
+
+body .ui-widget, body .ui-widget .ui-widget {
+    font-family: 'GOTHIC';
+    font-size: 1em;
+    color: #0c0c0c;
+    text-decoration: none;
+    font-weight: none;
+}
+
+input:-internal-autofill-selected {
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    color: #afa0a0 !important;
+}
+
+
+body .ui-radiobutton .ui-radiobutton-box {
+    border: 2px solid #ffffff;
+    -moz-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+    background-color: #ffffff;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: #ffffff;
+    background-color: transparent;
+}
+
+
+/* custom radio */
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide the browser's default radio button */
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* create custom radio */
+.radio .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.24) !important;
+    border: 1px solid #e2d6d6 !important;
+    border-radius: 50%;
+}
+
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+    border: 2px solid black;
+}
+
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+    background-color: #e8edef;
+    border: 1px;
+}
+
+/* create the radio and hide when not checked */
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+    display: block;
+}
+
+/* radio style */
+.radio .check:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+body .ui-message {
+    min-height: 14px;
+}
+
+body .ui-message .ui-message-error-icon {
+    margin-top: 0px;
+    font-size: 18px;
+    right: 1px;
+}
+
+body .ui-messages .ui-messages-error-icon, body .ui-message .ui-message-error-icon {
+    background: none;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    font-size: 13px;
+    color: #fff;
+    margin-top: -2px;
+}
+
+body .ui-state-error, body .ui-widget.ui-state-error, body .ui-widget-content .ui-state-error, body .ui-widget-header .ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-inputfield.ui-state-error {
+    border-color: #ffffff;
+}
+
+body .ui-button {
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: bold;
+    height: 36px;
+    width: 100%;
+    padding: 0 16px;
+    border: 0 none;
+    border-radius: 20px;
+    -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+body .ui-inputfield {
+    background: transparent;
+    border-width: 0 0 1px 0;
+    padding: 2px 2px 1px 2px;
+    font-size: 14px !important;
+    border-color: #ffffff;
+    border-style: solid;
+    -moz-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px; 
+}
+
+@media only screen and (min-width: 481px) {
+
+
+    body {
+        background-image: url(../imagenes/bg_04.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+
+        width:100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #cabezote {
+        float: left;
+        width: 100%;
+        height: 43px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #tit_cabezote{
+        float: left;
+        width: 100%;
+        height:50px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #stit_cabezote{
+        float: left;
+        width: 100%;
+        height: 67px;
+        margin: 6% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: none;
+
+    }
+
+    #marcocontenendor{
+        float: left;
+        width: 100%;
+        height: 426px;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #bannerlog{
+        background-image: url(../imagenes/logoamigo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        float: left;
+        width: 20%;
+        height: 92px;
+        margin: 0% 0% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcologin {
+        float: left;
+        width: 75%;
+        height: 657px;
+        background-image: url(../imagenes/bg_02tabletu.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: -3% 0% 0% 25%;
+        padding: 0 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulo{
+        float: left;
+        width: 89%;
+        height: 92px;
+        margin: 16% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #titimagen{
+        float: left;
+        width: 90%;
+        height: 86px;
+        background-image: url(../img/app/logoblanco.png);
+        background-size: 95%;
+        background-repeat: no-repeat;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_stitulo{
+        float: left;
+        width: 89%;
+        height: 25px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+
+    #continputs{
+        float: left;
+        width: 100%;
+        height: auto;
+        margin: 12% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+
+    #contenedorinputu{
+        float: left;
+        width: 90%;
+        height: 30px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorinputd{
+        float: left;
+        width: 90%;
+        height: auto;
+        margin: 0% 5% 0% 5%;
+        padding: 1% 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorinputdt{
+        float: left;
+        width: 90%;
+        height: auto;
+        margin: 2% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+
+    #contenedor_capcha{
+        float: left;
+        width: 40%;
+        height: 30px;
+        margin: 0% 35% 0% 11%;
+        padding: 1% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #imgleftt{
+        float: left;
+        width: 3%;
+        height: auto;
+        margin: 1% 0% 0% 2%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 14;
+        display: block;
+    }
+
+    #imgcapcha{
+        float: left;
+        width: 55%;
+        height: 30px;
+        background-image: url(../img/racpcha.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border: 1px solid #ffffff;
+        border-radius: 8px; 
+        position: relative;
+        z-index: 15;
+        margin: -10% 0% 0% 50%;
+        display: block;
+
+    }
+
+    #contenedorinputc{
+        float: left;
+        width: 40%;
+        height: auto;
+        margin: -4% 30% 0% 51%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #inputleft{
+        float: left;
+        width: 45%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #imgleft{
+        float: left;
+        width: 2%;
+        height: 10px;
+        margin: 1% 0% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 31;
+        display: block;
+    }
+
+    #imgleftd{
+        float: left;
+        width: 4%;
+        height: auto;
+        margin: 0% 0% 0% 4%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        z-index: 17;
+        display: block;
+    }
+
+    #imgleftdt{
+        float: left;
+        width: 4%;
+        height: auto;
+        margin: 0% 0% 0% 10%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        z-index: 18;
+        display: block;
+    }
+
+
+
+    #txtleft{
+        float: left;
+        width: 100%;
+        height: 30px;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #inputrigth{
+        float: right;
+        width: 45%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #imgrigth{
+        float: left;
+        height: 10px;
+        margin: 1% 0% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 7;
+        display: block;
+    }
+
+    #imgrigthd{
+        float: right;
+        width: 100%;
+        height: auto;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+
+    #txtrigth{
+        float: right;
+        width: 100%;
+        height:30px;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: relative;
+        z-index: 5;
+    }
+
+
+    #txtrigthd{
+        float: right;
+        width: 100%;
+        height:43px;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: -6% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: relative;
+        z-index: 4;
+    }
+
+    #ver{
+        float: right;
+        width: 5%;
+        height: 5px;
+        margin: 0.5% 0% 0% 26%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: absolute;
+    }
+
+    #contterminos{
+        float: left;
+        width: 100%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+
+
+        display: block;
+
+    }
+
+    #cont_termiosycond{
+        float: left;
+        width: 90%;
+        height: 17px;
+        margin: -2% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+    }
+
+    #txtterminos{
+        float: right;
+        width: 70%;
+        height: 12px;
+        margin: 2% 10% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        display: block;
+    }
+
+    #seguridad{
+        float: right;
+        width: 90%;
+        height: 12px;
+        margin: 2% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #imgcapcha{
+        float: left;
+        width: 80%;
+        height: 26px;
+        margin: 3% 0% 0% 16%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #mainCaptcha{
+        float: right;
+        width: 53%;
+        height: 26px;
+        margin: 0% 26% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesuno{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 1% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #regresar{
+        float: left;
+        width: 31%;
+        height: 36px;
+        margin: 0% 0% 0% 4%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #ingresar{
+        float: left;
+        width: 30%;
+        height: 36px;
+        margin: 0% 10% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+
+
+    }
+
+    #Registrarse{
+        float: right;
+        width: 26%;
+        height: 37px;
+        margin: -6.5% 5% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #mensajes{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+
+
+
+
+    #footer{
+        float: left;
+        width: 100%;
+        height: 65px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        bottom: 0;
+        clear: both;
+    }
+
+    #marco_pie{
+        float: left;
+        width:96%;
+        height:138px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+
+    } 
+
+    #desarrollo {
+        height: 40px;
+        width: 100%;
+        float: left;
+        margin: 0% 0% 0% 0%;
+        padding: 5% 0% 0% 5%;
+        text-align: center;
+        display: block;
+    }
+
+
+
+    a:link
+    {
+        text-decoration:none;
+        cursor:pointer;
+        font-family: 'GOTHIC';font-size: 1em; color: #16647a;
+    }
+
+    .panelgrid-dotted-border{
+
+        border-spacing: 0;
+        border: 0px;
+    }
+    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+        border: 0px;
+    }
+
+    body .ui-chkbox .ui-chkbox-box {
+        border: 2px solid #FFFFFF;
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-chkbox .ui-chkbox-box.ui-state-active {
+        border-color: #FFFFFF;
+        background-color: #FFFFFF;
+    }
+
+    body .ui-message.ui-message-error {
+        font-size: 10px;
+        float: left;
+        height: 3px;
+        color: #fff8f8;
+        background-color: #f45f56;
+        width: 95%;
+        margin: 0% 0% 0% 0%;
+        font-weight: bold;
+        font-family: 'GOTHIC';
+    }
+
+
+
+    body .ui-inputfield.ui-state-focus {
+        border-width: 0% 0% 0% 0%;
+        border-color: #ffffff;
+        padding-bottom: 0px;
+    }    
+
+    body .ui-button {
+        width: 100%;
+        height: 30px;
+        color: #ffffff;
+        font-family: 'GOTHIC';
+        border: 1px solid black;
+        float: left;
+        margin-top: 0%;
+        margin-left: 0%;
+        overflow: hidden;
+        font-size: 1.3em;
+        font-weight: bold;
+        border: 0 none;
+        border-radius: 20px;
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-inputfield {
+
+        width: 80%;
+        height: 25px;
+        float: left;
+        font-family: 'GOTHIC';
+        font-size: 2em;
+        color: #151414;
+        font-style: normal;
+        text-decoration: none;
+        text-align: left;
+        border-radius: 20px;
+        border-width: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 12%;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transi45854641565410tion: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 20px;
+
+    }
+
+    button, select, textarea {
+        width: 83%;
+        height: 25px;
+        float: left;
+        font-family: 'GOTHIC' !important;
+        font-size: 1.2em;
+        color: #151414;
+        font-style: normal;
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid #ffffff;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 11%;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+
+
+    }
+
+
+    .ui-md-8 {
+        width: 100%;
+    }
+
+
+
+
+    option {
+        font-family: 'GOTHIC';
+        font-size: 14px;
+        color: #bdbdbd;
+        font-weight: bold;
+        display: block;
+        white-space: pre;
+        padding: 0px 2px 1px;
+    }
+
+    select {
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-align: start;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        cursor: default;
+        border-radius: 20px;
+        background-color: #FFFFFF;
+        text-decoration: none;
+        font-family: 'GOTHIC' !important;
+        font-size: 14px !important;
+        color: #bdbdbd;
+        font-weight: bold;
+    }
+
+    .ui-autocomplete {
+        width: auto;
+        zoom: 1;
+        cursor: pointer;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        position: relative;
+        display: inline-block;
+        background-color: #e6f0f2;
+        font-family: 'GOTHIC';
+        font-size: 1.2em;
+        color: #afa0a0;
+    }
+
+
+    body .ui-widget, body .ui-widget .ui-widget {
+        font-family: 'GOTHIC';
+        font-size: 1em;
+        color: #0c0c0c;
+        text-decoration: none;
+        font-weight: none;
+    }
+
+    input:-internal-autofill-selected {
+        background-color: #FFFFFF !important;
+        background-image: none !important;
+        color: #afa0a0 !important;
+    }
+
+
+    body .ui-radiobutton .ui-radiobutton-box {
+        border: 2px solid #ffffff;
+        -moz-transition: box-shadow 0.3s;
+        -o-transition: box-shadow 0.3s;
+        -webkit-transition: box-shadow 0.3s;
+        transition: box-shadow 0.3s;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+        background-color: #ffffff;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+        border-color: #ffffff;
+        background-color: transparent;
+    }
+
+
+    /* custom radio */
+    .radio {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* hide the browser's default radio button */
+    .radio input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    /* create custom radio */
+    .radio .check {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: rgba(0, 0, 0, 0.24) !important;
+        border: 1px solid #e2d6d6 !important;
+        border-radius: 50%;
+    }
+
+    /* on mouse-over, add border color */
+    .radio:hover input ~ .check {
+        border: 2px solid black;
+    }
+
+    /* add background color when the radio is checked */
+    .radio input:checked ~ .check {
+        background-color: #e8edef;
+        border: 1px;
+    }
+
+    /* create the radio and hide when not checked */
+    .radio .check:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* show the radio when checked */
+    .radio input:checked ~ .check:after {
+        display: block;
+    }
+
+    /* radio style */
+    .radio .check:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+
+    body .ui-message {
+        min-height: 14px;
+    }
+
+    body .ui-message .ui-message-error-icon {
+        margin-top: 0px;
+        font-size: 18px;
+        right: 1px;
+    }
+
+    body .ui-messages .ui-messages-error-icon, body .ui-message .ui-message-error-icon {
+        background: none;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        font-size: 13px;
+        color: #fff;
+        margin-top: -2px;
+    }
+
+    body .ui-state-error, body .ui-widget.ui-state-error, body .ui-widget-content .ui-state-error, body .ui-widget-header .ui-state-error {
+        border-color: #ffffff;
+    }
+
+    body .ui-inputfield.ui-state-error {
+        border-color: #ffffff;
+    }
+
+    body .ui-button {
+        overflow: hidden;
+        background-color: #ffffff;
+        color: #4d4d4d;
+        font-size: 16px;
+        font-weight: bold;
+        height: 36px;
+        width: 100%;
+        padding: 0 16px;
+        border: 0 none;
+        border-radius: 20px;
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-inputfield {
+        background: transparent;
+        border-width: 0 0 1px 0;
+        padding: 2px 2px 1px 2px;
+        font-size: 14px !important;
+        border-color: #ffffff;
+        border-style: solid;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+    }
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+
+    body {
+        background-image: url(../imagenes/bg_06.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #cabezote {
+        float: left;
+        width: 100%;
+        height: 57px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #tit_cabezote{
+        float: left;
+        width: 100%;
+        height: 50px;
+        margin: 4% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #stit_cabezote{
+        float: left;
+        width: 100%;
+        height: 50px;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcocontenendor{
+        float: left;
+        width: 100%;
+        height: 536px;
+        margin: 6% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #bannerlog{
+        background-image: url(../imagenes/logoamigo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        float: left;
+        width: 15%;
+        height: 170px;
+        margin: -7% 0% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #marcologin {
+        float: left;
+        width: 64%;
+        height: 643px;
+        background-image: url(../imagenes/bg_02.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 17% 0% 17%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_titulo{
+        float: left;
+        width: 89%;
+        height: 77px;
+        margin: 15% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #titimagen{
+        float: left;
+        width: 48%;
+        height: 48px;
+        background-image: url(../img/app/logoblanco.png);
+        background-size: 75%;
+        background-repeat: no-repeat;
+        margin: 0% 25% 0% 29%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_stitulo{
+        float: left;
+        width: 90%;
+        height: 25px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+    #continputs{
+        float: left;
+        width: 100%;
+        height: auto;
+        margin: 16% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: left;
+        display: block;
+
+    }
+
+    #contenedorinputu{
+        float: left;
+        width: 90%;
+        height: 38px;
+        margin: -4% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorinputd{
+        float: left;
+        width: 90%;
+        height: 38px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorinputdt{
+        float: left;
+        width: 90%;
+        height: 46px;
+        margin: -5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #contenedor_capcha{
+        float: left;
+        width: 40%;
+        height: 30px;
+        margin: 1% 35% 0% 17%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #imgleftt{
+        float: left;
+        width: 3%;
+        height: auto;
+        margin: 0% 0% 0% 3%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 19;
+        display: block;
+    }
+
+
+
+    #imgcapcha{
+        float: left;
+        width: 55%;
+        height: 30px;
+        background-image: url(../img/racpcha.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border: 1px solid #ffffff;
+        border-radius: 8px; 
+        position: relative;
+        z-index: 3;
+        margin: -10% 0% 0% 50%;
+        display: block;
+
+    }
+
+    #contenedorinputc{
+        float: left;
+        width: 30%;
+        height: auto;
+        margin: -4.5% 33% 0% 51%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #inputleft{
+        float: left;
+        width: 40%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #imgleft{
+        float: left;
+        width: 3%;
+        height: 10px;
+        margin: 0.6% 0% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 32;
+        display: block;
+    }
+    #imgleftd{
+        float: left;
+        width: 1%;
+        height: auto;
+        margin: 1% 0% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 21;
+        display: block;
+    }
+
+    #imgleftdt{
+        float: left;
+        width: 1%;
+        height: auto;
+        margin: 0.5% 0% 0% 3%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 22;
+        display: block
+    }
+
+
+
+    #txtleft{
+        float: left;
+        width: 100%;
+        height: 30px;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #inputrigth{
+        float: right;
+        width: 40%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #imgrigth{
+        float: right;
+        width: 1%;
+        height: auto;
+        margin: 0.6% 0% 0% 1%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 8;
+        display: block;
+    }
+
+    #imgrigthd{
+        float: right;
+        width: 100%;
+        height: auto;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+
+    #txtrigth{
+        float: right;
+        width: 100%;
+        height: 30px;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: relative;
+        z-index:5;
+    }
+
+
+    #txtrigthd{
+        float: right;
+        width: 100%;
+        height: auto;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 2% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: relative;
+        z-index: 4;
+    }
+
+    #ver{
+        float: right;
+        width: 5%;
+        height: 5px;
+        margin: 0.5% 0% 0% 21%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: absolute;
+        z-index: 12000;
+    }
+
+    #contterminos{
+        float: left;
+        width: 100%;
+        height: 12px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+
+        display: block;
+
+    }
+
+
+    #cont_termiosycond{
+        float: left;
+        width: 60%;
+        height: 17px;
+        margin: -1% 20% 0% 20%;
+        padding: 0% 0% 0% 0%;
+    }
+
+    #txtterminos{
+        float: left;
+        width: 100%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        z-index: 1;
+        display: block;
+    }
+
+
+    #seguridad{
+        float: right;
+        width: 100%;
+        height: 12px;
+        margin: -3% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #imgcapcha{
+        float: right;
+        width: 57%;
+        height: 26px;
+        margin: 0% 21% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #mainCaptcha{
+        float: right;
+        width:100%;
+        height: 26px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesuno{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: 1% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #regresar{
+        float: left;
+        width: 20%;
+        height: 37px;
+        margin: 0% 0% 0% 15%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #ingresar{
+        float: left;
+        width: 25%;
+        height: 38px;
+        margin: 0% 0% 0% 2%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #Registrarse{
+        float: right;
+        width: 25%;
+        height: 37px;
+        margin: 0% 12% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+
+
+
+    #mensajes{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+
+
+
+    #footer{
+        float: left;
+        width: 100%;
+        height: 35px;
+        margin: 5% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        bottom: 0;
+        clear: both;
+    }
+
+    #marco_pie{
+        float: left;
+        width:96%;
+        height:63px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+
+    } 
+
+    #desarrollo {
+        height: 32px;
+        width: 100%;
+        float: left;
+        margin: -4% 0% 0% 0%;
+        padding: 5% 0% 0% 5%;
+        text-align: center;
+        display: block;
+    }
+
+
+
+    a:link
+    {
+        text-decoration:none;
+
+        font-family: 'GOTHIC';font-size: 1em; color: #16647a;
+    }
+
+    .panelgrid-dotted-border{
+
+        border-spacing: 0;
+        border: 0px;
+    }
+    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+        border: 0px;
+    }
+
+    body .ui-chkbox .ui-chkbox-box {
+        border: 2px solid #FFFFFF;
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-chkbox .ui-chkbox-box.ui-state-active {
+        border-color: #FFFFFF;
+        background-color: #FFFFFF;
+    }
+
+    body .ui-message.ui-message-error {
+        font-size: 10px;
+        float: left;
+        height: 3px;
+        color: #fff8f8;
+        background-color: #f45f56;
+        width: 95%;
+        margin: 0% 0% 0% 0%;
+        font-weight: bold;
+        font-family: 'GOTHIC';
+    }
+
+
+
+    body .ui-inputfield.ui-state-focus {
+        border-width: 0% 0% 0% 0%;
+        border-color: #ffffff;
+        padding-bottom: 0px;
+    }    
+
+    body .ui-button {
+        width: 100%;
+        height: 30px;
+        color: #ffffff;
+        font-family: 'GOTHIC';
+        border: 1px solid black;
+        float: left;
+        margin-top: 0%;
+        margin-left: 0%;
+        overflow: hidden;
+        font-size: 1.3em;
+        font-weight: bold;
+        border: 0 none;
+        border-radius: 20px;
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-inputfield {
+
+        width: 80%;
+        height: 25px;
+        float: left;
+        font-family: 'GOTHIC';
+        font-size: 2em;
+        color: #151414;
+        font-style: normal;
+        text-decoration: none;
+        text-align: left;
+        border-radius: 20px;
+        border-width: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 13%;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transi45854641565410tion: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 20px;
+
+    }
+
+    button, select, textarea {
+        width: 83%;
+        height: 25px;
+        float: left;
+        font-family: 'GOTHIC' !important;
+        font-size: 1.2em;
+        color: #151414;
+        font-style: normal;
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid #ffffff;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 13%;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+
+
+    }
+
+
+    .ui-md-8 {
+        width: 100%;
+    }
+
+
+
+
+    option {
+        font-family: 'GOTHIC';
+        font-size: 14px;
+        color: #bdbdbd;
+        font-weight: bold;
+        display: block;
+        white-space: pre;
+        padding: 0px 2px 1px;
+    }
+
+    select {
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-align: start;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        cursor: default;
+        border-radius: 20px;
+        background-color: #FFFFFF;
+        text-decoration: none;
+        font-family: 'GOTHIC' !important;
+        font-size: 14px !important;
+        color: #bdbdbd;
+        font-weight: bold;
+    }
+
+    .ui-autocomplete {
+        width: auto;
+        zoom: 1;
+        cursor: pointer;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        position: relative;
+        display: inline-block;
+        background-color: #e6f0f2;
+        font-family: 'GOTHIC';
+        font-size: 1.2em;
+        color: #afa0a0;
+    }
+
+
+    body .ui-widget, body .ui-widget .ui-widget {
+        font-family: 'GOTHIC';
+        font-size: 1em;
+        color: #0c0c0c;
+        text-decoration: none;
+        font-weight: none;
+    }
+
+    input:-internal-autofill-selected {
+        background-color: #FFFFFF !important;
+        background-image: none !important;
+        color: #afa0a0 !important;
+    }
+
+
+    body .ui-radiobutton .ui-radiobutton-box {
+        border: 2px solid #ffffff;
+        -moz-transition: box-shadow 0.3s;
+        -o-transition: box-shadow 0.3s;
+        -webkit-transition: box-shadow 0.3s;
+        transition: box-shadow 0.3s;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+        background-color: #ffffff;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+        border-color: #ffffff;
+        background-color: transparent;
+    }
+
+
+    /* custom radio */
+    .radio {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* hide the browser's default radio button */
+    .radio input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    /* create custom radio */
+    .radio .check {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: rgba(0, 0, 0, 0.24) !important;
+        border: 1px solid #e2d6d6 !important;
+        border-radius: 50%;
+    }
+
+    /* on mouse-over, add border color */
+    .radio:hover input ~ .check {
+        border: 2px solid black;
+    }
+
+    /* add background color when the radio is checked */
+    .radio input:checked ~ .check {
+        background-color: #e8edef;
+        border: 1px;
+    }
+
+    /* create the radio and hide when not checked */
+    .radio .check:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* show the radio when checked */
+    .radio input:checked ~ .check:after {
+        display: block;
+    }
+
+    /* radio style */
+    .radio .check:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+
+    body .ui-message {
+        min-height: 14px;
+    }
+
+    body .ui-message .ui-message-error-icon {
+        margin-top: 0px;
+        font-size: 18px;
+        right: 1px;
+    }
+
+    body .ui-messages .ui-messages-error-icon, body .ui-message .ui-message-error-icon {
+        background: none;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        font-size: 13px;
+        color: #fff;
+        margin-top: -2px;
+    }
+
+    body .ui-state-error, body .ui-widget.ui-state-error, body .ui-widget-content .ui-state-error, body .ui-widget-header .ui-state-error {
+        border-color: #ffffff;
+    }
+
+    body .ui-inputfield.ui-state-error {
+        border-color: #ffffff;
+    }
+
+    body .ui-button {
+        overflow: hidden;
+        background-color: #ffffff;
+        color: #4d4d4d;
+        font-size: 16px;
+        font-weight: bold;
+        height: 36px;
+        width: 100%;
+        padding: 0 16px;
+        border: 0 none;
+        border-radius: 20px;
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-inputfield {
+        background: transparent;
+        border-width: 0 0 1px 0;
+        padding: 2px 2px 1px 2px;
+        font-size: 14px !important;
+        border-color: #ffffff;
+        border-style: solid;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+}
+
+@media only screen and (min-width: 1900px) {
+
+    body {
+        background-image: url(../imagenes/bg_06.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+
+    #contenedor {
+        /*width: 98.2%;
+        max-width: 1024px;
+        padding-left: 0.9%;
+        padding-right: 0.9%;*/
+        width:100%;
+        height:auto;
+        margin: auto;
+        padding:0%;
+    }
+
+    #cabezote {
+        float: left;
+        width: 100%;
+        height: 95px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #tit_cabezote{
+        float: left;
+        width: 100%;
+        height: 50px;
+        margin: 5% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #stit_cabezote{
+        float: left;
+        width: 100%;
+        height:50px;
+        margin: 0% 0% 0% 0%;
+        padding:0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #marcocontenendor{
+        loat: left;
+        width: 100%;
+        height: 916px;
+        margin: 5% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #bannerlog{
+        background-image: url(../imagenes/logoamigo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        float: left;
+        width: 12%;
+        height: 305px;
+        margin: -3% 0% 0% 4%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcologin {
+        float: left;
+        width: 60%;
+        height: 916px;
+        background-image: url(../imagenes/bg_02.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 20% 0% 20%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #txt_titulo{
+        float: left;
+        width: 30%;
+        height: 87px;
+        margin: 17% 35% 0% 35%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #titimagen{
+        float: left;
+        width: 90%;
+        height: 34px;
+        background-image: url(../img/app/logoblanco.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #txt_stitulo{
+        float: left;
+        width: 89%;
+        height: 25px;
+        margin: -3% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #continputs{
+        float: left;
+        width: 80%;
+        height: 437px;
+        margin: 15% 10% 0% 10%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #contenedorinputu{
+        float: left;
+        width: 90%;
+        height: 30px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorinputd{
+        float: left;
+        width: 90%;
+        height: 30px;
+        margin: 0% 5% 0% 5%;
+        padding: 1% 0% 0% 0%;
+        display: block;
+    }
+
+    #contenedorinputdt{
+        float: left;
+        width: 90%;
+        height: 30px;
+        margin: -5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #contenedor_capcha{
+        float: left;
+        width: 40%;
+        height: 30px;
+        margin: 0% 35% 0% 35%;
+        padding: 1% 0% 0% 0%;
+        display: block;
+
+    }
+
+
+    #imgleftt{
+        float: left;
+        width: 3%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 23;
+        display: block;
+    }
+
+
+    #imgcapcha{
+        float: left;
+        width: 55%;
+        height: 30px;
+        background-image: url(../img/racpcha.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border: 1px solid #ffffff;
+        border-radius: 8px; 
+        position: relative;
+        z-index: 3;
+        margin: -10% 0% 0% 50%;
+        display: block;
+
+    }
+
+    #inputleft{
+        float: left;
+        width: 50%;
+        height: 30px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #imgleft{
+        float: left;
+        width: 1%;
+        height: auto;
+        margin: 0.3% 0% 0% 0.5%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index:34;
+        display: block;
+    }
+
+
+    #contenedorinputc{
+        float: left;
+        width: 30%;
+        height: auto;
+        margin: -3.9% 35% 0% 66%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #imgleftd{
+        float: left;
+        width: 1%;
+        height: auto;
+        margin: 0.3% 0% 0% 0.5%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 25;
+        display: block;
+    }
+
+    #imgleftdt{
+        float: left;
+        width: 1%;
+        height: 3px;
+        margin: 0.3% 0% 0% 2%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 26;
+        display: block;
+    }
+
+
+
+    #txtleft{
+        float: left;
+        width: 100%;
+        height: 30px;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #inputrigth{
+        float: right;
+        width: 50%;
+        height:30px;
+        margin: 0% -5% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #imgrigth{
+        float: right;
+        width: 1%;
+        height: auto;
+        margin: 0.3% 0% 0% 0.5%;
+        padding: 0% 0% 0% 0%;
+        position: absolute;
+        z-index: 5;
+        display: block;
+    }
+
+    #imgrigthd{
+        float: right;
+        width: 100%;
+        height: auto;
+        margin: 0.5% 0% 0% 0.5%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        z-index: 2;
+        display: block;
+    }
+
+    #txtrigth{
+        float: right;
+        width: 100%;
+        height: 30px;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: relative;
+        z-index: 3;
+    }
+
+
+    #txtrigthd{
+        float: right;
+        width: 100%;
+        height: auto;
+        border: 1px solid #827d7d;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: relative;
+        z-index: 4;
+    }
+
+    #ver{
+        float: right;
+        width: 5%;
+        height: 5px;
+        margin: 0.2% 0% 0% 14%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+        position: absolute;
+        z-index: 12000;
+    }
+
+    #contterminos{
+        float: left;
+        width: 100%;
+        height: 17px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+
+        display: block;
+
+    }
+
+    #cont_termiosycond{
+        float: left;
+        width: 70%;
+        height: 17px;
+        margin: -3% 15% 0% 15%;
+        padding: 0% 0% 0% 0%;
+    }
+
+
+    #txtterminos{
+        float: right;
+        width: 100%;
+        height: 12px;
+        margin: 0.3% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        display: block;
+    }
+
+    #seguridad{
+        float: right;
+        width: 100%;
+        height: 12px;
+        margin: -5% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #imgcapcha{
+        float: right;
+        width: 61%;
+        height: 26px;
+        margin: 1% 21% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #mainCaptcha{
+        float: right;
+        width: 100%;
+        height: 26px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #botonesuno{
+        float: left;
+        width: 100%;
+        height: 25px;
+        margin: 1% 5% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+    #regresar{
+        float: left;
+        width: 20%;
+        height: 38px;
+        margin: 0% 0% 0% 24%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #ingresar{
+        float: left;
+        width: 20%;
+        height: 39px;
+        margin: 0% 0% 0% 2%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #Registrarse{
+        float: right;
+        width: 20%;
+        height: 39px;
+        margin: 0% 13% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        border: 1px solid #827d7d;
+        border-radius: 20px;
+        display: block;
+    }
+
+
+    #mensajes{
+        float: left;
+        width: 91%;
+        height: 25px;
+        margin: 5% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        text-align: center;
+        display: block;
+    }
+
+
+
+
+
+    #footer{
+        float: left;
+        width: 100%;
+        height: 47px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+
+        bottom: 0;
+        clear: both;
+
+    }
+
+    #marco_pie{
+        float: left;
+        width: 100%;
+        height: 86px;
+        margin: 4% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+
+    } 
+
+    #desarrollo {
+        float: left;
+        width:96%;
+        height:86px;
+        margin: -4% 0% 0% 0%;
+        padding:5% 0% 0% 5%;
+        text-align:center;
+        display:block;
+    }
+
+
+
+    a:link
+    {
+        text-decoration:none;
+        font-family: 'GOTHIC';font-size: 1em; color: #16647a;
+    }
+
+    .panelgrid-dotted-border{
+
+        border-spacing: 0;
+        border: 0px;
+    }
+    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+        border: 0px;
+    }
+
+    body .ui-chkbox .ui-chkbox-box {
+        border: 2px solid #FFFFFF;
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-chkbox .ui-chkbox-box.ui-state-active {
+        border-color: #FFFFFF;
+        background-color: #FFFFFF;
+    }
+
+    body .ui-message.ui-message-error {
+        font-size: 10px;
+        float: left;
+        height: 3px;
+        color: #fff8f8;
+        background-color: #f45f56;
+        width: 95%;
+        margin: 0% 0% 0% 0%;
+        font-weight: bold;
+        font-family: 'GOTHIC';
+    }
+
+
+
+    body .ui-inputfield.ui-state-focus {
+        border-width: 0% 0% 0% 0%;
+        border-color: #ffffff;
+        padding-bottom: 0px;
+    }    
+
+    body .ui-button {
+        width: 100%;
+        height: 30px;
+        color: #ffffff;
+        font-family: 'GOTHIC';
+        border: 1px solid black;
+        float: left;
+        margin-top: 0%;
+        margin-left: 0%;
+        overflow: hidden;
+        font-size: 1.3em;
+        font-weight: bold;
+        border: 0 none;
+        border-radius: 20px;
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-inputfield {
+
+        width: 80%;
+        height: 25px;
+        float: left;
+        font-family: 'GOTHIC';
+        font-size: 2em;
+        color: #151414;
+        font-style: normal;
+        text-decoration: none;
+        text-align: left;
+        border-radius: 20px;
+        border-width: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 14%;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transi45854641565410tion: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 20px;
+
+    }
+
+    button, select, textarea {
+        width: 83%;
+        height: 25px;
+        float: left;
+        font-family: 'GOTHIC' !important;
+        font-size: 1.2em;
+        color: #151414;
+        font-style: normal;
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid #ffffff;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 13%;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+
+
+    }
+
+
+    .ui-md-8 {
+        width: 100%;
+    }
+
+
+
+
+    option {
+        font-family: 'GOTHIC';
+        font-size: 14px;
+        color: #bdbdbd;
+        font-weight: bold;
+        display: block;
+        white-space: pre;
+        padding: 0px 2px 1px;
+    }
+
+    select {
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-align: start;
+        white-space: pre;
+        -webkit-rtl-ordering: logical;
+        cursor: default;
+        border-radius: 20px;
+        background-color: #FFFFFF;
+        text-decoration: none;
+        font-family: 'GOTHIC' !important;
+        font-size: 14px !important;
+        color: #bdbdbd;
+        font-weight: bold;
+    }
+
+    .ui-autocomplete {
+        width: auto;
+        zoom: 1;
+        cursor: pointer;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        position: relative;
+        display: inline-block;
+        background-color: #e6f0f2;
+        font-family: 'GOTHIC';
+        font-size: 1.2em;
+        color: #afa0a0;
+    }
+
+
+    body .ui-widget, body .ui-widget .ui-widget {
+        font-family: 'GOTHIC';
+        font-size: 1em;
+        color: #0c0c0c;
+        text-decoration: none;
+        font-weight: none;
+    }
+
+    input:-internal-autofill-selected {
+        background-color: #FFFFFF !important;
+        background-image: none !important;
+        color: #afa0a0 !important;
+    }
+
+
+    body .ui-radiobutton .ui-radiobutton-box {
+        border: 2px solid #ffffff;
+        -moz-transition: box-shadow 0.3s;
+        -o-transition: box-shadow 0.3s;
+        -webkit-transition: box-shadow 0.3s;
+        transition: box-shadow 0.3s;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    body .ui-radiobutton .ui-radiobutton-box .ui-icon-bullet {
+        background-color: #ffffff;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+        border-color: #ffffff;
+        background-color: transparent;
+    }
+
+
+    /* custom radio */
+    .radio {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* hide the browser's default radio button */
+    .radio input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    /* create custom radio */
+    .radio .check {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: rgba(0, 0, 0, 0.24) !important;
+        border: 1px solid #e2d6d6 !important;
+        border-radius: 50%;
+    }
+
+    /* on mouse-over, add border color */
+    .radio:hover input ~ .check {
+        border: 2px solid black;
+    }
+
+    /* add background color when the radio is checked */
+    .radio input:checked ~ .check {
+        background-color: #e8edef;
+        border: 1px;
+    }
+
+    /* create the radio and hide when not checked */
+    .radio .check:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* show the radio when checked */
+    .radio input:checked ~ .check:after {
+        display: block;
+    }
+
+    /* radio style */
+    .radio .check:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+
+    body .ui-message {
+        min-height: 14px;
+    }
+
+    body .ui-message .ui-message-error-icon {
+        margin-top: 0px;
+        font-size: 14px;
+        right: 1px;
+    }
+
+    body .ui-messages .ui-messages-error-icon, body .ui-message .ui-message-error-icon {
+        background: none;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        font-size: 13px;
+        color: #fff;
+        margin-top: -2px;
+    }
+
+    body .ui-state-error, body .ui-widget.ui-state-error, body .ui-widget-content .ui-state-error, body .ui-widget-header .ui-state-error {
+        border-color: #ffffff;
+    }
+
+    body .ui-inputfield.ui-state-error {
+        border-color: #ffffff;
+    }
+
+    body .ui-button {
+        overflow: hidden;
+        background-color: #ffffff;
+        color: #4d4d4d;
+        font-size: 16px;
+        font-weight: bold;
+        height: 36px;
+        width: 100%;
+        padding: 0 16px;
+        border: 0 none;
+        border-radius: 20px;
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -moz-transition: background-color 0.3s;
+        -o-transition: background-color 0.3s;
+        -webkit-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+    }
+
+    body .ui-inputfield {
+        background: transparent;
+        border-width: 0 0 1px 0;
+        padding: 2px 2px 1px 2px;
+        font-size: 14px !important;
+        border-color: #ffffff;
+        border-style: solid;
+        -moz-transition: border-color 0.3s;
+        -o-transition: border-color 0.3s;
+        -webkit-transition: border-color 0.3s;
+        transition: border-color 0.3s;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+    }
+
+}

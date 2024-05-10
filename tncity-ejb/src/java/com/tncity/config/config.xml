@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <param id="1"  classPojo="com.tncity.config.pojoaux.GeneralConfig"></param>
+    <param id="2"  classPojo="com.tncity.config.pojoaux.PagosConfig"></param>
+    <param id="3"  classPojo="com.tncity.config.pojoaux.TelefoniaConfig"></param>
+    <param id="4"  classPojo="com.tncity.config.pojoaux.EmailConfig"></param>
+    <param id="5"  classPojo="com.tncity.config.pojoaux.CondicionesyTerminos"></param>
+    <param id="6"  classPojo="com.tncity.notificacion.NotificacionConfig"></param>
+    <param id="7"  classPojo="com.tncity.config.pojoaux.TnPagosConfig"></param>
+    <param id="8"  classPojo="com.tncity.config.pojoaux.PagosInteligentesConfig"></param>
+    <param id="9"  classPojo="com.tncity.config.pojoaux.PasarelasPagosConfig"></param>
+    <param id="10" classPojo="com.tncity.config.pojoaux.ParametrosSmsConfig"></param>
+    <param id="11" classPojo="com.tncity.config.pojoaux.ParametrosSmSText"></param>
+    <param id="12" classPojo="com.tncity.config.pojoaux.ParametrosSmsTeleamigoConfig"></param>
+    <param id="13" classPojo="com.tncity.config.pojoaux.PagosInteligentesEnvioPago"></param>
+    <param id="14" classPojo="com.tncity.config.pojoaux.PagosInteligentesMostrarPago"></param>
+    <param id="15" classPojo="com.tncity.config.pojoaux.PagosInteligentesRta"></param> 
+     <param id="16" classPojo="com.tncity.config.pojoaux.PayzendConfig"></param> 
+</config>

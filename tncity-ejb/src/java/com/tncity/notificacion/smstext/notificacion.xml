@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notificacionConfig>
+
+     
+    <notificacion id="1">
+        <descripcion>Envio De Mensaje De Texto.</descripcion>
+        <var name="@nombrebeneficiario@">
+            <descripcion>Nombre del Beneficiario.</descripcion>
+        </var>
+        
+        <var name="@apellidobeneficiario@">
+            <descripcion>Apellido del Beneficiario.</descripcion>
+        </var>
+  
+  
+        <var name="@monto@">
+            <descripcion>Monto De La Recarga</descripcion>
+        </var>
+        
+        <var name="@numeroautoriosacion@">
+            <descripcion>Numero De Autorizacion</descripcion>
+        </var>
+       
+       
+    </notificacion>
+    
+    
+    
+    
+
+</notificacionConfig>

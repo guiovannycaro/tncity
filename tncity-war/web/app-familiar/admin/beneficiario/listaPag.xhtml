@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+
+                <h:outputText value="#{beneficiarioControl.recuperaCountTotalBenId(param.id_)}"/>
+
+               
+                <div id="tabladatos">
+                    <p:dataTable reflow="true" var="lst" value="#{beneficiarioControl.lisben}" tableStyle="width:100%">
+
+                        <p:column class="estilo27">
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="idbeneficiario"
+                                attributeDisplay="Codigo Familiar"
+                                
+                                />
+                            <h:panelGroup>
+
+                                <div class="estilo28">  <h:outputText value="#{lst.idbeneficiario}"/></div>
+
+                            </h:panelGroup>
+                        </p:column>
+
+
+                        <p:column class="estilo27">
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="nombresApellidos"
+                                attributeDisplay="Nombre Completo"
+                                />
+                            <h:panelGroup>
+
+                                <div class="estilo28">  <h:outputText value="#{lst.nombresApellidos}"/></div>
+
+                            </h:panelGroup>
+                        </p:column>
+
+                        <p:column class="estilo27">
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="td"
+                                attributeDisplay="Tipo Documento"
+                                />
+                            <h:panelGroup>
+
+                                <div class="estilo28"> <h:outputText value="#{lst.td}"/></div>
+
+                            </h:panelGroup>
+                        </p:column>
+
+       <p:column class="estilo27">
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="td"
+                                attributeDisplay="Numero Documento"
+                                />
+                            <h:panelGroup>
+
+                                <div class="estilo28"> <h:outputText value="#{lst.pin}"/></div>
+
+                            </h:panelGroup>
+                        </p:column>
+
+
+
+
+
+
+
+                    </p:dataTable>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

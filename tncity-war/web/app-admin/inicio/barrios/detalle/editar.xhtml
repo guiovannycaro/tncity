@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.inicio.barrios.detalle.content">
+            
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <p:panelGrid columns="2">
+
+                            <h:panelGroup>
+                                <h:outputText value="Nombre" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+                              <h:panelGroup>
+                                    <p:inputText value="#{barrioControl.obj.nombre}" required="true" requiredMessage="Requerido!" id="attr_nombre"/>
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+                            
+                            <h:panelGroup>
+                                <h:outputText value="Codigo Barrio" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+                            <h:panelGroup>
+                                <p:inputText value="#{barrioControl.obj.codoficial}" required="true" requiredMessage="Requerido!" id="attr_codoficial"/>
+                                <p:message for="attr_codoficial"/>
+                            </h:panelGroup>
+           
+                            
+                             <h:panelGroup>
+                                <h:outputText value="Localidad" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+                            <h:panelGroup>
+                                    <p:selectOneMenu value="#{barrioControl.obj.idlocalidad}" required="true" requiredMessage="Requerido!" id="attr_idlocalidad">
+                                        <f:selectItems value="#{localidadControl.selectAll()}"/>
+                                    </p:selectOneMenu>
+                                </h:panelGroup>
+                            
+                            
+                             <h:panelGroup>
+                                <h:outputText value="Observaciones:" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                             </h:panelGroup>
+                            <h:panelGroup>
+                                <p:inputText value="#{barrioControl.obj.observaciones}" required="true" requiredMessage="Requerido!" id="attr_observaciones"/>
+                                <p:message for="attr_observaciones"/>
+                            </h:panelGroup>
+                            
+                            
+                            <h:panelGroup>
+                                <h:outputText value="Lat:" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                             </h:panelGroup>
+                            <h:panelGroup>
+                                <p:inputText value="#{barrioControl.obj.latitud}" required="true" requiredMessage="Requerido!" id="attr_lat"/>
+                                <p:message for="attr_lat"/>
+                            </h:panelGroup>
+                            
+                            <h:panelGroup>
+                                <h:outputText value="Longitud:" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+                            <h:panelGroup>
+                                <p:inputText value="#{barrioControl.obj.longitud}" required="true" requiredMessage="Requerido!" id="attr_long"/>
+                                <p:message for="attr_long"/>
+                            </h:panelGroup>
+
+                           
+                        </p:panelGrid>
+                        <br/><br/>
+
+                        <h:inputHidden value="#{barrioControl.obj.idbarrio}"/>
+
+                        <p:commandButton value="Guardar Cambios" action="#{barrioControl.editar()}" icon="fa fa-save" ajax="false">
+                            <f:param name="idbarrio_" value="#{param.idbarrio_}"/>
+                        </p:commandButton>
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+                    <h:panelGroup rendered="#{barrioControl.successful}">
+                        <script type="text/javascript">
+                            document.location.href = 
+             '#{utilControl.protocolHostPortContext}/app-admin/inicio/barrios/detalle/detalle.xhtml?idbarrio_=#{barrioControl.obj.idbarrio}';
+                        </script>
+                    </h:panelGroup>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../_templatetransacciones.xhtml">
+
+            <ui:define name="app-familiar.admin.transacciones.content">
+
+                <div id="subtitulo" class="estilo31"> 
+                    <div id="txt_subtitulo"> Detalles Recaudo</div>
+                </div>    
+
+
+                <div id="cod_recaudo">  <h:outputText value="Código Recaudo : #{param.idrecaudo_}" style="font-size: 20px;"/>
+              
+                
+                </div>
+                <div id="lineadiv"></div>
+               <div id="cod_recaudo">
+                <h:form id="ff_">
+                    <p:menubar>
+                        <p:menuitem value="Detalle"  icon="fa fa-hand-o-right" ajax="true" url="#{utilControl.protocolHostPortContext}/app-familiar/admin/transacciones/detalle/detalle.xhtml?idrecaudo_=#{param.idrecaudo_}" />
+
+                        <p:menuitem value="Transacciones"  icon="fa fa-credit-card"  ajax="true" onclick="document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/transacciones/lista.xhtml?id_=#{loginBenefactorControl.usLog.idpersona.idpersona}';"/>
+
+                    </p:menubar>
+                </h:form>
+                         
+               </div>
+                 <div id="lineadiv"></div>
+          
+                <ui:insert name="app-familiar.admin.transacciones.detalle.content"></ui:insert>
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.informex.informe3.content">
+
+                <p:panel header="Nuevo Informe">
+                    <div align="center">
+                        <h:form id="form_">
+                            <p:panelGrid columns="2">
+
+
+
+                                <h:panelGroup>
+                                    <h:outputText value="Desde" styleClass="label"/>
+                                    <span class="oblig">*</span>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:calendar autocomplete="off" id="desde" required="true" requiredMessage="Por favor, Debe seleccionar la fecha de inicio del informe!" value="#{informexControl.desde}" pattern="yyyy-MM-dd " locale="es"  navigator="true"/>
+                                    <p:messages for="desde"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Hasta" styleClass="label"/>
+                                    <span class="oblig">*</span>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:calendar autocomplete="off" id="hasta" required="true" requiredMessage="Por favor, Debe seleccionar la fecha de final del informe!" value="#{informexControl.hasta}" pattern="yyyy-MM-dd " locale="es"  navigator="true"/>
+                                    <p:messages for="hasta"/>
+                                </h:panelGroup>
+
+                            </p:panelGrid>
+                            <br/><br/>
+
+
+
+                            <p:commandButton value="Siguiente" onclick="enviarf();" class="sigui" icon="fa fa-arrow-right"  >
+                            </p:commandButton>
+                            <br/><br/>
+                            <p:message for="form_"/>
+                        </h:form>
+
+                        <script>
+                            
+                             
+                               PrimeFaces.locales['es'] = {
+                                closeText: 'Cerrar',
+                                prevText: 'Anterior',
+                                nextText: 'Siguiente',
+                                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                                dayNamesMin: ['D', 'L', 'M', 'Mi', 'J', 'V', 'S'],
+                                weekHeader: 'Semana',
+                                firstDay: 1,
+                                isRTL: false,
+                                showMonthAfterYear: false,
+                                yearSuffix: '',
+                                timeOnlyTitle: 'Sólo hora',
+                                timeText: 'Tiempo',
+                                hourText: 'Hora',
+                                minuteText: 'Minuto',
+                                secondText: 'Segundo',
+                                currentText: 'Fecha actual',
+                                ampm: false,
+                                month: 'Mes',
+                                week: 'Semana',
+                                day: 'Día',
+                                allDayText: 'Todo el día'
+                            };
+                            
+                            function enviarf() {
+
+
+                                var desde = document.getElementById("form_:desde_input").value;
+                                var hasta = document.getElementById("form_:hasta_input").value;
+
+                                var funciona = 'S';
+
+                                if (desde == "") {
+                                    swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Debe seleccionar la fecha de inicio del informe.'});
+                                    formulario.desde.focus();
+                                    funciona = 'N';
+                                    return false;
+                                }
+
+                                if (hasta == "") {
+                                    swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Debe seleccionar la fecha de final del informe.'});
+                                    formulario.hasta.focus();
+                                    funciona = 'N';
+                                    return false;
+                                }
+                                
+                                if (funciona == 'S') {
+                                    var som = '/app-admin/informex/informe3/detalle/generarinforme.xhtml?desde_=' + desde + '&amp;hasta_=' + hasta;
+                                    var url = '#{utilControl.protocolHostPortContext}' + som;
+
+                                    document.location.href = url;
+                                }
+                            }
+
+                        </script>
+
+                    </div>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

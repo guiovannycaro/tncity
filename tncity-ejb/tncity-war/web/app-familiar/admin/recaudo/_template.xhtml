@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+
+
+    <h:body>
+
+
+        <ui:composition template="./../../_template.xhtml">
+
+            <ui:define name="app-familiar.content">
+
+                <div class="gridContainer clearfix"><!--inicio-contenedor-->
+                    <div class="cajacontenedor"><!--inicio-contenedor-->
+                        <div id="contenedorsuperior"><!--inicio_contenedorsuperior-->
+                            <div id="contenedorpestana" class="estilo6"><!--inicio_datos1-->
+                                <h:form id="ff">
+
+                                    <div id="menuhor" columns="5">
+
+                                        <div id="panelu" class="tab1-class">
+
+ <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml">
+                                            <div id="txtpanel" class="estilo8">
+                                               
+                                                 Datos del PPL  <h:outputText  class="fa fa-address-card-o" ></h:outputText>  
+                                                
+                                            </div></a>
+                                        </div>
+
+                                        <div id="paneld" class="tab2-class">
+                                            <div id="txtpanel" class="estilo8">
+                                                 Monto Recarga <h:outputText  class="fa fa-usd" ></h:outputText>  
+                                            </div>
+                                        </div>
+
+                                        <div id="panelt" class="tab3-class">
+                                            <div id="txtpanel" class="estilo8">
+                                                3. Confirmar Recarga  <h:outputText  class="fa fa-usd" ></h:outputText>  
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </h:form>
+                            </div>
+                        </div>
+                        <p:panel>
+                            <ui:insert name="app-familiar.admin.recaudo.content"></ui:insert>
+                        </p:panel>
+
+
+                        <br/>
+
+
+
+                    </div>
+                </div>
+
+            </ui:define>
+
+
+        </ui:composition>
+    </h:body>
+
+</html>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.beneficiario.detalle.content">
+             
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <p:panelGrid columns="2">
+
+                            
+
+                            
+                             <h:panelGroup>
+                                    <h:outputText value="Nombre Beneficiario" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{beneficiarioControl.obj.nombresApellidos}" required="true" requiredMessage="Requerido!" id="attr_nbenefi"/>
+                                    <p:message for="attr_nbenefi"/>
+                                </h:panelGroup>
+
+                                       <h:panelGroup>
+                                    <h:outputText value="Tipo Documento" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{beneficiarioControl.obj.td}" required="true" requiredMessage="Requerido!" id="attr_td"/>
+                                    <p:message for="attr_td"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="No. Documento Beneficiario" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                <h:panelGroup>
+                                    <p:inputText value="#{beneficiarioControl.obj.pin}" required="true" requiredMessage="Requerido!" id="attr_pin"/>
+                                    <p:message for="attr_pin"/>
+                                </h:panelGroup>
+
+                           
+                        </p:panelGrid>
+                        <br/><br/>
+
+                        <h:inputHidden value="#{beneficiarioControl.obj.idbeneficiario}"/>
+
+                        <p:commandButton value="Guardar Cambios" action="#{beneficiarioControl.editar()}" icon="fa fa-save" ajax="false">
+                            <f:param name="idbeneficiario_" value="#{param.idbeneficiario_}"/>
+                        </p:commandButton>
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+                    <h:panelGroup rendered="#{beneficiarioControl.successful}">
+                        <script type="text/javascript">
+                            document.location.href = 
+             '#{utilControl.protocolHostPortContext}/app-admin/recaudo/beneficiario/detalle/detalle.xhtml?idbeneficiario_=#{beneficiarioControl.obj.idbeneficiario}';
+                        </script>
+                    </h:panelGroup>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

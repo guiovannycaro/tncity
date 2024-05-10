@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.promociones.detalle.content">
+
+               
+                <div class="ui-g">
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                    <div class="ui-g-12 ui-md-12 ui-lg-8">
+                         <ui:repeat value="#{promocionesControl.lispromociones}" var="lst"> 
+                        <p:panelGrid columns="2" layout="grid" columnClasses="ui-grid-col-3,ui-grid-col-9">
+
+                            <h:outputText value="Nombre" class="label"/>
+                            <h:outputText value="#{lst.idpromocion.nombre} "/>
+
+                          <h:outputText value="Tipo Promocion" class="label"/>
+                            <h:outputText value="#{lst.tipoValor}"/>
+                            
+                              <h:outputText value="Valor Promocion" class="label"/>
+                            <h:outputText value="#{lst.valorPromocion}"/>
+                            
+                              <h:outputText value="Fecha Inicial" class="label"/>
+                            <h:outputText value="#{lst.fechaInicial}"/>
+                            
+                              <h:outputText value="Fecha Fin" class="label"/>
+                            <h:outputText value="#{lst.fechaFinal}"/>
+
+                              <h:outputText value="Criterio" class="label"/>
+                            <h:outputText value="#{lst.aplicadesde}"/>
+                            
+                               <h:outputText value="Parametro Criterio" class="label"/>
+                               <h:outputText value="#{lst.valoraplica}"/>
+                            
+                              <h:outputText value="Estado" class="label"/>
+                            <h:outputText value="#{plst.estado}"/>
+                            
+                             <h:outputText value="Observaciones" class="label"/>
+                            <h:outputText value="#{lst.observacion}"/>
+                            
+                               <h:outputText value="Digitos Cedula" class="label"/>
+                               <br/>
+                              <h:panelGroup rendered="#{lst.cero == true }">
+                                    0  <input  type="checkbox" value="true" id="ncedula0" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.cero == false }">
+                                    0 <input  type="checkbox" value="false" id="ncedula0" disabled="disabled" />
+                                </h:panelGroup>
+                               
+                                <h:panelGroup rendered="#{lst.uno == true }">
+                                    1 <input  type="checkbox" value="true" id="ncedula1" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.uno == false }">
+                                    1  <input  type="checkbox" value="false" id="ncedula1"  disabled="disabled"/>
+                                </h:panelGroup>
+                               
+                                <h:panelGroup rendered="#{lst.dos == true }">
+                                    2  <input  type="checkbox" value="true" id="ncedula2" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.dos == false }">
+                                    2  <input  type="checkbox" value="false" id="ncedula2" disabled="disabled"/>
+                                </h:panelGroup>
+                               
+                                <h:panelGroup rendered="#{lst.tres == true }">
+                                    3 <input  type="checkbox" value="true" id="ncedula3" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.tres == false }">
+                                    3 <input  type="checkbox" value="false" id="ncedula3" disabled="disabled"/>
+                                </h:panelGroup>
+                               
+                                <h:panelGroup rendered="#{promocionesControl.obj.cuatro == true }">
+                                    4 <input  type="checkbox" value="true" id="ncedula4" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.cuatro == false }">
+                                    4 <input  type="checkbox" value="false" id="ncedula4" disabled="disabled"/>
+                                </h:panelGroup>
+
+                               
+                                <h:panelGroup rendered="#{lst.cinco == true }">
+                                    5  <input  type="checkbox" value="true" id="ncedula5" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{promocionesControl.obj.cinco == false }">
+                                    5  <input  type="checkbox" value="false" id="ncedula5" disabled="disabled"/>
+                                </h:panelGroup>
+                             
+                                <h:panelGroup rendered="#{lst.seis == true }">
+                                    6 <input  type="checkbox" value="true" id="ncedula6" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup rendered="#{lst.seis == false }">
+                                    6  <input  type="checkbox" value="false" id="ncedula6" disabled="disabled"/>
+                                </h:panelGroup>
+
+                              
+                                <h:panelGroup rendered="#{lst.siete == true }">
+                                    7  <input  type="checkbox" value="true" id="ncedula7" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.siete == false }">
+                                    7  <input  type="checkbox" value="false" id="ncedula7" disabled="disabled"/>
+                                </h:panelGroup>
+                             
+
+                                <h:panelGroup rendered="#{lst.ocho == true }">
+                                    8 <input  type="checkbox" value="true" id="ncedula8" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.ocho == false }">
+                                    8 <input  type="checkbox" value="false" id="ncedula8" disabled="disabled"/>
+                                </h:panelGroup>
+                              
+                                <h:panelGroup rendered="#{lst.nueve == true }">
+                                    9 <input  type="checkbox" value="true" id="ncedula9" checked="true" disabled="disabled"/>
+                                </h:panelGroup>
+                                <h:panelGroup rendered="#{lst.nueve == false }">
+                                    9 <input  type="checkbox" value="false" id="ncedula9" disabled="disabled"/>
+                                </h:panelGroup>
+                            
+                        </p:panelGrid>
+                         </ui:repeat>
+                        <br/><br/><br/>
+                    </div>
+                    <div class="ui-g-0 ui-md-0 ui-lg-2"/>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.recaudo.cuentas.detalle.movimientos.detalle.content">
+
+
+     
+
+                <h:outputText value="#{movimientosControl.recuperaCountTotalMovimientosIdd(param.idbenefactor_,param.idcuenta_,param.idmov_)}"/>
+
+                <div align="center">
+                    <ui:repeat value="#{movimientosControl.lisMovCuenta}" var="lst">
+                        <p:panelGrid id = "panel"   style="width: 70%;" styleClass="panelgrid-dotted-border">
+                            <p:row>
+
+
+                                <p:column colspan="2" >
+                                    <div><b><center>Datos Generales Cuenta</center></b> </div>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Codigo Movimiento: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lst.idmovimiento}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Codigo Cuenta: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idcuenta.idcuenta} "/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Nombre Benefactor: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idcuenta.idbenefactor.idpersona.nombres}  #{lst.idcuenta.idbenefactor.idpersona.apellidos}"/>
+
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Estado: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="Activa" rendered="#{lst.idcuenta.isActiva == true }"/>
+                                        <h:outputText value="Inactiva" rendered="#{lst.idcuenta.isActiva == false }"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Entradas: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idcuenta.valEntradas}"/>
+
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Salidas: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idcuenta.valSalidas}"/>
+
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Saldo: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+                                        <h:outputText value="#{lst.idcuenta.valSaldo}"/>
+
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+
+
+                                <p:column colspan="2" >
+                                    <div><b><center>Movimientos</center></b> </div>
+                                </p:column>
+                            </p:row>
+
+
+
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Valor : " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lst.valor}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Tipo : " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lst.tipo}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Observacion: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lst.observaciones}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Anulacion : " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lst.observacionesAnulacion}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Estado: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lst.estado}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+
+
+
+                        </p:panelGrid>
+                    </ui:repeat>
+    <h:outputText value="#{movimientosControl.recuperaRecaudosCuenta(param.idbenefactor_,param.idcuenta_,param.idmov_)}"/>
+
+
+                    <ui:repeat value="#{movimientosControl.lisRecCuenta}" var="lstr">
+                        <p:panelGrid id = "panel"   style="width: 70%;" styleClass="panelgrid-dotted-border">
+                            <p:row>
+
+
+                                <p:column colspan="2" >
+                                    <div><b><center>Recaudos de la  Cuenta</center></b> </div>
+                                </p:column>
+                            </p:row>
+                            
+                             <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Valor: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lstr.idrecaudo.valor}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                               <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Estado: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lstr.idrecaudo.estado}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                             <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Establecimiento: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lstr.idrecaudo.establecimiento}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                              <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Codigo Pago: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lstr.idrecaudo.codPago}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            
+                              <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Pasarela Pago: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lstr.idrecaudo.idpasarela.nombre}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                              <p:row>
+                                <p:column  style="width: 40%">
+                                    <h:outputText value="Nombre Beneficiario: " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+                                    <h:panelGroup>
+
+                                        <h:outputText value="#{lstr.idrecaudo.idbeneficiario.nombresApellidos}"/>
+                                    </h:panelGroup>
+                                </p:column> 
+                            </p:row>
+                            
+                       
+                        </p:panelGrid>
+                    </ui:repeat>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

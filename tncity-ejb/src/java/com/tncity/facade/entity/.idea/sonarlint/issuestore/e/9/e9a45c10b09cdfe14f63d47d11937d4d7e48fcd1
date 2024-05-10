@@ -1,0 +1,22 @@
+
+c
+java:S1192J"NDefine a constant instead of duplicating this literal "transaccionid" 4 times.(æàñ.
+s
+java:S1488I"]Immediately return this expression instead of assigning it to the temporary variable "attrs".(ò¹‹ï
+s
+java:S1488Q"]Immediately return this expression instead of assigning it to the temporary variable "attrs".(ò¹‹ï
+u
+java:S4144P"_Update this method so that its implementation is not identical to "attrsQueryLight" on line 72.(¡î–Å
+B
+java:S1874`",Remove this use of "Long"; it is deprecated.(¾‘±´
+O	java:S106…"9Replace this use of System.out or System.err by a logger.(Ã–°÷
+T	java:S106œ"9Replace this use of System.out or System.err by a logger.(ø¬ðÿúÿÿÿÿ
+E
+java:S2140«")Use "java.util.Random.nextInt()" instead.(öõ¸¿øÿÿÿÿ
+T	java:S106®"9Replace this use of System.out or System.err by a logger.(ÖØÀþÿÿÿÿÿ
+T	java:S106Æ"9Replace this use of System.out or System.err by a logger.(ø¬ðÿúÿÿÿÿ
+T	java:S106â"9Replace this use of System.out or System.err by a logger.(•Ð¾³ýÿÿÿÿ
+F
+java:S1874é"/Remove this use of "Integer"; it is deprecated.(¥Äò€
+C
+java:S1874ñ",Remove this use of "Long"; it is deprecated.(š÷£Ë

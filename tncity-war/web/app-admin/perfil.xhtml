@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="head">
+              
+            </ui:define>
+
+            <ui:define name="app-admin.content">
+                <br/>
+                <p:panel header="Perfil">
+                    <div align="center">
+                        <p:panelGrid columns="2">
+                            
+                            <h:outputText value="Nombre" styleClass="label"/>
+                            <h:panelGroup>
+                                <h:outputText value="#{loginAdminControl.usLog.idpersona.nombres} #{loginAdminControl.usLog.idpersona.apellidos}"/>
+                            </h:panelGroup>
+                            
+                             <h:outputText value="No. Documento" styleClass="label"/>
+                            <h:panelGroup>
+                                <h:outputText value="#{loginAdminControl.usLog.idpersona.numdocumento}"/>
+                            </h:panelGroup>
+                            
+                             <h:outputText value="E-mail" styleClass="label"/>
+                            <h:panelGroup>
+                                <h:outputText value="#{loginAdminControl.usLog.idpersona.email}"/>
+                            </h:panelGroup>
+                             
+                             <h:outputText value="Teléfono" styleClass="label"/>
+                            <h:panelGroup>
+                                <h:outputText value="#{loginAdminControl.usLog.idpersona.numTelefono}"/>
+                            </h:panelGroup>
+                            
+                        </p:panelGrid>
+                    </div>
+                    <br/><br/><br/>
+                </p:panel>
+            </ui:define>
+
+            <ui:define name="app-admin.menu">
+          
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

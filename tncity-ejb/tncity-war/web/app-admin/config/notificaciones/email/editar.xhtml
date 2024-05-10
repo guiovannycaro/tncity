@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+      <ui:composition template="./../../_template.xhtml">
+
+              <ui:define name="app-admin.config.content">
+                <h:outputText value="#{notificacionControl.recuperaNotificacionConfigById(param.id_)}"/>
+
+                <p:panel header="Configurar Notificación">
+                    <h:form>
+                        <div align="center">
+                            <p:panelGrid columns="2">
+
+                                <h:outputText value="Descripción" styleClass="label"/>
+                                <h:panelGroup>
+                                    <b><h:outputText value="#{notificacionControl.notificacionC.descripcion}"/></b>
+                                </h:panelGroup>
+
+                                <h:outputText value="Activar notificación" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:selectBooleanCheckbox value="#{notificacionControl.notificacionC.isActiva}"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Enviar E-mail" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:selectBooleanCheckbox value="#{notificacionControl.notificacionC.sendEmail}"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Enviar SMS" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:selectBooleanCheckbox value="#{notificacionControl.notificacionC.sendSms}"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Variables" styleClass="label"/>
+                                <h:panelGroup>
+                                    <ui:repeat value="#{notificacionControl.notificacionC.var}" var="v">
+                                        <b><h:outputText value="#{v.name}"/> : </b>
+                                        <h:outputText value="#{v.descripcion}"/>
+                                        <br/>
+                                    </ui:repeat>
+                                    <h:outputText value="-Ninguna-" rendered="#{empty notificacionControl.notificacionC.var}"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Mensaje SMS" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:inputTextarea value="#{notificacionControl.notificacionC.smsContent}" cols="35" rows="3"/>
+                                </h:panelGroup>
+                                
+                                 
+
+                                <h:outputText value="Asunto e-mail" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:inputText value="#{notificacionControl.notificacionC.mailAsunto}" size="40"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Contenido e-mail" styleClass="label"/>
+                                <h:panelGroup>
+                                    <p:editor value="#{notificacionControl.notificacionC.mailContent}"/>
+                                </h:panelGroup>
+
+                            </p:panelGrid>
+
+                            <h:inputHidden value="#{notificacionControl.notificacionC.id}"/>
+
+                            <br/>
+                            <p:commandButton value="Guardar Cambios" ajax="false" action="#{notificacionControl.guardarCambios()}" icon="fa fa-save">
+                                <f:param name="id_" value="#{param.id_}"/>
+                            </p:commandButton>
+
+                        </div>
+                    </h:form>
+
+                    <br/><br/><br/>
+
+                </p:panel>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

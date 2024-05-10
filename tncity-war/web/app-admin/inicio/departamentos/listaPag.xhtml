@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+       
+                <h:outputText value="#{departamentoestadoControl.recuperaAllRegPaginationNoLight()}"/>
+
+                <br/>
+                <div>
+                    <p:dataTable reflow="true" var="lst" value="#{departamentoestadoControl.lst}" tableStyle="width:auto">
+ <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="iddepartamento"
+                                attributeDisplay="Codigo"
+                                />
+                            <h:panelGroup>
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/inicio/departamentos/detalle/detalle.xhtml?iddepartamento_=#{lst.iddepartamento}">
+                                    <h:outputText value="#{lst.iddepartamento}"/>
+                                </a>
+                            </h:panelGroup>
+                        </p:column>
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="nombre"
+                                attributeDisplay="Nombre "
+                                />
+                            <h:panelGroup>
+                               
+                                    <h:outputText value="#{lst.nombre}"/>
+                                
+                            </h:panelGroup>
+                        </p:column>
+
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="codoficial"
+                                attributeDisplay="Cod. Departamento"
+                                value="#{lst.codoficial}"
+                                />
+                        </p:column>
+
+                        <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="latitud"
+                                attributeDisplay="Latitud"
+                                value="#{lst.latitud}"
+                                />
+                        </p:column>
+
+ <p:column>
+                            <jc:pagColumn
+                                for="0"
+                                attributeName="longitud"
+                                attributeDisplay="Longitud"
+                                value="#{lst.longitud}"
+                                />
+                        </p:column>
+
+                    </p:dataTable>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

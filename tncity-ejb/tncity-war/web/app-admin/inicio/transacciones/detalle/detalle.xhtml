@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.inicio.transacciones.detalle.content">
+
+                <h:outputText value="#{seguridadControl.validaPermiso_6}" escape="false"/>
+                <h:outputText value="#{transaccionesControl.DetalleTransaccion()}"/>
+
+                <br/>
+                <div>
+
+                    <ui:repeat var="lst" value="#{transaccionesControl.lsttransaccion}" varStatus="status">
+                        <p:panelGrid id = "panel"   style="width: 70%;" styleClass="panelgrid-dotted-border">
+
+
+
+
+                            <p:row>
+
+
+                                <p:column colspan="2" >
+                                    <div   style=" width: 100%;height: 21px;float: right;color: #2F4050;font-weight: bold;
+                                           font-size: 16px;text-align: center;padding: 2px 5px;text-decoration: none;
+                                           text-transform: capitalize;border-radius: 4px;opacity: 0.8;align-content: center;">Detalle Transaccion</div>
+                                </p:column>
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Cod Recaudo " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value="#{lst.idrecaudo.idrecaudo} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Cod transaccion " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value="#{lst.codtransaccion} "/>
+
+                                </p:column> 
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Franquicia " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value="#{lst.franquicia} "/>
+
+                                </p:column> 
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Descripcion " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value="#{lst.descripcion} "/>
+
+                                </p:column> 
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Referencia " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value="#{lst.referencia1} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Referencia " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value="#{lst.fechapago} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Numero Recibo " styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value="#{lst.numerorecibo} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Codigo" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lst.codigo} "/>
+
+                                </p:column> 
+                            </p:row>
+
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Error" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lst.mensajeerror} "/>
+
+                                </p:column> 
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="NUm Recaudo" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lst.codigoint} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                        </p:panelGrid>
+                    </ui:repeat> 
+
+
+                    <h:outputText value="#{transaccionesSmSControl.DetallemsmTransaccion()}"/>
+
+                    <ui:repeat var="lstd" value="#{transaccionesSmSControl.lstmsmtransaccion}" varStatus="status">
+                        <p:panelGrid id = "panel"   style="width: 70%;" styleClass="panelgrid-dotted-border">
+                            <p:row>
+                            <p:column colspan="2" >
+                                <div   style=" width: 100%;height: 21px;float: right;color: #2F4050;font-weight: bold;
+                                       font-size: 16px;text-align: center;padding: 2px 5px;text-decoration: none;
+                                       text-transform: capitalize;border-radius: 4px;opacity: 0.8;align-content: center;">Detalle Mensaje Texto</div>
+                            </p:column>
+                            </p:row>
+
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="id Mensaje" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lstd.idmensajetxt} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Estado" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lstd.status} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Numero Mensajes" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lstd.cantidadmensajes} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Cantidad Caracteres" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lstd.cantidadCaracteres} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            <p:row>
+                                <p:column  style="width: 35%">
+                                    <h:outputText value="Mensaje Respuesta" styleClass="label"/>
+                                </p:column>    
+                                <p:column style="width: 60%">
+
+                                    <h:outputText value=" #{lstd.mensaje} "/>
+
+                                </p:column> 
+                            </p:row>
+
+                            
+                            
+
+                        </p:panelGrid>
+                    </ui:repeat>
+
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

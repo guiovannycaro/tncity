@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.inicio.localidades.content">
+     
+                <h:outputText value="#{localidadControl.recuperaCountTotalReg()}"/>
+
+                <p:panel header="Buscar Localidad">
+
+                    <div align="center">
+                        <h:form>
+                            <br/><br/>
+                            <i style="color:gray">Localidades  / nombre </i>
+                            <br/><br/>
+                            <p:inputText value="#{localidadControl.valBusq}"/>
+                            <br/><br/>
+                            <p:commandButton value="Buscar" icon="fa fa-search" ajax="false"/>
+                            <br/><br/>
+                        </h:form>
+
+                    </div>
+
+                    <h:panelGroup rendered="#{localidadControl.valBusq!=null}">
+                        <div align="center">
+
+                            <h:outputText value="#{localidadControl.recuperaBuscarCount()}"/>
+
+                            Registros Encontrados (<b>#{localidadControl.totalConsulta}</b>) - Criterio " <b>#{localidadControl.valBusq}</b> "
+
+                            <jc:pagList
+                                id="0"
+                                count="#{localidadControl.totalConsulta}"
+                                urlPageData="#{utilControl.protocolHostPortContext}/app-admin/inicio/localidades/buscarPag.xhtml?query_=#{localidadControl.valBusq}"
+                                maxRegLista="#{localidadControl.maxRegLista}"/>
+
+                        </div>
+                        <br/><br/>
+                    </h:panelGroup>
+                </p:panel>
+
+            </ui:define>
+
+        </ui:composition>
+ciudadControl
+    </body>
+</html>

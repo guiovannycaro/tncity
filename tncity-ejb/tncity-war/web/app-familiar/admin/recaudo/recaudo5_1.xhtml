@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head>
+
+
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <script src="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.min.js" type="text/javascript"></script>
+            <link href="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.css" rel="stylesheet" type="text/css"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+            <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+
+        </f:facet>
+
+        <h:outputText value="#{loginBenefactorControl.validaSessionPasarela(param.idrecaudo_)}" escape="false"/>
+
+
+        <title>TN - Sistema de Recargas</title>
+        <link rel="shortcut icon" href="#{utilControl.protocolHostPortContext}/img/app/logo3.png"/>
+
+
+        <h:outputScript name="js/nanoscroller.js" library="ultima-layout" />
+        <h:outputScript name="js/layout.js" library="ultima-layout" />
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+        <h:outputScript name="js/swipe.js" library="ultima-layout" />
+
+
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/estilosint.css"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/fuentes/fuentes.css"/>
+
+        <script src="#{utilControl.protocolHostPortContext}/js/respond.min.js"></script>
+
+        <!-- Color Box -->
+        <link rel="stylesheet" href="#{utilControl.protocolHostPortContext}/libscript/colorbox/colorbox-master/example1/colorbox.css" />
+        <script src="#{utilControl.protocolHostPortContext}/libscript/colorbox/colorbox-master/jquery.colorbox-min.js"></script>
+        <script src="#{utilControl.protocolHostPortContext}/js/animateprogress.js"></script>
+
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/estilosrespuesta.css"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/fuentes/fuentes.css"/>
+        <ui:insert name="head"/>
+
+    </h:head>
+
+    <h:body >
+
+        <h:outputScript library="primefaces" name="jquery/jquery.js"
+                        target="head" />
+        <div class="layout-wrapper #{themeControl.menuLayout} #{themeControl.orientationRTL ? 'layout-rtl' : null}">
+            <ui:include src="./../../topbarD.xhtml" />
+            <ui:include src="./../../menuD.xhtml" />
+
+            <div class="layout-main">
+                <div class="layout-content">
+
+                    <div class="gridContainer clearfix"><!--inicio-contenedor-->
+                        <div class="cajacontenedor"><!--inicio-contenedor-->
+                            <div id="contenedorprincipal">
+
+
+                                <div id="contenedormedio"><!--inicio_contenedorsuperior-->
+                                    <div id="marcorecaudo">
+                                        <div id="contenedorsuperior"><!--inicio_contenedorsuperior-->
+                                            <a href="#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml">
+                                                <div id="pestana1">
+                                                    <div id="txtpu" class="estilo28">
+                                                         DATOS PPL <h:outputText  class="fa fa-address-card-o"  style="font-size: 2em; color: #0B637A;float:left" ></h:outputText>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div id="pestana2" class="estilo28">
+                                                <div id="txtpd">
+                                                     RECARGA <h:outputText  class="fa fa-usd" style="font-size: 2em; color: #0B637A;float:left"></h:outputText>  
+                                                </div>
+                                            </div>
+                                            <div id="pestana3" class="estilo27">
+                                                <div id="txtpt">
+                                                   TRANSACCIÓN  <h:outputText  class="fa fa-usd" style="font-size: 2em; color: #0B637A;float:left"></h:outputText>
+                                                <div id="lineapestana"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <h:outputText value="#{recaudoControl.validarbeneficiario(recaudoControl.decodificar(param.idrecaudo_))}"/>
+
+                                        <h:panelGroup rendered="#{recaudoControl.successful == true}">  
+                                            <div id="marco_detalle">
+                                                <div id="marco_titulo">
+                                                    <div id="errortrans">
+
+
+
+                                                        pago registrado pendiente por validar!
+
+
+                                                    </div>
+
+
+                                                    <div id="cont_boton">
+                                                        <div id="btn1">
+                                                            <a href="javascript:void();" 
+
+                                                               onclick="transacciones();" id="registrarse" icon="fa fa-arrow-left"   >
+
+                                                                <center style="color: #ffffff;
+                                                                        margin: 2% 0% 0% 0%;
+                                                                        width: 100%;"> Transacciones</center> 
+                                                            </a>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h:panelGroup>
+
+                                    </div>
+
+                                </div>
+
+                                <div id="contenedorinferior"><!--inicio_contenedorsuperior-->
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+
+                            function terminar() {
+
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';
+                            }
+                            function transacciones() {
+
+                                document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/transacciones/lista.xhtml?id_=#{loginBenefactorControl.usLog.idpersona.idpersona}';
+                                    }
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h:outputStylesheet name="css/nanoscroller.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/animate.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{themeControl.theme}.css" library="ultima-layout" />
+
+
+    </h:body>
+
+</html>
+
+
+
+

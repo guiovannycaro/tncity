@@ -1,0 +1,89 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="_template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+
+    <ui:define name="head">
+        <script type="text/javascript">
+            //<![CDATA[
+            function skinChart() {
+                this.cfg.shadow = false;
+                this.cfg.title = '';
+                this.cfg.seriesColors = ['#FFC107', '#03A9F4'];
+                this.cfg.grid = {
+                    background: '#ffffff',
+                    borderColor: '#ffffff',
+                    gridLineColor: '#EEEEEE',
+                    shadow: false
+                };
+                this.cfg.axesDefaults = {
+                    rendererOptions: {
+                        textColor: '#212121'
+                    }
+                };
+                this.cfg.seriesDefaults = {
+                    shadow: false,
+                    lineWidth: 1,
+                    markerOptions: {
+                        shadow: false,
+                        size: 7,
+                        style: 'circle'
+                    }
+                }
+            }
+            //]]>  
+        </script>
+        <style type="text/css">
+            .main-content {
+                padding: 0;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="app-familiar.content">
+        <div class="ui-g dashboard" style="min-height: 400px;">
+            <div class="ui-g-12 ui-md-8">
+                <b style="color: #003366; font-size: 17px;">Bienvenid@ a Inpec !</b>
+
+                <div align="center">
+                     <div id="imagenLOG">
+
+                    </div>
+                    <br/>
+                    <br/><br/>
+
+                    <br/><br/>
+
+
+                </div>
+
+                <p:menubar>
+
+                
+                   <p:menuitem value="Salida Segura" url="#{utilControl.protocolHostPortContext}/app-familiar/auth/logout.xhtml" icon="fa fa-power-off  " />
+                     
+                </p:menubar>
+            </div>
+        </div>
+        
+                <style> 
+            #imagenLOG{
+                float: left;
+                width: 100%;
+                height: 175px;
+                background-image: url(../img/app/logo3.png);
+                background-size: 22%;
+                background-repeat: no-repeat;
+                background-position: top center;
+                margin: 24% 0% 0% 0%;
+                padding: 0% 0% 0% 0%;
+
+            }
+        </style>
+    </ui:define>
+
+</ui:composition>

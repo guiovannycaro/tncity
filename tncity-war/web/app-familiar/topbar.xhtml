@@ -1,0 +1,51 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <div class="topbar clearfix">
+        <div class="topbar-left">            
+          <div  style="background: rgb(56, 133, 152);top:0px;">
+ <img src="#{utilControl.protocolHostPortPath}/imagenes/logoamigo.png" height="50" width="180"/>
+       
+            </div>
+        </div>
+
+        <div class="topbar-right">
+            <a id="menu-button" href="#">
+                <i></i>
+            </a>
+
+            <a id="topbar-menu-button" href="#">
+                <i class="material-icons">&#xE5D2;</i>
+            </a>
+            <ul class="topbar-items fadeInDown animated">
+
+                <li>
+                    <a href="#" onclick="document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/auth/logout.xhtml';">
+                        <i class="topbar-icon material-icons">&#xE8AC;</i>
+                        <span class="topbar-item-name">Salir</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/admin/recaudo/recaudo1.xhtml';">
+                        <i class="topbar-icon material-icons">home</i>
+                        <span class="topbar-item-name">Inicio</span>
+                    </a>
+                </li>
+
+                <li class="search-item">
+                    <h:panelGroup styleClass="md-inputfield" rendered="false">
+                        <p:inputText />
+                        <label>Buscar</label>
+                        <i class="topbar-icon material-icons">&#xE8B6;</i>
+                    </h:panelGroup>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+   
+</ui:composition>

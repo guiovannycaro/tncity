@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="tncityDB" nm="tncityDB" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>\opt\tncityd\tncity\model</DocFolder>
+  <Sch Cm="" nm="auditar">
+    <Tbl UsSo="1" nm="auditoria">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="CODIGO_AU" nm="PK_CODIGO_AU"/>
+      <Cl au="0" df="" nm="NombreTabla" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="Operacion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ValorAnterior" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="NuevoValor" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="UpdateDate" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="USUARIO" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="1" df="nextval('auditar.&quot;auditoria_CODIGO_AU_seq&quot;'::regclass)" nm="CODIGO_AU" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Seq incr="1" nm="auditoria_CODIGO_AU_seq" start="1"/>
+    <CustomTypes/>
+  </Sch>
+  <Sch Cm="standard public schema" nm="public">
+    <Tbl UsSo="1" nm="barrio">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idbarrio" nm="barrio_pkey"/>
+      <Cl au="1" df="nextval('barrio_idbarrio_seq'::regclass)" nm="idbarrio" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idlocalidad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="codoficial" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observaciones" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="latitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="longitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_barrio_localidad" prLkCl="idlocalidad" upAc="3">
+        <PrTb mn="0" nm="localidad" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="barrio" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idlocalidad" prCl="idlocalidad"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_barrio_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_barrio()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="benefactor">
+      <Cm>Registra los familiares o allegados que quieren realizar una transacción</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idbenefactor" nm="pkbenefactor"/>
+      <Cl au="1" df="nextval('benefactor_idbenefactor_seq'::regclass)" nm="idbenefactor" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idpersona" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>persona que es benefactor</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de actualización de registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_updated" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="username" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Nombre de usuario para acceso al sistema</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="constrasena" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Contraseña de acceso</Cm>
+      </Cl>
+      <Cl au="0" df="false" nm="is_activo" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Indica si la cuenta está o no activa</Cm>
+      </Cl>
+      <Cl au="0" df="false" nm="is_cambiarcontrasena" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Indica si se debe cambiar o no la contraseña</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="cuenta" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="perfil" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="primerarecarga" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_benefactor_persona" prLkCl="idpersona" upAc="3">
+        <PrTb mn="0" nm="persona" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="benefactor" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpersona" prCl="idpersona"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_benefactor_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="benefactor" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_updated" prCl="idusuario"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_benefactor_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_benefactor()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="beneficiario">
+      <Cm>Registra los beneficiarios de las transacciones de recaudo</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idbeneficiario" nm="pkbeneficiario"/>
+      <Cl au="1" df="nextval('beneficiario_idbeneficiario_seq'::regclass)" nm="idbeneficiario" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="td" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Número de identificación penitenciaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="pin" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Número único de identificación ante el sistema telefónico de TN</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombres_apellidos" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Nombres y apellidos del beneficiario en caso de que ID_PERSONA sea NULL</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idpersona" nu="1">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Persona que es beneficiaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de actualización de registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_updated" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Usuario que actualiza el registro</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_beneficiario_persona" prLkCl="idpersona" upAc="3">
+        <PrTb mn="0" nm="persona" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="beneficiario" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpersona" prCl="idpersona"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_beneficiario_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="beneficiario" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_updated" prCl="idusuario"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="beneficiario_pin_idx" spa="0" unq="1">
+        <ClNs>pin</ClNs>
+        <OptTx>USING btree</OptTx>
+      </Idx>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_beneficiario_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_beneficiario()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="beneficiarioNoExiste">
+      <TblOpts/>
+      <Pk ClNs="idbeneficiarione" nm="pkbeneficiarioNoExiste"/>
+      <Cl au="1" df="" nm="idbeneficiarione" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="td" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="pin" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombres_apellidos" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idpersona" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="update_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_updated" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tariffgroupname" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_beneficiario_NoExiste_persona" prLkCl="idpersona" upAc="3">
+        <PrTb mn="0" nm="persona" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="beneficiarioNoExiste" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpersona" prCl="idpersona"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_beneficiario_NoExiste_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="beneficiarioNoExiste" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_updated" prCl="idusuario"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_beneficiarioNoExiste_ciudad" prLkCl="idciudad" upAc="3">
+        <PrTb mn="0" nm="ciudad" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="beneficiarioNoExiste" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="tariffgroupname" prCl="idciudad"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="ciudad">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idciudad" nm="ciudad_pkey"/>
+      <Cl au="1" df="nextval('ciudad_idciudad_seq'::regclass)" nm="idciudad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="codoficial" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="latitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="longitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="iddepartamento" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="codpostal" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_ciudad_departamentoestado" prLkCl="iddepartamento" upAc="3">
+        <PrTb mn="0" nm="departamentoestado" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="ciudad" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="iddepartamento" prCl="iddepartamento"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_ciudad_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_ciudad()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="configuracion">
+      <Cm>Registra los parámetros de configuración del sistema</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idparam" nm="configuracion_pkey"/>
+      <Cl au="0" df="" nm="idparam" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valor" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_updated" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_configuracion_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="configuracion" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_updated" prCl="idusuario"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_configuracion_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_configuracion()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="cuentamovimiento">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idmovimiento" nm="pkcuentamovimiento"/>
+      <Cl au="1" df="nextval('cuentamovimiento_idmovimiento_seq'::regclass)" nm="idmovimiento" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="valor" nu="0">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Valor del movimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tipo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Tipo de movimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="observaciones" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Observaciones</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="path_adjunto" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Path del archivo adjunto</Cm>
+      </Cl>
+      <Cl au="0" df="VALIDO" nm="estado" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Estado del movimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="observaciones_anulacion" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>OBservaciones de anulación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha del movimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_updated" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Usuario que actualiza el registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de creación del registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_created" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Usuario que crea el registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idcuenta" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Cuenta a la que pertenece el movimiento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idrecaudo" nu="1">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Recaudo relacionado con el movimiento</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_cuentamovimiento_recaudo" prLkCl="idrecaudo" upAc="3">
+        <PrTb mn="0" nm="recaudo" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="cuentamovimiento" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idrecaudo" prCl="idrecaudo"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_cuentamovimiento_usuario_cree" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="cuentamovimiento" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_created" prCl="idusuario"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_cuentamovimiento_usuario_updated" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="cuentamovimiento" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_updated" prCl="idusuario"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_cuentamovimiento_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_cuentamovimiento()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="departamentoestado">
+      <Cm>Registra los departamentos o estados de los paises</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="iddepartamento" nm="departamentoestado_pkey"/>
+      <Cl au="1" df="nextval('departamentoestado_iddepartamento_seq'::regclass)" nm="iddepartamento" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idpais" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Pais al que pertenece</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="codoficial" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Cod ificial del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Nombre del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="latitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Latitud del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="longitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Longitud del departamento</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_departamentoestado_pais" prLkCl="idpais" upAc="3">
+        <PrTb mn="0" nm="pais" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="departamentoestado" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpais" prCl="idpais"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_departamentoestado_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_departamentoestado()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="estadisticas">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idestadistica" nm="pkestadisticas"/>
+      <Cl au="1" df="nextval('estadisticas_idestadistica_seq'::regclass)" nm="idestadistica" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="titulo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha_inicio" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha_fin" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idpersona" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="is_finalisado" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="is_cancelado" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="log" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="codestadistica" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="exel" nu="0">
+        <DT arr="0" ds="VarChar2" en="" id="781" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="pdf" nu="0">
+        <DT arr="0" ds="VarChar2" en="" id="781" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_estadisticas_persona" prLkCl="idpersona" upAc="3">
+        <PrTb mn="0" nm="persona" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="estadisticas" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpersona" prCl="idpersona"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="indicativospaises">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idindicativo" nm="pkindicativospaises"/>
+      <Cl au="1" df="nextval('indicativospaises_idindicativo_seq'::regclass)" nm="idindicativo" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idpais" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>codigo del pais</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="iddepartamento" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>codigo del departamento</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idciudad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>codigo del la ciudad</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="codindicativo" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>indicativo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="codarea" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_indicativosciudad_ciudad" prLkCl="idciudad" upAc="3">
+        <PrTb mn="0" nm="ciudad" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="indicativospaises" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idciudad" prCl="idciudad"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_indicativospaises_departamentoestado" prLkCl="iddepartamento" upAc="3">
+        <PrTb mn="0" nm="departamentoestado" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="indicativospaises" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="iddepartamento" prCl="iddepartamento"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_indicativospaises_pais" prLkCl="idpais" upAc="3">
+        <PrTb mn="0" nm="pais" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="indicativospaises" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpais" prCl="idpais"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_indicativospaises_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_indicativospaises()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="informes">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idinforme" nm="pkinformes"/>
+      <Cl au="1" df="nextval('informes_idinforme_seq'::regclass)" nm="idinforme" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idpersona" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="titulo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="0">
+        <DT arr="0" ds="VarChar2" en="" id="781" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="imagen" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="url" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombrevisual" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_informes_persona" prLkCl="idpersona" upAc="3">
+        <PrTb mn="0" nm="persona" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="informes" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpersona" prCl="idpersona"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="localidad">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idlocalidad" nm="localidad_pkey"/>
+      <Cl au="1" df="nextval('localidad_idlocalidad_seq'::regclass)" nm="idlocalidad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idciudad" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="codoficial" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observaciones" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="latitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="longitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_localidad_ciudad" prLkCl="idciudad" upAc="3">
+        <PrTb mn="0" nm="ciudad" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="localidad" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idciudad" prCl="idciudad"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_localidad_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_localidad()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="modulos">
+      <TblOpts/>
+      <Pk ClNs="idmodulo" nm="pkmodulos"/>
+      <Cl au="1" df="" nm="idmodulo" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre " nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="imagen " nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="url " nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombrevisual" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="moduloxseccionxsubseccion">
+      <TblOpts/>
+      <Pk ClNs="idmodseccionsubseccion" nm="pkmoduloxseccionxsubseccion"/>
+      <Cl au="0" df="" nm="idmodulo" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idseccion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idsubseccion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="1" df="" nm="idmodseccionsubseccion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_moduloxseccionxsubseccion_modulos" prLkCl="idmodulo" upAc="3">
+        <PrTb mn="0" nm="modulos" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="moduloxseccionxsubseccion" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idmodulo" prCl="idmodulo"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_moduloxseccionxsubseccion_secciones" prLkCl="idseccion" upAc="3">
+        <PrTb mn="0" nm="secciones" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="moduloxseccionxsubseccion" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idseccion" prCl="idseccion"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_moduloxseccionxsubseccion_subsecciones" prLkCl="idsubseccion" upAc="3">
+        <PrTb mn="0" nm="subsecciones" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="moduloxseccionxsubseccion" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idsubseccion" prCl="idsubseccion"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="moneda">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idmoneda" nm="pkmoneda"/>
+      <Cl au="1" df="nextval('moneda_idmoneda_seq'::regclass)" nm="idmoneda" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idpais" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="codeiso4217" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="numiso4217" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="simbolo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valortrm" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_pais" prLkCl="idpais" upAc="3">
+        <PrTb mn="0" nm="pais" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="moneda" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpais" prCl="idpais"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="fki_pais" spa="0" unq="0">
+        <ClNs>idpais</ClNs>
+        <OptTx>USING btree</OptTx>
+      </Idx>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_moneda_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_moneda()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="notificacion">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idnotificacion" nm="pknotificacion"/>
+      <Cl au="1" df="nextval('notificacion_idnotificacion_seq'::regclass)" nm="idnotificacion" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="config_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tipo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="email_asunto" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="email_contenido" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="sms_content" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="sms_numcel" nu="1">
+        <DT arr="0" ds="Numeric" en="" id="2" ln="15" sc="0" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_notificacion_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_notificacion()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="pais">
+      <Cm>Se registran los paises</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idpais" nm="pais_pkey"/>
+      <Cl au="1" df="nextval('pais_idpais_seq'::regclass)" nm="idpais" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Nombre del país</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="cod_oficial_iso" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Cód oficial ISO</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="iso2" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>ISO 2</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="iso3" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>ISO 3</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="latitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Latitud</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="longitud" nu="1">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Longitud</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="codpostal" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_pais_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_pais()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="parametrossms">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="Idparametro" nm="pkparametrossms"/>
+      <Cl au="1" df="nextval('&quot;parametrossms_Idparametro_seq&quot;'::regclass)" nm="Idparametro" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="host" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="puerto" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="protocolo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_parametrossms_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_parametrossms()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="pasarelapago">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idpasarela" nm="pkpasarelapago"/>
+      <Cl au="1" df="nextval('pasarelapago_idpasarela_seq'::regclass)" nm="idpasarela" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Nombre de la pasarela de pagos</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="config_xml" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Configuración de la pasarela</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de actualización de registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_updated" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Usuarioque actualiza el registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="comision" nu="0">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_pasarelapago_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="pasarelapago" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_updated" prCl="idusuario"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_pasarelapago_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_pasarelapago()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="pasarelas">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="configidpasarela" nm="pkpasarelas"/>
+      <Cl au="1" df="nextval('pasarelas_configidpasarela_seq'::regclass)" nm="configidpasarela" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="config_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tipo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="puerto" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="host" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="protocolo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_pasarelas_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_pasarelas()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="perfil">
+      <Cm>Registra los perfiles del sistema</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idperfil" nm="perfil_pkey"/>
+      <Cl au="1" df="nextval('perfil_idperfil_seq'::regclass)" nm="idperfil" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observaciones" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_perfil_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_perfil()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="perfil_funcionalidad">
+      <Cm>Registra las funcionalidades de un perfil</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idpf" nm="perfil_funcionalidad_pkey"/>
+      <Cl au="0" df="" nm="idpf" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="funcionalidad_id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Id. la funcionalidad que pertenece al perfil</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idperfil" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Perfil al que pertenece la funcionalidad</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_perfil_funcionalidad_perfil" prLkCl="idperfil" upAc="3">
+        <PrTb mn="0" nm="perfil" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="perfil_funcionalidad" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idperfil" prCl="idperfil"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_perfilfuncionalidad_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_perfil_funcionalidad()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="perfil_has_usuario">
+      <Cm>Registro los perfiles a los que pertenece un usuario</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idpu" nm="perfil_has_usuario_pkey"/>
+      <Cl au="0" df="" nm="idpu" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idperfil" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Perfil que se relaciona con el usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Usuario que tiene el perfil</Cm>
+      </Cl>
+      <Fk deAc="3" nm="fk_perfil_has_usuario_perfil" prLkCl="idperfil" upAc="3">
+        <PrTb mn="0" nm="perfil" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="perfil_has_usuario" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idperfil" prCl="idperfil"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_perfil_has_usuario_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="perfil_has_usuario" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_perfilhasusuario_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_perfil_has_usuario()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="permisos">
+      <TblOpts/>
+      <Pk ClNs="idpermiso" nm="pkpermisos"/>
+      <Cl au="1" df="" nm="idpermiso" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idperfil" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idmodulo" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idseccion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idsubsecccion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="consulta" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ingreso" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="eliminacion" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="edicion" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="buscar" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_permisos_modulos" prLkCl="idmodulo" upAc="3">
+        <PrTb mn="0" nm="modulos" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="permisos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idmodulo" prCl="idmodulo"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_permisos_perfil" prLkCl="idperfil" upAc="3">
+        <PrTb mn="0" nm="perfil" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="permisos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idperfil" prCl="idperfil"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_permisos_secciones" prLkCl="idseccion" upAc="3">
+        <PrTb mn="0" nm="secciones" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="permisos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idseccion" prCl="idseccion"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_permisos_subsecciones" prLkCl="idsubseccion" upAc="3">
+        <PrTb mn="0" nm="subsecciones" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="permisos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idsubsecccion" prCl="idsubseccion"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_permisos_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="permisos" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="persona">
+      <Cm>Registra todas las personas que tienen que ver con el sistema de una u otra forma.</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idpersona" nm="pkpersona"/>
+      <Cl au="1" df="nextval('persona_idpersona_seq'::regclass)" nm="idpersona" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="nombres" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Primer y segundo nombre</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="apellidos" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Primer y segundo apellido</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="tipodocumento" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Tipo de documento de identidad</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="numdocumento" nu="0">
+        <DT arr="0" ds="Numeric" en="" id="2" ln="20" sc="0" sg="1" un="0"/>
+        <Cm>Número de documento de identidad</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="num_telefono" nu="1">
+        <DT arr="0" ds="Numeric" en="" id="2" ln="15" sc="0" sg="1" un="0"/>
+        <Cm>Número de teléfono</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Correo electrónico</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="direccion" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Dirección de residencia</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_updated" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Usuario que actualiza el registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de actualización</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario_created" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Usuario que crea el registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de creación de registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="num_telefono2" nu="1">
+        <DT arr="0" ds="Numeric" en="" id="2" ln="10" sc="0" sg="1" un="0"/>
+        <Cm>Teléfono 2</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idciudad" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="imagen" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_persona_ciudad" prLkCl="idciudad" upAc="3">
+        <PrTb mn="0" nm="ciudad" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="persona" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idciudad" prCl="idciudad"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_persona_usuario_created" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="persona" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_created" prCl="idusuario"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_persona_usuario_updated" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="1"/>
+        <CdTb mn="1" nm="persona" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario_updated" prCl="idusuario"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="persona_numdocumento_uniq" spa="0" unq="1">
+        <ClNs>numdocumento</ClNs>
+        <OptTx>USING btree</OptTx>
+      </Idx>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_persona_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_persona()</Sql>
+      </Trg>
+      <UniqueConstraints>
+        <UnCon nm="persona_numdocumento_key">
+          <ClNs>numdocumento</ClNs>
+        </UnCon>
+      </UniqueConstraints>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="promocion">
+      <TblOpts/>
+      <Pk ClNs="idpromocion" nm="pkpromocion"/>
+      <Cl au="1" df="" nm="idpromocion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observacion" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="promociones">
+      <TblOpts/>
+      <Pk ClNs="idpromociones" nm="pkpromociones"/>
+      <Cl au="1" df="" nm="idpromociones" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idpromocion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tipo_valor" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valor_promocion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha_inicial" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fecha_final" nu="0">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="cero" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="uno" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="dos" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tres" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="cuatro" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="cinco" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="seis" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="siete" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="ocho" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nueve" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="tipo_aplicadesde" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="aplicadesde" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valoraplica" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observacion " nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_promociones_promocion" prLkCl="idpromocion" upAc="3">
+        <PrTb mn="0" nm="promocion" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="promociones" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpromocion" prCl="idpromocion"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_promociones_recaudopromo" prLkCl="idpromociones" upAc="3">
+        <PrTb mn="0" nm="recaudopromo" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="promociones" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpromociones" prCl="idpromociones"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="promocionxrecaudo">
+      <TblOpts/>
+      <Pk ClNs="idpromorecaudo" nm="pkpromocionxrecaudo"/>
+      <Cl au="1" df="" nm="idpromorecaudo" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idrecaudo" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idpromocion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idbenefactor" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="promorecaudobenefactor">
+      <TblOpts/>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="recaudo">
+      <Cm>Registra las transacciones de recaudo</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idrecaudo" nm="pkrecaudo"/>
+      <Cl au="1" df="nextval('recaudo_idrecaudo_seq'::regclass)" nm="idrecaudo" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idbenefactor" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Quien realiza la consignación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idbeneficiario" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Quien recibe la consignación</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="valor" nu="0">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Valor del recaudo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Estado del recaudo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="log" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Log de la transacción</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de creación de registro</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="check_telefonia_at" nu="1">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha en la que se confirma la recarga en la plataforma de telefonía</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="establecimiento" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Establecimiento en el que está el beneficiario que recibe el recaudo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="cod_pago" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Códigop de pago indicado por la pasarela</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="token_wtnpagos" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Información del pago en formato XML</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idpasarela" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Pasarela de pagos utilizadas para la transacción</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="telefonosms" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>telefono para envio de mensajes de confirmacion del pago</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="ciudad" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observacion" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="observacion_adicional" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="pasarela_dia" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valorcomision" nu="0">
+        <DT arr="0" ds="Double" en="" id="8" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valorpromocion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="numtransaccion" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="promo" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_recaudo_benefactor" prLkCl="idbenefactor" upAc="3">
+        <PrTb mn="0" nm="benefactor" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="recaudo" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idbenefactor" prCl="idbenefactor"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_recaudo_beneficiario" prLkCl="idbeneficiario" upAc="3">
+        <PrTb mn="0" nm="beneficiario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="recaudo" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idbeneficiario" prCl="idbeneficiario"/>
+      </Fk>
+      <Fk deAc="3" nm="fk_recaudo_pasarelapago" prLkCl="idpasarela" upAc="3">
+        <PrTb mn="0" nm="pasarelapago" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="recaudo" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpasarela" prCl="idpasarela"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_recaudo_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_recaudo()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="recaudopromo">
+      <TblOpts/>
+      <Pk ClNs="idrecpromocion" nm="pkrecaudopromo"/>
+      <Cl au="1" df="" nm="idrecpromocion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idpromociones" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idrecaudo" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_promociones_recaudo" prLkCl="idrecaudo" upAc="3">
+        <PrTb mn="0" nm="recaudo" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="recaudopromo" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idrecaudo" prCl="idrecaudo"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="repoauditoria">
+      <TblOpts/>
+      <Pk ClNs="idrepoauditoria" nm="pkrepoauditoria"/>
+      <Cl au="1" df="" nm="idrepoauditoria" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="imagen" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="url" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombrevisual" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_repoauditoria_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="repoauditoria" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="reportes">
+      <TblOpts/>
+      <Pk ClNs="idreporte" nm="pkreportes"/>
+      <Cl au="1" df="" nm="idreporte" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="imagen" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="url" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombrevisual" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="created_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idusuario" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_reportes_usuario" prLkCl="idusuario" upAc="3">
+        <PrTb mn="0" nm="usuario" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="reportes" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idusuario" prCl="idusuario"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="secciones">
+      <TblOpts/>
+      <Pk ClNs="idseccion" nm="pksecciones"/>
+      <Cl au="1" df="" nm="idseccion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombrevisual" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado " nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="subsecciones">
+      <TblOpts/>
+      <Pk ClNs="idsubseccion" nm="pksubsecciones"/>
+      <Cl au="1" df="" nm="idsubseccion" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombre" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="imagen " nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="url" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="nombrevisual" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="estado " nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="transacciones">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idtransaccion" nm="pktransacciones"/>
+      <Cl au="1" df="nextval('transacciones_idtransaccion_seq'::regclass)" nm="idtransaccion" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>llave primaria que indica una transaccion exitosa</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="codtransaccion" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>recibe el codigo de la transaccion</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="formapago" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="franquicia" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="descripcion" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="referencia1" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fechapago" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="numerorecibo" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="codigo" nu="1">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="mensajeerror" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idrecaudo" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>llave foranea proveniente del recaudo</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="codigoint" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_transacciones_recaudo" prLkCl="idrecaudo" upAc="3">
+        <PrTb mn="0" nm="recaudo" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="transacciones" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idrecaudo" prCl="idrecaudo"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_transacciones_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_transacciones()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="transmensajetexto">
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idmensajetxt" nm="pktransmensajetexto"/>
+      <Cl au="1" df="nextval('transmensajetexto_idmensajetxt_seq'::regclass)" nm="idmensajetxt" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="status" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="cantidadmensajes" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="valor" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="cantidad_caracteres" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="mensaje" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="idconfirmacion" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="transaccionid" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_transmensajetexto_transacciones" prLkCl="idtransaccion" upAc="3">
+        <PrTb mn="0" nm="transacciones" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="transmensajetexto" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="transaccionid" prCl="idtransaccion"/>
+      </Fk>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_transmensajetexto_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_transmensajetexto()</Sql>
+      </Trg>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="usuario">
+      <Cm>Registra los usuarios que tienen acceso al sistema</Cm>
+      <TblOpts>WITHOUT OIDS</TblOpts>
+      <Pk ClNs="idusuario" nm="usuario_pkey"/>
+      <Cl au="1" df="nextval('usuario_idusuario_seq'::regclass)" nm="idusuario" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Llave primaria</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="idpersona" nu="0">
+        <DT arr="0" ds="BigInt" en="" id="-5" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Persona que es usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="username" nu="0">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Login</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="contrasena" nu="0">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Contraseña de acceso</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="updated_at" nu="0">
+        <DT arr="0" ds="TimeStamp" en="" id="93" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Fecha de actualización</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="is_activo" nu="0">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Indica si esta o no activo el usuario</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="is_cambiarcontrasena" nu="1">
+        <DT arr="0" ds="Boolean" en="" id="16" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Fk deAc="3" nm="fk_usuario_persona" prLkCl="idpersona" upAc="3">
+        <PrTb mn="0" nm="persona" oe="1" sch="public" zr="0"/>
+        <CdTb mn="1" nm="usuario" oe="0" sch="public" zr="1"/>
+        <ClPr cdCl="idpersona" prCl="idpersona"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="usuario_idpersona_idx" spa="0" unq="1">
+        <ClNs>idpersona</ClNs>
+        <OptTx>USING btree</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="usuario_username_uniq" spa="0" unq="1">
+        <ClNs>username</ClNs>
+        <OptTx>USING btree</OptTx>
+      </Idx>
+      <Trg del="1" eaRow="1" exBe="0" ins="1" nm="tbl_usuario_tb_auditoria" upd="1">
+        <Sql>public.fn_log_audit_usuario()</Sql>
+      </Trg>
+      <UniqueConstraints>
+        <UnCon nm="usuario_idpersona_key">
+          <ClNs>idpersona</ClNs>
+        </UnCon>
+        <UnCon nm="usuario_username_key">
+          <ClNs>username</ClNs>
+        </UnCon>
+      </UniqueConstraints>
+      <SchTrHis/>
+    </Tbl>
+    <Proc nm="crea_primary_perfil_funcionalidad()">
+      <src>CREATE OR REPLACE FUNCTION public.crea_primary_perfil_funcionalidad() 
+  RETURNS trigger AS 
+$$
+BEGIN
+	NEW.idpf:=NEW.idperfil||'_'||NEW.funcionalidad_id;--Concatenado
+	RETURN NEW;
+END;
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="crea_primary_perfil_has_usuario()">
+      <src>CREATE OR REPLACE FUNCTION public.crea_primary_perfil_has_usuario() 
+  RETURNS trigger AS 
+$$
+BEGIN
+	NEW.idpu:=NEW.idperfil||'_'||NEW.idusuario;--Concatenado
+	RETURN NEW;
+END;
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_barrio()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_barrio() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_benefactor()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_benefactor() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_beneficiario()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_beneficiario() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_ciudad()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_ciudad() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_configuracion()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_configuracion() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_cuenta()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_cuenta() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_cuentamovimiento()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_cuentamovimiento() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_departamentoestado()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_departamentoestado() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_indicativospaises()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_indicativospaises() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_informex_histo()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_informex_histo() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_informex_permiso()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_informex_permiso() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_localidad()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_localidad() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_moneda()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_moneda() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_notificacion()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_notificacion() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_pais()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_pais() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_parametrossms()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_parametrossms() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_pasarelapago()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_pasarelapago() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_pasarelas()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_pasarelas() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_perfil()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_perfil() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_perfil_funcionalidad()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_perfil_funcionalidad() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_perfil_has_usuario()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_perfil_has_usuario() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_persona()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_persona() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_recaudo()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_recaudo() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_transacciones()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_transacciones() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_transmensajetexto()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_transmensajetexto() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <Proc nm="fn_log_audit_usuario()">
+      <src>CREATE OR REPLACE FUNCTION public.fn_log_audit_usuario() 
+  RETURNS trigger AS 
+$$
+begin
+IF(TG_OP = 'DELETE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'D', row_to_json(OLD.*),NULL,NOW(),USER);
+RETURN OLD;
+ELSEIF (TG_OP = 'UPDATE') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'U',row_to_json(OLD.*),row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+ELSEIF(TG_OP = 'INSERT') THEN
+INSERT INTO auditar.AUDITORIA ("NombreTabla","Operacion","ValorAnterior","NuevoValor","UpdateDate","USUARIO")
+VALUES (TG_TABLE_NAME,'I',NULL,row_to_json(NEW.*),NOW(),USER);
+RETURN NEW;
+END IF;
+RETURN NULL;
+end
+$$
+  LANGUAGE plpgsql VOLATILE 
+  COST 100;</src>
+    </Proc>
+    <View nm="vista_recargas_tnpagos">
+      <Sql>SELECT
+    recaudo.idrecaudo AS idvista,
+    persona.nombres,
+    persona.apellidos,
+    persona.tipodocumento AS tipo_documento,
+    persona.numdocumento AS numero_documento,
+    persona.num_telefono,
+    persona.email,
+    persona.direccion,
+    ciudad.nombre AS ciudad_familiar,
+    departamentoestado.nombre AS departamento_familiar,
+    pais.nombre AS pais_familiar,
+    beneficiario.td AS tipodocumento_ppl,
+    beneficiario.pin AS numero_documento_ppl,
+    beneficiario.nombres_apellidos AS nombre_ppl,
+    recaudo.idrecaudo,
+    recaudo.valor,
+    recaudo.estado,
+    recaudo.log,
+    recaudo.created_at,
+    recaudo.check_telefonia_at,
+    recaudo.establecimiento,
+    recaudo.cod_pago,
+    recaudo.telefonosms,
+    recaudo.observacion,
+    recaudo.observacion_adicional,
+    recaudo.ciudad AS ciudad_ppl,
+    pasarelapago.nombre AS nombre_pasarela,
+    transacciones.codtransaccion,
+    transacciones.formapago,
+    transacciones.franquicia,
+    transacciones.descripcion,
+    transacciones.referencia1,
+    transacciones.fechapago,
+    transacciones.numerorecibo,
+    transacciones.codigo,
+    transacciones.mensajeerror
+FROM recaudo
+    JOIN benefactor ON recaudo.idbenefactor = benefactor.idbenefactor
+    JOIN beneficiario ON recaudo.idbeneficiario = beneficiario.idbeneficiario
+    JOIN persona ON benefactor.idpersona = persona.idpersona
+    JOIN ciudad ON persona.idciudad = ciudad.idciudad
+    JOIN departamentoestado ON ciudad.iddepartamento = departamentoestado.iddepartamento
+    JOIN pais ON departamentoestado.idpais = pais.idpais
+    JOIN pasarelapago ON recaudo.idpasarela = pasarelapago.idpasarela
+    JOIN transacciones ON recaudo.idrecaudo = transacciones.idrecaudo
+WHERE recaudo.idpasarela = 1</Sql>
+    </View>
+    <View nm="vista_recargas_webservices">
+      <Sql>SELECT
+    recaudo.idrecaudo AS idvista,
+    persona.nombres,
+    persona.apellidos,
+    persona.tipodocumento AS tipo_documento,
+    persona.numdocumento AS numero_documento,
+    persona.num_telefono,
+    persona.email,
+    persona.direccion,
+    ciudad.nombre AS ciudad_familiar,
+    departamentoestado.nombre AS departamento_familiar,
+    pais.nombre AS pais_familiar,
+    beneficiario.td AS tipodocumento_ppl,
+    beneficiario.pin AS numero_documento_ppl,
+    beneficiario.nombres_apellidos AS nombre_ppl,
+    recaudo.idrecaudo,
+    recaudo.valor,
+    recaudo.estado,
+    recaudo.log,
+    recaudo.created_at,
+    recaudo.check_telefonia_at,
+    recaudo.establecimiento,
+    recaudo.cod_pago,
+    recaudo.telefonosms,
+    recaudo.observacion,
+    recaudo.observacion_adicional,
+    recaudo.ciudad AS ciudad_ppl,
+    pasarelapago.nombre AS nombre_pasarela,
+    transacciones.codtransaccion,
+    transacciones.formapago,
+    transacciones.franquicia,
+    transacciones.descripcion,
+    transacciones.referencia1,
+    transacciones.fechapago,
+    transacciones.numerorecibo,
+    transacciones.codigo,
+    transacciones.mensajeerror
+FROM recaudo
+    JOIN benefactor ON recaudo.idbenefactor = benefactor.idbenefactor
+    JOIN beneficiario ON recaudo.idbeneficiario = beneficiario.idbeneficiario
+    JOIN persona ON benefactor.idpersona = persona.idpersona
+    JOIN ciudad ON persona.idciudad = ciudad.idciudad
+    JOIN departamentoestado ON ciudad.iddepartamento = departamentoestado.iddepartamento
+    JOIN pais ON departamentoestado.idpais = pais.idpais
+    JOIN pasarelapago ON recaudo.idpasarela = pasarelapago.idpasarela
+    JOIN transacciones ON recaudo.idrecaudo = transacciones.idrecaudo
+WHERE recaudo.idpasarela &lt;&gt; 1</Sql>
+    </View>
+    <Seq incr="1" nm="AUDITORIA_CODIGO_AU_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="barrio_idbarrio_seq" start="1"/>
+    <Seq incr="1" nm="benefactor_idbenefactor_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="beneficiario_idbeneficiario_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="ciudad_idciudad_seq" start="1"/>
+    <Seq incr="1" nm="cuenta_idcuenta_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="cuentamovimiento_idmovimiento_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="departamentoestado_iddepartamento_seq" start="1"/>
+    <Seq incr="1" nm="estadisticas_idestadistica_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="indicativospaises_Idindicativo_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="informes_idinforme_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="informes_Idinformes_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="informex_detalle_ididetalle_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="informex_histo_idinformexhisto_seq" start="1"/>
+    <Seq incr="1" nm="informex_permiso_idpermiso_seq" start="1"/>
+    <Seq incr="1" nm="localidad_idlocalidad_seq" start="1"/>
+    <Seq incr="1" nm="moneda_idmoneda_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="notificacion_idnotificacion_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="pais_idpais_seq" start="1"/>
+    <Seq incr="1" nm="parametrossms_Idparametro_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="pasarelapago_idpasarela_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="pasarelas_configidpasarela_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="perfil_idperfil_seq" start="1"/>
+    <Seq incr="1" nm="persona_idpersona_seq" start="1"/>
+    <Seq incr="1" nm="recaudo_idrecaudo_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="transacciones_idtransaccion_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="transmensajetexto_Idmensajetxt_seq" start="1">
+      <Cm>DbWrench Autogenerated Sequence.</Cm>
+    </Seq>
+    <Seq incr="1" nm="usuario_idusuario_seq" start="1"/>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="diagramA">
+    <RnCf ClkAct="true" FtSz="12" lkStgy="RightAngleStrategy" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="0"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="0"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="1" PkCols="1"/>
+      <ErNotation>BarkerErNotation</ErNotation>
+      <DbTableRectangleFill>HeaderFooterFill</DbTableRectangleFill>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ff4c78ff" sch="auditar" tbl="auditoria" x="3884" y="50"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="barrio" x="601" y="585"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="ciudad" x="1094" y="614"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="configuracion" x="1535" y="1212"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="cuentamovimiento" x="2360" y="762"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="departamentoestado" x="847" y="777"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="estadisticas" x="1100" y="29"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="indicativospaises" x="742" y="388"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="informes" x="602" y="50"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="localidad" x="853" y="588"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="moneda" x="50" y="388"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="notificacion" x="4168" y="50"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="pais" x="392" y="388"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="parametrossms" x="3884" y="251"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="pasarelapago" x="1560" y="749"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="pasarelas" x="4168" y="251"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="perfil" x="1241" y="1092"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="perfil_funcionalidad" x="1096" y="959"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="perfil_has_usuario" x="1593" y="1092"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="persona" x="1461" y="50"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="recaudo" x="523" y="772"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="transacciones" x="3206" y="250"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="transmensajetexto" x="3539" y="250"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="usuario" x="1922" y="50"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="permisos" x="944" y="1318"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="modulos" x="321" y="1337"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="secciones" x="569" y="1342"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="subsecciones" x="491" y="1499"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="moduloxseccionxsubseccion" x="184" y="1529"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="reportes" x="1294" y="400"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="recaudopromo" x="252" y="1215"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="benefactor" x="4044" y="454"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="promocion" x="271" y="613"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="promociones" x="0" y="774"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="repoauditoria" x="1012" y="305"/>
+    <TbGl bkCl="ff4c78ff" sch="public" tbl="beneficiarioNoExiste" x="2809" y="426"/>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.barrio.fk_barrio_localidad" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="853" x2="834" y1="665" y2="665"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.benefactor.fk_benefactor_persona" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1753" x2="4184" y1="191" y2="191"/>
+        <positionableLine lineRole="CHILD_LINE" x1="4188" x2="4188" y1="454" y2="195"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.benefactor.fk_benefactor_usuario" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="2210" x2="4184" y1="127" y2="127"/>
+        <positionableLine lineRole="CHILD_LINE" x1="4188" x2="4188" y1="454" y2="131"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.beneficiarioNoExiste.fk_beneficiario_NoExiste_persona" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1753" x2="2938" y1="191" y2="191"/>
+        <positionableLine lineRole="CHILD_LINE" x1="2942" x2="2942" y1="426" y2="195"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.beneficiarioNoExiste.fk_beneficiario_NoExiste_usuario" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="2210" x2="2938" y1="127" y2="127"/>
+        <positionableLine lineRole="CHILD_LINE" x1="2942" x2="2942" y1="426" y2="131"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.beneficiarioNoExiste.fk_beneficiarioNoExiste_ciudad" parentEdge="EAST" positioner="ThreeLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1337" x2="2773" y1="691" y2="691"/>
+        <positionableLine lineRole="CHILD_LINE" x1="2809" x2="2781" y1="585" y2="585"/>
+        <positionableLine lineRole="MIDDLE_LINE" x1="2777" x2="2777" y1="589" y2="687"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.ciudad.fk_ciudad_departamentoestado" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1090" x2="1090" y1="777" y2="777"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1094" x2="1094" y1="768" y2="773"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.configuracion.fk_configuracion_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="2045" x2="2045" y1="204" y2="1261"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1804" x2="2041" y1="1265" y2="1265"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.cuentamovimiento.fk_cuentamovimiento_recaudo" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="523" x2="2369" y1="1045" y2="1045"/>
+        <positionableLine lineRole="CHILD_LINE" x1="2365" x2="2365" y1="1012" y2="1041"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.cuentamovimiento.fk_cuentamovimiento_usuario_cree" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="2086" x2="2086" y1="204" y2="758"/>
+        <positionableLine lineRole="CHILD_LINE" x1="2360" x2="2090" y1="762" y2="762"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.cuentamovimiento.fk_cuentamovimiento_usuario_updated" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="2127" x2="2127" y1="204" y2="758"/>
+        <positionableLine lineRole="CHILD_LINE" x1="2360" x2="2131" y1="762" y2="762"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.departamentoestado.fk_departamentoestado_pais" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="625" x2="843" y1="500" y2="500"/>
+        <positionableLine lineRole="CHILD_LINE" x1="847" x2="847" y1="777" y2="504"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.estadisticas.fk_estadisticas_persona" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1461" x2="1340" y1="111" y2="111"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.indicativospaises.fk_indicativosciudad_ciudad" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1094" x2="968" y1="680" y2="680"/>
+        <positionableLine lineRole="CHILD_LINE" x1="964" x2="964" y1="526" y2="676"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.indicativospaises.fk_indicativospaises_departamentoestado" parentEdge="NORTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="965" x2="965" y1="777" y2="526"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.indicativospaises.fk_indicativospaises_pais" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="625" x2="742" y1="457" y2="457"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.informes.fk_informes_persona" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1461" x2="836" y1="127" y2="127"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.localidad.fk_localidad_ciudad" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1094" x2="1084" y1="752" y2="752"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1080" x2="1080" y1="742" y2="748"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.moduloxseccionxsubseccion.fk_moduloxseccionxsubseccion_modulos" parentEdge="SOUTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="369" x2="369" y1="1475" y2="1529"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.moduloxseccionxsubseccion.fk_moduloxseccionxsubseccion_secciones" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="569" x2="304" y1="1411" y2="1411"/>
+        <positionableLine lineRole="CHILD_LINE" x1="300" x2="300" y1="1529" y2="1415"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.moduloxseccionxsubseccion.fk_moduloxseccionxsubseccion_subsecciones" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="491" x2="465" y1="1574" y2="1574"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.moneda.fk_pais" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="392" x2="272" y1="465" y2="465"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.pasarelapago.fk_pasarelapago_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1963" x2="1963" y1="204" y2="745"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1829" x2="1959" y1="749" y2="749"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.perfil_funcionalidad.fk_perfil_funcionalidad_perfil" parentEdge="NORTH" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1246" x2="1246" y1="1092" y2="1049"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.perfil_has_usuario.fk_perfil_has_usuario_perfil" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1474" x2="1593" y1="1137" y2="1137"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.perfil_has_usuario.fk_perfil_has_usuario_usuario" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="2004" x2="2004" y1="204" y2="1088"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1793" x2="2000" y1="1092" y2="1092"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.permisos.fk_permisos_modulos" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="547" x2="944" y1="1364" y2="1364"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.permisos.fk_permisos_perfil" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1246" x2="1246" y1="1182" y2="1381"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1162" x2="1242" y1="1385" y2="1385"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.permisos.fk_permisos_secciones" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="795" x2="944" y1="1395" y2="1395"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.permisos.fk_permisos_subsecciones" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="717" x2="944" y1="1534" y2="1534"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.permisos.fk_permisos_usuario" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1922" x2="984" y1="127" y2="127"/>
+        <positionableLine lineRole="CHILD_LINE" x1="980" x2="980" y1="1318" y2="131"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.persona.fk_persona_ciudad" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1337" x2="1602" y1="691" y2="691"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1606" x2="1606" y1="332" y2="687"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.persona.fk_persona_usuario_created" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1922" x2="1753" y1="127" y2="127"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.persona.fk_persona_usuario_updated" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1922" x2="1753" y1="127" y2="127"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.promociones.fk_promociones_promocion" parentEdge="WEST" positioner="ThreeLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="271" x2="270" y1="714" y2="714"/>
+        <positionableLine lineRole="CHILD_LINE" x1="249" x2="262" y1="832" y2="832"/>
+        <positionableLine lineRole="MIDDLE_LINE" x1="266" x2="266" y1="828" y2="718"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.promociones.fk_promociones_recaudopromo" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="252" x2="127" y1="1276" y2="1276"/>
+        <positionableLine lineRole="CHILD_LINE" x1="123" x2="123" y1="1152" y2="1272"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.recaudo.fk_recaudo_benefactor" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="4188" x2="4188" y1="672" y2="768"/>
+        <positionableLine lineRole="CHILD_LINE" x1="812" x2="4184" y1="772" y2="772"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.recaudo.fk_recaudo_pasarelapago" parentEdge="WEST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1560" x2="812" y1="882" y2="882"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="EAST" nm="public.recaudopromo.fk_promociones_recaudo" parentEdge="SOUTH" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="532" x2="532" y1="1150" y2="1284"/>
+        <positionableLine lineRole="CHILD_LINE" x1="475" x2="528" y1="1288" y2="1288"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.repoauditoria.fk_repoauditoria_usuario" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1922" x2="1139" y1="127" y2="127"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1135" x2="1135" y1="305" y2="131"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="NORTH" nm="public.reportes.fk_reportes_usuario" parentEdge="WEST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="1922" x2="1414" y1="127" y2="127"/>
+        <positionableLine lineRole="CHILD_LINE" x1="1410" x2="1410" y1="400" y2="131"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="SOUTH" nm="public.transacciones.fk_transacciones_recaudo" parentEdge="EAST" positioner="TwoLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="PARENT_LINE" x1="812" x2="3207" y1="832" y2="832"/>
+        <positionableLine lineRole="CHILD_LINE" x1="3211" x2="3211" y1="484" y2="828"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.transmensajetexto.fk_transmensajetexto_transacciones" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="3418" x2="3539" y1="335" y2="335"/>
+      </positionableLines>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="WEST" nm="public.usuario.fk_usuario_persona" parentEdge="EAST" positioner="OneLineUserLinkPositioner">
+      <positionableLines>
+        <positionableLine lineRole="SINGLE_LINE" x1="1753" x2="1922" y1="127" y2="127"/>
+      </positionableLines>
+    </FkGl>
+    <Notes/>
+    <Zones/>
+  </Dgm>
+  <RnmMgr>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="modulos" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idmodulo" oNm="Idmodulo"/>
+      <Rnm nNm="Idmodulo" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="secciones" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idseccion" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="subsecciones" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idsubseccion" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm nNm="permisos" oNm="perfilusuario"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="permisos" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idpermiso" oNm="idperniso"/>
+      <Rnm nNm="idperniso" oNm="idperfilusuario"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="permisos" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idusuario" oNm="idusuarios"/>
+      <Rnm nNm="idusuarios" oNm="idperfil"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="permisos" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idperfil" oNm="idusuario"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="permisos" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idseccion" oNm="idsubmodulo"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="moduloxseccionxsubseccion" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idmodulo" oNm="Idmodulo"/>
+      <Rnm nNm="Idmodulo" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="informes" SupCls="Schema" SupNme="public">
+      <Rnm nNm="estado" oNm="pdf"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm nNm="informes" oNm="reportes"/>
+      <Rnm nNm="reportes" oNm="informes"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="reportes" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idreporte" oNm="Idreporte"/>
+      <Rnm nNm="Idreporte" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="promociones" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idpromocion" oNm="Idpromocion"/>
+      <Rnm nNm="Idpromocion" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm nNm="promorecaudobenefactor" oNm="promocionesbenefactor"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="promorecaudobenefactor" SupCls="Schema" SupNme="public">
+      <Rnm nNm="Idpromrecben" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="recaudopromo" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idrecpromocion" oNm="Idrecpromocion"/>
+      <Rnm nNm="Idrecpromocion" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="promocion" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idpromocion" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="promociones" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idpromociones" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="recaudopromo" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idpromociones" oNm="idpromocion"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="repoauditoria" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idrepoauditoria" oNm="Idrepoauditoria"/>
+      <Rnm nNm="Idrepoauditoria" oNm="Idreporrecaudos"/>
+      <Rnm nNm="Idreporrecaudos" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm nNm="repoauditoria" oNm="reporecaudos"/>
+    </RnmCh>
+    <RnmCh ObjCls="Column" ParCls="Table" ParNme="beneficiarioNoExiste" SupCls="Schema" SupNme="public">
+      <Rnm nNm="idbeneficiarione" oNm="Idbeneficiarione"/>
+      <Rnm nNm="Idbeneficiarione" oNm="Id"/>
+    </RnmCh>
+    <RnmCh ObjCls="Table" ParCls="Schema" ParNme="public" SupCls="" SupNme="">
+      <Rnm nNm="beneficiarioNoExiste" oNm="beneficiario_NoExiste"/>
+    </RnmCh>
+  </RnmMgr>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors/>
+  <TreePaths>
+    <TreePath/>
+    <TreePath>/Schemas (2)</TreePath>
+    <TreePath>/Schemas (2)/public</TreePath>
+    <TreePath>/Schemas (2)/public/Tables (38)</TreePath>
+    <TreePath>/Diagrams (1)</TreePath>
+    <TreePath>/Diagrams (1)/diagramA</TreePath>
+    <TreePath>/Diagrams (1)/diagramA/Notes (0)</TreePath>
+    <TreePath>/Diagrams (1)/diagramA/Zones (0)</TreePath>
+  </TreePaths>
+  <SqlTexts/>
+</Db>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+            
+                <h:outputText value="#{recaudoControl.setValBusq(param.query_)}"/>
+                <h:outputText value="#{recaudoControl.buscarFullText()}"/>
+
+                <br/>
+                <div>
+                    <ui:repeat var="lst" value="#{recaudoControl.lst}" >
+                        <p:panel>
+                            <div align="left">
+
+                                <h:outputText value="Datos Del Benefactor " class="busqBlue"/>
+
+                                <p:separator/>
+ <div>
+                                    <a href="#{utilControl.protocolHostPortContext}/app-admin/recaudo/recaudo/detalle/detalle.xhtml?idrecaudo_=#{lst.idrecaudo}">
+                                        Codigo Recaudo: <h:outputText value="#{lst.idrecaudo} "/>
+                                    </a>
+                                </div>
+                              
+                                <div>
+                                  
+                                        Nombre Familiar: <h:outputText value="#{lst.idbenefactor.idpersona.nombres} #{lst.idbenefactor.idpersona.apellidos}"/>
+                                   
+                                </div>
+                              
+                                
+                                <div>
+                                    Numero Documento: <h:outputText value="#{lst.idbenefactor.idpersona.numdocumento} "/>
+                                </div>
+                                
+                                   <div>
+                                   
+                                        Nombre Beneficiario: <h:outputText value="#{lst.idbeneficiario.nombresApellidos}"/>
+                                    
+                                </div>
+                                   <div>
+                                    TD : <h:outputText value="#{lst.idbeneficiario.td} "/>
+                                </div>
+                                     <div>
+                                  
+                                        Documento Beneficiario: <h:outputText value="#{lst.idbeneficiario.pin}"/>
+                                   
+                                </div>
+
+                                <div>
+                                    Numero Transaccion: <h:outputText value="#{lst.numtransaccion} "/>
+                                </div>
+                                <p:separator/>
+                                <h:outputText value="Datos Del Recaudo" class="busqBlue"/>
+                                <p:separator/>
+                             
+                                <div>
+                                    Valor: <h:outputText value="#{lst.valor} "/>
+                                </div>
+
+                                <div>
+                                    Estado: <h:outputText value="#{lst.estado} "/>
+                                </div>
+                               
+                                <div>
+                                    Observacion: <h:outputText value="#{lst.observacion} "/>
+                                </div>
+                         
+                               
+                               
+
+                            </div>
+                        </p:panel>    
+                        <br/>
+                    </ui:repeat>
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

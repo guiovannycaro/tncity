@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "CenturyGothic-BoldItalic";
+  src: url("./fonts/GOTHICBI.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/GOTHICBI.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/GOTHICBI.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/GOTHICBI.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/GOTHICBI.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/GOTHICBI.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/GOTHICBI.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

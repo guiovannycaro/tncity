@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+            <ui:define name="app-admin.informex.informe2.detalle.content">
+
+
+
+
+
+                <div align="center">
+                    <h:outputText value="#{informexControl2.TotalInformes()}"/>
+                    <h:outputText value="#{informexControl2.TotalInformeCompleto()}"/>
+                    Registros Encontrados (<b>#{informexControl2.totalConsulta}</b>)
+
+
+                    <br/> 
+                    <div id="contenedor">
+                        <div style="float: right;width: 20%;height: auto;">
+
+                            <div style="float:right;width: 100%;height: 12px">
+                                <center><b>Descargar</b></center>
+                            </div>
+
+                            <div style="    float: left;width: 28%;height: 36px;margin: 6% 0% 0% 23%;padding: 0% 15% 0% 14%;" >
+                                <div style="float: left;width: 66%;height: 23px;margin: 12% 0% 0% 0%;padding: 0% 15% 0% 14%;" >
+                                    <button onclick="exportTableToExcel('tblData', 'reporteTnPagosCompleto')">
+                                        <span class="fa fa-table" style="color: #5E9414;font-size: 18px;font-weight: bold;"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <table  id="tblData">
+                            <tr>
+                                <th> idvista </th>
+                                <th> Nombre </th>
+                                <th> Apellido </th>
+                                <th> Tipo Documento </th>
+                                <th> Num. Documento </th>
+                                <th> Telefono </th>
+                                <th> Correo </th>
+                                <th> Direccion </th>
+                                <th> Departamento </th>
+                                <th> Pais </th>
+                                <th> Documento PPL </th>
+                                <th> No.Documento PPL </th>
+                                <th> Noombre PPL </th>
+                                <th> Fecha Recarga </th>
+                                <th> Valor Recarga</th>
+                                <th> Estado Recarga </th>
+                                <th> Establecimiento Recarga </th>
+                                <th> Codigo Recarga </th>
+                                <th> Observacion Recarga </th>
+                                <th> Ciudad PPL </th>
+                                <th> Codigo Transaccion </th>
+                                <th> Forma De Pago </th>
+                                <th> Franquicia </th>
+                                <th>  Descripcion </th>
+                                <th>Referencia Pago </th>
+                                <th> Numero Recibo </th>
+                                <th>  Codigo Transaccion </th>
+                                <th> Transaccion Descripcion </th>
+                            </tr>
+                            <ui:repeat value="#{informexControl2.lstInformesTnPagos}" var="lst"> 
+                                <tr>
+                                    <td>#{lst.idvista} </td>
+                                    <td>#{lst.nombres} </td>
+                                    <td>#{lst.apellidos} </td>
+                                    <td>#{lst.tipo_documento} </td>
+                                    <td>#{lst.numero_documento} </td>
+                                    <td>#{lst.num_telefono} </td>
+                                    <td>#{lst.email} </td>
+                                    <td>#{lst.ciudad_familiar} </td>
+                                    <td>#{lst.departamento_familiar} </td>
+                                    <td>#{lst.pais_familiar}</td>
+                                    <td>#{lst.tipodocumento_ppl}</td>
+                                    <td>#{lst.numero_documento_ppl}</td>
+                                    <td>#{lst.nombre_ppl}</td>
+                                    <td>#{lst.created_at}</td>
+                                    <td>#{lst.valor}</td>
+                                    <td>#{lst.estado}</td>
+                                    <td>#{lst.establecimiento}</td>
+                                    <td>#{lst.cod_pago}</td>
+                                    <td>#{lst.observacion}</td>
+                                    <td>#{lst.ciudad_ppl}</td>
+                                    <td>#{lst.codtransaccion}</td>
+                                    <td>#{lst.formapago}</td>
+                                    <td>#{lst.franquicia}</td>
+                                    <td>#{lst.descripcion}</td>
+                                    <td>#{lst.referencia1}</td>
+                                    <td>#{lst.numerorecibo}</td>
+                                    <td>#{lst.codigo}</td>
+                                </tr>
+                            </ui:repeat>
+                        </table>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <br/>
+                <style type="text/css">
+
+                    body.layout-compact .ui-button.ui-button-text-icon-left {
+                        padding-left: 26px;
+                    }
+
+                    .panelgrid-dotted-border{
+
+                        border-spacing: 0;
+                        border: 0px;
+                    }
+                    .panelgrid-dotted-border.ui-panelgrid tr, .panelgrid-dotted-border.ui-panelgrid .ui-panelgrid-cell {
+                        border: 0px;
+                    }
+
+                    #contenedor{
+                        background-color: #eee;
+                        width: 100%;
+                        height:300px;
+                        margin: 2% 0% 0% 0%;
+                        border: 1px dotted black;
+                        overflow: scroll;
+                    }
+
+                    th{
+                        background: 
+                            #d4d4d4 !important;
+
+                    }
+                    body .ui-button .ui-icon {
+                        color: #247348;
+                    }
+
+                    body .ui-button {
+                        overflow: hidden;
+                        background-color: #ffffff;
+                        color: #5E9414;
+                        font-size: 16px;
+                        height: 36px;
+                        width: 40%;
+                        padding: 0 16px;
+                        border: 0 none;
+                        border-radius: 20px;
+                        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+                        -moz-transition: background-color 0.3s;
+                        -o-transition: background-color 0.3s;
+                        -webkit-transition: background-color 0.3s;
+                        transition: background-color 0.3s;
+                    }
+
+                </style>
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+                <script src="http://demos.codexworld.com/includes/js/bootstrap.js"></script>
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+                <script>
+
+                                        function exportTableToExcel(tableID, filename = '') {
+                                            var downloadLink;
+                                            var dataType = 'application/vnd.ms-excel';
+                                            var tableSelect = document.getElementById(tableID);
+                                            var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+                                            // Specify file name
+                                            filename = filename ? filename + '.xls' : 'excel_data.xls';
+
+                                            // Create download link element
+                                            downloadLink = document.createElement("a");
+
+                                            document.body.appendChild(downloadLink);
+
+                                            if (navigator.msSaveOrOpenBlob) {
+                                                var blob = new Blob(['\ufeff', tableHTML], {
+                                                    type: dataType
+                                                });
+                                                navigator.msSaveOrOpenBlob(blob, filename);
+                                            } else {
+                                                // Create a link to the file
+                                                downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+                                                // Setting the file name
+                                                downloadLink.download = filename;
+
+                                                //triggering the function
+                                                downloadLink.click();
+                                        }
+
+                                        }
+
+                                        function GenerarPdf() {
+                                            html2canvas(document.getElementById('tblData'), {
+                                                onrendered: function (canvas) {
+                                                    var data = canvas.toDataURL();
+                                                    var docDefinition = {
+                                                        content: [{
+                                                                image: data,
+
+                                                                pageOrientation: 'portrait',
+                                                                pageSize: 'A4',
+                                                                widths: ['*', 'auto', 100, '*'],
+                                                            }]
+                                                    };
+                                                    pdfMake.createPdf(docDefinition).download("reporteTnPagosCompleto.pdf");
+                                                }
+                                            });
+
+                                        }
+
+
+
+
+                </script>
+
+            </ui:define>
+
+
+
+
+
+        </ui:composition>
+
+    </body>
+</html>

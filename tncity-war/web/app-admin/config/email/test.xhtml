@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../../_templateBlank.xhtml">
+
+            <ui:define name="app-admin.contentBlank">
+
+                <h:outputText value="#{configControl.setObjEmailSistema(configControl.config(configControl.objEmailSistema))}"/>
+
+                <p:panel header="Configurar">
+                    <div align="center">
+                        <h:form id="ff_">
+
+                            <br/>
+                            <b>Test e-mail</b>
+                            <br/>
+                            <p:panelGrid columns="2">
+
+                                <h:outputText value="De:" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:outputText value="#{configControl.objEmailSistema.usuarioMail}"/>    
+                                </h:panelGroup>
+
+                                <h:outputText value="Para:" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:inputText value="#{configControl.mail}" id="para_" required="true" requiredMessage="Requerido!"/>
+                                      <p:message for="para_"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Asunto:" styleClass="label"/>
+                                <h:panelGroup>
+                                    <h:inputText value="#{configControl.asunto}" id="asunto_" required="true" requiredMessage="Requerido!"/>
+                                    <p:message for="asunto_"/>
+                                </h:panelGroup>
+
+                                <h:outputText value="Contenido:" styleClass="label"/>
+                                <h:panelGroup>
+                                    <p:editor value="#{configControl.contenido}" id="cont_" required="true" requiredMessage="Requerido!"/>
+                                    <p:message for="cont_"/>
+                                </h:panelGroup>
+
+
+                            </p:panelGrid>
+
+                            <br/><br/>
+                            <p:commandButton value="Enviar Mensaje" ajax="false" action="#{configControl.testMail()}" icon="fa fa-paper-plane">
+                            </p:commandButton>
+                            <br/><br/>
+
+                        </h:form>
+                    </div>
+                </p:panel>
+
+                <script type="text/javascript">
+                    document.getElementById('ff_:pss_').type = 'password';
+                </script>
+
+                <h:panelGroup rendered="#{configControl.successful}">
+                    <script type="text/javascript">
+                        parent.document.location.href = '#{utilControl.protocolHostPortContext}/app-admin/config/email/index.xhtml';
+                    </script>
+                </h:panelGroup>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:form>
+
+        <h:outputText value="#{informexControl.setKey(key)}"/>
+
+        <p:remoteCommand oncomplete="#{oncomplete}"  name="rc" actionListener="#{informexControl.builderInformex(informexObj)}">
+        </p:remoteCommand>
+
+        <h:panelGroup id="stateInfor_">
+            <p:panel>
+                <div align="center">
+                    <i style="color: #003366">Generando Reporte</i><p:separator/>
+                    <p:progressBar value="#{informexControl.informexByKey(key).progressInfo}" labelTemplate="{value}%" displayOnly="true"/><br/><br/>
+                    <h:outputText value="#{informexControl.informexByKey(key).state}"/>
+                    <div>
+                        <h:outputText value="#{informexControl.msgErr}" style="color:red"/>
+                    </div>
+                    <br/>
+                    <p:commandButton onclick="if (confirm('Realmente desea cancelar el informe?')) {
+                                $(this).colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/informex/cancelInfo.xhtml?k_=#{utilControl.informexKeyUser()}', title: 'Cancelar Informe', width: '50%', height: '50%', iframe: true});}" value="Cancelar Informe" icon="fa fa-ban" ajax="false"/>
+                    <br/>
+                    <img src="#{utilControl.protocolHostPortContext}/img/loadCat.gif" height="200"/>
+                    <br/><br/>
+                    <h:panelGroup rendered="#{informexControl.informexByKey(key).log!=''}">
+                        <div style="width: 100%; padding: 5px; overflow: auto; background: #333333; color: #009900;" align="left">
+                            <pre><h:outputText value="#{informexControl.informexByKey(key).log}"/></pre>
+                        </div>
+                    </h:panelGroup>
+
+                </div>  
+            </p:panel>
+
+            <h:panelGroup rendered="#{!autostart}">
+                <h:panelGroup rendered="#{informexControl.informexByKey(key).progressInfo ge 100}">
+                    <script type="text/javascript">
+                        #{oncomplete};
+                    </script>
+                </h:panelGroup>
+            </h:panelGroup>
+
+        </h:panelGroup>
+
+        <p:poll interval="3"  update="stateInfor_" />
+
+        <h:panelGroup rendered="#{autostart}">
+            <script type="text/javascript">
+                setTimeout("rc();", 500);
+            </script>
+        </h:panelGroup>
+    </h:form>
+
+</ui:composition>

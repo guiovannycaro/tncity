@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/tncity-war/PagosInteligentesWS?wsdl" uri="src/conf/xml-resources/web-service-references/PagosInteligentesWS/wsdl/localhost_8080/tncity-war/PagosInteligentesWS.wsdl"/>
+    <system systemId="http://localhost:8080/tncity-war/PagosInteligentesWS?xsd=1" uri="src/conf/xml-resources/web-service-references/PagosInteligentesWS/wsdl/localhost_8080/tncity-war/PagosInteligentesWS.xsd_1.xsd"/>
+    <system systemId="https://www.imonitor.cz/imonws/BaseWS.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/BaseWS/wsdl/www.imonitor.cz/imonws/BaseWS.asmx.wsdl"/>
+    <system systemId="https://ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx" uri="src/conf/xml-resources/web-service-references/mainwebservicesV2/wsdl/ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx"/>
+    <system systemId="https://ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx?wsdl" uri="src/conf/xml-resources/web-service-references/mainwebservicesV2/wsdl/ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx.wsdl"/>
+    <system systemId="https://ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/mainwebservicesV2/wsdl/ecommerce.pagosinteligentes.com/webservices/mainwebservicesV2.asmx.wsdl"/>
+</catalog>

@@ -1,0 +1,726 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+
+      >
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        </f:facet>
+
+        <title>Amigo Interno - Registrarse</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="#{utilControl.protocolHostPortContext}/imagenes/favicon.ico" />
+        <!-- Color Box -->
+        <link rel="stylesheet" href="#{utilControl.protocolHostPortContext}/libscript/colorbox/colorbox-master/example1/colorbox.css" />
+        <script src="#{utilControl.protocolHostPortContext}/libscript/colorbox/colorbox-master/jquery.colorbox-min.js"></script>
+
+
+
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/estilosregistrarse.css"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/fuentes/fuentes.css"/>
+
+        <script src="#{utilControl.protocolHostPortContext}/js/respond.min.js"></script>
+        <script src="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.min.js" type="text/javascript"></script>
+        <link href="#{utilControl.protocolHostPortContext}/css/alertas/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <style type="text/css">
+            .login-body {
+                background: url("#{utilControl.protocolHostPortPath}/img/app/bannerLogin.jpg") top left no-repeat #f7f7f7;
+                background-size: 100% auto; }
+            .login-contenedor {
+                background: url("#{utilControl.protocolHostPortPath}/img/app/formlogin.png") top left no-repeat #f7f7f7;
+                background-size: 100% auto; }
+
+        </style>
+
+    </h:head>
+
+
+    <h:body  onload="Captcha();" >
+        <h:outputScript library="primefaces" name="jquery/jquery.js"
+                        target="head" />
+        <div class="gridContainer clearfix"><!--inicio-contenedor-->
+            <div id="contenedor"><!--inicio-contenedor-->
+                <div id="cabezote">
+                    <div id="tit_cabezote" class="estilo14" > Datos de Usuario </div>
+                    <div id="stit_cabezote" class="estilo15" >      </div>
+                    <div id="bannerlog"></div>
+
+                </div>
+
+
+                <div id="marcocontenendor"><!--inicio_contenedormedio-->
+
+                    <div id="marcologin"><!--inicio_marco-->
+
+                        <h:form id="form2" class="form2">
+
+                            <div id="continputs">
+                                <div id="contenedorinputu">
+                                    <div id="inputleft">
+                                        <div id="imgleft">
+                                            <h:outputText  class="fa fa-user" style="font-size: 2em; color: #958f8f;"></h:outputText>  
+                                        </div>
+                                        <div id="txtleft">
+                                            <h:panelGroup class="estilo5">
+
+                                                <p:inputText value="#{benefactorControl.nombre}"  requiredMessage="El Campo Nombre Esta Vacio!" id="nombre"
+                                                             maxlength="45" placeholder="Nombres*" class="estilo5"> 
+
+                                                    <p:keyFilter regEx="/^[a-zA-Z\s]+$/"/>  
+                                                </p:inputText>
+
+
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+
+                                    <div id="inputrigth">
+                                        <div id="imgrigth">
+                                            <h:outputText  class="fa fa-user" style="font-size: 2em; color: #958f8f;"></h:outputText>  
+                                        </div>
+                                        <div id="txtrigth">
+                                            <h:panelGroup class="estilo5">
+
+                                                <p:inputText value="#{benefactorControl.apellidos}"  requiredMessage="El Campo Apellido Esta Vacio!" id="apellido"
+                                                             maxlength="30" placeholder="Apellidos*" class="estilo5">  
+                                                    <p:keyFilter regEx="/^[a-zA-Z\s]+$/"/>  
+                                                </p:inputText>
+
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div id="contenedorinputd">
+                                    <div id="inputleft">
+                                        <div id="imgleft">
+
+                                            <h:outputText  class="fa  fa-file" style="font-size: 2em; color: #958f8f;"></h:outputText>
+                                        </div>
+                                        <div id="txtleft">
+                                            <h:panelGroup >
+
+                                                <h:selectOneMenu value="#{benefactorControl.tipodocumento}"  requiredMessage="Debe Elegir Una Tipo de documento de la lista!" id="tipodoc" 
+                                                                 >
+                                                    <f:selectItem  itemValue="" itemLabel="Tipo Identificación*" class="estilo12" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="Cédula de ciudadanía" itemValue="CEDULA" class="estilo12"/>
+                                                    <f:selectItem itemLabel="Cédula de extranjería" itemValue="CEDULA EXTRANGERIA" class="estilo12"/>
+                                                    <f:selectItem itemLabel="Pasaporte" itemValue="PASAPORTE" class="estilo12"/>
+
+                                                </h:selectOneMenu>
+
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+
+                                    <div id="inputrigth">
+                                        <div id="imgrigth">
+                                            <h:outputText  class="fa fa-sort-numeric-desc" style="font-size: 2em; color: #958f8f;"></h:outputText>  
+                                        </div>
+                                        <div id="txtrigth">
+                                            <h:panelGroup class="estilo5">
+
+                                                <p:inputText id="attr_numdoc" value="#{benefactorControl.numdocumento}"     maxlength="12" placeholder="Número de Identificación*" class="estilo5">
+                                                    <p:keyFilter regEx="/[A-Za-z0-9_]/i"/>  
+                                                </p:inputText>
+
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div id="contenedorinputd">
+                                    <div id="inputleft">
+                                        <div id="imgleft">
+                                            <h:outputText  class="fa fa-mobile" style="font-size: 2em; color: #958f8f;"></h:outputText>  
+
+                                        </div>
+                                        <div id="txtleft">
+                                            <h:panelGroup class="estilo5">
+
+                                                <p:inputNumber value="#{benefactorControl.telefono}" requiredMessage="Debe ingresar un numero de telefono fijo!" id="tel2"
+                                                               minValue="0" maxValue="10000000000"              decimalSeparator="" thousandSeparator=""  onchange="caracteres();"
+                                                               placeholder="Teléfono 1" class="estilo5"/>
+
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+
+                                    <div id="inputrigth">
+                                        <div id="imgrigth">
+                                            <h:outputText  class="fa fa-map-marker" style="font-size: 2em; color: #958f8f;"></h:outputText> 
+                                        </div>
+                                        <div id="txtrigth">
+
+                                            <h:panelGroup>
+
+
+
+                                                <h:selectOneMenu value="#{benefactorControl.ciudad}"  requiredMessage="Debe Elegir Una Tipo de documento de la lista!"  id="ciudad"
+                                                                 >
+
+                                                    <f:selectItems  value="#{ciudadControl.selectAll()}"/>
+
+                                                </h:selectOneMenu>
+                                            </h:panelGroup>
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div id="contenedorinputd">
+                                    <div id="inputleft">
+                                        <div id="imgleft">
+                                            <h:outputText  class="fa fa-user-plus" style="font-size: 2em; color: #958f8f;"></h:outputText> 
+                                        </div>
+                                        <div id="txtleft">
+                                            <h:panelGroup class="estilo5">
+
+                                                <p:inputText value="#{benefactorControl.correo}"  id="correo"
+                                                             class="estilo5" 
+                                                             requiredMessage="Por Favor ingrese un usuario para ingresar al sistema  ." 
+
+                                                             placeholder="Usuario *">   	
+                                                </p:inputText>
+
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+
+                                    <div id="inputrigth">
+
+                                        <div id="ver">
+                                            <a href="javascript:mostrarContrasena()" ><i class="fa fa-eye-slash" style="font-size: 2em; color: #958f8f;" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                        </div>
+                                        <div id="imgleft">
+                                            <h:outputText  class="fa fa-pencil" style="font-size: 2em; color: #958f8f;"  title="Digite 4 caracteres como minimo 1 letra mayuscula "></h:outputText> 
+                                        </div>
+                                        <div id="txtrigth">
+                                            <h:panelGroup >
+
+                                                <p:password value="#{benefactorControl.contra}" feedback="true"  requiredMessage="Debe ingresar una contraseña!" id="contra"
+                                                            required="true" 
+                                                            placeholder="Contraseña *" class="estilo5" 
+                                                            />
+                                                <span id="passstrength"></span>
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div id="contenedorinputd">
+                                    <div id="inputleft">
+                                        <div id="imgleft">
+                                            <h:outputText  class="fa fa-at" style="font-size: 2em; color: #958f8f;"></h:outputText> 
+                                        </div>
+                                        <div id="txtleft">
+                                            <h:panelGroup class="estilo5">
+
+                                                <p:inputText value="#{benefactorControl.con_correo}"    id="ccorreo"
+                                                             class="estilo5"
+                                                             requiredMessage="Por Favor ingrese un correo ." 
+                                                             validatorMessage="El Formato del Correo es Incorrecto" 
+                                                             placeholder="Correo Electrónico " >   	<f:validateRegex
+                                                        pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+
+                                                </p:inputText>
+
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+
+                                    <div id="inputrigth">
+                                        <div id="ver">
+                                            <a href="javascript:mostrarConfContrasena()" ><i class="fa fa-eye-slash" style="font-size: 2em; color: #958f8f;" aria-hidden="true" title="Mostrar Contraseña"></i> </a>
+                                        </div>
+                                        <div id="imgleft">
+                                            <h:outputText  class="fa fa-pencil" style="font-size: 2em; color: #958f8f;" title="Digite 4 caracteres como minimo 1 letra mayuscula "></h:outputText> 
+                                        </div>
+                                        <div id="txtrigth">
+                                            <h:panelGroup >
+
+                                                <p:password value="#{benefactorControl.con_contra}" class="estilo5" requiredMessage="Debe ingresar una contraseña!" id="ccontra"
+                                                            required="true" feedback="true"  lang="es"
+                                                            placeholder="Confirmar Contraseña*"
+                                                            />
+                                                <span id="passstrength"></span>
+                                            </h:panelGroup>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="contenedorinputd">
+                                    <!-- <div id="inputleft">
+                                         <div id="imgleft">
+                                           
+                                         </div>
+                                         <div id="txtleft">
+                                       
+                                         </div>
+                                     </div>-->
+
+
+                                    <div id="inputrigth">
+                                        <div id="contterminos" class="estilo25">
+
+                                            <a href="javascript:void();" class="estilo5"  onclick="$.colorbox({href: '#{utilControl.protocolHostPortContext}/app-familiar/admin/terminos.xhtml', iframe: true, title: 'Terminos y Condiciones', transition: 'fade', width: '75%', height: '95%'});">
+                                                <i style="font-family: 'GOTHIC';font-size: 2em; color: #16647a;" aria-hidden="true" title="Leer Términos y Condiciones"></i> Leer Términos y Condiciones
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="contenedorinputd">
+                                    <div id="cont_termiosycond">
+                                        <div id="txtterminos" class="estilo25">He leído los términos y condiciones, y acepto lo descrito en él.
+                                            <label class="container">
+
+                                                <input type="checkbox" id="form2:value1" value="true" />
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                               <!-- <div id="contenedorinputd">
+                                    <div id="seguridad" class="estilo25">Imagen de Seguridad</div>
+                                </div>
+
+                                <div id="contenedorinputdt">
+                                    <div id="contenedor_capcha">
+                                        <div  id="imgleftt">
+                                            <a href="#" onclick="Captcha();">
+                                                <img src="#{utilControl.protocolHostPortPath}/imagenes/recargar.png" alt="imagen" width="35px" height="30px"/>
+                                            </a>
+                                        </div>
+                                        <h:outputText id="recargar" value="#{benefactorControl.captchaCode()  }" class="estilo5"/>
+                                        <div  id="imgcapcha" class="estilo16">
+                                            <center> <b id="mainCaptcha"></b></center>
+                                        </div>
+
+                                        <h:inputHidden  id="ocapcha" />
+                                    </div>
+                                </div>
+
+
+                                <div id="contenedorinputc">
+
+                                    <div id="imgleft">
+                                        <h:outputText  class="fa fa-pencil" style="font-size: 2em; color: #958f8f;" title="Digite 4 caracteres como minimo 1 letra mayuscula 1 letra minuscula"></h:outputText> 
+                                    </div>
+                                    <div id="txtrigth">
+                                        <p:inputText id="captchaCode" value="#{benefactorControl.captcha}" class="estilo5"  placeholder="Digite Los Caracteres *" 
+                                                     />
+                                    </div>
+                                </div>-->
+
+
+
+
+
+
+                                <div id="botonesuno">
+                                    <h:outputText value="#{utilControl.msg}" escape="false" id="mensajes1" style="font-size: 1em;
+                                                  float: left;
+                                                  height: 12px;
+                                                  color: #f45f56;
+                                                  text-align: center;
+                                                  width: 96%;
+                                                  margin-top: -4%;
+                                                  margin-left: 2%;
+                                                  font-weight: bold;
+                                                  font-family: 'CenturyGothic-Bold';
+                                                  opacity: 0.8;
+                                                  border-radius: 20px;" class="estilo5"/>
+                                    <!-- <div id="regresar">  
+                                            <p:commandButton type="reset" value="LIMPIAR" id="limpiar"  ajax="true" onclick="limpiarFormulario()"  />
+                                         </div>-->
+                                    <div id="ingresar"> 
+                                        <p:commandButton value="REGRESAR" id="regresar"  ajax="true" onclick="regresar();"  />
+
+                                    </div>
+
+
+                                    <div id="Registrarse"> 
+
+                                        <p:commandButton value="REGISTRARSE" id="registrarse"  ajax="true" onclick="registro();"  />
+                                    </div>   
+
+                                </div>
+
+
+                                <script type="text/javascript">
+
+
+
+
+                                    $(document).ready(function () {
+
+                                        $('.estilo5').attr('autocomplete', 'off');
+                                        $('.estilo5').bind("cut copy paste", function (e) {
+                                            e.preventDefault();
+                                        });
+                                    });
+
+                                    function mostrarContrasena() {
+                                        var tipo = document.getElementById("form2:contra");
+                                        if (tipo.type == "password") {
+                                            tipo.type = "text";
+                                        } else {
+                                            tipo.type = "password";
+                                        }
+
+                                    }
+
+                                    function mostrarConfContrasena() {
+                                        var tipo = document.getElementById("form2:ccontra");
+                                        if (tipo.type == "password") {
+                                            tipo.type = "text";
+                                        } else {
+                                            tipo.type = "password";
+                                        }
+                                    }
+
+                                    function actualizar() {
+                                        setTimeout("location.reload(true);", 1000);
+                                    }
+
+
+                                    function regresar() {
+
+                                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/auth/login.xhtml'
+                                    }
+
+
+                                    function registro() {
+
+
+                                        var formulario = document.getElementById("form2");
+
+                                        var nombre = document.getElementById("form2:nombre").value;
+
+
+
+
+                                        var apellidos = document.getElementById("form2:apellido").value;
+                                        var tipdoc = document.getElementById("form2:tipodoc").value;
+
+
+                                        var numdoc = document.getElementById("form2:attr_numdoc").value;
+                                        var tel1 = 0000000;
+                                        var tel1u = 0000000;
+                                        var tel2 = document.getElementById("form2:tel2_input").value;
+
+
+
+                                        var correo = document.getElementById("form2:correo").value;
+                                        var contra = document.getElementById("form2:contra").value;
+
+                                        var ccorreo = document.getElementById("form2:ccorreo").value;
+                                        
+                                      var email =  ccorreo.toLowerCase();
+                                        
+                                        var ccontra = document.getElementById("form2:ccontra").value;
+
+                                        var ciudad = document.getElementById("form2:ciudad").value;
+                                        
+                                        
+                                        var value1 = document.getElementById("form2:value1").checked;
+
+                                       // var capcha = document.getElementById("form2:ocapcha").value;
+                                       // var ccaptcha = document.getElementById("form2:captchaCode").value;
+                                        var funciona = 'S';
+
+
+
+
+
+                                        if (nombre == "") {
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, ingrese su nombre.'});
+                                            formulario.nombre.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+                                        if (apellidos == "") {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, ingrese su apellido.'});
+                                            formulario.apellidos.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+                                        if (tipdoc == "")
+                                        {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: '¡Por favor seleccione un tipo de identificación de la lista!'});
+                                            formulario.tipdoc.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+                                        if (numdoc == "")
+                                        {
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor ingrese un número de identificación'});
+                                            formulario.numdoc.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+
+
+                                        var inputnumRegexd = /^([A-Za-z0-9_]){5,12}$/;
+                                        if (numdoc != "") {
+                                            if (!inputnumRegexd.exec(numdoc)) {
+
+                                                swal({type: "error", title: '¡Mensaje De Error!', text: 'El número de documento debe tener entre 5 o 12 digitos numéricos.'});
+                                                funciona = 'N';
+                                                return false;
+                                            }
+                                        }
+                                        var inputnumRegex = /^([0-9]){7,10}$/;
+                                        if (tel1 != "") {
+                                            if (!inputnumRegex.exec(tel1)) {
+
+                                                swal({type: "error", title: '¡Mensaje De Error!', text: 'El número Telefónico debe tener entre 7 o 10 digitos numéricos.'});
+                                                funciona = 'N';
+                                                return false;
+                                            }
+
+                                        }
+
+                                        if (tel2 == "")
+                                        {
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: '!Por favor digite su número de celular!'});
+                                            formulario.tel2.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+
+                                        if (!inputnumRegex.exec(tel2)) {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'El número Telefónico debe tener entre 7 o 10 digitos numéricos.'});
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+
+                           
+
+                                        var er = new RegExp(/\s/);
+                                        if (er.test(correo)) {
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: ' Por favor ,Su Usuario del sistema de Recarga No Puede tener espacios en blanco.'});
+                                          
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+
+                                   
+
+                                        if (!mailRegex.exec(email)) {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'La dirección de email es incorrecta.'});
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+                                        if (contra == "")
+                                        {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor Digite Una Contraseña'});
+                                            formulario.contra.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+                                        if (ccontra == "")
+                                        {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor digite una contraseña'});
+                                            formulario.ccontra.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+
+
+
+                                        if (ciudad == "")
+                                        {
+                                            ciudad = "512";
+                                            
+                                        }
+
+
+
+                                        if (!value1)
+                                        {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Para continuar debe aceptar los términos y condiciones'});
+                                            formulario.value1.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }
+
+
+
+
+
+                                      /*  if (ccaptcha == "")
+                                        {
+
+                                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor digite el texto que se ve en la imagen'});
+                                            formulario.ccaptcha.focus();
+                                            funciona = 'N';
+                                            return false;
+                                        }*/
+
+
+
+
+
+
+
+                                        if (funciona == 'S') {
+
+                                      //      $.colorbox({href: '#{utilControl.protocolHostPortContext}/app-familiar/auth/registro.xhtml?nombre_=' + nombre + '&amp;apellidos_=' + apellidos + '&amp;tipdoc_=' + tipdoc + '&amp;numdoc_=' + numdoc + '&amp;tel1_=' + tel1 + '&amp;tel2_=' + tel2 + '&amp;correo_=' + correo + '&amp;contra_=' + contra + '&amp;ccorreo_=' + ccorreo + '&amp;ccontra_=' + ccontra + '&amp;ciudad_=' + ciudad + '&amp;value1_=' + value1 + '&amp;capcha_=' + capcha + '&amp;ccapcha_=' + ccaptcha + '', iframe: true, title: ' ', transition: 'fade', width: '60%', height: '50%'});
+                                        $.colorbox({href: '#{utilControl.protocolHostPortContext}/app-familiar/auth/registro.xhtml?nombre_=' + nombre + '&amp;apellidos_=' + apellidos + '&amp;tipdoc_=' + tipdoc + '&amp;numdoc_=' + numdoc + '&amp;tel1_=' + tel1 + '&amp;tel2_=' + tel2 + '&amp;correo_=' + correo + '&amp;contra_=' + contra + '&amp;ccorreo_=' + email + '&amp;ccontra_=' + ccontra + '&amp;ciudad_=' + ciudad + '&amp;value1_=' + value1 +  '', iframe: true, title: ' ', transition: 'fade', width: '60%', height: '50%'});
+                                          }
+                                    }
+
+
+
+
+                                    function Captcha() {
+
+
+                                        var aM = new Array(
+                                                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+                                                'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                                                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                                                'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+                                                , '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+                                                );
+
+
+
+
+                                        var aMinusculas = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+                                                'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                                                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                                                'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+                                                , '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+                                                );
+
+
+
+                                        var aNumeros = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+                                                'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                                                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                                                'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+                                                , '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+                                                );
+
+
+
+                                        var aCaracteres = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+                                                'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                                                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                                                'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+                                                , '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                                                '+', '-', '/', '*', '.', '(', ')', '@', '[', ']', '{', '}', '?', '¡', '!', ':', ',', ';');
+
+                                        var cLetra = aMinusculas[Math.floor(Math.random() * aMinusculas.length)];
+
+                                        var cNumero = aNumeros[Math.floor(Math.random() * aNumeros.length)];
+
+                                        var cCaracteres = aCaracteres[Math.floor(Math.random() * aCaracteres.length)];
+                                        var cMaysculas = aM[Math.floor(Math.random() * aM.length)];
+
+                                        var code = cLetra + cNumero + cMaysculas;
+
+
+                                        var capcha = document.getElementById('mainCaptcha').innerHTML = code;
+                                        document.getElementById("form2:ocapcha").value = code;
+
+
+
+
+
+
+                                    }
+
+
+                                    function limpiarFormulario() {
+                                        document.getElementById("form2").reset();
+                                    }
+
+
+                                    $(function () {
+                                        PrimeFaces.cw("Password", "widget_form2_contra", {id: "form2:contra", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayúscula 1 letra minúscula", weakLabel: "Contraseña Debil", goodLabel: "Contraseña  Normal", strongLabel: "Contraseña Fuerte"});
+                                    });
+                                    $(function () {
+                                        PrimeFaces.cw("Password", "widget_form2_ccontra", {id: "form2:ccontra", feedback: true, inline: false, promptLabel: "Digite 4 caracteres como minimo 1 letra mayúscula 1  letra minúscula", weakLabel: "Contraseña Debil", goodLabel: "Contraseña Normal", strongLabel: "Contraseña Fuerte"});
+                                    }
+                                    );
+
+                                </script>
+                            </div>
+                        </h:form>
+
+                    </div><!--fin_marco-->
+                </div><!--fin_contenedormedio-->
+                <div id="footer">
+                    <div id="marco_pie" >
+
+                        <div id="desarrollo">
+                            <span><h:outputText value="©"/> 2019 - </span> 
+                            <span>
+                                <a target="_blank" href="http://www.tncolombia.com.co" style="color: #003366">
+                                    <h:outputText value="Amigo Interno "/></a>
+                            </span> <br/>
+                            Sistema Recargas - V. #{propiedadControl.version} <i>Actualizado: #{propiedadControl.versionUpdated}</i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h:panelGroup rendered="#{benefactorControl.successful}">
+                    <script type="text/javascript">
+                        document.location.href = '#{utilControl.protocolHostPortContext}/app-familiar/auth/login.xhtml';
+                    </script>
+
+                </h:panelGroup>
+
+            </div>
+        </div>
+    </h:body>
+
+
+
+</html>

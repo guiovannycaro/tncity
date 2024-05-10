@@ -1,0 +1,622 @@
+@charset "utf-8";
+/* Medios fluidos sencillos
+   Nota: Los medios fluidos exigen la eliminación de los atributos de altura y anchura de los medios del código HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+    max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+    width:100%;
+}
+
+/*
+        Propiedades de cuadrícula fluida de Dreamweaver
+        ----------------------------------
+        dw-num-cols-mobile:		5;
+        dw-num-cols-tablet:		8;
+        dw-num-cols-desktop:	10;
+        dw-gutter-percentage:	25;
+        
+        Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+        http://www.alistapart.com/articles/responsive-web-design
+        
+        y Golden Grid System de Joni Korpi
+        http://goldengridsystem.com/
+*/
+
+/* Diseño móvil: 480 px e inferior. */
+
+body {
+    background-image: url(../imagenes/finternomovild.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position:top center;
+    font-size: 8px;
+    padding:0px;
+    margin:0px;
+    width:100%;
+}
+
+.gridContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 0%;/*
+    padding-right: 1.82%;*/
+}
+
+#cajacontenedor {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+}
+
+#contenedorprincipal{
+    float: left;
+    width: 100%;
+    height: 1579px;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    border: 0px solid #ffffff;
+    background-color: transparent;
+    display: block;
+}
+
+#marcorecaudo {
+    height: auto;
+    width: 100%;
+    float: left;
+    background-color: #ffffff;
+    border-radius: 20px 20px 0px 0px;
+    -moz-border-radius: 20px 20px 0px 0px;
+    -webkit-border-radius: 20px 20px 0px 0px;
+    border: 0px solid #000000;
+    opacity: 0.9;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+
+    display: block;
+}
+
+#marcorecaudointerno{
+    height: auto;
+    width: 100%;
+    float: left;
+    background-color: #ffffff;
+    border-radius: 0px 0px 20px 20px;
+    -moz-border-radius: 0px 0px 20px 20px;
+    -webkit-border-radius: 0px 0px 20px 20px;
+    border: 0px solid #000000;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#tituloseccion{
+    height: 50px;
+    width: 85%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 4% 0% 0% 8%;
+    display: block;
+}
+
+#subtitulo{
+    height: 30px;
+    width: 94%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 2% 0% 0% 2%;
+    background-color: #39899c;
+    display: block;  
+}
+
+#txt_subtitulo{
+    height: 30px;
+    width: 94%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0.5% 0% 0% 2%;
+    display: block;    
+
+}
+
+#elementocontador{
+    height: 40px;
+    width: 100%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+    display: block;
+}
+
+#valor_cont{
+    height: 20px;
+    width: 94%;
+    float: left;
+    padding: 0% 0% 0% 0%;
+    margin: 1% 0% 0% 3%;
+    text-align: center;
+    display: block;
+
+}
+
+#tabladatos{
+    height: auto;
+    width: 90%;
+    float: left;
+    padding: 0% 0% 2% 0%;
+    margin: 2% 5% 0% 5%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: block;
+
+}
+
+.ui-md-8 {
+    width: 100%;
+}
+/* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
+
+@media only screen and (min-width: 481px) {
+
+
+    body {
+        background-image: url(../imagenes/finternotabletd.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #cajacontenedor{
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #contenedorprincipal{
+        float: left;
+        width: 100%;
+        height: 640px;
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 0%;
+        border: 0px solid #bdbdbd;
+        background-color: transparent;
+        display: block;
+
+    }
+
+
+    #marcorecaudo {
+        height: auto;
+        width: 100%;
+        float: left;
+        background-color: #ffffff;
+        border-radius: 20px 20px 0px 0px;
+        -moz-border-radius: 20px 20px 0px 0px;
+        -webkit-border-radius: 20px 20px 0px 0px;
+        border: 0px solid #000000;
+        opacity: 0.9;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+        display: block;
+    }
+
+    #marcorecaudointerno{
+        height: auto;
+        width: 100%;
+        float: left;
+        background-color: #ffffff;
+        border-radius: 0px 0px 20px 20px;
+        -moz-border-radius: 0px 0px 20px 20px;
+        -webkit-border-radius: 0px 0px 20px 20px;
+        border: 0px solid #000000;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+
+        display: block;
+    }
+
+    #tituloseccion{
+        height: 31px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 6%;
+        display: block;
+    }
+
+
+    #subtitulo{
+        height: 30px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 2%;
+        background-color: #39899c;
+        display: block;  
+    }
+
+    #txt_subtitulo{
+        height: 30px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin:0.5% 0% 0% 2%;
+        display: block;    
+
+    }
+
+    #elementocontador{
+        height: 40px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block; 
+
+    }
+
+    #valor_cont{
+        height: 20px;
+        width: 30%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 35% 0% 35%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #tabladatos{
+        height: auto;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 2% 0%;
+        margin: 2% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        display: block;
+
+    }
+
+    .ui-md-8 {
+        width: 100%;
+    }
+
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+
+    body {
+        background-image: url(../imagenes/fondointernod.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #cajacontenedor {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #contenedorprincipal{
+        float:left;
+        width: 90%;
+        height:930px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 0px solid  #bdbdbd;
+        background-color: transparent;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        height:auto;
+        width: 100%;
+        float: left;
+        background-color: #ffffff;
+        border-radius: 20px 20px 0px 0px;
+        -moz-border-radius: 20px 20px 0px 0px;
+        -webkit-border-radius: 20px 20px 0px 0px;
+        border: 0px solid #000000;
+        opacity: 0.9;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #marcorecaudointerno{
+        height:auto;
+        width: 100%;
+        float: left;
+        background-color: #ffffff;
+        border-radius: 0px 0px 20px 20px;
+        -moz-border-radius: 0px 0px 20px 20px;
+        -webkit-border-radius: 0px 0px 20px 20px;
+        border: 0px solid #000000;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+
+    #tituloseccion{
+        height: 40px;
+        width: 90%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 0% 0% 6%;
+        display: block;
+    }
+
+    #subtitulo{
+        height: 30px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 2%;
+        background-color: #39899c;
+        display: block;  
+    }
+
+    #txt_subtitulo{
+        height: 30px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0.5% 0% 0% 2%;
+        display: block;    
+
+    }
+
+    #elementocontador{
+        height: 40px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+    }
+
+    #valor_cont{
+        height: 20px;
+        width: 20%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 40% 0% 40%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #tabladatos{
+        height: auto;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 2% 0%;
+        margin: 2% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        display: block;
+
+    }
+
+    .ui-md-8 {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 1900px) {
+
+    body {
+        background-image: url(../imagenes/fondointernod.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position:top center;
+        font-size:10px;
+        padding:0px;
+        margin:0px;
+        width:100%
+    }
+
+
+    .gridContainer {
+        width: 100%;
+        padding-left: 0%;
+        /*padding-right: 1.1625%;*/
+    }
+
+    #cajacontenedor {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #contenedorprincipal{
+        float: left;
+        width: 90%;
+        height: 1500px;
+        margin: 0% 5% 0% 5%;
+        padding: 0% 0% 0% 0%;
+        border: 0px solid #bdbdbd;
+        background-color: transparent;
+        display: block;
+
+    }
+
+    #marcorecaudo {
+        float: left;
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        border-radius: 20px 20px 0px 0px;
+        -moz-border-radius: 20px 20px 0px 0px;
+        -webkit-border-radius: 20px 20px 0px 0px;
+        border: 0px solid #000000;
+        opacity: 0.9;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 0%;
+
+        display: block;
+    }
+
+    #marcorecaudointerno{
+        float: left;
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        border-radius: 0px 0px 20px 20px;
+        -moz-border-radius: 0px 0px 20px 20px;
+        -webkit-border-radius: 0px 0px 20px 20px;
+        border: 0px solid #000000;
+        padding: 0% 0% 0% 0%;
+        margin: -1% 0% 0% 0%;
+        display: block;
+    }
+
+    #tituloseccion{
+        height: 50px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 6%;
+        display: block;
+    }
+
+    #subtitulo{
+        height: 30px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 2% 0% 0% 2%;
+        background-color: #39899c;
+        display: block;  
+    }
+
+    #txt_subtitulo{
+        height: 30px;
+        width: 94%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0.5% 0% 0% 2%;
+        display: block;
+
+    }
+
+    #elementocontador{
+        height: 40px;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%;
+        display: block;
+
+    }
+
+    #valor_cont{
+        height: 20px;
+        width: 20%;
+        float: left;
+        padding: 0% 0% 0% 0%;
+        margin: 1% 40% 0% 40%;
+        text-align: center;
+        display: block;
+
+    }
+
+    #tabladatos{
+        height: auto;
+        width: 100%;
+        float: left;
+        padding: 0% 0% 2% 0%;
+        margin: 2% 0% 0% 0%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        display: block;
+
+    }
+
+    .ui-md-8 {
+        width: 100%;
+    }
+
+}
+
+body .ui-widget-content {
+    background-color: transparent;
+    font-size: 16px;
+    border: 1px solid #bdbdbd0d;
+}
+
+a {
+    color: #39899C;
+    text-decoration: none;
+}
+
+.light-theme a, .light-theme span {
+    float: left;
+    color: #666;
+    font-family: 'GOTHIC';
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid #BBB;
+    min-width: 14px;
+    padding: 0 7px;
+    margin: 0 5px 0 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    background: #efefef;
+    background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%);
+    background: linear-gradient(top, #ffffff 0%,#efefef 100%);
+}
+
+.simple-pagination {
+    display: block;
+    overflow: hidden;
+    padding: 0 5px 5px 0;
+    /* margin: 0; */
+    margin: 0% 0% 0% 2% !important;
+}

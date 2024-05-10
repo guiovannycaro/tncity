@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../../_templateEmbed.xhtml">
+
+            <ui:define name="content.embed">
+               
+                <h:outputText value="#{informexControl.TotalInformes1(desde,hasta,idbenefactor,documento)}"/>
+
+                <br/>
+                <div>
+
+                    <h:form>
+                        <p:dataTable id="reporte" var="lst" value="#{informexControl.lstInformesTnPagos}" rows="15"
+                                     paginator="false"
+                                     paginatorTemplate="  {RowsPerPageDropdown}"
+                                     rowsPerPageTemplate="5,10,15,25">
+                            <p:column headerText="Titulo">
+                                <a href="#{utilControl.protocolHostPortContext}/app-admin/informex/informe1/detalle/detalle.xhtml?idinforme_=#{lst.idvista}">
+                                    <h:outputText value="#{lst.idvista}" />
+                                </a>
+                            </p:column>
+
+
+
+
+                            <p:column headerText="Nombres Familiar">
+                                <h:outputText value="#{lst.nombres}" />
+                            </p:column>
+
+                            <p:column headerText="Apellidos Familiar">
+                                <h:outputText value="#{lst.apellidos}" />
+                            </p:column>
+
+                            <p:column headerText="Tipo Documento">
+                                <h:outputText value="#{lst.tipo_documento}" />
+                            </p:column>
+
+                            <p:column headerText="Nro. Documento">
+                                <h:outputText value="#{lst.numero_documento}" />
+                            </p:column>
+
+                            <p:column headerText="Numero Telefono ">
+                                <h:outputText value="#{lst.num_telefono}" />
+                            </p:column>
+                          
+
+
+                            <p:column headerText="Descargar ">
+                                <div style="float:left;width: 100%;height: 30px;margin:0% 0% 0% 0%;padding: 0% 0% 0% 0%">
+                                
+                                    <a href="#" title="Descargar Exel" > 
+                                     <div style="    float: left;
+    width: 33%;
+    height: 30px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 0% 0% 0%;" >
+                                    <span class="fa fa-table" style="font-size: 25px;color: green;"></span> 
+                                     </div>
+                                </a>
+                              
+                                    <div style="float:left;width: 15%;height: 30px;margin:0% 0% 0% 0%;padding: 0% 0% 0% 0%"> - </div>
+                                    
+                                    
+                                    
+                                <a href="#"  title="Descargar Pdf" > 
+                                       <div style="float:left;width: 28%;height: 30px;margin:0% 5% 0% 5%;padding: 0% 0% 0% 0%" >
+                                    <span class="fa fa-file-pdf-o" style="font-size: 25px;color: red;"></span> 
+                                     </div>
+                                </a>
+                                </div>
+
+
+                            </p:column>
+
+                            <f:facet name="paginatorTopLeft">
+                                <p:commandButton type="button" icon="pi pi-refresh" />
+                            </f:facet>
+
+                            <f:facet name="paginatorBottomRight">
+                                <p:commandButton type="button" icon="pi pi-cloud-upload" />
+                            </f:facet>
+                          
+                        </p:dataTable>
+                    </h:form>
+
+
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

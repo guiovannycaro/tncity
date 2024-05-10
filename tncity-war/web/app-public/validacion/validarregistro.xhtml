@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+
+
+        <title>TNCity- Sistema De Recaudos</title>
+        <link rel="shortcut icon" href="#{utilControl.protocolHostPortContext}/img/app/logo3.png"/>
+        <link rel="stylesheet" type="text/css" id="theme" href="#{utilControl.protocolHostPortContext}/css/baseCSS.css"/>
+
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+        <h:outputScript name="js/layout.js" library="ultima-layout" />
+
+        <style type="text/css">
+            .login-body {
+                background: url("#{utilControl.protocolHostPortPath}/img/app/bannerLogin.jpg") top left no-repeat #f7f7f7;
+                background-size: 100% auto; }
+            </style>
+        </h:head>
+
+        <h:body styleClass="login-body">
+
+        <h:form>
+       
+
+            <div class="card login-panel ui-fluid" style="background: rgba(255,255,255, 0.75); padding: 5px;width: 80%">
+
+                <div class="ui-g-12">
+                    <img src="#{utilControl.protocolHostPortPath}/img/app/logo.png" height="50"/>
+                </div>
+
+
+                <div align="center">
+                    <h:panelGrid id = "panel" columns = "6" border = "0"
+                                 cellpadding = "2" cellspacing = "1">
+
+                        <f:facet name = "header">
+                            <h:outputLabel value = "Validarse En El Sistema"/>
+                        </f:facet>
+
+
+
+
+
+
+                        <h:outputText value="Tipo de Documento * " styleClass="label"/>
+                        <h:selectOneMenu value="#{benefactorControl.obj.idpersona.tipodocumento}" required="true" requiredMessage="Debe Elegir Una Tipo de documento de la lista!" id="attr_tipodoc" 
+                                         style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                         color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                         padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                         border-radius: 4px;opacity: 0.5;"
+
+                                         >
+                            <f:selectItem 
+                                itemValue="" itemLabel="-Seleccione Una Opcion--" />
+                            <f:selectItem itemValue="CEDULA" itemLabel="CEDULA"/>
+                            <f:selectItem itemValue="PASAPORTE" itemLabel="PASAPORTE"/>
+                            <f:selectItem itemValue="CEDULA EXTRANGERIA" itemLabel="CED. EXTRANGERIA"/>
+
+                        </h:selectOneMenu>
+
+
+                        <h:outputText value="No. Documento * " styleClass="label"/>
+                        <p:inputText value="#{benefactorControl.numdocumento}" required="true" requiredMessage="Debe ingresar un numero de documento!" id="attr_nc"
+                                     style=" width: 100%; height: 25px;float: right;border: 1px solid black;
+                                     color: #151414;font-weight: bold;font-size: 12px;text-align: center;
+                                     padding: 2px 5px;background-color: #FFFFFF;text-decoration: none;text-transform: capitalize;
+                                     border-radius: 4px;opacity: 0.5;"           
+
+                                     />
+
+
+                        <f:facet name = "footer">
+
+                            <h:panelGroup style = "display:block; text-align:center">
+
+                                <p:commandButton value="Continuar" action="#{benefactorControl.validar()}" icon="fa fa-check" ajax="false" style="
+                                                 text-decoration: none;
+                                                 width: 23%;
+                                                 height: 38px;
+                                                 float: left;
+                                                 padding: 2px 5px 1px 3px;
+                                                 font-weight: bold;
+                                                 font-size: 14px;
+                                                 color: #ffffff;
+                                                 background-color: #1883ba;
+                                                 border-radius: 6px;
+                                                 border: 1px solid black;
+                                                 margin-left: 183px;
+                                                 " />
+
+                                <p:commandButton type="reset" id = "reset" value = "Limpiar" icon="fa fa-paint-brush" style="
+                                                 text-decoration: none;
+                                                 width: 20%;
+                                                 height: 38px;
+                                                 float: right;
+                                                 padding: 3px;
+                                                 font-weight: bold;
+                                                 font-size: 14px;
+                                                 color: #ffffff;
+                                                 background-color: #1883ba;
+                                                 border-radius: 6px;
+                                                 border: 1px solid black;
+                                                 margin-right: 170px;"/>
+
+                            </h:panelGroup>
+
+
+                            <h:panelGroup style = "display:block;margin-top: 4%;">
+
+
+                                <p:message for="attr_tipodoc" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                                <p:message for="attr_nc" style="font-size: 12px;float: left;height: 3px;color: #333;background-color: #f45f56;" />
+                            </h:panelGroup> 
+
+                            <h:panelGroup style = "display:block;margin-top: 8%;">
+                                <h:outputText value="#{utilControl.msg}" escape="false"/>
+                            </h:panelGroup> 
+                            
+                 
+                        </f:facet>
+                    </h:panelGrid>
+                </div>
+
+
+
+
+                <br/>
+                <ui:include src="./../footer.xhtml" />
+
+            </div>   
+            
+                          
+        </h:form>
+
+            
+      
+             
+             
+            <h:panelGroup rendered="#{benefactorControl.redir=='RECAUDO'}">
+            <script type="text/javascript">
+                document.location.href = '#{utilControl.protocolHostPortContext}/app-public/recaudo/recaudo.xhtml';
+            </script>
+        </h:panelGroup>
+      
+            <h:panelGroup rendered="#{benefactorControl.redir=='REGISTRO'}">
+            <script type="text/javascript">
+                document.location.href = '#{utilControl.protocolHostPortContext}/app-public/registro/registro.xhtml';
+            </script>
+        </h:panelGroup>
+
+        <br/><br/><br/>
+
+
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{themeControl.theme}.css" library="ultima-layout" />
+    </h:body>
+
+</html>

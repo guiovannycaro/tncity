@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.administracion.promociones.detalle.content">
+
+                <p:panel header="Editar Promocion">
+                    <div align="center">
+                        <h:form id="formP_">
+                            <ui:repeat value="#{promocionesControl.lispromociones}" var="lst"> 
+                                <p:panelGrid columns="2">
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Nombre" styleClass="label"/>
+                                        <h:outputText value="*" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+
+
+                                        <p:inputText id="attr_nombre"  class="selu" required="true" requiredMessage="Por favor, Debe seleccionar Una Promocion De La Lista!" value="#{lst.idpromocion.nombre}" readonly="true" />
+
+                                        <p:message for="attr_nombre"/>
+                                    </h:panelGroup>
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Tipo Promocion" styleClass="label"/>
+                                        <h:outputText value="*" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+
+                                        <p:inputText id="tipovalor" class="selu" value="#{lst.tipoValor}" onchange="selectO1()" required="false" requiredMessage="Debe Elegir UnA Opcion!"  
+                                                     readonly="true"    />
+
+
+                                    </h:panelGroup>
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Valor Promocion" styleClass="label"/>
+                                        <h:outputText value="*" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+                                        <p:inputText  value="#{lst.valorPromocion}"     required="true" requiredMessage="Requerido!" id="attr_vpromocion1"  style="display:block;" readonly="true" >
+                                            <p:keyFilter regEx="/[0-9]/"/>  
+                                        </p:inputText>
+                                        <p:message for="attr_evpromocion1" id="attr_evpromocion1" style="display:none;"/>
+                                    </h:panelGroup>
+
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Fecha Inicial" styleClass="label"/>
+                                        <h:outputText value="*" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+
+
+                                        <p:calendar autocomplete="off" id="attr_finicial" required="true" requiredMessage="Por favor, Debe seleccionar la fecha de inicio!" value="#{lst.fechaInicial}" pattern="yyyy-MM-dd" locale="es"  navigator="true"/>
+                                        <p:messages for="attr_finicial"/>
+
+
+                                    </h:panelGroup>
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Fecha Final" styleClass="label"/>
+                                        <h:outputText value="*" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+                                        
+                                        <p:calendar autocomplete="off" id="attr_ffin" required="true" requiredMessage="Por favor, Debe seleccionar la fecha de inicio!" value="#{lst.fechaFinal}" pattern="yyyy-MM-dd" locale="es"  navigator="true"/>
+                                        <p:messages for="attr_ffin"/>
+
+
+                                    </h:panelGroup>
+
+
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Tipo Criterio" styleClass="label"/>
+                                        <h:outputText value="" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+
+                                        <p:inputText id="tipocriterio" class="selu" value="#{lst.tipoAplicadesde}"  required="false" requiredMessage="Debe Elegir UnA Opcion!" readonly="true"/> 
+
+
+                                    </h:panelGroup>
+
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Criterio Aplicación" styleClass="label"/>
+                                        <h:outputText value="" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+                                        <p:inputText  value="#{lst.aplicadesde}"  id="attr_caplica1"   style="display:block;" readonly="true" />
+
+                                        <p:message for="attr_caplica1" id="attr_vcaplica1" style="display:none;"/>
+
+                                    </h:panelGroup>
+
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Estado" styleClass="label"/>
+                                        <h:outputText value="*" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+
+                                        <h:selectOneMenu value="#{lst.estado}"  requiredMessage="Debe Elegir Una Opcion" id="attr_estado" 
+                                                         >
+                                            <f:selectItem  itemValue="" itemLabel="Seleccione un Estado..." noSelectionOption="true" />
+                                            <f:selectItem itemLabel="Activo" itemValue="true" />
+                                            <f:selectItem itemLabel="Inactivo" itemValue="false" />
+
+
+                                        </h:selectOneMenu>
+
+
+                                    </h:panelGroup>
+
+
+
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Observaciones" styleClass="label"/>
+                                        <h:outputText value="" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+                                        <p:inputText value="#{lst.observacion}" required="false" requiredMessage="Requerido!" id="attr_observaciones"/>
+                                        <p:message for="attr_observaciones"/>
+                                    </h:panelGroup>
+
+
+                                    <h:panelGroup>
+                                        <h:outputText value="Digitos Cedula" styleClass="label"/>
+                                        <h:outputText value="" styleClass="oblig"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup>
+
+                                        <h:panelGroup rendered="#{lst.cero == true }">
+                                            0  <input  type="checkbox" value="true" id="ncedula0" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.cero == false }">
+                                            0 <input  type="checkbox" value="false" id="ncedula0"  disabled="true"/>
+                                        </h:panelGroup>
+                                        <br/>
+                                        <h:panelGroup rendered="#{lst.uno == true }">
+                                            1 <input  type="checkbox" value="true" id="ncedula1" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.uno == false }">
+                                            1  <input  type="checkbox" value="false" id="ncedula1" disabled="true"/>
+                                        </h:panelGroup>
+                                        <br/>
+                                        <h:panelGroup rendered="#{lst.dos == true }">
+                                            2  <input  type="checkbox" value="true" id="ncedula2" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.dos == false }">
+                                            2  <input  type="checkbox" value="false" id="ncedula2" disabled="true"/>
+                                        </h:panelGroup>
+                                        <br/>
+                                        <h:panelGroup rendered="#{lst.tres == true }">
+                                            3 <input  type="checkbox" value="true" id="ncedula3" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.tres == false }">
+                                            3 <input  type="checkbox" value="false" id="ncedula3" disabled="true"/>
+                                        </h:panelGroup>
+                                        <br/>
+                                        <h:panelGroup rendered="#{lst.cuatro == true }">
+                                            4 <input  type="checkbox" value="true" id="ncedula4" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.cuatro == false }">
+                                            4 <input  type="checkbox" value="false" id="ncedula4" disabled="true"/>
+                                        </h:panelGroup>
+
+                                        <br/>
+
+                                        <h:panelGroup rendered="#{lst.cinco == true }">
+                                            5  <input  type="checkbox" value="true" id="ncedula5" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.cinco == false }">
+                                            5  <input  type="checkbox" value="false" id="ncedula5" disabled="true"/>
+                                        </h:panelGroup>
+                                        <br/>
+                                        <h:panelGroup rendered="#{lst.seis == true }">
+                                            6 <input  type="checkbox" value="true" id="ncedula6" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+
+                                        <h:panelGroup rendered="#{lst.seis == false }">
+                                            6  <input  type="checkbox" value="false" id="ncedula6" disabled="true"/>
+                                        </h:panelGroup>
+
+                                        <br/>
+                                        <h:panelGroup rendered="#{lst.siete == true }">
+                                            7  <input  type="checkbox" value="true" id="ncedula7" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.siete == false }">
+                                            7  <input  type="checkbox" value="false" id="ncedula7" disabled="true"/>
+                                        </h:panelGroup>
+                                        <br/>
+
+                                        <h:panelGroup rendered="#{lst.ocho == true }">
+                                            8 <input  type="checkbox" value="true" id="ncedula8" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.ocho == false }">
+                                            8 <input  type="checkbox" value="false" id="ncedula8" disabled="true"/>
+                                        </h:panelGroup>
+                                        <br/>
+                                        <h:panelGroup rendered="#{lst.nueve == true }">
+                                            9 <input  type="checkbox" value="true" id="ncedula9" checked="true" disabled="true"/>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{lst.nueve == false }">
+                                            9 <input  type="checkbox" value="false" id="ncedula9" disabled="true"/>
+                                        </h:panelGroup>
+
+
+                                    </h:panelGroup>
+                                    <h:inputHidden id="attr_promocion" value="#{lst.idpromocion.idpromocion}" />
+
+                                </p:panelGrid>
+                            </ui:repeat>
+                            <p:commandButton value="Enviar" onclick="enviarf();" class="sigui"  >
+                            </p:commandButton>
+                        </h:form>
+
+
+
+                    </div>
+                </p:panel>
+                <script type="text/javascript">
+
+                    function enviarf() {
+
+                        var formulario = document.getElementById("formP_");
+                        var funciona = 'S';
+                        var nombre = document.getElementById("formP_:j_idt65:0:attr_nombre").value;
+                        var tipopromo = document.getElementById("formP_:j_idt65:0:tipovalor").value;
+                        var valor1 = document.getElementById("formP_:j_idt65:0:attr_vpromocion1").value;
+                        var fechainicial = document.getElementById("formP_:j_idt65:0:attr_finicial_input").value;
+                        var fechafinal = document.getElementById("formP_:j_idt65:0:attr_ffin_input").value;
+                        var estado = document.getElementById("formP_:j_idt65:0:attr_estado").value;
+                        var observacion = document.getElementById("formP_:j_idt65:0:attr_observaciones").value;
+                        var cero = document.getElementById('ncedula0').checked;
+                        var uno = document.getElementById('ncedula1').checked;
+                        var dos = document.getElementById('ncedula2').checked;
+                        var tres = document.getElementById('ncedula3').checked;
+                        var cuatro = document.getElementById('ncedula4').checked;
+                        var cinco = document.getElementById('ncedula5').checked;
+                        var seis = document.getElementById('ncedula6').checked;
+                        var siete = document.getElementById('ncedula7').checked;
+                        var ocho = document.getElementById('ncedula8').checked;
+                        var nueve = document.getElementById('ncedula9').checked;
+                        var taplica = document.getElementById("formP_:j_idt65:0:tipocriterio").value;
+                        var caplica1 = document.getElementById('formP_:j_idt65:0:attr_caplica1').value;
+                        var promocion = document.getElementById("formP_:j_idt65:0:attr_promocion").value;
+
+                        if (estado == "") {
+                            swal({type: "error", title: '¡Mensaje De Error!', text: 'Por favor, Seccione un estado para la promocion.'});
+                            formulario.estado.focus();
+                            funciona = 'N';
+                            return false;
+                        }
+
+                        if (funciona == 'S') {
+
+                            $.colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/administracion/promociones/detalle/salvareditar.xhtml?nombre_=' + nombre + '&amp;tipopromo_=' + tipopromo + '&amp;valorpromouno_='
+                                        + valor1 + '&amp;finicial_=' + fechainicial
+                                        + '&amp;ffinal_=' + fechafinal + '&amp;estado_=' + estado + '&amp;observacion_=' + observacion
+                                        + '&amp;cero_=' + cero + '&amp;uno_=' + uno + '&amp;dos_=' + dos + '&amp;tres_=' + tres + '&amp;cuatro_=' + cuatro
+                                        + '&amp;cinco_=' + cinco + '&amp;seis_=' + seis + '&amp;siete_=' + siete + '&amp;ocho_=' + ocho + '&amp;nueve_=' + nueve + '&amp;taplica_=' + taplica + '&amp;caplicaa_=' + caplica1 + '&amp;idpromocion_=' + #{param.idpromocion_} + '&amp;promocion_=' + promocion + '', iframe: true, title: ' ', transition: 'fade', width: '60 % ', height: '50 % '});
+
+                        }
+
+                    }
+
+                </script>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

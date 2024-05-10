@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../_template.xhtml">
+
+            <ui:define name="app-admin.config.content">
+
+                <p:panel header="Parámetros Generales">
+
+                    <div align="center">
+                        <a href="javascript:void();" class="fa fa-edit" onclick="$.colorbox({href: '#{utilControl.protocolHostPortContext}/app-admin/config/general/editar.xhtml', iframe: true, title: 'Configurar', transition: 'fade', width: '75%', height: '95%'});">
+                            Editar
+                        </a>
+                        <br/><br/>
+                        <h:outputText value="#{configControl.setObjGeneralConfig(configControl.config(configControl.objGeneralConfig))}"/>
+
+                        <p:panelGrid columns="2">
+
+                            <h:outputText styleClass="label" value="Nombre del Sistema"/>
+                            <h:panelGroup>
+                                <h:outputText value="#{configControl.objGeneralConfig.nombreSistema}"/>
+                            </h:panelGroup>
+
+                            <h:outputText styleClass="label" value="Administrador del Sistema"/>
+                            <h:panelGroup>
+                                <h:outputText value="#{usuarioControl.recuperaByIdInteger(configControl.objGeneralConfig.idusuarioAdministrador)}"/>
+                                <a href="#">
+                                    <h:outputText value="#{usuarioControl.obj.idpersona.nombres} #{usuarioControl.obj.idpersona.apellidos}"/>
+                                </a>
+                            </h:panelGroup>
+
+                        </p:panelGrid>
+
+                    </div>
+
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

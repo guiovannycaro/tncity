@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.inicio.indicativos.detalle.content">
+            
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <p:panelGrid columns="2">
+
+
+
+                            <h:panelGroup>
+                                <h:outputText value="Pais" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+
+
+                            <h:panelGroup>
+
+                                <p:selectOneMenu value="#{indicativosControl.obj.idpais}" required="true" requiredMessage="Requerido!" id="attr_idpais">
+                                    <f:selectItems value="#{paisControl.selectAll()}"/>
+                                </p:selectOneMenu>
+                                <p:message for="attr_idpais"/>
+
+                            </h:panelGroup>
+
+                            <h:panelGroup>
+                                <h:outputText value="Ciudad" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+
+                            <h:panelGroup>
+
+                                <p:selectOneMenu value="#{indicativosControl.obj.idciudad}" required="true" requiredMessage="Requerido!" id="attr_ciudad">
+                                    <f:selectItems value="#{ciudadControl.selectAll()}"/>
+                                </p:selectOneMenu>
+                                <p:message for="attr_ciudad"/>
+                            </h:panelGroup>
+
+                            <h:panelGroup>
+                                <h:outputText value="Departamento" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+
+                            <h:panelGroup>
+
+
+                                <p:selectOneMenu value="#{indicativosControl.obj.iddepartamento}" required="true" requiredMessage="Requerido!" id="attr_departamento">
+                                    <f:selectItems value="#{departamentoestadoControl.selectAll()}"/>
+                                </p:selectOneMenu>
+
+                                <p:message for="attr_departamento"/>
+                            </h:panelGroup>
+
+
+                            <h:panelGroup>
+                                <h:outputText value="Codigo" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+
+                            <h:panelGroup>
+                                <p:inputText value="#{indicativosControl.obj.codindicativo}" required="true" requiredMessage="Requerido!" id="attr_codindicativo"/>
+                                <p:message for="attr_codindicativo"/>
+                            </h:panelGroup>
+
+ <h:panelGroup>
+                                <h:outputText value="Codigo Area" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                            </h:panelGroup>
+
+                            <h:panelGroup>
+                                <p:inputText value="#{indicativosControl.obj.codarea}" required="true" requiredMessage="Requerido!" id="attr_codarea"/>
+                                <p:message for="attr_codarea"/>
+                            </h:panelGroup>
+
+                        </p:panelGrid>
+                        <br/><br/>
+
+                        <h:inputHidden value="#{indicativosControl.obj.idindicativo}"/>
+
+                        <p:commandButton value="Guardar Cambios" action="#{indicativosControl.editarindicativo()}" icon="fa fa-save" ajax="false">
+                            <f:param name="idindicativo_" value="#{param.idindicativo_}"/>
+                        </p:commandButton>
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+                    <h:panelGroup rendered="#{indicativosControl.successful}">
+                        <script type="text/javascript">
+                            document.location.href =
+                                    '#{utilControl.protocolHostPortContext}/app-admin/inicio/indicativos/detalle/detalle.xhtml?idindicativo_=#{indicativosControl.obj.idindicativo}';
+                        </script>
+                    </h:panelGroup>
+
+                </div>
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

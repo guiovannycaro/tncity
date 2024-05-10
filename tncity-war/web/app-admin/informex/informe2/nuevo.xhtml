@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.informex.informe2.content">
+           
+
+                <div align="center">
+                    <h:form id="ff_">
+                        <p:panelGrid columns="2">
+
+            
+
+                         
+
+
+                         
+
+
+                          
+
+
+
+                        </p:panelGrid>
+                        <br/><br/>
+
+                 
+
+                        <p:commandButton value="Guardar Cambios" action="#{informexControl.crear()}" icon="fa fa-save" ajax="false">
+                            <f:param name="idciudad_" value="#{param.idinforme_}"/>
+                        </p:commandButton>
+                        <br/><br/>
+                        <p:message for="ff_"/>
+                    </h:form>
+
+                    <h:panelGroup rendered="#{informexControl.successful}">
+                        <script type="text/javascript">
+                            document.location.href =
+                                    '#{utilControl.protocolHostPortContext}/app-admin/informex/informe2/detalle/detalle.xhtml?idinforme_=#{informexControl.obj.idinforme}';
+                        </script>
+                    </h:panelGroup>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

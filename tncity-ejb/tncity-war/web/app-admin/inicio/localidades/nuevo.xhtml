@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jc="http://jc.faces/component"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./_template.xhtml">
+
+            <ui:define name="app-admin.inicio.localidades.content">
+             
+                <p:panel header="Nueva Localidad">
+                    <div align="center">
+                        <h:form>
+                            <p:panelGrid columns="2">
+
+                                <h:panelGroup>
+                                    <h:outputText value="Nombre" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+
+                                <h:panelGroup>
+                                    <p:inputText value="#{localidadControl.obj.nombre}" required="true" requiredMessage="Requerido!" id="attr_nombre"/>
+                                    <p:message for="attr_nombre"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <h:outputText value="Codigo Localidad" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                <h:panelGroup>
+                                    <p:inputText value="#{localidadControl.obj.codoficial}" required="true" requiredMessage="Requerido!" id="attr_codOficial"/>
+                                    <p:message for="attr_codOficial"/>
+                                </h:panelGroup>
+
+                                
+                                  <h:panelGroup>
+                                    <h:outputText value="Ciudad" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+
+                                <h:panelGroup>
+                                    <p:selectOneMenu value="#{localidadControl.obj.idciudad}" required="true" requiredMessage="Requerido!" id="attr_idciudad">
+                                        <f:selectItems value="#{ciudadControl.selectAll()}"/>
+                                    </p:selectOneMenu>
+                                </h:panelGroup>
+                                
+                                
+                                 <h:panelGroup>
+                                <h:outputText value="Observaciones:" styleClass="label"/>
+                                <h:outputText value="*" styleClass="oblig"/>
+                             </h:panelGroup>
+                            <h:panelGroup>
+                                <p:inputText value="#{localidadControl.obj.observaciones}" required="true" requiredMessage="Requerido!" id="attr_observaciones"/>
+                                <p:message for="attr_observaciones"/>
+                            </h:panelGroup>
+                                
+                                
+                                
+                                  <h:panelGroup>
+                                    <h:outputText value="Longitud" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                
+                                <h:panelGroup>
+                                    <p:inputText value="#{localidadControl.obj.longitud}" required="true" requiredMessage="Requerido!" id="attr_longitud"/>
+                                    <p:message for="attr_longitud"/>
+                                </h:panelGroup>
+     <h:panelGroup>
+                                    <h:outputText value="Latitud" styleClass="label"/>
+                                    <h:outputText value="*" styleClass="oblig"/>
+                                </h:panelGroup>
+                                
+                                
+                                <h:panelGroup>
+                                    <p:inputText value="#{localidadControl.obj.latitud}" required="true" requiredMessage="Requerido!" id="attr_latitud"/>
+                                    <p:message for="attr_latitud"/>
+                                </h:panelGroup>
+
+                            </p:panelGrid>
+                            <br/><br/>
+                       <p:commandButton value="Guardar" action="#{localidadControl.nuevo()}" icon="fa fa-save" ajax="false"/>
+                            <br/><br/>
+                        </h:form>
+
+                        <h:panelGroup rendered="#{localidadControl.successful}">
+                            <script type="text/javascript">
+                                document.location.href = 
+                                        '#{utilControl.protocolHostPortContext}/app-admin/inicio/localidades/detalle/detalle.xhtml?idlocalidad_=#{localidadControl.obj.idlocalidad}';
+                            </script>
+                        </h:panelGroup>
+
+                    </div>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
